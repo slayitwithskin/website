@@ -125,6 +125,148 @@ const index = () => {
         </Flex>
       </Flex>
 
+      <Box 
+      position={"relative"}
+      backgroundImage={"bride.jpg"} 
+      backgroundPosition={"50% 0%"}
+      backgroundSize={"cover"}
+      backgroundAttachment={"fixed"} 
+      backgroundRepeat={"no-repeat"}
+      w={"full"}
+      h={"80vh"}
+      >
+        <Box position={"absolute"} top={0} right={0} bottom={0} left={0} bg={"rgba(0,0,0,0.6)"}>
+          <Flex h={'full'} direction={"column"} alignItems={'center'} justifyContent={'center'} zIndex={10}>
+            <Text className={styles.monts} color={'white'} letterSpacing={4}>BEAUTIFUL & CONFIDENT</Text>
+            <Text className={styles.cursive} fontSize={64} color={'white'}>Need a Fresh Look?</Text>
+            <Button my={4} p={6} bg={'transparent'} border={'2px'} borderColor={'white'} color={'white'} rounded={0} className={styles.monts} _hover={{bg: 'white', color: 'black'}}>BOOK APPOINTMENT</Button>
+          </Flex>
+        </Box>
+      </Box>
+
+      <Box p={16} h={'auto'}>
+        <Text className={styles.monts} textAlign={'center'} letterSpacing={4} color={'blackAlpha.700'}>JUST FOR QUEENS</Text>
+        <Text className={styles.cursive} textAlign={'center'} fontSize={48} color={'black'}>Our Services</Text>
+        <Box width={24} h={.5} m={'0 auto'} bg={'black'}></Box>
+        <Flex wrap={'wrap'} mt={16} alignItems={'center'} justifyContent={'space-around'}>
+          <Link href={'#'} m={4}>
+            <Box 
+            w={40} 
+            h={40} 
+            boxShadow={'base'} 
+            rounded={4} 
+            display={'grid'} 
+            placeContent={'center'} 
+            backgroundImage={"url('floral-leaves-corner.jpg')"} 
+            backgroundPosition={'center'} 
+            backgroundSize={'cover'} 
+            backgroundRepeat={'no-repeat'}
+
+            transition={'ease'}
+            transitionDuration={'.5s'}
+            _hover={{
+              transform: "translateY(-5px)",
+              boxShadow: 'xl'
+            }}
+            >
+              <Text textAlign={'center'}>Service 1</Text>
+            </Box>
+          </Link>
+          <Link href={'#'} m={4}>
+            <Box 
+            w={40} 
+            h={40} 
+            boxShadow={'base'} 
+            rounded={4} 
+            display={'grid'} 
+            placeContent={'center'} 
+            backgroundImage={"url('floral-leaves-corner.jpg')"} 
+            backgroundPosition={'center'} 
+            backgroundSize={'cover'} 
+            backgroundRepeat={'no-repeat'}
+
+            transition={'ease'}
+            transitionDuration={'.5s'}
+            _hover={{
+              transform: "translateY(-5px)",
+              boxShadow: 'xl'
+            }}
+            >
+              <Text textAlign={'center'}>Service 2</Text>
+            </Box>
+          </Link>
+          <Link href={'#'} m={4}>
+            <Box 
+            w={40} 
+            h={40} 
+            boxShadow={'base'} 
+            rounded={4} 
+            display={'grid'} 
+            placeContent={'center'} 
+            backgroundImage={"url('floral-leaves-corner.jpg')"} 
+            backgroundPosition={'center'} 
+            backgroundSize={'cover'} 
+            backgroundRepeat={'no-repeat'}
+
+            transition={'ease'}
+            transitionDuration={'.5s'}
+            _hover={{
+              transform: "translateY(-5px)",
+              boxShadow: 'xl'
+            }}
+            >
+              <Text textAlign={'center'}>Service 3</Text>
+            </Box>
+          </Link>
+          <Link href={'#'} m={4}>
+            <Box 
+            w={40} 
+            h={40} 
+            boxShadow={'base'} 
+            rounded={4} 
+            display={'grid'} 
+            placeContent={'center'} 
+            backgroundImage={"url('floral-leaves-corner.jpg')"} 
+            backgroundPosition={'center'} 
+            backgroundSize={'cover'} 
+            backgroundRepeat={'no-repeat'}
+
+            transition={'ease'}
+            transitionDuration={'.5s'}
+            _hover={{
+              transform: "translateY(-5px)",
+              boxShadow: 'xl'
+            }}
+            >
+              <Text textAlign={'center'}>Service 4</Text>
+            </Box>
+          </Link>
+          <Link href={'#'} m={4}>
+            <Box 
+            w={40} 
+            h={40} 
+            boxShadow={'base'} 
+            rounded={4} 
+            display={'grid'} 
+            placeContent={'center'} 
+            backgroundImage={"url('floral-leaves-corner.jpg')"} 
+            backgroundPosition={'center'} 
+            backgroundSize={'cover'} 
+            backgroundRepeat={'no-repeat'}
+
+            transition={'ease'}
+            transitionDuration={'.5s'}
+            _hover={{
+              transform: "translateY(-5px)",
+              boxShadow: 'xl'
+            }}
+            >
+              <Text textAlign={'center'}>Service 5</Text>
+            </Box>
+          </Link>
+        </Flex>
+      </Box>
+
       <Flex p={16} backgroundImage={"url('videobg.jpg')"} backgroundPosition={"0% 0%"} backgroundSize={"cover"} backgroundRepeat={"no-repeat"} justifyContent={'space-between'}>
         <Flex direction={'column'} alignItems={'flex-start'} justifyContent={'center'} w={'40%'}>
           <Text className={styles.monts}>EXPERT BEAUTICIANS</Text>
