@@ -12,9 +12,17 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-.hero{
-  position: relative;
+.nav{
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 85vh;
-  background: #000;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(5px);
+  z-index: 999;
+}
+
+.homevideo{
+  position: relative;
+  border-radius: 24px 0 24px 0;
 }
