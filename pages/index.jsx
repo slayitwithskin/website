@@ -284,7 +284,7 @@ const index = () => {
       </Flex>
 
       <Flex p={16} direction={'column'} alignItems={'center'} justifyContent={'center'}>
-        <Text className={styles.monts} textAlign={'center'} letterSpacing={4} color={'blackAlpha.700'}>DON'T TAKE OUR WORD FOR IT</Text>
+        <Text className={styles.monts} textAlign={'center'} letterSpacing={4} color={'blackAlpha.700'}>DO NOT TAKE OUR WORD FOR IT</Text>
         <Text className={styles.cursive} textAlign={'center'} fontSize={48} color={'black'}>Read Our Testimonials</Text>
         <Box width={24} h={.5} m={'0 auto'} bg={'black'}></Box>
         <Splide
