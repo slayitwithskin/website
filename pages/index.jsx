@@ -4,13 +4,16 @@ import leaves from '../public/floral-leaves-corner.jpg'
 import herobg from '../public/hero.jpg'
 import herogirl from '../public/woman.png'
 
-import { Flex, Box, Spacer, Menu, MenuButton, MenuList, MenuIcon, MenuItem, Text, MenuDivider, Button, Image, Container, AspectRatio } from '@chakra-ui/react'
+import { Flex, Box, Spacer, Menu, MenuButton, MenuList, MenuIcon, MenuItem, Text, MenuDivider, Button, Image, Container, AspectRatio, HStack } from '@chakra-ui/react'
 
 import { HiOutlineShoppingBag } from 'react-icons/hi2'
-import { BsChevronDown, BsArrowRight } from 'react-icons/bs'
+import { BsChevronDown, BsArrowRight, BsEnvelopeFill, BsTelephoneFill, BsInstagram, BsFacebook, BsTwitter, BsWhatsapp } from 'react-icons/bs'
 
 import Link from 'next/link'
 import Head from 'next/head'
+
+import {Splide, SplideSlide} from '@splidejs/react-splide'
+import '@splidejs/react-splide/css/sea-green';
 
 const index = () => {
   return (
@@ -107,7 +110,7 @@ const index = () => {
         <Box w={'50%'}>
           <Image src='woman2.png' w={'xl'}/>
         </Box>
-        <Flex direction={'column'} alignItems={'flex-start'} justifyContent={'center'} w={'50%'} px={6}>
+        <Flex direction={'column'} alignItems={'flex-start'} justifyContent={'center'} w={'50%'} px={6} backgroundImage={'leaves.png'} backgroundSize={'contain'} backgroundRepeat={'no-repeat'}>
           <Text className={styles.monts}>FEEL THE CONFIDENCE</Text>
           <Text className={styles.cursive} fontSize={'56'}>Beauty Forever</Text>
           <Box mt={6} mb={4} w={20} h={.5} bg={'blackAlpha.800'}></Box>
@@ -163,7 +166,7 @@ const index = () => {
             backgroundRepeat={'no-repeat'}
 
             transition={'ease'}
-            transitionDuration={'.5s'}
+            transitionDuration={'.2s'}
             _hover={{
               transform: "translateY(-5px)",
               boxShadow: 'xl'
@@ -186,7 +189,7 @@ const index = () => {
             backgroundRepeat={'no-repeat'}
 
             transition={'ease'}
-            transitionDuration={'.5s'}
+            transitionDuration={'.2s'}
             _hover={{
               transform: "translateY(-5px)",
               boxShadow: 'xl'
@@ -209,7 +212,7 @@ const index = () => {
             backgroundRepeat={'no-repeat'}
 
             transition={'ease'}
-            transitionDuration={'.5s'}
+            transitionDuration={'.2s'}
             _hover={{
               transform: "translateY(-5px)",
               boxShadow: 'xl'
@@ -232,7 +235,7 @@ const index = () => {
             backgroundRepeat={'no-repeat'}
 
             transition={'ease'}
-            transitionDuration={'.5s'}
+            transitionDuration={'.2s'}
             _hover={{
               transform: "translateY(-5px)",
               boxShadow: 'xl'
@@ -255,7 +258,7 @@ const index = () => {
             backgroundRepeat={'no-repeat'}
 
             transition={'ease'}
-            transitionDuration={'.5s'}
+            transitionDuration={'.2s'}
             _hover={{
               transform: "translateY(-5px)",
               boxShadow: 'xl'
@@ -267,7 +270,7 @@ const index = () => {
         </Flex>
       </Box>
 
-      <Flex p={16} backgroundImage={"url('videobg.jpg')"} backgroundPosition={"0% 0%"} backgroundSize={"cover"} backgroundRepeat={"no-repeat"} justifyContent={'space-between'}>
+      <Flex position={'relative'} p={16} backgroundImage={"url('videobg.jpg')"} backgroundPosition={"0% 0%"} backgroundSize={"cover"} backgroundRepeat={"no-repeat"} justifyContent={'space-between'}>
         <Flex direction={'column'} alignItems={'flex-start'} justifyContent={'center'} w={'40%'}>
           <Text className={styles.monts}>EXPERT BEAUTICIANS</Text>
           <Text className={styles.cursive} fontSize={'56'} lineHeight={'short'}>10+ Years of Experience</Text>
@@ -280,6 +283,138 @@ const index = () => {
         </Flex>
       </Flex>
 
+      <Flex p={16} direction={'column'} alignItems={'center'} justifyContent={'center'}>
+        <Text className={styles.monts} textAlign={'center'} letterSpacing={4} color={'blackAlpha.700'}>DON'T TAKE OUR WORD FOR IT</Text>
+        <Text className={styles.cursive} textAlign={'center'} fontSize={48} color={'black'}>Read Our Testimonials</Text>
+        <Box width={24} h={.5} m={'0 auto'} bg={'black'}></Box>
+        <Splide
+        options={{
+          perPage: 4,
+          perMove: 1,
+        }}
+        >
+          <SplideSlide>
+            <Box p={4} display={'flex'} flexDirection={'column'} alignItems={'center'} justifyContent={'flex-start'} boxShadow={'base'}>
+              <Image boxSize={'128px'} objectFit={'cover'} src={'bride.jpg'} objectPosition={'top'} borderTopLeftRadius={16} borderBottomRightRadius={16} />
+              <Text fontSize={'2xl'} color={'black'} mt={2}>Amanda</Text>
+              <Text className={styles.monts} fontSize={12} mb={4}>LOCATION</Text>
+              <Text color={'darkslategray'} textAlign={'center'}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore perspiciatis debitis iste quam repellendus quos, sapiente facilis! Consectetur voluptates deserunt sequi?</Text>
+            </Box>
+          </SplideSlide>
+          <SplideSlide>
+            <Box p={4} display={'flex'} flexDirection={'column'} alignItems={'center'} justifyContent={'flex-start'} boxShadow={'base'}>
+              <Image boxSize={'128px'} objectFit={'cover'} src={'bride.jpg'} objectPosition={'top'} borderTopLeftRadius={16} borderBottomRightRadius={16} />
+              <Text fontSize={'2xl'} color={'black'} mt={2}>Amanda</Text>
+              <Text className={styles.monts} fontSize={12} mb={4}>LOCATION</Text>
+              <Text color={'darkslategray'} textAlign={'center'}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore perspiciatis debitis iste quam repellendus quos, sapiente facilis! Consectetur voluptates deserunt sequi?</Text>
+            </Box>
+          </SplideSlide>
+          <SplideSlide>
+            <Box p={4} display={'flex'} flexDirection={'column'} alignItems={'center'} justifyContent={'flex-start'} boxShadow={'base'}>
+              <Image boxSize={'128px'} objectFit={'cover'} src={'bride.jpg'} objectPosition={'top'} borderTopLeftRadius={16} borderBottomRightRadius={16} />
+              <Text fontSize={'2xl'} color={'black'} mt={2}>Amanda</Text>
+              <Text className={styles.monts} fontSize={12} mb={4}>LOCATION</Text>
+              <Text color={'darkslategray'} textAlign={'center'}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore perspiciatis debitis iste quam repellendus quos, sapiente facilis! Consectetur voluptates deserunt sequi?</Text>
+            </Box>
+          </SplideSlide>
+          <SplideSlide>
+            <Box p={4} display={'flex'} flexDirection={'column'} alignItems={'center'} justifyContent={'flex-start'} boxShadow={'base'}>
+              <Image boxSize={'128px'} objectFit={'cover'} src={'bride.jpg'} objectPosition={'top'} borderTopLeftRadius={16} borderBottomRightRadius={16} />
+              <Text fontSize={'2xl'} color={'black'} mt={2}>Amanda</Text>
+              <Text className={styles.monts} fontSize={12} mb={4}>LOCATION</Text>
+              <Text color={'darkslategray'} textAlign={'center'}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore perspiciatis debitis iste quam repellendus quos, sapiente facilis! Consectetur voluptates deserunt sequi?</Text>
+            </Box>
+          </SplideSlide>
+          <SplideSlide>
+            <Box p={4} display={'flex'} flexDirection={'column'} alignItems={'center'} justifyContent={'flex-start'} boxShadow={'base'}>
+              <Image boxSize={'128px'} objectFit={'cover'} src={'bride.jpg'} objectPosition={'top'} borderTopLeftRadius={16} borderBottomRightRadius={16} />
+              <Text fontSize={'2xl'} color={'black'} mt={2}>Amanda</Text>
+              <Text className={styles.monts} fontSize={12} mb={4}>LOCATION</Text>
+              <Text color={'darkslategray'} textAlign={'center'}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore perspiciatis debitis iste quam repellendus quos, sapiente facilis! Consectetur voluptates deserunt sequi?</Text>
+            </Box>
+          </SplideSlide>
+        </Splide>
+      </Flex>
+
+      <Flex pt={16} pb={8} px={8} direction={'column'} alignItems={'center'} justifyContent={'flex-start'} backgroundImage={"url('petals.png')"} backgroundPosition={'bottom'} backgroundRepeat={'no-repeat'} backgroundSize={'cover'}>
+        <Flex gap={36}>
+          <Flex direction={'column'} alignItems={'flex-start'} justifyContent={'flex-start'}>
+            <Text className={styles.cursive} fontSize={28}>Slay it with Skin</Text>
+            <Text my={4} fontSize={14}>25, L T Road, Opp Goyal Shopping Centre,
+            <br />Borivli (w), Mumbai, Maharashtra
+            <br />PIN: 400091
+            </Text>
+            <Link href={'mailto: info@slayitwithskin.com'} target={'_blank'}>
+              <Flex alignItems={'center'}><Text fontSize={16} mr={4}><BsEnvelopeFill /></Text><Text fontSize={16}>info@slayitwithskin.com</Text></Flex>
+            </Link>
+            <Box w={4} h={2}></Box>
+            <Link href={'tel: +911234567890'} target={'_blank'}>
+              <Flex alignItems={'center'}><Text fontSize={16} mr={4}><BsTelephoneFill /></Text><Text fontSize={16}>+91 123 456 7890</Text></Flex>
+            </Link>
+          </Flex>
+          <Flex w={'full'} direction={'column'} alignItems={'flex-start'} justifyContent={'flex-start'}>
+            <Text className={styles.monts} fontSize={18}>Services</Text>
+            <Box w={'full'} h={.5} bg={'blackAlpha.400'} mb={4}></Box>
+            <Link href={'#'}>
+              <Text fontSize={16} p={2} _hover={{bg: 'pink.100'}}>Skin Treatments</Text>
+            </Link>
+            <Link href={'#'}>
+              <Text fontSize={16} p={2} _hover={{bg: 'pink.100'}}>Hair Treatments</Text>
+            </Link>
+            <Link href={'#'}>
+              <Text fontSize={16} p={2} _hover={{bg: 'pink.100'}}>Bridal Makeup</Text>
+            </Link>
+          </Flex>
+          <Flex w={'full'} direction={'column'} alignItems={'flex-start'} justifyContent={'flex-start'}>
+            <Text className={styles.monts} fontSize={18}>Important Links</Text>
+            <Box w={'full'} h={.5} bg={'blackAlpha.400'} mb={4}></Box>
+            <Link href={'#'}>
+              <Text fontSize={16} p={2} _hover={{bg: 'pink.100'}}>The Beauty Shop</Text>
+            </Link>
+            <Link href={'#'}>
+              <Text fontSize={16} p={2} _hover={{bg: 'pink.100'}}>Our Blogs</Text>
+            </Link>
+            <Link href={'#'}>
+              <Text fontSize={16} p={2} _hover={{bg: 'pink.100'}}>Book Appointment</Text>
+            </Link>
+          </Flex>
+          <Flex w={'full'} direction={'column'} alignItems={'flex-start'} justifyContent={'flex-start'}>
+            <Text className={styles.monts} fontSize={18}>Policies</Text>
+            <Box w={'full'} h={.5} bg={'blackAlpha.400'} mb={4}></Box>
+            <Link href={'#'}>
+              <Text fontSize={16} p={2} _hover={{bg: 'pink.100'}}>Terms & Conditions</Text>
+            </Link>
+            <Link href={'#'}>
+              <Text fontSize={16} p={2} _hover={{bg: 'pink.100'}}>Privacy Policy</Text>
+            </Link>
+            <Link href={'#'}>
+              <Text fontSize={16} p={2} _hover={{bg: 'pink.100'}}>Refund Policy</Text>
+            </Link>
+            <Link href={'#'}>
+              <Text fontSize={16} p={2} _hover={{bg: 'pink.100'}}>Shipping Policy</Text>
+            </Link>
+          </Flex>
+        </Flex>
+        <Box w={'70%'} h={.5} bg={'blackAlpha.400'} my={8}></Box>
+        <HStack justifyContent={'center'} spacing={6}>
+          <Link href={'#'}>
+            <Box p={4} fontSize={24} color={'pink.400'} transition={'all .3s ease'} _hover={{bg: 'pink.400', color: 'white'}} borderRadius={'8px 0 8px 0'}><BsInstagram /></Box>
+          </Link>
+          
+          <Link href={'#'}>
+            <Box p={4} fontSize={24} color={'pink.400'} transition={'all .3s ease'} _hover={{bg: 'pink.400', color: 'white'}} borderRadius={'8px 0 8px 0'}><BsFacebook /></Box>
+          </Link>
+          
+          <Link href={'#'}>
+            <Box p={4} fontSize={24} color={'pink.400'} transition={'all .3s ease'} _hover={{bg: 'pink.400', color: 'white'}} borderRadius={'8px 0 8px 0'}><BsTwitter /></Box>
+          </Link>
+          
+          <Link href={'#'}>
+            <Box p={4} fontSize={24} color={'pink.400'} transition={'all .3s ease'} _hover={{bg: 'pink.400', color: 'white'}} borderRadius={'8px 0 8px 0'}><BsWhatsapp /></Box>
+          </Link>
+          
+        </HStack>
+      </Flex>
     </>
   )
 }
