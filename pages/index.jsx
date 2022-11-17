@@ -74,43 +74,73 @@ const index = () => {
             </Menu>
             <Link href={"#"}><Text mx={6} borderBottom={"2px"} borderColor={"transparent"} transition={"ease"} transitionDuration={".3s"} _hover={{ borderColor: "black" }}>Blogs</Text></Link>
             <Link href={"#"}><Text mx={6} borderBottom={"2px"} borderColor={"transparent"} transition={"ease"} transitionDuration={".3s"} _hover={{ borderColor: "black" }}>Shop</Text></Link>
+
+            <Menu>
+              <MenuButton mx={6} borderBottom={"2px"} borderColor={"transparent"} _hover={{ borderColor: "black" }}>
+                <Flex alignItems={'center'} justifyContent={'center'}>
+                  <Text>Dropdown</Text> &nbsp;&nbsp;
+                  <Text><BsChevronDown /></Text>
+                </Flex>
+              </MenuButton>
+              <MenuList rounded={0} backgroundImage={"url('/floral-leaves-corner.jpg')"} backgroundPosition={"50% 80%"} backgroundRepeat={"no-repeat"} backgroundSize={"cover"}>
+                <Flex>
+
+                  <Flex direction={"column"} mx={4} alignItems={"flex-start"} justifyContent={"flex-start"}>
+                    <Text as={"h2"} mb={5} mt={4} ml={4} textTransform={"uppercase"} className={styles.cursive} fontWeight={600}>skin</Text>
+                    <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
+                      <Text>Service Title 1</Text>
+                    </MenuItem>
+                    <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
+                      <Text>Service Title 2</Text>
+                    </MenuItem>
+                    <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
+                      <Text>Service Title 3</Text>
+                    </MenuItem>
+                  </Flex>
+
+                  <Flex direction={"column"} mx={4} alignItems={"flex-start"} justifyContent={"flex-start"}>
+                    <Text as={"h2"} mb={5} mt={4} ml={4} textTransform={"uppercase"} className={styles.cursive} fontWeight={600}>hair</Text>
+                    <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
+                      <Text>Service Title 1</Text>
+                    </MenuItem>
+                  </Flex>
+
+                  <Flex direction={"column"} mx={4} alignItems={"flex-start"} justifyContent={"flex-start"}>
+                    <Text as={"h2"} mb={5} mt={4} ml={4} textTransform={"uppercase"} className={styles.cursive} fontWeight={600}>misc.</Text>
+                    <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
+                      <Text>Service Title 1</Text>
+                    </MenuItem>
+                    <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
+                      <Text>Service Title 2</Text>
+                    </MenuItem>
+                  </Flex>
+                </Flex>
+              </MenuList>
+            </Menu>
             <Spacer />
             <Button rounded={'xl'} bg={"transparent"} border={"1px"} borderColor={"black"} borderTopRightRadius={"0"} _hover={{ bg: "black", color: "white" }} className={styles.cursive}>Book Appointment</Button>
           </Flex>
         </nav>
 
-        <Flex alignItems={"center"} justifyContent={"space-between"} h={'100vh'} backgroundImage={"url(background2.png)"} backgroundSize={'cover'} backgroundPosition={"center"} backgroundRepeat={"no-repeat"}>
+        <Flex alignItems={"center"} justifyContent={"space-between"} h={'auto'} bg={'red.100'}>
           <Flex direction={"column"} justifySelf={'center'} p={'24'} justifyContent={'center'}>
-            <Text fontSize={"64"} className={styles.cursive} lineHeight={1}>Give your hair</Text>
-            <Text mb={8} fontSize={"52"} className={styles.cursive} color={'gray.600'}>the treatment they deserve</Text>
+            <Text fontSize={"64"} className={styles.cursive} lineHeight={1}>Give your skin</Text>
+            <Text mb={8} fontSize={"52"} className={styles.cursive} color={'gray.600'}>the treatment it deserves</Text>
             <Button w={'fit-content'} border={'2px'} p={6} letterSpacing={2} borderColor={'transparent'} rounded={0} bg={'black'} color={'white'} _hover={{ bg: 'rgba(0,0,0,0.6)' }} className={styles.monts}>BOOK APPOINTMENT</Button>
-            <Link href={'#'}>
-              <Flex mt={'12'} alignItems={"center"} justifyContent={"flex-start"}><Text className={styles.monts} position={'relative'} top={1} fontWeight={600} mr={4} transition={'ease'} transitionDuration={'.5s'} borderBottom={'2px'} borderBottomColor={'transparent'} _hover={{ mr: 6, borderBottomColor: 'black' }}>VISIT OUR ONLINE STORE</Text> <Text className={styles.monts} fontSize={24}><HiOutlineShoppingBag /></Text></Flex>
-            </Link>
+            
           </Flex>
-          <Flex w={'40%'} direction={"column"} justifySelf={'center'} p={'8'} justifyContent={'center'}>
+          <Flex w={'40%'} direction={"column"} justifySelf={'center'} px={'8'} justifyContent={'flex-end'}>
             <Image src={'woman.png'} />
           </Flex>
         </Flex>
 
       </header>
 
-      <Text className={styles.monts} letterSpacing={4} color={'blackAlpha.700'} textAlign={'center'}>OUR PARTNERS</Text>
-      <Flex px={24} py={0}>
-        <Image src={'https://1000logos.net/wp-content/uploads/2017/03/LOreal-Symbol.jpg'} boxSize={'160px'} objectFit={'contain'} />
-        <Spacer />
-        <Image src={'https://1000logos.net/wp-content/uploads/2021/04/MAC-Cosmetics-logo.png'} boxSize={'160px'} objectFit={'contain'} />
-        <Spacer />
-        <Image src={'https://www.elcompanies.com/~/media/Images/E/Estee-Lauder-Companies/Universal/our-brands/bobbi-brown/BobbiBrown-logo-about_resized.png'} boxSize={'160px'} objectFit={'contain'} />
-        <Spacer />
-        <Image src={'https://logosdownload.com/logo/nars-logo-512.png'} boxSize={'160px'} objectFit={'contain'} />
-      </Flex>
-
       <Flex px={16} py={8} justifyContent={'center'}>
         <Box w={'50%'}>
           <Image src='woman2.png' w={'xl'}/>
         </Box>
-        <Flex direction={'column'} alignItems={'flex-start'} justifyContent={'center'} w={'50%'} px={6} backgroundImage={'leaves.png'} backgroundSize={'contain'} backgroundRepeat={'no-repeat'}>
+        <Flex direction={'column'} alignItems={'flex-start'} justifyContent={'center'} w={'50%'} px={6}>
           <Text className={styles.monts}>FEEL THE CONFIDENCE</Text>
           <Text className={styles.cursive} fontSize={'56'}>Beauty Forever</Text>
           <Box mt={6} mb={4} w={20} h={.5} bg={'blackAlpha.800'}></Box>
@@ -152,121 +182,181 @@ const index = () => {
         <Text className={styles.cursive} textAlign={'center'} fontSize={48} color={'black'}>Our Services</Text>
         <Box width={24} h={.5} m={'0 auto'} bg={'black'}></Box>
         <Flex wrap={'wrap'} mt={16} alignItems={'center'} justifyContent={'space-around'}>
-          <Link href={'#'} m={4}>
-            <Box 
-            w={40} 
-            h={40} 
-            boxShadow={'base'} 
-            rounded={4} 
-            display={'grid'} 
-            placeContent={'center'} 
-            backgroundImage={"url('floral-leaves-corner.jpg')"} 
-            backgroundPosition={'center'} 
-            backgroundSize={'cover'} 
-            backgroundRepeat={'no-repeat'}
 
-            transition={'ease'}
-            transitionDuration={'.2s'}
-            _hover={{
-              transform: "translateY(-5px)",
-              boxShadow: 'xl'
-            }}
+          <Link href={'#'}>
+            <Box 
+            position={'relative'}
+            m={2} 
+            w={'xs'} 
+            h={'2xs'} 
+            rounded={'28px'} 
+            bg={'#B85C38'}
+
+            display={'flex'}
+            flexDir={'column'}
+            alignItems={'center'}
+            justifyContent={'flex-end'}
             >
-              <Text textAlign={'center'}>Service 1</Text>
+              <Box 
+              className={styles.cardGradient}
+              position={'absolute'} 
+              w={'inherit'} h={'inherit'} 
+              rounded={'inherit'} 
+              backgroundImage={'bride.jpg'}
+              backgroundSize={'cover'}
+              backgroundPosition={'center'}
+
+              transition={'all .3s ease'} 
+              _hover={{transform: 'translateY(-3.25em)'}}
+              >
+                <Text 
+                fontSize={24} 
+                color={'white'}
+                className={styles.monts}
+                position={'absolute'}
+                p={4}
+                w={'inherit'} h={'inherit'} 
+                rounded={'inherit'} 
+
+                display={'flex'}
+                flexDir={'column'}
+                alignItems={'flex-start'}
+                justifyContent={'flex-end'}
+
+                backgroundImage='linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.9) 90%)'
+                >
+                  Magical Skin Treatment by Magicians
+                </Text>
+              </Box>
+              <Text 
+              p={4}
+              display={'flex'} 
+              flexDir={'row'} 
+              alignItems={'center'} 
+              justifyContent={'center'} 
+              color={'white'}
+              >
+              Read More &nbsp;&nbsp;<BsArrowRight />
+              </Text>
             </Box>
           </Link>
-          <Link href={'#'} m={4}>
-            <Box 
-            w={40} 
-            h={40} 
-            boxShadow={'base'} 
-            rounded={4} 
-            display={'grid'} 
-            placeContent={'center'} 
-            backgroundImage={"url('floral-leaves-corner.jpg')"} 
-            backgroundPosition={'center'} 
-            backgroundSize={'cover'} 
-            backgroundRepeat={'no-repeat'}
 
-            transition={'ease'}
-            transitionDuration={'.2s'}
-            _hover={{
-              transform: "translateY(-5px)",
-              boxShadow: 'xl'
-            }}
+          <Link href={'#'}>
+            <Box 
+            position={'relative'}
+            m={2} 
+            w={'xs'} 
+            h={'2xs'} 
+            rounded={'28px'} 
+            bg={'#B85C38'}
+
+            display={'flex'}
+            flexDir={'column'}
+            alignItems={'center'}
+            justifyContent={'flex-end'}
             >
-              <Text textAlign={'center'}>Service 2</Text>
+              <Box 
+              className={styles.cardGradient}
+              position={'absolute'} 
+              w={'inherit'} h={'inherit'} 
+              rounded={'inherit'} 
+              backgroundImage={'bride.jpg'}
+              backgroundSize={'cover'}
+              backgroundPosition={'center'}
+
+              transition={'all .3s ease'} 
+              _hover={{transform: 'translateY(-3.25em)'}}
+              >
+                <Text 
+                fontSize={24} 
+                color={'white'}
+                className={styles.monts}
+                position={'absolute'}
+                p={4}
+                w={'inherit'} h={'inherit'} 
+                rounded={'inherit'} 
+
+                display={'flex'}
+                flexDir={'column'}
+                alignItems={'flex-start'}
+                justifyContent={'flex-end'}
+
+                backgroundImage='linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.9) 90%)'
+                >
+                  Magical Skin Treatment by Magicians
+                </Text>
+              </Box>
+              <Text 
+              p={4}
+              display={'flex'} 
+              flexDir={'row'} 
+              alignItems={'center'} 
+              justifyContent={'center'} 
+              color={'white'}
+              >
+              Read More &nbsp;&nbsp;<BsArrowRight />
+              </Text>
             </Box>
           </Link>
-          <Link href={'#'} m={4}>
-            <Box 
-            w={40} 
-            h={40} 
-            boxShadow={'base'} 
-            rounded={4} 
-            display={'grid'} 
-            placeContent={'center'} 
-            backgroundImage={"url('floral-leaves-corner.jpg')"} 
-            backgroundPosition={'center'} 
-            backgroundSize={'cover'} 
-            backgroundRepeat={'no-repeat'}
 
-            transition={'ease'}
-            transitionDuration={'.2s'}
-            _hover={{
-              transform: "translateY(-5px)",
-              boxShadow: 'xl'
-            }}
+          <Link href={'#'}>
+            <Box 
+            position={'relative'}
+            m={2} 
+            w={'xs'} 
+            h={'2xs'} 
+            rounded={'28px'} 
+            bg={'#B85C38'}
+
+            display={'flex'}
+            flexDir={'column'}
+            alignItems={'center'}
+            justifyContent={'flex-end'}
             >
-              <Text textAlign={'center'}>Service 3</Text>
+              <Box 
+              className={styles.cardGradient}
+              position={'absolute'} 
+              w={'inherit'} h={'inherit'} 
+              rounded={'inherit'} 
+              backgroundImage={'bride.jpg'}
+              backgroundSize={'cover'}
+              backgroundPosition={'center'}
+
+              transition={'all .3s ease'} 
+              _hover={{transform: 'translateY(-3.25em)'}}
+              >
+                <Text 
+                fontSize={24} 
+                color={'white'}
+                className={styles.monts}
+                position={'absolute'}
+                p={4}
+                w={'inherit'} h={'inherit'} 
+                rounded={'inherit'} 
+
+                display={'flex'}
+                flexDir={'column'}
+                alignItems={'flex-start'}
+                justifyContent={'flex-end'}
+
+                backgroundImage='linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.9) 90%)'
+                >
+                  Magical Skin Treatment by Magicians
+                </Text>
+              </Box>
+              <Text 
+              p={4}
+              display={'flex'} 
+              flexDir={'row'} 
+              alignItems={'center'} 
+              justifyContent={'center'} 
+              color={'white'}
+              >
+              Read More &nbsp;&nbsp;<BsArrowRight />
+              </Text>
             </Box>
           </Link>
-          <Link href={'#'} m={4}>
-            <Box 
-            w={40} 
-            h={40} 
-            boxShadow={'base'} 
-            rounded={4} 
-            display={'grid'} 
-            placeContent={'center'} 
-            backgroundImage={"url('floral-leaves-corner.jpg')"} 
-            backgroundPosition={'center'} 
-            backgroundSize={'cover'} 
-            backgroundRepeat={'no-repeat'}
 
-            transition={'ease'}
-            transitionDuration={'.2s'}
-            _hover={{
-              transform: "translateY(-5px)",
-              boxShadow: 'xl'
-            }}
-            >
-              <Text textAlign={'center'}>Service 4</Text>
-            </Box>
-          </Link>
-          <Link href={'#'} m={4}>
-            <Box 
-            w={40} 
-            h={40} 
-            boxShadow={'base'} 
-            rounded={4} 
-            display={'grid'} 
-            placeContent={'center'} 
-            backgroundImage={"url('floral-leaves-corner.jpg')"} 
-            backgroundPosition={'center'} 
-            backgroundSize={'cover'} 
-            backgroundRepeat={'no-repeat'}
-
-            transition={'ease'}
-            transitionDuration={'.2s'}
-            _hover={{
-              transform: "translateY(-5px)",
-              boxShadow: 'xl'
-            }}
-            >
-              <Text textAlign={'center'}>Service 5</Text>
-            </Box>
-          </Link>
         </Flex>
       </Box>
 
@@ -279,7 +369,6 @@ const index = () => {
         </Flex>
         <Flex>
           <iframe className={styles.homevideo} width="560" height="315" src="https://www.youtube.com/embed/q0BVR5jRXxE" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          <Image position={'absolute'} bottom={0} right={0} src={'roses.png'} w={64} />
         </Flex>
       </Flex>
 
@@ -336,7 +425,7 @@ const index = () => {
         </Splide>
       </Flex>
 
-      <Flex pt={16} pb={8} px={8} direction={'column'} alignItems={'center'} justifyContent={'flex-start'} backgroundImage={"url('petals.png')"} backgroundPosition={'bottom'} backgroundRepeat={'no-repeat'} backgroundSize={'cover'}>
+      <Flex pt={16} pb={8} px={8} direction={'column'} alignItems={'center'} justifyContent={'flex-start'} backgroundImage={'linear-gradient(90deg, #C5D8A4 10%, #E3CAA5 90%)'}>
         <Flex gap={36}>
           <Flex direction={'column'} alignItems={'flex-start'} justifyContent={'flex-start'}>
             <Text className={styles.cursive} fontSize={28}>Slay it with Skin</Text>
@@ -398,19 +487,19 @@ const index = () => {
         <Box w={'70%'} h={.5} bg={'blackAlpha.400'} my={8}></Box>
         <HStack justifyContent={'center'} spacing={6}>
           <Link href={'#'}>
-            <Box p={4} fontSize={24} color={'pink.400'} transition={'all .3s ease'} _hover={{bg: 'pink.400', color: 'white'}} borderRadius={'8px 0 8px 0'}><BsInstagram /></Box>
+            <Box p={4} fontSize={24} color={'green.600'} transition={'all .3s ease'} _hover={{bg: 'green.600', color: 'white'}} borderRadius={'8px 0 8px 0'}><BsInstagram /></Box>
           </Link>
           
           <Link href={'#'}>
-            <Box p={4} fontSize={24} color={'pink.400'} transition={'all .3s ease'} _hover={{bg: 'pink.400', color: 'white'}} borderRadius={'8px 0 8px 0'}><BsFacebook /></Box>
+            <Box p={4} fontSize={24} color={'green.600'} transition={'all .3s ease'} _hover={{bg: 'green.600', color: 'white'}} borderRadius={'8px 0 8px 0'}><BsFacebook /></Box>
           </Link>
           
           <Link href={'#'}>
-            <Box p={4} fontSize={24} color={'pink.400'} transition={'all .3s ease'} _hover={{bg: 'pink.400', color: 'white'}} borderRadius={'8px 0 8px 0'}><BsTwitter /></Box>
+            <Box p={4} fontSize={24} color={'green.600'} transition={'all .3s ease'} _hover={{bg: 'green.600', color: 'white'}} borderRadius={'8px 0 8px 0'}><BsTwitter /></Box>
           </Link>
           
           <Link href={'#'}>
-            <Box p={4} fontSize={24} color={'pink.400'} transition={'all .3s ease'} _hover={{bg: 'pink.400', color: 'white'}} borderRadius={'8px 0 8px 0'}><BsWhatsapp /></Box>
+            <Box p={4} fontSize={24} color={'green.600'} transition={'all .3s ease'} _hover={{bg: 'green.600', color: 'white'}} borderRadius={'8px 0 8px 0'}><BsWhatsapp /></Box>
           </Link>
           
         </HStack>
