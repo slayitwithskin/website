@@ -40,7 +40,7 @@ import Head from 'next/head'
 import { Splide, SplideSlide } from '@splidejs/react-splide'
 import '@splidejs/react-splide/css/sea-green';
 
-const index = () => {
+const Index = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const menuRef = React.useRef()
   return (
@@ -792,4 +792,4 @@ const index = () => {
   )
 }
 
-export default index
+export default Index
