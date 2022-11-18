@@ -370,8 +370,8 @@ const index = () => {
           <Box mt={6} mb={4} w={20} h={.5} bg={'blackAlpha.800'}></Box>
           <Text fontWeight={400}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore perspiciatis debitis iste quam repellendus quos, sapiente facilis! Consectetur voluptates deserunt sequi? Repudiandae recusandae, voluptas nesciunt non accusamus unde temporibus dolorum.</Text>
         </Flex>
-        <Flex mt={[8,0,0]}>
-          <iframe width="full" height="auto" src="https://www.youtube.com/embed/q0BVR5jRXxE" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <Flex w={['100%', '45%']} mt={[8,0,0]}>
+          <iframe className={styles.homevideo} src="https://www.youtube.com/embed/q0BVR5jRXxE" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </Flex>
       </Flex>
 
@@ -399,7 +399,7 @@ const index = () => {
         <Flex
           pos={'relative'}
           p={8}
-          wrap={'wrap'}
+          direction={['column', 'row']}
         >
           <Image
             src={'facial.jpg'}
@@ -493,14 +493,14 @@ const index = () => {
         </Splide>
       </Flex>
 
-      <Flex pt={16} 
-      pb={8} px={8} 
+      <Flex pt={[8,16]} 
+      pb={[4,8]} px={[0,8]} 
       direction={'column'} 
       alignItems={'center'} justifyContent={'flex-start'} 
       backgroundImage={'linear-gradient(90deg, #C5D8A4 10%, #E3CAA5 90%)'}>
         <Flex 
-        gap={[0,12,36]}
-        wrap={'wrap'}
+        gap={[0,0,36]}
+        direction={['column', 'column', 'row']}
         >
 
           <Flex direction={'column'} alignItems={'flex-start'} justifyContent={'flex-start'} my={[8,8,0]}>
