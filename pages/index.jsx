@@ -1,38 +1,18 @@
 import React from 'react'
 import styles from '../styles/Home.module.css'
-import leaves from '../public/floral-leaves-corner.jpg'
-import herobg from '../public/hero.jpg'
-import herogirl from '../public/woman.png'
 
 import { 
   Flex, 
   Box, 
   Spacer, 
-  Menu, 
-  MenuButton, 
-  MenuList, 
-  MenuItem, 
   Text,
   Button, 
   Image, 
   HStack,
-  Drawer, 
-  DrawerBody,
-  DrawerHeader,
-  DrawerContent, 
-  DrawerCloseButton, 
-  DrawerOverlay,
-  useDisclosure,
-  Accordion,
-  AccordionItem,
-  AccordionPanel,
-  AccordionButton,
-  AccordionIcon
 } from '@chakra-ui/react'
 
 
-import { HiBars3BottomRight, HiOutlineShoppingBag } from 'react-icons/hi2'
-import { BsChevronDown, BsArrowRight, BsEnvelopeFill, BsTelephoneFill, BsInstagram, BsFacebook, BsTwitter, BsWhatsapp } from 'react-icons/bs'
+import { BsArrowRight, BsEnvelopeFill, BsTelephoneFill, BsInstagram, BsFacebook, BsTwitter, BsWhatsapp } from 'react-icons/bs'
 
 import Link from 'next/link'
 import Head from 'next/head'
@@ -40,293 +20,18 @@ import Head from 'next/head'
 import { Splide, SplideSlide } from '@splidejs/react-splide'
 import '@splidejs/react-splide/css/sea-green';
 
+import Navbar from '../hocs/Navbar'
+import Footer from '../hocs/Footer'
+
 const Index = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  const menuRef = React.useRef()
   return (
     <>
       <Head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Slay it with Skin</title>
+        <title>Home | Slay it with Skin</title>
       </Head>
       <header>
-        <nav className={styles.nav}>
-          <Flex p={4} alignItems={'center'}>
-            <h1 className="brand-title">Slay it with Skin</h1>
-            <Spacer />
 
-            <Flex display={['none', 'none', 'flex']}>
-              <Menu>
-                <MenuButton mx={6} borderBottom={"2px"} borderColor={"transparent"} _hover={{ borderColor: "black" }}>
-                  <Flex alignItems={'center'} justifyContent={'center'}>
-                    <Text>Services</Text> &nbsp;&nbsp;
-                    <Text><BsChevronDown /></Text>
-                  </Flex>
-                </MenuButton>
-                <MenuList rounded={0} backgroundImage={"url('/floral-leaves-corner.jpg')"} backgroundPosition={"50% 80%"} backgroundRepeat={"no-repeat"} backgroundSize={"cover"}>
-                  <Flex>
-
-                    <Flex direction={"column"} mx={4} alignItems={"flex-start"} justifyContent={"flex-start"}>
-                      <Text as={"h2"} mb={5} mt={4} ml={4} textTransform={"uppercase"} className={styles.cursive} fontWeight={600}>skin</Text>
-                      <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                        <Text>Service Title 1</Text>
-                      </MenuItem>
-                      <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                        <Text>Service Title 2</Text>
-                      </MenuItem>
-                      <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                        <Text>Service Title 3</Text>
-                      </MenuItem>
-                    </Flex>
-
-                    <Flex direction={"column"} mx={4} alignItems={"flex-start"} justifyContent={"flex-start"}>
-                      <Text as={"h2"} mb={5} mt={4} ml={4} textTransform={"uppercase"} className={styles.cursive} fontWeight={600}>hair</Text>
-                      <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                        <Text>Service Title 1</Text>
-                      </MenuItem>
-                    </Flex>
-
-                    <Flex direction={"column"} mx={4} alignItems={"flex-start"} justifyContent={"flex-start"}>
-                      <Text as={"h2"} mb={5} mt={4} ml={4} textTransform={"uppercase"} className={styles.cursive} fontWeight={600}>misc.</Text>
-                      <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                        <Text>Service Title 1</Text>
-                      </MenuItem>
-                      <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                        <Text>Service Title 2</Text>
-                      </MenuItem>
-                    </Flex>
-                  </Flex>
-                </MenuList>
-              </Menu>
-              <Link href={"#"}><Text mx={6} borderBottom={"2px"} borderColor={"transparent"} transition={"ease"} transitionDuration={".3s"} _hover={{ borderColor: "black" }}>Blogs</Text></Link>
-              <Link href={"#"}><Text mx={6} borderBottom={"2px"} borderColor={"transparent"} transition={"ease"} transitionDuration={".3s"} _hover={{ borderColor: "black" }}>Shop</Text></Link>
-
-              <Menu>
-                <MenuButton mx={6} borderBottom={"2px"} borderColor={"transparent"} _hover={{ borderColor: "black" }}>
-                  <Flex alignItems={'center'} justifyContent={'center'}>
-                    <Text>Dropdown</Text> &nbsp;&nbsp;
-                    <Text><BsChevronDown /></Text>
-                  </Flex>
-                </MenuButton>
-                <MenuList rounded={0} backgroundImage={"url('/floral-leaves-corner.jpg')"} backgroundPosition={"50% 80%"} backgroundRepeat={"no-repeat"} backgroundSize={"cover"}>
-                  <Flex>
-
-                    <Flex direction={"column"} mx={4} alignItems={"flex-start"} justifyContent={"flex-start"}>
-                      <Text as={"h2"} mb={5} mt={4} ml={4} textTransform={"uppercase"} className={styles.cursive} fontWeight={600}>skin</Text>
-                      <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                        <Text>Service Title 1</Text>
-                      </MenuItem>
-                      <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                        <Text>Service Title 2</Text>
-                      </MenuItem>
-                      <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                        <Text>Service Title 3</Text>
-                      </MenuItem>
-                    </Flex>
-
-                    <Flex direction={"column"} mx={4} alignItems={"flex-start"} justifyContent={"flex-start"}>
-                      <Text as={"h2"} mb={5} mt={4} ml={4} textTransform={"uppercase"} className={styles.cursive} fontWeight={600}>hair</Text>
-                      <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                        <Text>Service Title 1</Text>
-                      </MenuItem>
-                    </Flex>
-
-                    <Flex direction={"column"} mx={4} alignItems={"flex-start"} justifyContent={"flex-start"}>
-                      <Text as={"h2"} mb={5} mt={4} ml={4} textTransform={"uppercase"} className={styles.cursive} fontWeight={600}>misc.</Text>
-                      <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                        <Text>Service Title 1</Text>
-                      </MenuItem>
-                      <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                        <Text>Service Title 2</Text>
-                      </MenuItem>
-                    </Flex>
-                  </Flex>
-                </MenuList>
-              </Menu>
-            </Flex>
-            <Spacer />
-            <Button display={['none', 'none', 'block']} rounded={'xl'} bg={"transparent"} border={"1px"} borderColor={"black"} borderTopRightRadius={"0"} _hover={{ bg: "black", color: "white" }} className={styles.cursive}>Book Appointment</Button>
-            <Text fontSize={28} display={['block', 'block', 'none']} ref={menuRef} onClick={onOpen}><HiBars3BottomRight /></Text>
-          </Flex>
-        </nav>
-
-        <Drawer
-        isOpen={isOpen}
-        placement={'right'}
-        size={'full'}
-        onClose={onClose}
-        finalFocusRef={menuRef}
-        >
-          <DrawerOverlay />
-            <DrawerContent>
-              <DrawerCloseButton />
-              <DrawerHeader mb={16}>
-                <Text textAlign={'center'} fontSize={24} className={styles.cursive}>Slay it with Skin</Text>
-              </DrawerHeader>
-              <DrawerBody>
-
-                <Accordion defaultIndex={[]} allowMultiple>
-
-                  <AccordionItem border={'none'}>
-                    <h2>
-                      <AccordionButton>
-                        <Box flex='1' textAlign='left'>
-                          Services
-                        </Box>
-                        <AccordionIcon />
-                      </AccordionButton>
-                    </h2>
-                    <AccordionPanel>
-
-                      <AccordionItem border={'none'}>
-                        <h2>
-                          <AccordionButton>
-                            <Box flex='1' textAlign='left'>
-                              Skin Services
-                            </Box>
-                            <AccordionIcon />
-                          </AccordionButton>
-                        </h2>
-
-                        <AccordionPanel>
-                          <Link href={'#'}><Text my={2}>Service 1</Text></Link>
-                          <Link href={'#'}><Text my={2}>Service 2</Text></Link>
-                          <Link href={'#'}><Text my={2}>Service 3</Text></Link>
-                        </AccordionPanel>
-                      </AccordionItem>
-                      
-
-                      <AccordionItem border={'none'}>
-                        <h2>
-                          <AccordionButton>
-                            <Box flex='1' textAlign='left'>
-                              Hair Services
-                            </Box>
-                            <AccordionIcon />
-                          </AccordionButton>
-                        </h2>
-
-                        <AccordionPanel>
-                          <Link href={'#'}><Text my={2}>Service 1</Text></Link>
-                          <Link href={'#'}><Text my={2}>Service 2</Text></Link>
-                          <Link href={'#'}><Text my={2}>Service 3</Text></Link>
-                        </AccordionPanel>
-                      </AccordionItem>
-
-                      <AccordionItem border={'none'}>
-                        <h2>
-                          <AccordionButton>
-                            <Box flex='1' textAlign='left'>
-                              Misc.
-                            </Box>
-                            <AccordionIcon />
-                          </AccordionButton>
-                        </h2>
-
-                        <AccordionPanel>
-                          <Link href={'#'}><Text my={2}>Service 1</Text></Link>
-                          <Link href={'#'}><Text my={2}>Service 2</Text></Link>
-                          <Link href={'#'}><Text my={2}>Service 3</Text></Link>
-                        </AccordionPanel>
-                      </AccordionItem>
-
-                    </AccordionPanel>
-                  </AccordionItem>
-
-                </Accordion>
-
-                <Link href={'#'}>
-                  <Box flex={1} px={4} py={2}>
-                    <Text>Blogs</Text>
-                  </Box>
-                </Link>
-                <Link href={'#'}>
-                  <Box flex={1} px={4} py={2}>
-                    <Text>Shop</Text>
-                  </Box>
-                </Link>
-
-                <Accordion defaultIndex={[]} allowMultiple>
-
-                  <AccordionItem border={'none'}>
-                    <h2>
-                      <AccordionButton>
-                        <Box flex='1' textAlign='left'>
-                          Dropdown
-                        </Box>
-                        <AccordionIcon />
-                      </AccordionButton>
-                    </h2>
-                    <AccordionPanel>
-
-                      <AccordionItem border={'none'}>
-                        <h2>
-                          <AccordionButton>
-                            <Box flex='1' textAlign='left'>
-                              Skin Services
-                            </Box>
-                            <AccordionIcon />
-                          </AccordionButton>
-                        </h2>
-
-                        <AccordionPanel>
-                          <Link href={'#'}><Text my={2}>Service 1</Text></Link>
-                          <Link href={'#'}><Text my={2}>Service 2</Text></Link>
-                          <Link href={'#'}><Text my={2}>Service 3</Text></Link>
-                        </AccordionPanel>
-                      </AccordionItem>
-                      
-
-                      <AccordionItem border={'none'}>
-                        <h2>
-                          <AccordionButton>
-                            <Box flex='1' textAlign='left'>
-                              Hair Services
-                            </Box>
-                            <AccordionIcon />
-                          </AccordionButton>
-                        </h2>
-
-                        <AccordionPanel>
-                          <Link href={'#'}><Text my={2}>Service 1</Text></Link>
-                          <Link href={'#'}><Text my={2}>Service 2</Text></Link>
-                          <Link href={'#'}><Text my={2}>Service 3</Text></Link>
-                        </AccordionPanel>
-                      </AccordionItem>
-
-                      <AccordionItem border={'none'}>
-                        <h2>
-                          <AccordionButton>
-                            <Box flex='1' textAlign='left'>
-                              Misc.
-                            </Box>
-                            <AccordionIcon />
-                          </AccordionButton>
-                        </h2>
-
-                        <AccordionPanel>
-                          <Link href={'#'}><Text my={2}>Service 1</Text></Link>
-                          <Link href={'#'}><Text my={2}>Service 2</Text></Link>
-                          <Link href={'#'}><Text my={2}>Service 3</Text></Link>
-                        </AccordionPanel>
-                      </AccordionItem>
-
-                    </AccordionPanel>
-                  </AccordionItem>
-
-                </Accordion>
-
-                <Link href={'#'}>
-                  <Button bg={'black'} color={'white'} rounded={0} my={16} w={'full'}>
-                    <Text className={styles.monts}>BOOK APPOINTMENT</Text>
-                  </Button>
-                </Link>
-
-              </DrawerBody>
-            </DrawerContent>
-        </Drawer>
+        <Navbar />
 
         <Flex alignItems={"center"} justifyContent={"space-between"} h={'auto'} bg={'red.100'} wrap={'wrap'}>
           <Flex direction={"column"} justifySelf={'center'} px={['8','16','24']} pt={24} justifyContent={'center'}>
@@ -393,6 +98,7 @@ const Index = () => {
             <Box
               position={'relative'}
               m={2}
+              my={[6,4,2]}
               w={'xs'}
               h={'2xs'}
               rounded={'0'}
@@ -451,6 +157,7 @@ const Index = () => {
             <Box
               position={'relative'}
               m={2}
+              my={[6,4,2]}
               w={'xs'}
               h={'2xs'}
               rounded={'0'}
@@ -509,6 +216,7 @@ const Index = () => {
             <Box
               position={'relative'}
               m={2}
+              my={[6,4,2]}
               w={'xs'}
               h={'2xs'}
               rounded={'0'}
@@ -696,98 +404,7 @@ const Index = () => {
         </Splide>
       </Flex>
 
-      <Flex pt={[8,16]} 
-      pb={[4,8]} px={[0,8]} 
-      direction={'column'} 
-      alignItems={'center'} justifyContent={'flex-start'} 
-      backgroundImage={'linear-gradient(90deg, #C5D8A4 10%, #E3CAA5 90%)'}>
-        <Flex 
-        gap={[0,0,36]}
-        direction={['column', 'column', 'row']}
-        >
-
-          <Flex direction={'column'} alignItems={'flex-start'} justifyContent={'flex-start'} my={[8,8,0]}>
-            <Text className={styles.cursive} fontSize={28}>Slay it with Skin</Text>
-            <Text my={4} fontSize={14}>25, L T Road, Opp Goyal Shopping Centre,
-              <br />Borivli (w), Mumbai, Maharashtra
-              <br />PIN: 400091
-            </Text>
-            <Link href={'mailto: info@slayitwithskin.com'} target={'_blank'}>
-              <Flex alignItems={'center'}><Text fontSize={16} mr={4}><BsEnvelopeFill /></Text><Text fontSize={16}>info@slayitwithskin.com</Text></Flex>
-            </Link>
-            <Box w={4} h={2}></Box>
-            <Link href={'tel: +911234567890'} target={'_blank'}>
-              <Flex alignItems={'center'}><Text fontSize={16} mr={4}><BsTelephoneFill /></Text><Text fontSize={16}>+91 123 456 7890</Text></Flex>
-            </Link>
-          </Flex>
-
-          <Flex w={'full'} direction={'column'} alignItems={'flex-start'} justifyContent={'flex-start'} my={[4,4,0]}>
-            <Text className={styles.monts} fontSize={18}>Services</Text>
-            <Box w={'full'} h={.5} bg={'blackAlpha.400'} mb={4}></Box>
-            <Link href={'#'}>
-              <Text fontSize={16} p={2} _hover={{ bg: 'green.600', color: 'white' }}>Skin Treatments</Text>
-            </Link>
-            <Link href={'#'}>
-              <Text fontSize={16} p={2} _hover={{ bg: 'green.600', color: 'white' }}>Hair Treatments</Text>
-            </Link>
-            <Link href={'#'}>
-              <Text fontSize={16} p={2} _hover={{ bg: 'green.600', color: 'white' }}>Bridal Makeup</Text>
-            </Link>
-          </Flex>
-
-          <Flex w={'full'} direction={'column'} alignItems={'flex-start'} justifyContent={'flex-start'} my={[4,4,0]}>
-            <Text className={styles.monts} fontSize={18}>Important Links</Text>
-            <Box w={'full'} h={.5} bg={'blackAlpha.400'} mb={4}></Box>
-            <Link href={'#'}>
-              <Text fontSize={16} p={2} _hover={{ bg: 'green.600', color: 'white' }}>The Beauty Shop</Text>
-            </Link>
-            <Link href={'#'}>
-              <Text fontSize={16} p={2} _hover={{ bg: 'green.600', color: 'white' }}>Our Blogs</Text>
-            </Link>
-            <Link href={'#'}>
-              <Text fontSize={16} p={2} _hover={{ bg: 'green.600', color: 'white' }}>Book Appointment</Text>
-            </Link>
-          </Flex>
-
-          <Flex w={'full'} direction={'column'} alignItems={'flex-start'} justifyContent={'flex-start'} my={[4,4,0]}>
-            <Text className={styles.monts} fontSize={18}>Policies</Text>
-            <Box w={'full'} h={.5} bg={'blackAlpha.400'} mb={4}></Box>
-            <Link href={'#'}>
-              <Text fontSize={16} p={2} _hover={{ bg: 'green.600', color: 'white' }}>Terms & Conditions</Text>
-            </Link>
-            <Link href={'#'}>
-              <Text fontSize={16} p={2} _hover={{ bg: 'green.600', color: 'white' }}>Privacy Policy</Text>
-            </Link>
-            <Link href={'#'}>
-              <Text fontSize={16} p={2} _hover={{ bg: 'green.600', color: 'white' }}>Refund Policy</Text>
-            </Link>
-            <Link href={'#'}>
-              <Text fontSize={16} p={2} _hover={{ bg: 'green.600', color: 'white' }}>Shipping Policy</Text>
-            </Link>
-          </Flex>
-        </Flex>
-
-        <Box w={'70%'} h={.5} bg={'blackAlpha.400'} my={8}></Box>
-
-        <HStack justifyContent={'center'} spacing={6}>
-          <Link href={'#'}>
-            <Box p={4} fontSize={24} color={'green.600'} transition={'all .3s ease'} _hover={{ bg: 'green.600', color: 'white' }} borderRadius={'8px 0 8px 0'}><BsInstagram /></Box>
-          </Link>
-
-          <Link href={'#'}>
-            <Box p={4} fontSize={24} color={'green.600'} transition={'all .3s ease'} _hover={{ bg: 'green.600', color: 'white' }} borderRadius={'8px 0 8px 0'}><BsFacebook /></Box>
-          </Link>
-
-          <Link href={'#'}>
-            <Box p={4} fontSize={24} color={'green.600'} transition={'all .3s ease'} _hover={{ bg: 'green.600', color: 'white' }} borderRadius={'8px 0 8px 0'}><BsTwitter /></Box>
-          </Link>
-
-          <Link href={'#'}>
-            <Box p={4} fontSize={24} color={'green.600'} transition={'all .3s ease'} _hover={{ bg: 'green.600', color: 'white' }} borderRadius={'8px 0 8px 0'}><BsWhatsapp /></Box>
-          </Link>
-
-        </HStack>
-      </Flex>
+      <Footer />
     </>
   )
 }
