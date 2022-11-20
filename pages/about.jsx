@@ -163,7 +163,8 @@ const About = () => {
             perMove: 1,
             breakpoints: {
                 576: {
-                    perPage: 1
+                    perPage: 1,
+                    gap: 10,
                 },
                 768: {
                     perPage: 3
@@ -173,7 +174,7 @@ const About = () => {
         }}
         >
             <SplideSlide>
-                <Box px={[8,16]}>
+                <Box px={[0,16]}>
                     <Image 
                     src='https://upload.wikimedia.org/wikipedia/en/thumb/1/16/Royal_College_of_Physicians_logo.svg/1200px-Royal_College_of_Physicians_logo.svg.png'
                     />
@@ -181,7 +182,7 @@ const About = () => {
             </SplideSlide>
 
             <SplideSlide>
-                <Box px={[8,16]}>
+                <Box px={[0,16]}>
                     <Image 
                     src='https://upload.wikimedia.org/wikipedia/en/thumb/1/16/Royal_College_of_Physicians_logo.svg/1200px-Royal_College_of_Physicians_logo.svg.png'
                     />
@@ -189,7 +190,7 @@ const About = () => {
             </SplideSlide>
 
             <SplideSlide>
-                <Box px={[8,16]}>
+                <Box px={[0,16]}>
                     <Image 
                     src='https://upload.wikimedia.org/wikipedia/en/thumb/1/16/Royal_College_of_Physicians_logo.svg/1200px-Royal_College_of_Physicians_logo.svg.png'
                     />
@@ -197,7 +198,7 @@ const About = () => {
             </SplideSlide>
 
             <SplideSlide>
-                <Box px={[8,16]}>
+                <Box px={[0,16]}>
                     <Image 
                     src='https://upload.wikimedia.org/wikipedia/en/thumb/1/16/Royal_College_of_Physicians_logo.svg/1200px-Royal_College_of_Physicians_logo.svg.png'
                     />
@@ -205,7 +206,7 @@ const About = () => {
             </SplideSlide>
 
             <SplideSlide>
-                <Box px={[8,16]}>
+                <Box px={[0,16]}>
                     <Image 
                     src='https://upload.wikimedia.org/wikipedia/en/thumb/1/16/Royal_College_of_Physicians_logo.svg/1200px-Royal_College_of_Physicians_logo.svg.png'
                     />
