@@ -26,7 +26,7 @@ const About = () => {
     <Flex direction={['column', 'row']} px={16} py={8}>
         <Box p={0} w={['100%', '40%']} bg={'transparent'} borderRadius={'0'}>
             <Image 
-            src='https://img.freepik.com/free-photo/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair_285396-896.jpg'
+            src={'https://img.freepik.com/free-photo/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair_285396-896.jpg'}
             w={'full'}
             h={'sm'}
             objectFit={'cover'}
