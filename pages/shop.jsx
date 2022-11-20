@@ -12,7 +12,7 @@ import {
     Box, Button, Flex, HStack, Image, Spacer, Text
 } from '@chakra-ui/react'
 import Navbar from '../hocs/Navbar';
-import { BsBagCheckFill, BsFillCartCheckFill, BsHeartFill } from 'react-icons/bs';
+import { BsPeopleFill, BsFillCartCheckFill, BsHeartFill } from 'react-icons/bs';
 import { HiShoppingBag } from 'react-icons/hi2';
 import Footer from '../hocs/Footer';
 
@@ -118,25 +118,29 @@ const Shop = () => {
                 576: {
                     perPage: 1,
                     gap: 10,
+                    padding: 0,
                 },
                 998: {
                     perPage: 2,
+                    gap: 30,
+                    padding: 0,
                 }
             },
             perPage: 3,
             perMove: 1,
+            gap: 80,
+            padding: {right: 30, left: 30},
             arrows: false,
         }}
-        className={shop.productsCarousel}
         >
             <SplideSlide>
-                <Box pos={'relative'} mx={[0,8]} my={[4,4]} w={["unset",64,72]} transition={"all .3s ease"} border={'1px'} borderColor={'green.400'} _hover={{ boxShadow: 'xl', transform: 'translateY(-8px)' }}>
+                <Box pos={'relative'} transition={"all .3s ease"} border={'1px'} borderColor={'green.400'} _hover={{ boxShadow: 'xl', transform: 'translateY(-8px)' }}>
                     <Badge pos={'absolute'} top={2} right={2} px={2} py={2} bg={'yellow.600'} color={'white'}>50% OFF</Badge>
                     <Image
                     src='https://goodmockups.com/wp-content/uploads/2019/11/Free-Natural-Face-Wash-Pump-Spray-Scrub-Jar-Mockup-PSD-File-1.jpg'
                     alt='Face Wash'
                     />
-                    <HStack spacing={4} p={4} pb={0}>
+                    <Flex gap={4} p={4} pb={0} alignItems={'center'} justifyContent={'center'}>
                         <Image 
                         boxSize={12}
                         objectFit={'cover'}
@@ -165,7 +169,7 @@ const Shop = () => {
                         rounded={4}
                         src={'https://99effect.com/wp-content/uploads/2021/01/Dettol-Hand-Wash-Bottle-Label-Mockup-scaled-1.jpg'}
                         />
-                    </HStack>
+                    </Flex>
                     <Box p={"4"}>
                         <Text className={styles.monts} fontSize={20} fontWeight={600} color={'black'}>Super Clean Facewash</Text>
                         <Text fontSize={14} color={'darkslategray'}>Lorem ipsum dolor sit amet consectetur adipisicing elit...</Text>
@@ -173,7 +177,7 @@ const Shop = () => {
                         <Flex mt={4}>
                             <HStack><Text pos={'relative'} fontSize={16} color={'red.400'} bottom={.5}><BsHeartFill /></Text><Text className={styles.monts} fontSize={16} fontWeight={600} color={'red.400'}>48</Text></HStack>
                             <Spacer />
-                            <HStack><Text pos={'relative'} fontSize={16} color={'green.600'} bottom={.5}><BsBagCheckFill /></Text><Text className={styles.monts} fontSize={16} fontWeight={600} color={'green.600'}>127</Text></HStack>
+                            <HStack><Text pos={'relative'} fontSize={18} color={'green.600'} bottom={.5}><BsPeopleFill /></Text><Text className={styles.monts} fontSize={16} fontWeight={600} color={'green.600'}>127</Text></HStack>
                         </Flex>
                         
                         <Flex pos={'relative'} w={'full'} p={0} mt={4} alignItems={'center'} justifyContent={'space-between'}>
@@ -197,13 +201,13 @@ const Shop = () => {
                 </Box>
             </SplideSlide>
             <SplideSlide>
-                <Box pos={'relative'} mx={[0,8]} my={[4,4]} w={["unset",64,72]} transition={"all .3s ease"} border={'1px'} borderColor={'green.400'} _hover={{ boxShadow: 'xl', transform: 'translateY(-8px)' }}>
+                <Box pos={'relative'} transition={"all .3s ease"} border={'1px'} borderColor={'green.400'} _hover={{ boxShadow: 'xl', transform: 'translateY(-8px)' }}>
                     <Badge pos={'absolute'} top={2} right={2} px={2} py={2} bg={'yellow.600'} color={'white'}>50% OFF</Badge>
                     <Image
                     src='https://goodmockups.com/wp-content/uploads/2019/11/Free-Natural-Face-Wash-Pump-Spray-Scrub-Jar-Mockup-PSD-File-1.jpg'
                     alt='Face Wash'
                     />
-                    <HStack spacing={4} p={4} pb={0}>
+                    <Flex gap={4} p={4} pb={0} alignItems={'center'} justifyContent={'center'}>
                         <Image 
                         boxSize={12}
                         objectFit={'cover'}
@@ -232,7 +236,7 @@ const Shop = () => {
                         rounded={4}
                         src={'https://99effect.com/wp-content/uploads/2021/01/Dettol-Hand-Wash-Bottle-Label-Mockup-scaled-1.jpg'}
                         />
-                    </HStack>
+                    </Flex>
                     <Box p={"4"}>
                         <Text className={styles.monts} fontSize={20} fontWeight={600} color={'black'}>Super Clean Facewash</Text>
                         <Text fontSize={14} color={'darkslategray'}>Lorem ipsum dolor sit amet consectetur adipisicing elit...</Text>
@@ -240,7 +244,7 @@ const Shop = () => {
                         <Flex mt={4}>
                             <HStack><Text pos={'relative'} fontSize={16} color={'red.400'} bottom={.5}><BsHeartFill /></Text><Text className={styles.monts} fontSize={16} fontWeight={600} color={'red.400'}>48</Text></HStack>
                             <Spacer />
-                            <HStack><Text pos={'relative'} fontSize={16} color={'green.600'} bottom={.5}><BsBagCheckFill /></Text><Text className={styles.monts} fontSize={16} fontWeight={600} color={'green.600'}>127</Text></HStack>
+                            <HStack><Text pos={'relative'} fontSize={18} color={'green.600'} bottom={.5}><BsPeopleFill /></Text><Text className={styles.monts} fontSize={16} fontWeight={600} color={'green.600'}>127</Text></HStack>
                         </Flex>
                         
                         <Flex pos={'relative'} w={'full'} p={0} mt={4} alignItems={'center'} justifyContent={'space-between'}>
@@ -264,13 +268,13 @@ const Shop = () => {
                 </Box>
             </SplideSlide>
             <SplideSlide>
-                <Box pos={'relative'} mx={[0,8]} my={[4,4]} w={["unset",64,72]} transition={"all .3s ease"} border={'1px'} borderColor={'green.400'} _hover={{ boxShadow: 'xl', transform: 'translateY(-8px)' }}>
+                <Box pos={'relative'} transition={"all .3s ease"} border={'1px'} borderColor={'green.400'} _hover={{ boxShadow: 'xl', transform: 'translateY(-8px)' }}>
                     <Badge pos={'absolute'} top={2} right={2} px={2} py={2} bg={'yellow.600'} color={'white'}>50% OFF</Badge>
                     <Image
                     src='https://goodmockups.com/wp-content/uploads/2019/11/Free-Natural-Face-Wash-Pump-Spray-Scrub-Jar-Mockup-PSD-File-1.jpg'
                     alt='Face Wash'
                     />
-                    <HStack spacing={4} p={4} pb={0}>
+                    <Flex gap={4} p={4} pb={0} alignItems={'center'} justifyContent={'center'}>
                         <Image 
                         boxSize={12}
                         objectFit={'cover'}
@@ -299,7 +303,7 @@ const Shop = () => {
                         rounded={4}
                         src={'https://99effect.com/wp-content/uploads/2021/01/Dettol-Hand-Wash-Bottle-Label-Mockup-scaled-1.jpg'}
                         />
-                    </HStack>
+                    </Flex>
                     <Box p={"4"}>
                         <Text className={styles.monts} fontSize={20} fontWeight={600} color={'black'}>Super Clean Facewash</Text>
                         <Text fontSize={14} color={'darkslategray'}>Lorem ipsum dolor sit amet consectetur adipisicing elit...</Text>
@@ -307,7 +311,7 @@ const Shop = () => {
                         <Flex mt={4}>
                             <HStack><Text pos={'relative'} fontSize={16} color={'red.400'} bottom={.5}><BsHeartFill /></Text><Text className={styles.monts} fontSize={16} fontWeight={600} color={'red.400'}>48</Text></HStack>
                             <Spacer />
-                            <HStack><Text pos={'relative'} fontSize={16} color={'green.600'} bottom={.5}><BsBagCheckFill /></Text><Text className={styles.monts} fontSize={16} fontWeight={600} color={'green.600'}>127</Text></HStack>
+                            <HStack><Text pos={'relative'} fontSize={18} color={'green.600'} bottom={.5}><BsPeopleFill /></Text><Text className={styles.monts} fontSize={16} fontWeight={600} color={'green.600'}>127</Text></HStack>
                         </Flex>
                         
                         <Flex pos={'relative'} w={'full'} p={0} mt={4} alignItems={'center'} justifyContent={'space-between'}>

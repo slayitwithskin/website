@@ -228,7 +228,7 @@ const Navbar = () => {
                     <Text>Blogs</Text>
                   </Box>
                 </Link>
-                <Link href={'#'}>
+                <Link href={'shop'}>
                   <Box flex={1} px={4} py={2}>
                     <Text>Shop</Text>
                   </Box>
