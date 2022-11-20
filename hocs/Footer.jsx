@@ -41,7 +41,7 @@ const Footer = () => {
             </Flex>
 
             <Flex w={'full'} direction={'column'} alignItems={'flex-start'} justifyContent={'flex-start'} my={[4,4,0]}>
-            <Text className={styles.monts} fontSize={18}>Services</Text>
+            <Text className={styles.monts} fontSize={18}>Company</Text>
             <Box w={'full'} h={.5} bg={'blackAlpha.400'} mb={4}></Box>
             <Link href={'#'}>
                 <Text fontSize={16} p={2} _hover={{ bg: 'green.600', color: 'white' }}>Skin Treatments</Text>
@@ -51,6 +51,9 @@ const Footer = () => {
             </Link>
             <Link href={'#'}>
                 <Text fontSize={16} p={2} _hover={{ bg: 'green.600', color: 'white' }}>Bridal Makeup</Text>
+            </Link>
+            <Link href={'about'}>
+                <Text fontSize={16} p={2} _hover={{ bg: 'green.600', color: 'white' }}>About Us</Text>
             </Link>
             </Flex>
 
@@ -65,6 +68,9 @@ const Footer = () => {
             </Link>
             <Link href={'#'}>
                 <Text fontSize={16} p={2} _hover={{ bg: 'green.600', color: 'white' }}>Book Appointment</Text>
+            </Link>
+            <Link href={'#'}>
+                <Text fontSize={16} p={2} _hover={{ bg: 'green.600', color: 'white' }}>Track Your Order</Text>
             </Link>
             </Flex>
 
