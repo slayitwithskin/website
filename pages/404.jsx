@@ -28,7 +28,7 @@ const NotFound = () => {
             />
             <Flex direction={'column'} alignItems={'center'} justifyContent={'center'} mb={[24,0]} position={'relative'} top={[0,'-32']}>
               <Text fontSize={[40,64]} fontWeight={800} color={'darkslategray'} textAlign={'center'}>404<br />Are You Lost?</Text>
-              <Text textAlign={'center'}>We couldn't find the page you were looking for.</Text>
+              <Text textAlign={'center'}>We could not find the page you were looking for.</Text>
               <Link href={'/'}>
               <Button rounded={0} bg={'burlywood'} className={styles.monts} color={'white'} _hover={{bg: 'brown'}} my={8} alignSelf={'center'}>GET BACK TO HOME PAGE</Button>
               </Link>
