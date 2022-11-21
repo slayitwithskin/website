@@ -58,30 +58,30 @@ const Navbar = () => {
                     <Flex direction={"column"} mx={4} alignItems={"flex-start"} justifyContent={"flex-start"}>
                       <Text as={"h2"} mb={5} mt={4} ml={4} textTransform={"uppercase"} className={styles.cursive} fontWeight={600}>skin</Text>
                       <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                        <Text>Service Title 1</Text>
+                        <Link href={'service'}><Text>Service Title 1</Text></Link>
                       </MenuItem>
                       <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                        <Text>Service Title 2</Text>
+                        <Link href={'service'}><Text>Service Title 2</Text></Link>
                       </MenuItem>
                       <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                        <Text>Service Title 3</Text>
+                        <Link href={'service'}><Text>Service Title 3</Text></Link>
                       </MenuItem>
                     </Flex>
 
                     <Flex direction={"column"} mx={4} alignItems={"flex-start"} justifyContent={"flex-start"}>
                       <Text as={"h2"} mb={5} mt={4} ml={4} textTransform={"uppercase"} className={styles.cursive} fontWeight={600}>hair</Text>
                       <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                        <Text>Service Title 1</Text>
+                        <Link href={'service'}><Text>Service Title 1</Text></Link>
                       </MenuItem>
                     </Flex>
 
                     <Flex direction={"column"} mx={4} alignItems={"flex-start"} justifyContent={"flex-start"}>
                       <Text as={"h2"} mb={5} mt={4} ml={4} textTransform={"uppercase"} className={styles.cursive} fontWeight={600}>misc.</Text>
                       <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                        <Text>Service Title 1</Text>
+                        <Link href={'service'}><Text>Service Title 1</Text></Link>
                       </MenuItem>
                       <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                        <Text>Service Title 2</Text>
+                        <Link href={'service'}><Text>Service Title 2</Text></Link>
                       </MenuItem>
                     </Flex>
                   </Flex>
@@ -103,30 +103,30 @@ const Navbar = () => {
                     <Flex direction={"column"} mx={4} alignItems={"flex-start"} justifyContent={"flex-start"}>
                       <Text as={"h2"} mb={5} mt={4} ml={4} textTransform={"uppercase"} className={styles.cursive} fontWeight={600}>skin</Text>
                       <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                        <Text>Service Title 1</Text>
+                        <Link href={'service'}><Text>Service Title 1</Text></Link>
                       </MenuItem>
                       <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                        <Text>Service Title 2</Text>
+                        <Link href={'service'}><Text>Service Title 2</Text></Link>
                       </MenuItem>
                       <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                        <Text>Service Title 3</Text>
+                        <Link href={'service'}><Text>Service Title 3</Text></Link>
                       </MenuItem>
                     </Flex>
 
                     <Flex direction={"column"} mx={4} alignItems={"flex-start"} justifyContent={"flex-start"}>
                       <Text as={"h2"} mb={5} mt={4} ml={4} textTransform={"uppercase"} className={styles.cursive} fontWeight={600}>hair</Text>
                       <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                        <Text>Service Title 1</Text>
+                        <Link href={'service'}><Text>Service Title 1</Text></Link>
                       </MenuItem>
                     </Flex>
 
                     <Flex direction={"column"} mx={4} alignItems={"flex-start"} justifyContent={"flex-start"}>
                       <Text as={"h2"} mb={5} mt={4} ml={4} textTransform={"uppercase"} className={styles.cursive} fontWeight={600}>misc.</Text>
                       <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                        <Text>Service Title 1</Text>
+                        <Link href={'service'}><Text>Service Title 1</Text></Link>
                       </MenuItem>
                       <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                        <Text>Service Title 2</Text>
+                        <Link href={'service'}><Text>Service Title 2</Text></Link>
                       </MenuItem>
                     </Flex>
                   </Flex>
@@ -177,9 +177,9 @@ const Navbar = () => {
                         </h2>
 
                         <AccordionPanel>
-                          <Link href={'#'}><Text my={2}>Service 1</Text></Link>
-                          <Link href={'#'}><Text my={2}>Service 2</Text></Link>
-                          <Link href={'#'}><Text my={2}>Service 3</Text></Link>
+                          <Link href={'service'}><Text my={2}>Service 1</Text></Link>
+                          <Link href={'service'}><Text my={2}>Service 2</Text></Link>
+                          <Link href={'service'}><Text my={2}>Service 3</Text></Link>
                         </AccordionPanel>
                       </AccordionItem>
                       
@@ -195,9 +195,9 @@ const Navbar = () => {
                         </h2>
 
                         <AccordionPanel>
-                          <Link href={'#'}><Text my={2}>Service 1</Text></Link>
-                          <Link href={'#'}><Text my={2}>Service 2</Text></Link>
-                          <Link href={'#'}><Text my={2}>Service 3</Text></Link>
+                          <Link href={'service'}><Text my={2}>Service 1</Text></Link>
+                          <Link href={'service'}><Text my={2}>Service 2</Text></Link>
+                          <Link href={'service'}><Text my={2}>Service 3</Text></Link>
                         </AccordionPanel>
                       </AccordionItem>
 
@@ -212,9 +212,9 @@ const Navbar = () => {
                         </h2>
 
                         <AccordionPanel>
-                          <Link href={'#'}><Text my={2}>Service 1</Text></Link>
-                          <Link href={'#'}><Text my={2}>Service 2</Text></Link>
-                          <Link href={'#'}><Text my={2}>Service 3</Text></Link>
+                          <Link href={'service'}><Text my={2}>Service 1</Text></Link>
+                          <Link href={'service'}><Text my={2}>Service 2</Text></Link>
+                          <Link href={'service'}><Text my={2}>Service 3</Text></Link>
                         </AccordionPanel>
                       </AccordionItem>
 
