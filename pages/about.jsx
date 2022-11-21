@@ -19,12 +19,12 @@ const About = () => {
     <Navbar />
     <Flex direction={'column'} px={[8,16]} py={16} mt={16} w={'full'}>
         <Text className={styles.monts} textAlign={'center'}>
-            WHY YOU SHOULD
+            WHY WE STARTED
         </Text>
-        <Text className={styles.cursive} fontSize={[40,56]} textAlign={'center'}>Slay it with Skin?</Text>
+        <Text className={styles.cursive} fontSize={[40,56]} textAlign={'center'}>Slay it with Skin</Text>
     </Flex>
     <Flex direction={['column', 'row']} px={[4,8,16]} py={[6,8]}>
-        <Box p={0} w={['100%', '40%']} bg={'transparent'} borderRadius={'0'}>
+        <Box pb={[8,0]} w={['100%', '40%']} bg={'transparent'} borderRadius={'0'}>
             <Image 
             src={'https://img.freepik.com/free-photo/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair_285396-896.jpg'}
             w={'full'}
