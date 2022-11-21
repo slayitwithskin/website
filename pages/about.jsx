@@ -17,7 +17,7 @@ const About = () => {
         <title>About Us</title>
     </Head>
     <Navbar />
-    <Flex direction={'column'} px={[8,16]} py={16} mt={16} w={'full'}>
+    <Flex direction={'column'} px={[8,16]} py={[8,16]} mt={16} w={'full'}>
         <Text className={styles.monts} textAlign={'center'}>
             WHY WE STARTED
         </Text>

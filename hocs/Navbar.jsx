@@ -41,7 +41,7 @@ const Navbar = () => {
         </Head>
         <nav className={styles.nav}>
           <Flex p={4} alignItems={'center'}>
-            <h1 className="brand-title">Slay it with Skin</h1>
+            <Link href={'/'}><h1 className="brand-title">Slay it with Skin</h1></Link>
             <Spacer />
 
             <Flex display={['none', 'none', 'flex']}>

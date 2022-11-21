@@ -28,6 +28,19 @@
   height: 100%;
 }
 
+.gradientBlue{
+  background-color: #0093E9;
+  background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+}
+.gradientRed{
+  background-image: radial-gradient( circle 860px at 11.8% 33.5%,  rgba(240,30,92,1) 0%, rgba(244,49,74,1) 30.5%, rgba(249,75,37,1) 56.1%, rgba(250,88,19,1) 75.6%, rgba(253,102,2,1) 100.2% );
+}
+.gradientYellow{
+  background-image: linear-gradient(to right, #f9d423 0%, #ff4e50 100%);
+}
+.gradientGreen{
+  background-image: linear-gradient( 117deg,  rgba(123,216,96,1) 39.2%, rgba(255,255,255,1) 156.2% );
+}
 
 @media (max-width: 576px) {
   .homevideo{

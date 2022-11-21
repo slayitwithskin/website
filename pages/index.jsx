@@ -22,6 +22,7 @@ import '@splidejs/react-splide/css/sea-green';
 
 import Navbar from '../hocs/Navbar'
 import Footer from '../hocs/Footer'
+import Reviews from '../hocs/Reviews'
 
 const Index = () => {
   return (
@@ -338,71 +339,7 @@ const Index = () => {
         </Flex>
       </Flex>
 
-
-      <Flex p={16} direction={'column'} alignItems={'center'} justifyContent={'center'}>
-        <Text className={styles.monts} textAlign={'center'} letterSpacing={4} color={'blackAlpha.700'}>DO NOT TAKE OUR WORD FOR IT</Text>
-        <Text className={styles.cursive} textAlign={'center'} fontSize={['40','56']} color={'black'}>Read Our Testimonials</Text>
-        <Box width={24} h={.5} m={'0 auto'} bg={'black'}></Box>
-        <Splide
-          options={{
-            breakpoints: {
-              576: {
-                perPage: 1,
-                width: '100vw'
-              },
-              768: {
-                perPage: 2
-              },
-              992: {
-                perPage: 3
-              }
-            },
-            perPage: 4,
-            perMove: 1
-          }}
-        >
-          <SplideSlide>
-            <Box p={4} display={'flex'} flexDirection={'column'} alignItems={'center'} justifyContent={'flex-start'}>
-              <Image boxSize={'128px'} objectFit={'cover'} src={'bride.jpg'} objectPosition={'top'} borderTopLeftRadius={16} borderBottomRightRadius={16} />
-              <Text fontSize={'2xl'} color={'black'} mt={2}>Amanda</Text>
-              <Text className={styles.monts} fontSize={12} mb={4}>LOCATION</Text>
-              <Text color={'darkslategray'} textAlign={'center'}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore perspiciatis debitis iste quam repellendus quos, sapiente facilis! Consectetur voluptates deserunt sequi?</Text>
-            </Box>
-          </SplideSlide>
-          <SplideSlide>
-            <Box p={4} display={'flex'} flexDirection={'column'} alignItems={'center'} justifyContent={'flex-start'}>
-              <Image boxSize={'128px'} objectFit={'cover'} src={'bride.jpg'} objectPosition={'top'} borderTopLeftRadius={16} borderBottomRightRadius={16} />
-              <Text fontSize={'2xl'} color={'black'} mt={2}>Amanda</Text>
-              <Text className={styles.monts} fontSize={12} mb={4}>LOCATION</Text>
-              <Text color={'darkslategray'} textAlign={'center'}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore perspiciatis debitis iste quam repellendus quos, sapiente facilis! Consectetur voluptates deserunt sequi?</Text>
-            </Box>
-          </SplideSlide>
-          <SplideSlide>
-            <Box p={4} display={'flex'} flexDirection={'column'} alignItems={'center'} justifyContent={'flex-start'}>
-              <Image boxSize={'128px'} objectFit={'cover'} src={'bride.jpg'} objectPosition={'top'} borderTopLeftRadius={16} borderBottomRightRadius={16} />
-              <Text fontSize={'2xl'} color={'black'} mt={2}>Amanda</Text>
-              <Text className={styles.monts} fontSize={12} mb={4}>LOCATION</Text>
-              <Text color={'darkslategray'} textAlign={'center'}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore perspiciatis debitis iste quam repellendus quos, sapiente facilis! Consectetur voluptates deserunt sequi?</Text>
-            </Box>
-          </SplideSlide>
-          <SplideSlide>
-            <Box p={4} display={'flex'} flexDirection={'column'} alignItems={'center'} justifyContent={'flex-start'}>
-              <Image boxSize={'128px'} objectFit={'cover'} src={'bride.jpg'} objectPosition={'top'} borderTopLeftRadius={16} borderBottomRightRadius={16} />
-              <Text fontSize={'2xl'} color={'black'} mt={2}>Amanda</Text>
-              <Text className={styles.monts} fontSize={12} mb={4}>LOCATION</Text>
-              <Text color={'darkslategray'} textAlign={'center'}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore perspiciatis debitis iste quam repellendus quos, sapiente facilis! Consectetur voluptates deserunt sequi?</Text>
-            </Box>
-          </SplideSlide>
-          <SplideSlide>
-            <Box p={4} display={'flex'} flexDirection={'column'} alignItems={'center'} justifyContent={'flex-start'}>
-              <Image boxSize={'128px'} objectFit={'cover'} src={'bride.jpg'} objectPosition={'top'} borderTopLeftRadius={16} borderBottomRightRadius={16} />
-              <Text fontSize={'2xl'} color={'black'} mt={2}>Amanda</Text>
-              <Text className={styles.monts} fontSize={12} mb={4}>LOCATION</Text>
-              <Text color={'darkslategray'} textAlign={'center'}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore perspiciatis debitis iste quam repellendus quos, sapiente facilis! Consectetur voluptates deserunt sequi?</Text>
-            </Box>
-          </SplideSlide>
-        </Splide>
-      </Flex>
+      <Reviews />
 
       <Footer />
     </>
