@@ -38,7 +38,17 @@ const Index = () => {
           <Flex direction={"column"} justifySelf={'center'} px={['8','16','24']} pt={24} justifyContent={'center'}>
             <Text fontSize={["42", "56", "64"]} className={styles.cursive} textAlign={['center', 'left']} lineHeight={[1.5,1,1]}>Give your skin</Text>
             <Text mb={8} fontSize={["36", "48", "56"]} className={styles.cursive} textAlign={['center', 'left']} color={'gray.600'}>the treatment it deserves</Text>
-            <Button w={['full','fit-content']} border={'2px'} p={6} letterSpacing={2} borderColor={'transparent'} rounded={0} bg={'black'} color={'white'} _hover={{ bg: 'rgba(0,0,0,0.6)' }} className={styles.monts}>BOOK APPOINTMENT</Button>
+            <Button 
+            w={['full','fit-content']} 
+            border={'2px'} p={6} 
+            letterSpacing={2} 
+            borderColor={'transparent'} 
+            rounded={0} bg={'black'} 
+            color={'white'} _hover={{ bg: 'rgba(0,0,0,0.6)' }} 
+            className={styles.monts}
+            onClick={()=>{Calendly.initPopupWidget({url: 'https://calendly.com/slayitwithskin/appointment'});return false;}}>
+              BOOK APPOINTMENT
+            </Button>
 
           </Flex>
           <Flex w={['100%','60%','40%']} direction={"column"} justifySelf={'center'} px={'8'} justifyContent={'flex-end'}>
@@ -84,7 +94,19 @@ const Index = () => {
           <Flex h={'full'} direction={"column"} alignItems={'center'} justifyContent={'center'} zIndex={10}>
             <Text className={styles.monts} color={'white'} letterSpacing={4}>BEAUTIFUL & CONFIDENT</Text>
             <Text className={styles.cursive} fontSize={['36','52', '64']} color={'white'}>Need a Fresh Look?</Text>
-            <Button my={4} p={6} bg={'transparent'} border={'2px'} borderColor={'white'} color={'white'} rounded={0} className={styles.monts} _hover={{ bg: 'white', color: 'black' }}>BOOK APPOINTMENT</Button>
+            <Button 
+            my={4} p={6} 
+            bg={'transparent'} 
+            border={'2px'} 
+            borderColor={'white'} 
+            color={'white'} 
+            rounded={0} 
+            className={styles.monts} 
+            _hover={{ bg: 'white', color: 'black' }}
+            onClick={()=>{Calendly.initPopupWidget({url: 'https://calendly.com/slayitwithskin/appointment'});return false;}}
+            >
+              BOOK APPOINTMENT
+            </Button>
           </Flex>
         </Box>
       </Box>

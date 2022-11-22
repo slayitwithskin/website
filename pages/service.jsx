@@ -10,7 +10,7 @@ import { Box, Button, Flex, Image, Text } from '@chakra-ui/react'
 import { Splide, SplideSlide } from '@splidejs/react-splide'
 import '@splidejs/react-splide/css/sea-green';
 import Reviews from '../hocs/Reviews'
-import Newsletter from '../hocs/Newsletter'
+import Newsletter from '../hocs/Banner'
 
 
 const Service = () => {
@@ -73,6 +73,7 @@ const Service = () => {
                 p={6}
                 rounded={0}
                 bg={'brown'}
+                onClick={()=>{Calendly.initPopupWidget({url: 'https://calendly.com/slayitwithskin/appointment'});return false;}}
                 >
                     BOOK AN APPOINTMENT
                 </Button>
@@ -127,7 +128,9 @@ const Service = () => {
                     <Button 
                     rounded={0} 
                     colorScheme={'twitter'} 
-                    className={styles.monts} >
+                    className={styles.monts} 
+                    onClick={()=>{Calendly.initPopupWidget({url: 'https://calendly.com/slayitwithskin/appointment'});return false;}}
+                    >
                         BOOK APPOINTMENT
                     </Button>
                 </Box>
@@ -174,7 +177,9 @@ const Service = () => {
                     <Button 
                     rounded={0} 
                     colorScheme={'whatsapp'} 
-                    className={styles.monts} >
+                    className={styles.monts} 
+                    onClick={()=>{Calendly.initPopupWidget({url: 'https://calendly.com/slayitwithskin/appointment'});return false;}}
+                    >
                         BOOK APPOINTMENT
                     </Button>
                 </Box>
@@ -221,7 +226,9 @@ const Service = () => {
                     <Button 
                     rounded={0} 
                     colorScheme={'red'} 
-                    className={styles.monts} >
+                    className={styles.monts} 
+                    onClick={()=>{Calendly.initPopupWidget({url: 'https://calendly.com/slayitwithskin/appointment'});return false;}}
+                    >
                         BOOK APPOINTMENT
                     </Button>
                 </Box>

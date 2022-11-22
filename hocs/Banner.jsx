@@ -21,6 +21,7 @@ const Newsletter = () => {
                 p={6}
                 mt={8}
                 className={styles.monts}
+                onClick={()=>{Calendly.initPopupWidget({url: 'https://calendly.com/slayitwithskin/appointment'});return false;}}
                 >
                     BOOK AN APPOINTMENT
                 </Button>

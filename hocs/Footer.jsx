@@ -4,6 +4,7 @@ import {
     Text,
     Box,
     Spacer,
+    Image,
     HStack
 } from '@chakra-ui/react'
 
@@ -15,7 +16,7 @@ import styles from '../styles/Home.module.css'
 const Footer = () => {
   return (
     <>
-        <Flex pt={[8,16]} 
+        <Flex id='footer' pt={[8,16]} 
         pb={[4,8]} px={[0,8]} 
         direction={'column'} 
         alignItems={'center'} justifyContent={'flex-start'} 
@@ -63,11 +64,11 @@ const Footer = () => {
             <Link href={'#'}>
                 <Text fontSize={16} p={2} _hover={{ bg: 'green.600', color: 'white' }}>The Beauty Shop</Text>
             </Link>
-            <Link href={'#'}>
+            <Link href={'blogs'}>
                 <Text fontSize={16} p={2} _hover={{ bg: 'green.600', color: 'white' }}>Our Blogs</Text>
             </Link>
-            <Link href={'#'}>
-                <Text fontSize={16} p={2} _hover={{ bg: 'green.600', color: 'white' }}>Book Appointment</Text>
+            <Link href={'#footer'}>
+                <Text fontSize={16} p={2} _hover={{ bg: 'green.600', color: 'white' }} onClick={()=>{Calendly.initPopupWidget({url: 'https://calendly.com/slayitwithskin/appointment'});return false;}}>Book Appointment</Text>
             </Link>
             <Link href={'#'}>
                 <Text fontSize={16} p={2} _hover={{ bg: 'green.600', color: 'white' }}>Track Your Order</Text>
@@ -113,6 +114,16 @@ const Footer = () => {
 
         </HStack>
         </Flex>
+        <Link href={'https://wa.me/918237644190'} target={'_blank'}>
+            <Image 
+            src={'whatsapp.png'}
+            pos={'fixed'}
+            bottom={8}
+            right={8}
+            w={'12'}
+            />
+        </Link>
+        <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
     </>
   )
 }

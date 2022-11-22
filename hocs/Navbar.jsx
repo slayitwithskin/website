@@ -38,6 +38,9 @@ const Navbar = () => {
           <meta charset="UTF-8" />
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+          <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+
         </Head>
         <nav className={styles.nav}>
           <Flex p={4} alignItems={'center'}>
@@ -87,7 +90,7 @@ const Navbar = () => {
                   </Flex>
                 </MenuList>
               </Menu>
-              <Link href={"#"}><Text mx={6} borderBottom={"2px"} borderColor={"transparent"} transition={"all .3s ease"} _hover={{ borderColor: "black" }}>Blogs</Text></Link>
+              <Link href={"blogs"}><Text mx={6} borderBottom={"2px"} borderColor={"transparent"} transition={"all .3s ease"} _hover={{ borderColor: "black" }}>Blogs</Text></Link>
               <Link href={"shop"}><Text mx={6} borderBottom={"2px"} borderColor={"transparent"} transition={"all .3s ease"} _hover={{ borderColor: "black" }}>Shop</Text></Link>
 
               <Menu>
@@ -134,7 +137,12 @@ const Navbar = () => {
               </Menu>
             </Flex>
             <Spacer />
-            <Button display={['none', 'none', 'block']} rounded={'xl'} bg={"transparent"} border={"1px"} borderColor={"black"} borderTopRightRadius={"0"} _hover={{ bg: "black", color: "white" }} className={styles.cursive}>Book Appointment</Button>
+            <Button 
+            display={['none', 'none', 'block']} 
+            rounded={'xl'} bg={"transparent"} 
+            border={"1px"} borderColor={"black"} 
+            borderTopRightRadius={"0"} _hover={{ bg: "black", color: "white" }} 
+            className={styles.cursive} onClick={()=>{Calendly.initPopupWidget({url: 'https://calendly.com/slayitwithskin/appointment'});return false;}}>Book Appointment</Button>
             <Text fontSize={28} display={['block', 'block', 'none']} ref={menuRef} onClick={onOpen}><HiBars3BottomRight /></Text>
           </Flex>
         </nav>
@@ -223,7 +231,7 @@ const Navbar = () => {
 
                 </Accordion>
 
-                <Link href={'#'}>
+                <Link href={'blogs'}>
                   <Box flex={1} px={4} py={2}>
                     <Text>Blogs</Text>
                   </Box>
@@ -305,7 +313,9 @@ const Navbar = () => {
                 </Accordion>
 
                 <Link href={'#'}>
-                  <Button bg={'black'} color={'white'} rounded={0} my={16} w={'full'} _hover={{bg: "#333"}}>
+                  <Button bg={'black'} color={'white'} rounded={0} 
+                  my={16} w={'full'} _hover={{bg: "#333"}}
+                  onClick={()=>{Calendly.initPopupWidget({url: 'https://calendly.com/slayitwithskin/appointment'});return false;}}>
                     <Text className={styles.monts}>BOOK APPOINTMENT</Text>
                   </Button>
                 </Link>
