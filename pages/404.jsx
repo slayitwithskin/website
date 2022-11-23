@@ -23,7 +23,7 @@ const NotFound = () => {
         justifyContent={'center'}
         >
             <Image 
-            src={'404.png'}
+            src={'/404.png'}
             w={['80%', '70%', '50%']}
             />
             <Flex direction={'column'} alignItems={'center'} justifyContent={'center'} mb={[24,0]} position={'relative'} top={[0,'-32']}>
