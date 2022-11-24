@@ -2,18 +2,21 @@ import {React, useState} from 'react'
 import styles from '../styles/Home.module.css'
 import Navbar from '../hocs/Navbar'
 import Footer from '../hocs/Footer'
+import Head from 'next/head'
 
 import { Flex, Image, Text, Box, HStack, Container, VStack, Button, Input, Textarea } from '@chakra-ui/react'
-import { DatePicker } from 'react-rainbow-components'
 
-import {BsCalendar2} from 'react-icons/bs'
+import "flatpickr/dist/themes/material_green.css";
+import Flatpickr from 'react-flatpickr'
 
 const Appointment = () => {
     const [dob, setDob] = useState()
     const [appointment, setAppointment] = useState()
     const [gender, setGender] = useState('female')
+
   return (
     <>
+        <Head><title>Book Appointment | Slay it with Skin</title></Head>
         <Navbar />
         <Text mt={[20,24]} textAlign={'center'} 
         fontSize={[40,56]} className={styles.cursive}>
@@ -43,16 +46,10 @@ const Appointment = () => {
                             </HStack>
                             <Input type={'hidden'} name={'gender'} value={gender} />
                         </Box>
-                        <Box pt={4} pl={8}>
+                        <Flex direction={'column'} alignItems={'flex-start'} justifyContent={'flex-start'} pt={4} pl={8}>
                             <Text color={'rgb(100,100,100)'} pb={2}>Date of Birth</Text>
-                            <DatePicker 
-                            icon={<BsCalendar2 />}
-                            formatStyle='small'
-                            placeholder='Select Date'
-                            onChange={(date) => setDob(date)}
-                            value={dob}
-                            />
-                        </Box>
+                            <Input id='flatpickr' w={'full'} size={'md'} type={'date'} placeholder={'Select Date'} />
+                        </Flex>
                     </HStack>
                 </VStack>
                 <VStack my={4} p={[4,6]} boxShadow={'base'} bg={'white'}>
@@ -69,13 +66,7 @@ const Appointment = () => {
                     <HStack w={'full'} my={2}>
                         <Box w={'full'}>
                             <Text color={'rgb(100,100,100)'} pb={2}>Your Preferred Date of Appointment</Text>
-                            <DatePicker 
-                            icon={<BsCalendar2 />}
-                            formatStyle='large'
-                            placeholder='Select Appointment Date'
-                            onChange={(date) => setAppointment(date)}
-                            value={appointment}
-                            />
+                            <Input className='flatpickr' w={'full'} size={'md'} type={'date'} placeholder={'Select Appointment Date'} />
                         </Box>
                     </HStack>
                     <Box w={'full'} pt={4}>
