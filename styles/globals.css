@@ -13,3 +13,7 @@
   color: #000;
   font-family: 'El Messiri', sans-serif;
 }
+
+button.selected{
+  background: #E3CAA5;
+}

@@ -67,8 +67,8 @@ const Footer = () => {
             <Link href={'blogs'}>
                 <Text fontSize={16} p={2} _hover={{ bg: 'green.600', color: 'white' }}>Our Blogs</Text>
             </Link>
-            <Link href={'#footer'}>
-                <Text fontSize={16} p={2} _hover={{ bg: 'green.600', color: 'white' }} onClick={()=>{Calendly.initPopupWidget({url: 'https://calendly.com/slayitwithskin/appointment'});return false;}}>Book Appointment</Text>
+            <Link href={'appointment'}>
+                <Text fontSize={16} p={2} _hover={{ bg: 'green.600', color: 'white' }}>Book Appointment</Text>
             </Link>
             <Link href={'#'}>
                 <Text fontSize={16} p={2} _hover={{ bg: 'green.600', color: 'white' }}>Track Your Order</Text>
@@ -123,7 +123,7 @@ const Footer = () => {
             w={'12'}
             />
         </Link>
-        <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+        {/* <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script> */}
     </>
   )
 }

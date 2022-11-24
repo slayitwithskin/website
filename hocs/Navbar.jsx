@@ -55,36 +55,34 @@ const Navbar = () => {
                     <Text><BsChevronDown /></Text>
                   </Flex>
                 </MenuButton>
-                <MenuList rounded={0} backgroundImage={"url('/floral-leaves-corner.jpg')"} backgroundPosition={"50% 80%"} backgroundRepeat={"no-repeat"} backgroundSize={"cover"}>
+                <MenuList rounded={0}>
                   <Flex>
 
                     <Flex direction={"column"} mx={4} alignItems={"flex-start"} justifyContent={"flex-start"}>
-                      <Text as={"h2"} mb={5} mt={4} ml={4} textTransform={"uppercase"} className={styles.cursive} fontWeight={600}>skin</Text>
+                      <Text as={"h2"} mb={5} mt={4} 
+                      ml={4} textTransform={"uppercase"} 
+                      className={styles.cursive} fontWeight={600}>
+                        consultation
+                      </Text>
                       <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                        <Link href={'service'}><Text>Service Title 1</Text></Link>
-                      </MenuItem>
-                      <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                        <Link href={'service'}><Text>Service Title 2</Text></Link>
-                      </MenuItem>
-                      <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                        <Link href={'service'}><Text>Service Title 3</Text></Link>
+                        <Link href={'service'}><Text>Speak To Us</Text></Link>
                       </MenuItem>
                     </Flex>
 
                     <Flex direction={"column"} mx={4} alignItems={"flex-start"} justifyContent={"flex-start"}>
-                      <Text as={"h2"} mb={5} mt={4} ml={4} textTransform={"uppercase"} className={styles.cursive} fontWeight={600}>hair</Text>
+                      <Text as={"h2"} mb={5} mt={4} ml={4} textTransform={"uppercase"} className={styles.cursive} fontWeight={600}>Packages</Text>
                       <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                        <Link href={'service'}><Text>Service Title 1</Text></Link>
+                        <Link href={'service'}><Text>Customised Routine</Text></Link>
                       </MenuItem>
                     </Flex>
 
                     <Flex direction={"column"} mx={4} alignItems={"flex-start"} justifyContent={"flex-start"}>
-                      <Text as={"h2"} mb={5} mt={4} ml={4} textTransform={"uppercase"} className={styles.cursive} fontWeight={600}>misc.</Text>
+                      <Text as={"h2"} mb={5} mt={4} ml={4} textTransform={"uppercase"} className={styles.cursive} fontWeight={600}>Bridal Skin Care</Text>
                       <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                        <Link href={'service'}><Text>Service Title 1</Text></Link>
+                        <Link href={'service'}><Text>3 Months Package</Text></Link>
                       </MenuItem>
                       <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                        <Link href={'service'}><Text>Service Title 2</Text></Link>
+                        <Link href={'service'}><Text>6 Months Package</Text></Link>
                       </MenuItem>
                     </Flex>
                   </Flex>
@@ -104,32 +102,26 @@ const Navbar = () => {
                   <Flex>
 
                     <Flex direction={"column"} mx={4} alignItems={"flex-start"} justifyContent={"flex-start"}>
-                      <Text as={"h2"} mb={5} mt={4} ml={4} textTransform={"uppercase"} className={styles.cursive} fontWeight={600}>skin</Text>
+                      <Text as={"h2"} mb={5} mt={4} ml={4} textTransform={"uppercase"} className={styles.cursive} fontWeight={600}>consultation</Text>
                       <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                        <Link href={'service'}><Text>Service Title 1</Text></Link>
-                      </MenuItem>
-                      <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                        <Link href={'service'}><Text>Service Title 2</Text></Link>
-                      </MenuItem>
-                      <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                        <Link href={'service'}><Text>Service Title 3</Text></Link>
+                        <Link href={'appointment'}><Text>Speak To Us</Text></Link>
                       </MenuItem>
                     </Flex>
 
                     <Flex direction={"column"} mx={4} alignItems={"flex-start"} justifyContent={"flex-start"}>
-                      <Text as={"h2"} mb={5} mt={4} ml={4} textTransform={"uppercase"} className={styles.cursive} fontWeight={600}>hair</Text>
+                      <Text as={"h2"} mb={5} mt={4} ml={4} textTransform={"uppercase"} className={styles.cursive} fontWeight={600}>packages</Text>
                       <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                        <Link href={'service'}><Text>Service Title 1</Text></Link>
+                        <Link href={'appointment'}><Text>Customised Routine Package</Text></Link>
                       </MenuItem>
                     </Flex>
 
                     <Flex direction={"column"} mx={4} alignItems={"flex-start"} justifyContent={"flex-start"}>
-                      <Text as={"h2"} mb={5} mt={4} ml={4} textTransform={"uppercase"} className={styles.cursive} fontWeight={600}>misc.</Text>
+                      <Text as={"h2"} mb={5} mt={4} ml={4} textTransform={"uppercase"} className={styles.cursive} fontWeight={600}>bridal skin care</Text>
                       <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                        <Link href={'service'}><Text>Service Title 1</Text></Link>
+                        <Link href={'appointment'}><Text>3 Months</Text></Link>
                       </MenuItem>
                       <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                        <Link href={'service'}><Text>Service Title 2</Text></Link>
+                        <Link href={'appointment'}><Text>6 Months</Text></Link>
                       </MenuItem>
                     </Flex>
                   </Flex>
@@ -137,12 +129,14 @@ const Navbar = () => {
               </Menu>
             </Flex>
             <Spacer />
-            <Button 
-            display={['none', 'none', 'block']} 
-            rounded={'xl'} bg={"transparent"} 
-            border={"1px"} borderColor={"black"} 
-            borderTopRightRadius={"0"} _hover={{ bg: "black", color: "white" }} 
-            className={styles.cursive} onClick={()=>{Calendly.initPopupWidget({url: 'https://calendly.com/slayitwithskin/appointment'});return false;}}>Book Appointment</Button>
+            <Link href={'appointment'}>
+              <Button 
+              display={['none', 'none', 'block']} 
+              rounded={'xl'} bg={"transparent"} 
+              border={"1px"} borderColor={"black"} 
+              borderTopRightRadius={"0"} _hover={{ bg: "black", color: "white" }} 
+              className={styles.cursive}>Book Appointment</Button>
+            </Link>
             <Text fontSize={28} display={['block', 'block', 'none']} ref={menuRef} onClick={onOpen}><HiBars3BottomRight /></Text>
           </Flex>
         </nav>
@@ -178,16 +172,14 @@ const Navbar = () => {
                         <h2>
                           <AccordionButton>
                             <Box flex='1' textAlign='left'>
-                              Skin Services
+                              consultation
                             </Box>
                             <AccordionIcon />
                           </AccordionButton>
                         </h2>
 
                         <AccordionPanel>
-                          <Link href={'service'}><Text my={2}>Service 1</Text></Link>
-                          <Link href={'service'}><Text my={2}>Service 2</Text></Link>
-                          <Link href={'service'}><Text my={2}>Service 3</Text></Link>
+                          <Link href={'appointment'}><Text my={2}>Speak To Us</Text></Link>
                         </AccordionPanel>
                       </AccordionItem>
                       
@@ -196,16 +188,14 @@ const Navbar = () => {
                         <h2>
                           <AccordionButton>
                             <Box flex='1' textAlign='left'>
-                              Hair Services
+                              Packages
                             </Box>
                             <AccordionIcon />
                           </AccordionButton>
                         </h2>
 
                         <AccordionPanel>
-                          <Link href={'service'}><Text my={2}>Service 1</Text></Link>
-                          <Link href={'service'}><Text my={2}>Service 2</Text></Link>
-                          <Link href={'service'}><Text my={2}>Service 3</Text></Link>
+                          <Link href={'appointment'}><Text my={2}>Customised Routine Package</Text></Link>
                         </AccordionPanel>
                       </AccordionItem>
 
@@ -213,16 +203,15 @@ const Navbar = () => {
                         <h2>
                           <AccordionButton>
                             <Box flex='1' textAlign='left'>
-                              Misc.
+                              Bridal Skin Care
                             </Box>
                             <AccordionIcon />
                           </AccordionButton>
                         </h2>
 
                         <AccordionPanel>
-                          <Link href={'service'}><Text my={2}>Service 1</Text></Link>
-                          <Link href={'service'}><Text my={2}>Service 2</Text></Link>
-                          <Link href={'service'}><Text my={2}>Service 3</Text></Link>
+                          <Link href={'appointment'}><Text my={2}>3 Months</Text></Link>
+                          <Link href={'appointment'}><Text my={2}>6 Months</Text></Link>
                         </AccordionPanel>
                       </AccordionItem>
 
