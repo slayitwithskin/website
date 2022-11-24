@@ -1,4 +1,4 @@
-import {React, useEffect, useState} from 'react'
+import {React, useState} from 'react'
 import styles from '../styles/Home.module.css'
 import Navbar from '../hocs/Navbar'
 import Footer from '../hocs/Footer'
@@ -12,10 +12,6 @@ const Appointment = () => {
     const [dob, setDob] = useState()
     const [appointment, setAppointment] = useState()
     const [gender, setGender] = useState('female')
-
-    
-    
-
   return (
     <>
         <Navbar />
