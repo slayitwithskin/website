@@ -34,8 +34,8 @@ const Index = () => {
 
         <Navbar />
 
-        <Flex alignItems={"center"} justifyContent={"space-between"} h={'auto'} bg={'red.100'} wrap={'wrap'}>
-          <Flex direction={"column"} justifySelf={'center'} px={['8','16','24']} pt={24} justifyContent={'center'}>
+        <Flex direction={['column', 'row']} alignItems={"center"} justifyContent={"space-between"} h={'auto'} bg={'red.100'}>
+          <Flex w={['100%','60%']} direction={"column"} justifySelf={'center'} px={['8','16','24']} pt={24} justifyContent={'center'}>
             <Text fontSize={["42", "56", "64"]} className={styles.cursive} textAlign={['center', 'left']} lineHeight={[1.5,1,1]}>Give your skin</Text>
             <Text mb={8} fontSize={["36", "48", "56"]} className={styles.cursive} textAlign={['center', 'left']} color={'gray.600'}>the treatment it deserves</Text>
             <Button 
@@ -51,7 +51,7 @@ const Index = () => {
             </Button>
 
           </Flex>
-          <Flex w={['100%','60%','40%']} direction={"column"} justifySelf={'center'} px={'8'} justifyContent={'flex-end'}>
+          <Flex w={['100%','40%']} direction={"column"} justifySelf={'center'} px={'8'} justifyContent={'flex-end'}>
             <Image src={'woman.png'} />
           </Flex>
         </Flex>

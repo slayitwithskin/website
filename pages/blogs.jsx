@@ -42,7 +42,7 @@ const blogs = () => {
             <Link key={postDate} href={'blog/'}>
                 <Box
                 my={4}
-                w={['sm','xs']}
+                w={['auto','xs']}
                 boxShadow={'lg'}
                 transition={'all .3s ease'}
 
@@ -53,7 +53,7 @@ const blogs = () => {
                 >
                     <Image 
                     src={'https://goodmockups.com/wp-content/uploads/2019/11/Free-Natural-Face-Wash-Pump-Spray-Scrub-Jar-Mockup-PSD-File-1.jpg'}
-                    w={'inherit'}
+                    w={'full'}
                     h={48}
                     objectFit={'cover'}
                     objectPosition={'center'}
@@ -85,6 +85,7 @@ const blogs = () => {
             </Link>
             )}
         </Flex>
+        
         <Flex
         p={[4,16]}
         justifyContent={'center'}

@@ -27,9 +27,9 @@ const blog = () => {
         </Text>
 
         <Flex
-        p={16}
+        p={[4,16]}
         pb={4}
-        direction={['column', 'row']}
+        direction={['column-reverse', 'row']}
         alignItems={'center'}
         justifyContent={'center'}
         >
@@ -52,12 +52,13 @@ const blog = () => {
             src={'https://goodmockups.com/wp-content/uploads/2019/11/Free-Natural-Face-Wash-Pump-Spray-Scrub-Jar-Mockup-PSD-File-1.jpg'}
             w={['sm','md','lg']}
             h={[48,56,72]}
+            mb={[4,0]}
             objectFit={'cover'}
             objectPosition={'center'}
             />
         </Flex>
         <Text
-        p={16}
+        p={[4,16]}
         >
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo, in vero. Deserunt 
             facere magnam repudiandae laborum debitis officiis harum impedit. Inventore eveniet 
@@ -111,7 +112,7 @@ const blog = () => {
             <Link key={postDate} href={'blog/'}>
                 <Box
                 my={4}
-                w={['sm','xs']}
+                w={['auto','xs']}
                 boxShadow={'lg'}
                 transition={'all .3s ease'}
 
@@ -122,7 +123,7 @@ const blog = () => {
                 >
                     <Image 
                     src={'https://goodmockups.com/wp-content/uploads/2019/11/Free-Natural-Face-Wash-Pump-Spray-Scrub-Jar-Mockup-PSD-File-1.jpg'}
-                    w={'inherit'}
+                    w={'full'}
                     h={48}
                     objectFit={'cover'}
                     objectPosition={'center'}
