@@ -81,7 +81,7 @@ const Footer = () => {
             <Link href={'#'}>
                 <Text fontSize={16} p={2} _hover={{ bg: 'green.600', color: 'white' }}>Terms & Conditions</Text>
             </Link>
-            <Link href={'#'}>
+            <Link href={'/policies/privacy-policy'}>
                 <Text fontSize={16} p={2} _hover={{ bg: 'green.600', color: 'white' }}>Privacy Policy</Text>
             </Link>
             <Link href={'#'}>
