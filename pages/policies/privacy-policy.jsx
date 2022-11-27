@@ -9,7 +9,7 @@ const PrivacyPolicy = () => {
     return (
         <>
             <Navbar />
-            <Box p={[4, 24]}>
+            <Box p={[4, 24]} mt={[20,0]}>
                 <h1 style={{textAlign: "center", marginBottom: "2em", fontSize: "3rem"}}>Privacy Policy</h1>
                 <p>Last updated: November 27, 2022</p>
                 <br />
