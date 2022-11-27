@@ -28,9 +28,9 @@ const Footer = () => {
 
             <Flex direction={'column'} alignItems={'flex-start'} justifyContent={'flex-start'} my={[8,8,0]}>
             <Text className={styles.cursive} fontSize={28}>Slay it with Skin</Text>
-            <Text my={4} fontSize={14}>25, L T Road, Opp Goyal Shopping Centre,
-                <br />Borivli (w), Mumbai, Maharashtra
-                <br />PIN: 400091
+            <Text my={4} fontSize={14}>Station Road, Santacruz West
+                <br />Mumbai, Maharashtra
+                <br />PIN: 400055
             </Text>
             <Link href={'mailto: info@slayitwithskin.com'} target={'_blank'}>
                 <Flex alignItems={'center'}><Text fontSize={16} mr={4}><BsEnvelopeFill /></Text><Text fontSize={16}>info@slayitwithskin.com</Text></Flex>
@@ -84,7 +84,7 @@ const Footer = () => {
             <Link href={'/policies/privacy-policy'}>
                 <Text fontSize={16} p={2} _hover={{ bg: 'green.600', color: 'white' }}>Privacy Policy</Text>
             </Link>
-            <Link href={'#'}>
+            <Link href={'/policies/refund-policy'}>
                 <Text fontSize={16} p={2} _hover={{ bg: 'green.600', color: 'white' }}>Refund Policy</Text>
             </Link>
             <Link href={'#'}>
@@ -114,7 +114,7 @@ const Footer = () => {
 
         </HStack>
         </Flex>
-        <Link href={'https://wa.me/918237644190'} target={'_blank'}>
+        <Link href={'https://wa.me/919004574190'} target={'_blank'}>
             <Image 
             src={'/whatsapp.png'}
             pos={'fixed'}

@@ -302,7 +302,7 @@ const Index = () => {
           <Text className={styles.monts}>EXPERT BEAUTICIANS</Text>
           <Text className={styles.cursive} fontSize={['40','56']} lineHeight={'short'}>10+ Years of Experience</Text>
           <Box mt={6} mb={4} w={20} h={.5} bg={'blackAlpha.800'}></Box>
-          <Text fontWeight={400}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore perspiciatis debitis iste quam repellendus quos, sapiente facilis! Consectetur voluptates deserunt sequi? Repudiandae recusandae, voluptas nesciunt non accusamus unde temporibus dolorum.</Text>
+          <Text fontWeight={400}>Slay it with skin aims at delivering happy skin smiles, helping clients achieve their skin goals with correct guidance & expert treatments. </Text>
         </Flex>
         <Flex w={['100%', '45%']} mt={[8,0,0]}>
           <iframe className={styles.homevideo} src="https://www.youtube.com/embed/q0BVR5jRXxE" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
