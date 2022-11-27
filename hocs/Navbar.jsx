@@ -38,9 +38,6 @@ const Navbar = () => {
           <meta charset="UTF-8" />
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-          <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
-
         </Head>
         <nav className={styles.nav}>
           <Flex p={4} alignItems={'center'}>
@@ -65,31 +62,31 @@ const Navbar = () => {
                         consultation
                       </Text>
                       <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                        <Link href={'service'}><Text>Speak To Us</Text></Link>
+                        <Link href={'/service'}><Text>Speak To Us</Text></Link>
                       </MenuItem>
                     </Flex>
 
                     <Flex direction={"column"} mx={4} alignItems={"flex-start"} justifyContent={"flex-start"}>
                       <Text as={"h2"} mb={5} mt={4} ml={4} textTransform={"uppercase"} className={styles.cursive} fontWeight={600}>Packages</Text>
                       <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                        <Link href={'service'}><Text>Customised Routine</Text></Link>
+                        <Link href={'/service'}><Text>Customised Routine</Text></Link>
                       </MenuItem>
                     </Flex>
 
                     <Flex direction={"column"} mx={4} alignItems={"flex-start"} justifyContent={"flex-start"}>
                       <Text as={"h2"} mb={5} mt={4} ml={4} textTransform={"uppercase"} className={styles.cursive} fontWeight={600}>Bridal Skin Care</Text>
                       <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                        <Link href={'service'}><Text>3 Months Package</Text></Link>
+                        <Link href={'/service'}><Text>3 Months Package</Text></Link>
                       </MenuItem>
                       <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                        <Link href={'service'}><Text>6 Months Package</Text></Link>
+                        <Link href={'/service'}><Text>6 Months Package</Text></Link>
                       </MenuItem>
                     </Flex>
                   </Flex>
                 </MenuList>
               </Menu>
-              <Link href={"blogs"}><Text mx={6} borderBottom={"2px"} borderColor={"transparent"} transition={"all .3s ease"} _hover={{ borderColor: "black" }}>Blogs</Text></Link>
-              <Link href={"shop"}><Text mx={6} borderBottom={"2px"} borderColor={"transparent"} transition={"all .3s ease"} _hover={{ borderColor: "black" }}>Shop</Text></Link>
+              <Link href={"/blogs"}><Text mx={6} borderBottom={"2px"} borderColor={"transparent"} transition={"all .3s ease"} _hover={{ borderColor: "black" }}>Blogs</Text></Link>
+              <Link href={"/shop"}><Text mx={6} borderBottom={"2px"} borderColor={"transparent"} transition={"all .3s ease"} _hover={{ borderColor: "black" }}>Shop</Text></Link>
 
               <Menu>
                 <MenuButton mx={6} borderBottom={"2px"} borderColor={"transparent"} _hover={{ borderColor: "black" }}>
@@ -104,24 +101,24 @@ const Navbar = () => {
                     <Flex direction={"column"} mx={4} alignItems={"flex-start"} justifyContent={"flex-start"}>
                       <Text as={"h2"} mb={5} mt={4} ml={4} textTransform={"uppercase"} className={styles.cursive} fontWeight={600}>consultation</Text>
                       <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                        <Link href={'appointment'}><Text>Speak To Us</Text></Link>
+                        <Link href={'/appointment'}><Text>Speak To Us</Text></Link>
                       </MenuItem>
                     </Flex>
 
                     <Flex direction={"column"} mx={4} alignItems={"flex-start"} justifyContent={"flex-start"}>
                       <Text as={"h2"} mb={5} mt={4} ml={4} textTransform={"uppercase"} className={styles.cursive} fontWeight={600}>packages</Text>
                       <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                        <Link href={'appointment'}><Text>Customised Routine Package</Text></Link>
+                        <Link href={'/appointment'}><Text>Customised Routine Package</Text></Link>
                       </MenuItem>
                     </Flex>
 
                     <Flex direction={"column"} mx={4} alignItems={"flex-start"} justifyContent={"flex-start"}>
                       <Text as={"h2"} mb={5} mt={4} ml={4} textTransform={"uppercase"} className={styles.cursive} fontWeight={600}>bridal skin care</Text>
                       <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                        <Link href={'appointment'}><Text>3 Months</Text></Link>
+                        <Link href={'/appointment'}><Text>3 Months</Text></Link>
                       </MenuItem>
                       <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                        <Link href={'appointment'}><Text>6 Months</Text></Link>
+                        <Link href={'/appointment'}><Text>6 Months</Text></Link>
                       </MenuItem>
                     </Flex>
                   </Flex>
@@ -129,7 +126,7 @@ const Navbar = () => {
               </Menu>
             </Flex>
             <Spacer />
-            <Link href={'appointment'}>
+            <Link href={'/appointment'}>
               <Button 
               display={['none', 'none', 'block']} 
               rounded={'xl'} bg={"transparent"} 
@@ -179,7 +176,7 @@ const Navbar = () => {
                         </h2>
 
                         <AccordionPanel>
-                          <Link href={'appointment'}><Text my={2}>Speak To Us</Text></Link>
+                          <Link href={'/appointment'}><Text my={2}>Speak To Us</Text></Link>
                         </AccordionPanel>
                       </AccordionItem>
                       
@@ -195,7 +192,7 @@ const Navbar = () => {
                         </h2>
 
                         <AccordionPanel>
-                          <Link href={'appointment'}><Text my={2}>Customised Routine Package</Text></Link>
+                          <Link href={'/appointment'}><Text my={2}>Customised Routine Package</Text></Link>
                         </AccordionPanel>
                       </AccordionItem>
 
@@ -210,8 +207,8 @@ const Navbar = () => {
                         </h2>
 
                         <AccordionPanel>
-                          <Link href={'appointment'}><Text my={2}>3 Months</Text></Link>
-                          <Link href={'appointment'}><Text my={2}>6 Months</Text></Link>
+                          <Link href={'/appointment'}><Text my={2}>3 Months</Text></Link>
+                          <Link href={'/appointment'}><Text my={2}>6 Months</Text></Link>
                         </AccordionPanel>
                       </AccordionItem>
 
@@ -220,12 +217,12 @@ const Navbar = () => {
 
                 </Accordion>
 
-                <Link href={'blogs'}>
+                <Link href={'/blogs'}>
                   <Box flex={1} px={4} py={2}>
                     <Text>Blogs</Text>
                   </Box>
                 </Link>
-                <Link href={'shop'}>
+                <Link href={'/shop'}>
                   <Box flex={1} px={4} py={2}>
                     <Text>Shop</Text>
                   </Box>
@@ -301,7 +298,7 @@ const Navbar = () => {
 
                 </Accordion>
 
-                <Link href={'#'}>
+                <Link href={'/appointment'}>
                   <Button bg={'black'} color={'white'} rounded={0} 
                   my={16} w={'full'} _hover={{bg: "#333"}}
                   onClick={()=>{Calendly.initPopupWidget({url: 'https://calendly.com/slayitwithskin/appointment'});return false;}}>

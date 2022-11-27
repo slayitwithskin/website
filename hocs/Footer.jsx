@@ -64,10 +64,10 @@ const Footer = () => {
             <Link href={'#'}>
                 <Text fontSize={16} p={2} _hover={{ bg: 'green.600', color: 'white' }}>The Beauty Shop</Text>
             </Link>
-            <Link href={'blogs'}>
+            <Link href={'/blogs'}>
                 <Text fontSize={16} p={2} _hover={{ bg: 'green.600', color: 'white' }}>Our Blogs</Text>
             </Link>
-            <Link href={'appointment'}>
+            <Link href={'/appointment'}>
                 <Text fontSize={16} p={2} _hover={{ bg: 'green.600', color: 'white' }}>Book Appointment</Text>
             </Link>
             <Link href={'#'}>

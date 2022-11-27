@@ -4,10 +4,14 @@ import Link from 'next/link'
 
 import Navbar from '../../hocs/Navbar'
 import Footer from '../../hocs/Footer'
+import Head from 'next/head'
 
 const PrivacyPolicy = () => {
     return (
         <>
+            <Head>
+                <title>Privacy Policy | Slay it with Skin</title>
+            </Head>
             <Navbar />
             <Box p={[4, 24]} mt={[20,0]}>
                 <h1 style={{textAlign: "center", marginBottom: "2em", fontSize: "3rem"}}>Privacy Policy</h1>
