@@ -116,7 +116,7 @@ const Footer = () => {
         </Flex>
         <Link href={'https://wa.me/918237644190'} target={'_blank'}>
             <Image 
-            src={'whatsapp.png'}
+            src={'/whatsapp.png'}
             pos={'fixed'}
             bottom={8}
             right={8}
