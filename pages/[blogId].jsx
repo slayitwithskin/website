@@ -9,7 +9,7 @@ import styles from '../styles/Home.module.css'
 
 import {BsCalendar2} from 'react-icons/bs'
 
-const blog = () => {
+const blogId = () => {
     const posts = [10,11,12]
   return (
     <>
@@ -161,4 +161,4 @@ const blog = () => {
   )
 }
 
-export default blog
+export default blogId

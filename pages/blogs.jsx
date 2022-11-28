@@ -10,8 +10,10 @@ import { BsCalendar2 } from 'react-icons/bs'
 import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai'
 import Link from 'next/link'
 
-const blogs = () => {
-  const posts = [10,11,12,13,14,15,16,17,18]
+import blogs from './api/blogs'
+
+const Blogs = () => {
+  const posts = blogs
   return (
     <>
         <Head>
@@ -38,8 +40,8 @@ const blogs = () => {
         alignItems={'center'}
         justifyContent={['center', 'space-between']}
         wrap={'wrap'}>
-            {posts.map((postDate)=>
-            <Link key={postDate} href={'blog/'}>
+            {posts.map((post)=>
+            <Link key={post.id} as={post.slug} href={`blog/${post.id}`}>
                 <Box
                 my={4}
                 w={['auto','xs']}
@@ -64,7 +66,7 @@ const blogs = () => {
                     >
                     <HStack spacing={2}>
                         <BsCalendar2 fontSize={10} fontWeight={600} />
-                        <Text color={'darkslategray'} fontSize={10} fontWeight={600}>{postDate} Nov 2022</Text>
+                        <Text color={'darkslategray'} fontSize={10} fontWeight={600}>{post.id} Nov 2022</Text>
                     </HStack>
                     <Text
                     my={2}
@@ -72,13 +74,13 @@ const blogs = () => {
                     fontWeight={600}
                     textTransform={'capitalize'}
                     >
-                    Which facewash is best for your skin?
+                    {post.title}
                     </Text>
                     <Text
                     fontSize={14}
                     color={'darkslategray'}
                     >
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis consectetur...
+                        {post.intro.slice(0,80)}...
                     </Text>
                     </Box>
                 </Box>
@@ -148,4 +150,4 @@ const blogs = () => {
   )
 }
 
-export default blogs
+export default Blogs
