@@ -2,7 +2,7 @@ import React from 'react'
 
 import Navbar from '../../hocs/Navbar'
 import Footer from '../../hocs/Footer'
-import styles from '../styles/Home.module.css'
+import styles from '../../styles/Home.module.css'
 import { Text, VStack, Card, Stack, Image, CardBody, CardFooter, Button, Heading } from '@chakra-ui/react'
 
 
