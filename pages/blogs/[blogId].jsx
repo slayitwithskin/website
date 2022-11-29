@@ -2,10 +2,10 @@ import { Flex, Image, Text, Box, HStack } from '@chakra-ui/react'
 import React from 'react'
 import Link from 'next/link'
 
-import Navbar from '../hocs/Navbar'
-import Footer from '../hocs/Footer'
-import Banner from '../hocs/Banner'
-import styles from '../styles/Home.module.css'
+import Navbar from '../../hocs/Navbar'
+import Footer from '../../hocs/Footer'
+import Banner from '../../hocs/Banner'
+import styles from '../../styles/Home.module.css'
 
 import {BsCalendar2} from 'react-icons/bs'
 

@@ -2,15 +2,15 @@ import { Text, Flex, Box, Image, HStack } from '@chakra-ui/react'
 import Head from 'next/head'
 import React from 'react'
 
-import Navbar from '../hocs/Navbar'
-import Footer from '../hocs/Footer'
+import Navbar from '../../hocs/Navbar'
+import Footer from '../../hocs/Footer'
 
-import styles from '../styles/Home.module.css'
+import styles from '../../styles/Home.module.css'
 import { BsCalendar2 } from 'react-icons/bs'
 import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai'
 import Link from 'next/link'
 
-import blogs from './api/blogs'
+import blogs from '../api/blogs'
 
 const Blogs = () => {
   const posts = blogs
@@ -41,7 +41,7 @@ const Blogs = () => {
         justifyContent={['center', 'space-between']}
         wrap={'wrap'}>
             {posts.map((post)=>
-            <Link key={post.id} as={post.slug} href={`blog/${post.id}`}>
+            <Link key={post.id} as={`/blogs/${post.slug}`} href={`blogs/${post.id}`}>
                 <Box
                 my={4}
                 w={['auto','xs']}

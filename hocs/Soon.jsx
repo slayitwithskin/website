@@ -4,10 +4,14 @@ import Link from 'next/link'
 
 import styles from '../styles/Home.module.css'
 import {BsEnvelopeFill} from 'react-icons/bs'
+import Head from 'next/head'
 
 const Soon = () => {
     return (
         <>
+            <Head>
+                <title>Coming Soon!</title>
+            </Head>
 
             <Flex
                 pt={[16, 0]}

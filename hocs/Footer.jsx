@@ -26,19 +26,19 @@ const Footer = () => {
         direction={['column', 'column', 'row']}
         >
 
-            <Flex direction={'column'} alignItems={'flex-start'} justifyContent={'flex-start'} my={[8,8,0]}>
-            <Text className={styles.cursive} fontSize={28}>Slay it with Skin</Text>
-            <Text my={4} fontSize={14}>Station Road, Santacruz West
-                <br />Mumbai, Maharashtra
-                <br />PIN: 400055
-            </Text>
-            <Link href={'mailto: info@slayitwithskin.com'} target={'_blank'}>
-                <Flex alignItems={'center'}><Text fontSize={16} mr={4}><BsEnvelopeFill /></Text><Text fontSize={16}>info@slayitwithskin.com</Text></Flex>
-            </Link>
-            <Box w={4} h={2}></Box>
-            <Link href={'tel: +911234567890'} target={'_blank'}>
-                <Flex alignItems={'center'}><Text fontSize={16} mr={4}><BsTelephoneFill /></Text><Text fontSize={16}>+91 123 456 7890</Text></Flex>
-            </Link>
+            <Flex w={'xs'} direction={'column'} alignItems={'flex-start'} justifyContent={'flex-start'} my={[8,8,0]}>
+                <Text className={styles.cursive} fontSize={28}>Slay it with Skin</Text>
+                <Text my={4} fontSize={14}>Station Road, Santacruz West
+                    <br />Mumbai, Maharashtra
+                    <br />PIN: 400055
+                </Text>
+                <Link href={'mailto: info@slayitwithskin.com'} target={'_blank'}>
+                    <Flex alignItems={'center'}><Text fontSize={16} mr={4}><BsEnvelopeFill /></Text><Text fontSize={16}>info@slayitwithskin.com</Text></Flex>
+                </Link>
+                <Box w={4} h={2}></Box>
+                <Link href={'tel: +919004574190'} target={'_blank'}>
+                    <Flex alignItems={'center'}><Text fontSize={16} mr={4}><BsTelephoneFill /></Text><Text fontSize={16}>+91 90045 74190</Text></Flex>
+                </Link>
             </Flex>
 
             <Flex w={'full'} direction={'column'} alignItems={'flex-start'} justifyContent={'flex-start'} my={[4,4,0]}>
