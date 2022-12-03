@@ -21,7 +21,7 @@ const blogId = async () => {
 
     return (
         <>
-            <Head><title>{postTitle}</title></Head>
+            <Head><title>Title</title></Head>
             <Navbar />
             <Text
                 className={styles.cursive}
