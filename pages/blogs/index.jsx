@@ -40,7 +40,7 @@ const Blogs = () => {
         alignItems={'center'}
         justifyContent={['center', 'space-between']}
         wrap={'wrap'}>
-            {posts.map((post)=>
+            {posts.slice(0,9).map((post)=>
             <Link key={post.id} as={`/blogs/${post.slug}`} href={`blogs/${post.id}`}>
                 <Box
                 my={4}
@@ -66,7 +66,7 @@ const Blogs = () => {
                     >
                     <HStack spacing={2}>
                         <BsCalendar2 fontSize={10} fontWeight={600} />
-                        <Text color={'darkslategray'} fontSize={10} fontWeight={600}>{post.id} Nov 2022</Text>
+                        <Text color={'darkslategray'} fontSize={10} fontWeight={600}>{post.id || "NA"} Nov 2022</Text>
                     </HStack>
                     <Text
                     my={2}
@@ -74,13 +74,13 @@ const Blogs = () => {
                     fontWeight={600}
                     textTransform={'capitalize'}
                     >
-                    {post.title}
+                    {post.title.slice(0,40) || "No title"}...
                     </Text>
                     <Text
                     fontSize={14}
                     color={'darkslategray'}
                     >
-                        {post.intro.slice(0,80)}...
+                        {post.intro.slice(0,80) || "Please add description to this post"}...
                     </Text>
                     </Box>
                 </Box>
