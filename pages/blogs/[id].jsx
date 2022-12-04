@@ -1,6 +1,7 @@
 import { Flex, Image, Text, Box, HStack, Spinner } from '@chakra-ui/react'
 import React from 'react'
 import Link from 'next/link'
+const parse = require('html-react-parser')
 
 import Navbar from '../../hocs/Navbar'
 import Footer from '../../hocs/Footer'
@@ -65,7 +66,7 @@ const Post = ({ data }) => {
                 justifyContent={'center'}
             >
                 <Text mr={[0, 12]} w={'full'} fontSize={20} color={'darkslategray'}>
-                    {data.intro}
+                    {parse(data.intro)}
                 </Text>
                 <Image
                     src={'https://goodmockups.com/wp-content/uploads/2019/11/Free-Natural-Face-Wash-Pump-Spray-Scrub-Jar-Mockup-PSD-File-1.jpg'}
@@ -76,11 +77,11 @@ const Post = ({ data }) => {
                     objectPosition={'center'}
                 />
             </Flex>
-            <Text
+            <Box
                 p={[4, 16]}
             >
-                {data.content}
-            </Text>
+                {parse(data.content)}
+            </Box>
             <Box mt={0} mx={'auto'} w={28} h={.5} bg={'blackAlpha.800'}></Box>
 
             <Text p={[4, 16]} fontSize={24}>
