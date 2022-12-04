@@ -53,7 +53,7 @@ const Blogs = () => {
                 justifyContent={['center', 'space-between']}
                 wrap={'wrap'}>
                 {posts.slice(indexOfFirstPost, indexOfLastPost).map((post) =>
-                    <Link key={post.id} as={`/blogs/${post.slug}?id=${post.id}`} href={`blogs/${post.id}`}>
+                    <Link key={post.id} as={`/blogs/${post.id}?title=${post.slug}`} href={`blogs/${post.id}`}>
                         <Box
                             my={4}
                             w={['auto', 'xs']}

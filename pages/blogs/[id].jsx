@@ -1,4 +1,4 @@
-import { Flex, Image, Text, Box, HStack } from '@chakra-ui/react'
+import { Flex, Image, Text, Box, HStack, Spinner } from '@chakra-ui/react'
 import { React, useState } from 'react'
 import Link from 'next/link'
 
@@ -6,30 +6,52 @@ import Navbar from '../../hocs/Navbar'
 import Footer from '../../hocs/Footer'
 import Banner from '../../hocs/Banner'
 import styles from '../../styles/Home.module.css'
+import { BsCalendar2 } from 'react-icons/bs'
 
-import blogs from '../api/blogs'
 
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 
+import blogs from '../api/blogs'
 
-const blogId = async () => {
+export function getStaticPaths() {
+    
+    const allPosts = blogs.map(blog =>(blog.id))
+
+    return {
+        paths: allPosts.map(post => ({params: {id: `${post}`}})),
+        fallback: false, 
+    }
+}
+
+export const getStaticProps = (context) => {
+    const postId = context.params.id
+    const data = blogs[postId - 1]
+
+    return {
+        props: {
+            data
+        }
+    }
+}
+
+
+const blogId = ({ data }) => {
     const router = useRouter()
-    const { id } = router.query
-    const [posts, setposts] = useState(blogs)
-    postTitle = posts[Number(id)].title
+    const { title } = router.query
 
     return (
         <>
-            <Head><title>Title</title></Head>
+            <Head><title>{data.title}</title></Head>
             <Navbar />
             <Text
                 className={styles.cursive}
                 mt={20}
                 px={[4, 16]}
                 fontSize={[36, 56]}
+                textTransform={'capitalize'}
             >
-                
+                {data.title}
             </Text>
             <Text color={'darkslategray'} px={[4, 16]}>
                 By Robert Downey Jr. &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; 23 November, 2022
@@ -42,8 +64,8 @@ const blogId = async () => {
                 alignItems={'flex-start'}
                 justifyContent={'center'}
             >
-                <Text mr={[0, 12]} w={'full'}>
-                    { }
+                <Text mr={[0, 12]} w={'full'} fontSize={20} color={'darkslategray'}>
+                    {data.intro}
                 </Text>
                 <Image
                     src={'https://goodmockups.com/wp-content/uploads/2019/11/Free-Natural-Face-Wash-Pump-Spray-Scrub-Jar-Mockup-PSD-File-1.jpg'}
@@ -57,41 +79,7 @@ const blogId = async () => {
             <Text
                 p={[4, 16]}
             >
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo, in vero. Deserunt
-                facere magnam repudiandae laborum debitis officiis harum impedit. Inventore eveniet
-                molestiae veritatis ratione dolores unde voluptatum voluptatibus modi suscipit
-                dolorum tempore aut quia pariatur earum, voluptates laudantium, doloremque nemo
-                exercitationem cupiditate ullam perspiciatis quae id repudiandae! Quod id porro
-                aliquam iure, illum, deleniti facere mollitia cupiditate quam nobis dolorem architecto
-                adipisci, repudiandae sed a nostrum exercitationem commodi ducimus odit! Nisi
-                reprehenderit ratione dolor reiciendis placeat porro facilis? Mollitia, quo autem
-                eos odit dignissimos optio perspiciatis praesentium aperiam numquam laudantium inventore
-                enim minus illum ab exercitationem id vero iure voluptatem, alias nulla est, officiis
-                qui sapiente? Aliquam qui ipsam laborum earum esse quibusdam debitis eius quae, eum
-                adipisci nemo. adipisci, repudiandae sed a nostrum exercitationem commodi ducimus odit! Nisi
-                reprehenderit ratione dolor reiciendis placeat porro facilis? Mollitia, quo autem
-                eos odit dignissimos optio perspiciatis praesentium aperiam numquam laudantium inventore
-                enim minus illum ab exercitationem id vero iure voluptatem, alias nulla est, officiis
-                qui sapiente? Aliquam qui ipsam laborum earum esse quibusdam debitis eius quae, eum
-                adipisci nemo.
-                <br />
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo, in vero. Deserunt
-                facere magnam repudiandae laborum debitis officiis harum impedit. Inventore eveniet
-                molestiae veritatis ratione dolores unde voluptatum voluptatibus modi suscipit
-                dolorum tempore aut quia pariatur earum, voluptates laudantium, doloremque nemo
-                exercitationem cupiditate ullam perspiciatis quae id repudiandae! Quod id porro
-                aliquam iure, illum, deleniti facere mollitia cupiditate quam nobis dolorem architecto
-                adipisci, repudiandae sed a nostrum exercitationem commodi ducimus odit! Nisi
-                reprehenderit ratione dolor reiciendis placeat porro facilis? Mollitia, quo autem
-                eos odit dignissimos optio perspiciatis praesentium aperiam numquam laudantium inventore
-                enim minus illum ab exercitationem id vero iure voluptatem, alias nulla est, officiis
-                qui sapiente? Aliquam qui ipsam laborum earum esse quibusdam debitis eius quae, eum
-                adipisci nemo. adipisci, repudiandae sed a nostrum exercitationem commodi ducimus odit! Nisi
-                reprehenderit ratione dolor reiciendis placeat porro facilis? Mollitia, quo autem
-                eos odit dignissimos optio perspiciatis praesentium aperiam numquam laudantium inventore
-                enim minus illum ab exercitationem id vero iure voluptatem, alias nulla est, officiis
-                qui sapiente? Aliquam qui ipsam laborum earum esse quibusdam debitis eius quae, eum
-                adipisci nemo.
+                {data.content}
             </Text>
             <Box mt={0} mx={'auto'} w={28} h={.5} bg={'blackAlpha.800'}></Box>
 
@@ -99,14 +87,14 @@ const blogId = async () => {
                 Recent Blogs
             </Text>
 
-            {/* <Flex
+            <Flex
                 px={[4, 16]}
                 pb={8}
                 alignItems={'center'}
                 justifyContent={['center', 'space-between']}
                 wrap={'wrap'}>
-                {posts.slice(posts.length - 3, posts.length).map((post) =>
-                    <Link key={post} href={`blogs/${post.id}`} as={`/blogs/${post.slug}`}>
+                {blogs.slice(blogs.length - 3, blogs.length).map((post) =>
+                    <Link key={post} href={`blogs/${post.id}`} as={`/blogs/${post.id}?title=${post.slug}`}>
                         <Box
                             my={4}
                             w={['auto', 'xs']}
@@ -139,7 +127,7 @@ const blogId = async () => {
                                     fontWeight={600}
                                     textTransform={'capitalize'}
                                 >
-                                    {post.title.slice(0, 40) || "No title"}...
+                                    {post.title.slice(0, 26) || "No title"}...
                                 </Text>
                                 <Text
                                     fontSize={14}
@@ -151,11 +139,12 @@ const blogId = async () => {
                         </Box>
                     </Link>
                 )}
-            </Flex> */}
+            </Flex>
             <Banner />
             <Footer />
         </>
     )
+
 }
 
 export default blogId
