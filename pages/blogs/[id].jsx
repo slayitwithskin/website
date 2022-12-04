@@ -1,5 +1,5 @@
 import { Flex, Image, Text, Box, HStack, Spinner } from '@chakra-ui/react'
-import { React, useState } from 'react'
+import React from 'react'
 import Link from 'next/link'
 
 import Navbar from '../../hocs/Navbar'
@@ -36,7 +36,7 @@ export const getStaticProps = (context) => {
 }
 
 
-const blogId = ({ data }) => {
+const Post = ({ data }) => {
     const router = useRouter()
     const { title } = router.query
 
@@ -147,4 +147,4 @@ const blogId = ({ data }) => {
 
 }
 
-export default blogId
+export default Post
