@@ -17,3 +17,12 @@
 button.selected{
   background: #E3CAA5;
 }
+
+.datepicker{
+  position: relative;
+  width: 100%;
+  border: 1px solid rgb(220,220,220);
+  border-radius: 8px;
+  padding: .5em 1em;
+  outline: none;
+}
