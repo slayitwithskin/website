@@ -25,4 +25,5 @@ button.selected{
   border-radius: 8px;
   padding: .5em 1em;
   outline: none;
+  cursor: pointer;
 }

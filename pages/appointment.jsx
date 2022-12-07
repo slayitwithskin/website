@@ -1,20 +1,63 @@
-import { React, useState } from 'react'
+import { React, useState, useEffect } from 'react'
 import styles from '../styles/Home.module.css'
 import Navbar from '../hocs/Navbar'
 import Footer from '../hocs/Footer'
 import Head from 'next/head'
 
 import { Flex, Image, Text, Box, HStack, Container, VStack, Button, Input, Textarea, Stack } from '@chakra-ui/react'
-import DatePicker from 'react-datepicker'
-import 'react-datepicker/dist/react-datepicker.css'
+// import DatePicker from 'react-datepicker'
+// import 'react-datepicker/dist/react-datepicker.css'
+import DatePicker from 'react-flatpickr'
+import 'flatpickr/dist/themes/material_blue.css'
 
 import appointments from './api/appointments'
+
 
 const Appointment = () => {
     var now = new Date()
     const [age, setAge] = useState()
-    const [appointment, setAppointment] = useState(now)
+    const [appointment, setAppointment] = useState([now])
     const [gender, setGender] = useState('female')
+
+    const availableSlots = [
+        "11:00 - 11:30",
+        "11:30 - 12:00",
+        "12:00 - 12:30",
+        "12:30 - 13:00",
+        "13:00 - 13:30",
+        "13:30 - 14:00",
+        "14:00 - 14:30",
+        "14:30 - 15:00",
+        "15:00 - 15:30",
+        "15:30 - 16:00",
+        "16:00 - 16:30",
+        "16:30 - 17:00",
+        "17:00 - 17:30",
+        "17:30 - 18:00",
+        "18:00 - 18:30",
+        "18:30 - 19:00",
+    ]
+
+    useEffect(() => {
+        const timeslots = document.querySelectorAll('.timeslot')
+        appointments.map((slot)=>{
+            if(slot.date===appointment[0].getDate() && slot.month===appointment[0].getMonth()+1 && slot.year===appointment[0].getFullYear()){
+                slot.bookings.map((bookedSlot)=>{
+                    document.getElementById(bookedSlot).setAttribute("disabled", true)
+                })
+                
+                console.log("Done!")
+            }
+            else{
+                timeslots.forEach(element => element.removeAttribute("disabled"))
+            }
+        })
+    }, [appointment])
+    
+
+    
+        
+    
 
     return (
         <>
@@ -39,10 +82,10 @@ const Appointment = () => {
                             <Box mt={4}>
                                 <Text color={'rgb(100,100,100)'} pb={2}>Your Gender</Text>
                                 <HStack spacing={6}>
-                                    <Button id='male' _hover={{ bg: '#E3CAA5' }} onClick={(e) => { setGender('male'); e.target.classList.toggle('selected') }}>
+                                    <Button id='male' onClick={(e) => { setGender('male'); e.target.classList.toggle('selected') }}>
                                         Male
                                     </Button>
-                                    <Button id='female' className='selected' _hover={{ bg: '#E3CAA5' }} onClick={(e) => { setGender('female'); e.target.classList.toggle('selected') }}>
+                                    <Button id='female' className='' onClick={(e) => { setGender('female'); e.target.classList.toggle('selected') }}>
                                         Female
                                     </Button>
                                 </HStack>
@@ -59,36 +102,37 @@ const Appointment = () => {
                         <HStack w={'full'} my={2}>
                             <Box w={'full'}>
                                 <Text color={'rgb(100,100,100)'} pb={2}>Your Preferred Date of Appointment</Text>
-                                <DatePicker 
+                                {/* <DatePicker 
                                 selected={appointment}
-                                onChange={date => setAppointment(date)}
+                                onChange={appointmentDate => {setAppointment(appointmentDate)}}
                                 minDate={now.setDate(now.getDate() + 1)}
                                 maxDate={now.setDate(now.getDate() + 15)}
                                 className='datepicker'
                                 dateFormat={'dd MMMM yyyy'}
-                                withPortal
+                                /> */}
+                                <DatePicker 
+                                value={appointment} 
+                                onChange={(appointmentDate) => setAppointment(appointmentDate)}
+                                options={{
+                                    defaultDate: now.setDate(now.getDate() + 1),
+                                    minDate: now.setDate(now.getDate() + 1), 
+                                    maxDate: now.setDate(now.getDate() + 15),
+                                    dateFormat: "d M Y",
+                                    altInput: true,
+                                    altInputClass: 'datepicker',
+                                    altFormat: "d m Y",
+                                }}
+                                style={{padding: ".5em .75em", border: '1px solid rgb(220,220,220)', width: '100%', borderRadius: "8px"}}
                                 />
                             </Box>
                         </HStack>
                         <Box w={'full'} pt={4}>
                             <Text color={'rgb(100,100,100)'}>Select Your Time Slot(s)</Text>
                             <Flex w={'full'} wrap={'wrap'} alignItems={'center'} justifyContent={['center', 'flex-start']}>
-                                <Button m={[2,3]} className={'timeslot'} _hover={{ bg: '#E3CAA5' }} onClick={(e) => { e.target.classList.toggle('selected') }} id={'1'} disabled={false}>11:00 - 11:30</Button>
-                                <Button m={[2,3]} className={'timeslot'} _hover={{ bg: '#E3CAA5' }} onClick={(e) => { e.target.classList.toggle('selected') }} id={'2'} disabled={false}>11:30 - 12:00</Button>
-                                <Button m={[2,3]} className={'timeslot'} _hover={{ bg: '#E3CAA5' }} onClick={(e) => { e.target.classList.toggle('selected') }} id={'3'} disabled={true}>12:00 - 12:30</Button>
-                                <Button m={[2,3]} className={'timeslot'} _hover={{ bg: '#E3CAA5' }} onClick={(e) => { e.target.classList.toggle('selected') }} id={'4'} disabled={true}>12:30 - 13:00</Button>
-                                <Button m={[2,3]} className={'timeslot'} _hover={{ bg: '#E3CAA5' }} onClick={(e) => { e.target.classList.toggle('selected') }} id={'5'} disabled={false}>13:00 - 13:30</Button>
-                                <Button m={[2,3]} className={'timeslot'} _hover={{ bg: '#E3CAA5' }} onClick={(e) => { e.target.classList.toggle('selected') }} id={'6'} disabled={false}>13:30 - 14:00</Button>
-                                <Button m={[2,3]} className={'timeslot'} _hover={{ bg: '#E3CAA5' }} onClick={(e) => { e.target.classList.toggle('selected') }} id={'7'} disabled={true}>14:00 - 14:30</Button>
-                                <Button m={[2,3]} className={'timeslot'} _hover={{ bg: '#E3CAA5' }} onClick={(e) => { e.target.classList.toggle('selected') }} id={'8'} disabled={true}>14:30 - 15:00</Button>
-                                <Button m={[2,3]} className={'timeslot'} _hover={{ bg: '#E3CAA5' }} onClick={(e) => { e.target.classList.toggle('selected') }} id={'9'} disabled={false}>15:00 - 15:30</Button>
-                                <Button m={[2,3]} className={'timeslot'} _hover={{ bg: '#E3CAA5' }} onClick={(e) => { e.target.classList.toggle('selected') }} id={'10'} disabled={false}>15:30 - 16:00</Button>
-                                <Button m={[2,3]} className={'timeslot'} _hover={{ bg: '#E3CAA5' }} onClick={(e) => { e.target.classList.toggle('selected') }} id={'11'} disabled={false}>16:00 - 16:30</Button>
-                                <Button m={[2,3]} className={'timeslot'} _hover={{ bg: '#E3CAA5' }} onClick={(e) => { e.target.classList.toggle('selected') }} id={'12'} disabled={true}>16:30 - 17:00</Button>
-                                <Button m={[2,3]} className={'timeslot'} _hover={{ bg: '#E3CAA5' }} onClick={(e) => { e.target.classList.toggle('selected') }} id={'13'} disabled={false}>17:00 - 17:30</Button>
-                                <Button m={[2,3]} className={'timeslot'} _hover={{ bg: '#E3CAA5' }} onClick={(e) => { e.target.classList.toggle('selected') }} id={'14'} disabled={false}>17:30 - 18:00</Button>
-                                <Button m={[2,3]} className={'timeslot'} _hover={{ bg: '#E3CAA5' }} onClick={(e) => { e.target.classList.toggle('selected') }} id={'15'} disabled={true}>18:00 - 18:30</Button>
-                                <Button m={[2,3]} className={'timeslot'} _hover={{ bg: '#E3CAA5' }} onClick={(e) => { e.target.classList.toggle('selected') }} id={'16'} disabled={true}>18:30 - 19:00</Button>
+                                {availableSlots.map((element, key)=>(
+                                    <Button m={[2,3]} className={'timeslot'} onClick={(e) => { e.target.classList.toggle('selected') }} id={`slot${key+1}`} disabled={false}>{element}</Button>
+                                ))}
+                                
                             </Flex>
                         </Box>
                     </VStack>
