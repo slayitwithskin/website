@@ -130,7 +130,7 @@ const Appointment = () => {
                             <Text color={'rgb(100,100,100)'}>Select Your Time Slot(s)</Text>
                             <Flex w={'full'} wrap={'wrap'} alignItems={'center'} justifyContent={['center', 'flex-start']}>
                                 {availableSlots.map((element, key)=>(
-                                    <Button m={[2,3]} className={'timeslot'} onClick={(e) => { e.target.classList.toggle('selected') }} id={`slot${key+1}`} disabled={false}>{element}</Button>
+                                    <Button key={key} m={[2,3]} className={'timeslot'} onClick={(e) => { e.target.classList.toggle('selected') }} id={`slot${key+1}`} disabled={false}>{element}</Button>
                                 ))}
                                 
                             </Flex>
