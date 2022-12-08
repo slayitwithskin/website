@@ -40,24 +40,22 @@ const Appointment = () => {
 
     useEffect(() => {
         const timeslots = document.querySelectorAll('.timeslot')
-        appointments.map((slot)=>{
-            if(slot.date===appointment[0].getDate() && slot.month===appointment[0].getMonth()+1 && slot.year===appointment[0].getFullYear()){
-                slot.bookings.map((bookedSlot)=>{
-                    document.getElementById(bookedSlot).setAttribute("disabled", true)
-                })
-                
+        const slots = appointments.find(slot => slot.fulldate === `${appointment[0].getDate()}` + `${appointment[0].getMonth() + 1}` + `${appointment[0].getFullYear()}`)
+        if (slots) {
+            slots.bookings.map((bookedSlot) => {
+                document.getElementById(bookedSlot).setAttribute("disabled", true)
                 console.log("Done!")
-            }
-            else{
-                timeslots.forEach(element => element.removeAttribute("disabled"))
-            }
-        })
+            })
+        }
+        else{
+            timeslots.forEach(element => element.removeAttribute("disabled"))
+        }
     }, [appointment])
-    
 
-    
-        
-    
+
+
+
+
 
     return (
         <>
@@ -91,9 +89,9 @@ const Appointment = () => {
                                 </HStack>
                                 <Input type={'hidden'} name={'gender'} value={gender} />
                             </Box>
-                            <Flex w={'full'} direction={'column'} alignItems={'flex-start'} justifyContent={'flex-start'} pt={4} pl={[0,8]}>
+                            <Flex w={'full'} direction={'column'} alignItems={'flex-start'} justifyContent={'flex-start'} pt={4} pl={[0, 8]}>
                                 <Text color={'rgb(100,100,100)'} pb={2}>Your Age</Text>
-                                <Input w={'full'} type={'tel'} value={age} placeholder={'e.g, 21'} onChange={(e)=>setAge(e.target.value)} />
+                                <Input w={'full'} type={'tel'} value={age} placeholder={'e.g, 21'} onChange={(e) => setAge(e.target.value)} />
                             </Flex>
                         </Stack>
                     </VStack>
@@ -110,29 +108,28 @@ const Appointment = () => {
                                 className='datepicker'
                                 dateFormat={'dd MMMM yyyy'}
                                 /> */}
-                                <DatePicker 
-                                value={appointment} 
-                                onChange={(appointmentDate) => setAppointment(appointmentDate)}
-                                options={{
-                                    defaultDate: now.setDate(now.getDate() + 1),
-                                    minDate: now.setDate(now.getDate() + 1), 
-                                    maxDate: now.setDate(now.getDate() + 15),
-                                    dateFormat: "d M Y",
-                                    altInput: true,
-                                    altInputClass: 'datepicker',
-                                    altFormat: "d m Y",
-                                }}
-                                style={{padding: ".5em .75em", border: '1px solid rgb(220,220,220)', width: '100%', borderRadius: "8px"}}
+                                <DatePicker
+                                    value={appointment}
+                                    onChange={(appointmentDate) => setAppointment(appointmentDate)}
+                                    options={{
+                                        minDate: now.setDate(now.getDate() + 1),
+                                        maxDate: now.setDate(now.getDate() + 15),
+                                        dateFormat: "d M Y",
+                                        altInput: true,
+                                        altInputClass: 'datepicker',
+                                        altFormat: "d m Y",
+                                    }}
+                                    style={{ padding: ".5em .75em", border: '1px solid rgb(220,220,220)', width: '100%', borderRadius: "8px" }}
                                 />
                             </Box>
                         </HStack>
                         <Box w={'full'} pt={4}>
                             <Text color={'rgb(100,100,100)'}>Select Your Time Slot(s)</Text>
                             <Flex w={'full'} wrap={'wrap'} alignItems={'center'} justifyContent={['center', 'flex-start']}>
-                                {availableSlots.map((element, key)=>(
-                                    <Button key={key} m={[2,3]} className={'timeslot'} onClick={(e) => { e.target.classList.toggle('selected') }} id={`slot${key+1}`} disabled={false}>{element}</Button>
+                                {availableSlots.map((element, key) => (
+                                    <Button key={key} m={[2, 3]} className={'timeslot'} onClick={(e) => { e.target.classList.toggle('selected') }} id={`slot${key + 1}`} disabled={false}>{element}</Button>
                                 ))}
-                                
+
                             </Flex>
                         </Box>
                     </VStack>
@@ -157,7 +154,7 @@ const Appointment = () => {
                                     ₹ 899
                                 </Text>
                             </Box>
-                            <Button colorScheme={'facebook'} rounded={0} p={6} fontSize={[12,16]} className={styles.monts} textTransform={'uppercase'}>
+                            <Button colorScheme={'facebook'} rounded={0} p={6} fontSize={[12, 16]} className={styles.monts} textTransform={'uppercase'}>
                                 Pay with Razorpay
                             </Button>
                         </HStack>
