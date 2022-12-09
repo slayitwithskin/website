@@ -3,7 +3,6 @@ import styles from '../styles/Home.module.css'
 import Navbar from '../hocs/Navbar'
 import Footer from '../hocs/Footer'
 import Head from 'next/head'
-import useRazorpay from 'react-razorpay'
 
 import { Flex, Text, Box, HStack, Container, VStack, Button, Input, Textarea, Stack } from '@chakra-ui/react'
 import DatePicker from 'react-flatpickr'
@@ -14,7 +13,7 @@ import appointments from './api/appointments'
 
 const Appointment = () => {
     var now = new Date()
-    const Razorpay = useRazorpay()
+    const baseRate = 899
     const [age, setAge] = useState()
     const [appointment, setAppointment] = useState([now])
     const [name, setName] = useState("")
@@ -56,65 +55,67 @@ const Appointment = () => {
         }
     }, [appointment])
 
-    const createOrder = async () => {
-        const order = await fetch('https://api.razorpay.com/v1/orders', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': 'https://siws.vercel.app',
-                'Authorization': 'Basic '+ window.btoa('rzp_test_ll7E6IYVCD5MFP:7ODMbca4hbkRFKHizgfCFbhQ')
-            },
-            body: JSON.stringify({
-                "amount": `${selectedSlots.length*899*100}`,
-                "currency": "INR",
-                "receipt": `Receipt 1`,
-            }),
-            mode: 'cors'
-        })
-        
-        return order
-    }
+    const initializeRazorpay = () => {
+        return new Promise((resolve) => {
+            const script = document.createElement("script");
+            script.src = "https://checkout.razorpay.com/v1/checkout.js";
+
+            script.onload = () => {
+                resolve(true);
+            };
+            script.onerror = () => {
+                resolve(false);
+            };
+
+            document.body.appendChild(script);
+        });
+    };
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        const order = await createOrder(); //  Create order on your backend
+        const res = await initializeRazorpay();
 
-        const options = {
-            key: "rzp_test_LP5SCJznm4op2b", // Enter the Key ID generated from the Dashboard
-            amount: selectedSlots.length*899*100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
-            currency: "INR",
-            name: "Slay it with skin",
-            description: "Appointment Booking",
-            image: "https://link.storjshare.io/raw/jxpsnw6z3y4u3zpdu5o7o7cgnxhq/website-assets/dnlogonewCIRCLE.png",
-            order_id: order.id, //This is a sample Order ID. Pass the `id` obtained in the response of createOrder().
+        if (!res) {
+            alert("Razorpay SDK Failed to load");
+            return;
+        }
+
+        // Make API call to the serverless API
+        const data = await fetch("/api/razorpay", { 
+            method: "POST",
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                amount: selectedSlots.length * baseRate
+            })
+         }).then((t) =>
+            t.json()
+        );
+        console.log(data);
+        var options = {
+            key: process.env.RAZORPAY_KEY, // Enter the Key ID generated from the Dashboard
+            name: "Manu Arora Pvt Ltd",
+            currency: data.currency,
+            amount: data.amount,
+            order_id: data.id,
+            description: "Thankyou for your test donation",
+            image: "https://manuarora.in/logo.png",
             handler: function (response) {
+                // Validate payment at server - using webhooks is a better idea.
                 alert(response.razorpay_payment_id);
                 alert(response.razorpay_order_id);
                 alert(response.razorpay_signature);
             },
             prefill: {
-                name: name,
-                email: email || null,
-                contact: phone,
+                name: "Manu Arora",
+                email: "manuarorawork@gmail.com",
+                contact: "9999999999",
             },
-            theme: {
-                color: "#3399cc",
-            },
+        };
 
-        }
-        const rzp1 = new Razorpay(options);
-
-        rzp1.on("payment.failed", function (response) {
-            alert(response.error.code);
-            alert(response.error.description);
-            alert(response.error.source);
-            alert(response.error.step);
-            alert(response.error.reason);
-            alert(response.error.metadata.order_id);
-            alert(response.error.metadata.payment_id);
-        });
-
-        rzp1.open();
+        const paymentObject = new window.Razorpay(options);
+        paymentObject.open();
     }
 
 
@@ -224,7 +225,7 @@ const Appointment = () => {
                                         Total Payable
                                     </Text>
                                     <Text fontSize={24} className={styles.monts}>
-                                        ₹ {selectedSlots.length * 899}
+                                        ₹ {selectedSlots.length * baseRate}
                                     </Text>
                                 </Box>
                                 <Button colorScheme={'facebook'}
