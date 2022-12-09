@@ -95,12 +95,12 @@ const Appointment = () => {
         console.log(data);
         var options = {
             key: process.env.RAZORPAY_KEY, // Enter the Key ID generated from the Dashboard
-            name: "Manu Arora Pvt Ltd",
+            name: "Slay it with skin",
             currency: data.currency,
             amount: data.amount,
             order_id: data.id,
-            description: "Thankyou for your test donation",
-            image: "https://manuarora.in/logo.png",
+            description: "Thankyou for your booking your appointment",
+            image: "https://avatars.githubusercontent.com/u/7713209?s=280&v=4",
             handler: function (response) {
                 // Validate payment at server - using webhooks is a better idea.
                 alert(response.razorpay_payment_id);
@@ -108,9 +108,9 @@ const Appointment = () => {
                 alert(response.razorpay_signature);
             },
             prefill: {
-                name: "Manu Arora",
-                email: "manuarorawork@gmail.com",
-                contact: "9999999999",
+                name: name,
+                email: email,
+                contact: phone,
             },
         };
 
@@ -144,7 +144,7 @@ const Appointment = () => {
                                 <Input variant={'flushed'} placeholder={'Your Full Name*'} required value={name} onChange={e => setName(e.target.value)} />
                             </HStack>
                             <HStack w={'full'} my={2}>
-                                <Input variant={'flushed'} type={'email'} placeholder={'Your Email ID'} value={email} onChange={e => setEmail(e.target.value)} />
+                                <Input variant={'flushed'} type={'email'} placeholder={'Your Email ID*'} required value={email} onChange={e => setEmail(e.target.value)} />
                                 <Input variant={'flushed'} type={'tel'} placeholder={'Your Phone Number*'} required value={phone} onChange={e => setPhone(e.target.value)} />
                             </HStack>
                             <Stack direction={["column", "row"]} w={'full'} my={2}>
