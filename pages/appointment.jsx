@@ -4,7 +4,25 @@ import Navbar from '../hocs/Navbar'
 import Footer from '../hocs/Footer'
 import Head from 'next/head'
 
-import { Flex, Text, Box, HStack, Container, VStack, Button, Input, Textarea, Stack } from '@chakra-ui/react'
+import {
+    Flex,
+    Text,
+    Box,
+    HStack,
+    Container,
+    VStack,
+    Button,
+    Input,
+    Textarea,
+    Stack,
+    Modal,
+    ModalOverlay,
+    ModalBody,
+    ModalContent,
+    ModalHeader,
+    ModalFooter,
+    useDisclosure
+} from '@chakra-ui/react'
 import DatePicker from 'react-flatpickr'
 import 'flatpickr/dist/themes/material_blue.css'
 
@@ -22,6 +40,19 @@ const Appointment = () => {
     const [selectedSlots, setSelectedSlots] = useState([])
     const [phone, setPhone] = useState("")
     const [details, setDetails] = useState("")
+    const [tranxnData, setTranxnData] = useState({
+        paymentId: "",
+        orderId: "",
+    })
+
+    const [modalProps, setModalProps] = useState({
+        status: false,
+        title: "Your payment was not successful!",
+        paymentId: tranxnData.paymentId,
+        orderId: tranxnData.orderId,
+    })
+    const { onClose } = useDisclosure()
+
     const availableSlots = [
         "11:00 - 11:30",
         "11:30 - 12:00",
@@ -42,18 +73,24 @@ const Appointment = () => {
     ]
 
     useEffect(() => {
+        document.getElementById(gender).style.background = '#E3CAA5'
+        gender === 'male' ? document.getElementById('female').style.background = "#edf2f7" : document.getElementById('male').style.background = "#edf2f7"
+    }, [gender])
+
+    useEffect(() => {
         const timeslots = document.querySelectorAll('.timeslot')
         const slots = appointments.find(slot => slot.fulldate === `${appointment[0].getDate()}` + `${appointment[0].getMonth() + 1}` + `${appointment[0].getFullYear()}`)
         if (slots) {
             slots.bookings.map((bookedSlot) => {
                 document.getElementById(bookedSlot).setAttribute("disabled", true)
-                console.log("Done!")
             })
         }
         else {
             timeslots.forEach(element => element.removeAttribute("disabled"))
         }
     }, [appointment])
+
+
 
     const initializeRazorpay = () => {
         return new Promise((resolve) => {
@@ -71,6 +108,37 @@ const Appointment = () => {
         });
     };
 
+    const triggerMail = (rzpresponse) => {
+        fetch('/api/mailer', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'User-Agent': '*',
+            },
+            body: JSON.stringify({
+                name,
+                phone,
+                email,
+                gender,
+                age,
+                date: appointment.toString(),
+                slots: `${selectedSlots.toString()}`,
+                details,
+                paymentId: rzpresponse.razorpay_payment_id,
+                orderId: rzpresponse.razorpay_order_id,
+            })
+        }).then((res) => {
+            setModalProps({
+                ...modalProps,
+                title: "Your payment was successful!",
+                status: true,
+                paymentId: rzpresponse.razorpay_payment_id,
+                orderId: rzpresponse.razorpay_order_id,
+            })
+        })
+    }
+
     const handleSubmit = async (e) => {
         e.preventDefault()
         const res = await initializeRazorpay();
@@ -81,15 +149,15 @@ const Appointment = () => {
         }
 
         // Make API call to the serverless API
-        const data = await fetch("/api/razorpay", { 
+        const data = await fetch("/api/razorpay", {
             method: "POST",
             headers: {
-              'Content-Type': 'application/json'
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify({
                 amount: selectedSlots.length * baseRate
             })
-         }).then((t) =>
+        }).then((t) =>
             t.json()
         );
         console.log(data);
@@ -103,9 +171,16 @@ const Appointment = () => {
             image: "https://avatars.githubusercontent.com/u/7713209?s=280&v=4",
             handler: function (response) {
                 // Validate payment at server - using webhooks is a better idea.
-                alert(response.razorpay_payment_id);
-                alert(response.razorpay_order_id);
-                alert(response.razorpay_signature);
+                setModalProps({
+                    ...modalProps,
+                    paymentId: response.razorpay_payment_id,
+                    orderId: response.razorpay_order_id,
+                })
+                if (response.razorpay_payment_id)
+                    triggerMail(response)
+                else {
+                    setModalProps({ ...modalProps, title: "Your payment could not be completed!", status: true })
+                }
             },
             prefill: {
                 name: name,
@@ -151,10 +226,14 @@ const Appointment = () => {
                                 <Box mt={4}>
                                     <Text color={'rgb(100,100,100)'} pb={2}>Your Gender</Text>
                                     <HStack spacing={6}>
-                                        <Button id='male' onClick={(e) => { setGender('male'); e.target.classList.toggle('selected') }}>
+                                        <Button id='male'
+                                            onClick={(e) => { setGender('male') }}
+                                        >
                                             Male
                                         </Button>
-                                        <Button id='female' className='' onClick={(e) => { setGender('female'); e.target.classList.toggle('selected') }}>
+                                        <Button id='female'
+                                            onClick={(e) => { setGender('female') }}
+                                        >
                                             Female
                                         </Button>
                                     </HStack>
@@ -197,6 +276,8 @@ const Appointment = () => {
                                             key={key} m={[2, 3]} className={'timeslot'}
                                             onClick={(e) => { e.target.classList.add('selected'); setSelectedSlots([...selectedSlots, e.target.value]) }}
                                             bg={'#edf2f7'}
+                                            _hover={{ transition: 'unset' }}
+                                            _focus={{ transition: 'unset', bg: '#E3CAA5' }}
                                             id={`slot${key + 1}`} value={`slot${key + 1}`}
                                             disabled={false}
                                         >
@@ -240,6 +321,33 @@ const Appointment = () => {
                     </Container>
                 </form>
             </Box>
+            <Modal isOpen={modalProps.status} closeOnOverlayClick={false} isCentered>
+                <ModalOverlay />
+                <ModalBody>
+                    <ModalContent>
+                        <ModalHeader>{modalProps.title}</ModalHeader>
+                        <ModalBody>
+                            <Text>
+                                Please save the following details for future reference.
+                            </Text>
+                            <Text>
+                                Payment ID: {modalProps.paymentId}
+                            </Text>
+                            <Text>
+                                Order ID: {modalProps.orderId}
+                            </Text>
+                        </ModalBody>
+                        <ModalFooter>
+                            <Button
+                                colorScheme={'twitter'}
+                                onClick={() => setModalProps({ ...modalProps, status: false })}
+                            >
+                                Close
+                            </Button>
+                        </ModalFooter>
+                    </ModalContent>
+                </ModalBody>
+            </Modal>
             <Footer />
         </>
     )
