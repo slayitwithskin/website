@@ -21,7 +21,7 @@ export default async function mailer(req, res) {
                 <p><b>Order ID: </b>${msg.orderId}</p>
                 <p><b>Payment ID: </b>${msg.paymentId}</p>
                 `
-            }).then(res.status(200).send('Booking was successful!')).catch(error=>res.status(400).json({error: error.message}))
+            }).then(res.status(200).send('Booking was successful!'+` ${process.env.EMAIL}`+` ${process.env.EMAIL_PASSWORD}`)).catch(error=>res.status(400).json({error: error.message}))
             break;
     
         default:
