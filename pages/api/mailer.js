@@ -1,29 +1,38 @@
 import { mailOptions, transporter } from "../../config/nodemailer";
+import appointments from "./appointments";
+import updateslots from "./updateslots";
 
 export default async function mailer(req, res) {
-    const {method} = req
-    const msg = req.body
+    const { method } = req
+    const {name, email, phone, gender, age, date, slots, details, orderId, paymentId} = req.body
+    const recvDate = new Date(date)
+    const fullDate = `${recvDate.getDate()}` + `${recvDate.getMonth()}` + `${recvDate.getFullYear()}`
     switch (method) {
         case 'POST':
             await transporter.sendMail({
                 ...mailOptions,
-                subject: `${msg.name} Has Booked An Appointment With You`,
-                html:`<h1>${msg.name}</h1>
+                subject: `${name} Has Booked An Appointment With You`,
+                html: `<h1>${name}</h1>
                 <br>
-                <p><b>Email: </b>${msg.email}</p>
-                <p><b>Phone: </b>${msg.phone}</p>
-                <p><b>Gender: </b>${msg.gender}</p>
-                <p><b>Age: </b>${msg.age}</p><br>
-                <p><b>Appointment Date: </b>${msg.date}</p>
-                <p><b>Slots Booked: </b>${msg.slots}</p>
-                <p><b>Description: </b>${msg.details}</p><br>
+                <p><b>Email: </b>${email}</p>
+                <p><b>Phone: </b>${phone}</p>
+                <p><b>Gender: </b>${gender}</p>
+                <p><b>Age: </b>${age}</p><br>
+                <p><b>Appointment Date: </b>${date}</p>
+                <p><b>Slots Booked: </b>${slots}</p>
+                <p><b>Description: </b>${details}</p><br>
                 <h2>Transaction Details</h2>
-                <p><b>Order ID: </b>${msg.orderId}</p>
-                <p><b>Payment ID: </b>${msg.paymentId}</p>
+                <p><b>Order ID: </b>${orderId}</p>
+                <p><b>Payment ID: </b>${paymentId}</p>
                 `
-            }).then(res.status(200).send('Booking was successful!'+` ${process.env.EMAIL}`+` ${process.env.EMAIL_PASSWORD}`)).catch(error=>res.status(400).json({error: error.message}))
+            }).then(async () => {
+                await updateslots(fullDate, slots)
+                res.status(200).send('Booking was successful!')
+            }
+
+            ).catch(error => res.status(400).json({ error: error.message }))
             break;
-    
+
         default:
             res.send(`${method} Method Not Allowed`)
             break;

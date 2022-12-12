@@ -40,6 +40,7 @@ const Appointment = () => {
     const [selectedSlots, setSelectedSlots] = useState([])
     const [phone, setPhone] = useState("")
     const [details, setDetails] = useState("")
+    const [payBtnStatus, setPayBtnStatus] = useState(false)
     const [tranxnData, setTranxnData] = useState({
         paymentId: "",
         orderId: "",
@@ -88,7 +89,7 @@ const Appointment = () => {
         else {
             timeslots.forEach(element => element.removeAttribute("disabled"))
         }
-    }, [appointment])
+    }, [appointment, payBtnStatus])
 
 
 
@@ -102,14 +103,15 @@ const Appointment = () => {
             };
             script.onerror = () => {
                 resolve(false);
+                setPayBtnStatus(false)
             };
 
             document.body.appendChild(script);
         });
     };
 
-    const triggerMail = (rzpresponse) => {
-        fetch('/api/mailer', {
+    const triggerMail = async (rzpresponse) => {
+        await fetch('/api/mailer', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -136,6 +138,7 @@ const Appointment = () => {
                 paymentId: rzpresponse.razorpay_payment_id,
                 orderId: rzpresponse.razorpay_order_id,
             })
+            setPayBtnStatus(false)
         })
     }
 
@@ -145,9 +148,11 @@ const Appointment = () => {
 
         if (!res) {
             alert("Razorpay SDK Failed to load");
+            setPayBtnStatus(false)
             return;
         }
 
+        setPayBtnStatus(true)
         // Make API call to the serverless API
         const data = await fetch("/api/razorpay", {
             method: "POST",
@@ -157,7 +162,7 @@ const Appointment = () => {
             body: JSON.stringify({
                 amount: selectedSlots.length * baseRate
             })
-        }).then((t) =>
+        }).then((t) => 
             t.json()
         );
         console.log(data);
@@ -176,10 +181,13 @@ const Appointment = () => {
                     paymentId: response.razorpay_payment_id,
                     orderId: response.razorpay_order_id,
                 })
-                if (response.razorpay_payment_id)
+                if (response.razorpay_payment_id) {
                     triggerMail(response)
+                    setPayBtnStatus(false)
+                }
                 else {
                     setModalProps({ ...modalProps, title: "Your payment could not be completed!", status: true })
+                    setPayBtnStatus(false)
                 }
             },
             prefill: {
@@ -191,6 +199,7 @@ const Appointment = () => {
 
         const paymentObject = new window.Razorpay(options);
         paymentObject.open();
+        setPayBtnStatus(false)
     }
 
 
@@ -313,6 +322,7 @@ const Appointment = () => {
                                     rounded={0} p={6} fontSize={[12, 16]}
                                     className={styles.monts} textTransform={'uppercase'}
                                     type='submit'
+                                    disabled={payBtnStatus}
                                 >
                                     Pay with Razorpay
                                 </Button>
