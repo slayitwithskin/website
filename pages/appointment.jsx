@@ -78,17 +78,34 @@ const Appointment = () => {
         gender === 'male' ? document.getElementById('female').style.background = "#edf2f7" : document.getElementById('male').style.background = "#edf2f7"
     }, [gender])
 
-    useEffect(() => {
+    const getAppointmenSlots = async () => {
         const timeslots = document.querySelectorAll('.timeslot')
-        const slots = appointments.find(slot => slot.fulldate === `${appointment[0].getDate()}` + `${appointment[0].getMonth() + 1}` + `${appointment[0].getFullYear()}`)
-        if (slots) {
-            slots.bookings.map((bookedSlot) => {
-                document.getElementById(bookedSlot).setAttribute("disabled", true)
+        await fetch('http://localhost:3000/api/getslots', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': '*'
+            },
+            body: JSON.stringify({
+                fulldate: `${appointment[0].getDate()}` + `${appointment[0].getMonth() + 1}` + `${appointment[0].getFullYear()}`
+                // fulldate: "28122022"
             })
-        }
-        else {
-            timeslots.forEach(element => element.removeAttribute("disabled"))
-        }
+        }).then(async (res) => {
+            if (res.status === 200) {
+                const data = await res.json()
+                data.map((bookedSlot) => {
+                    document.getElementById(bookedSlot).setAttribute("disabled", true)
+                })
+                console.log(data)
+            }
+            else {
+                timeslots.forEach(element => element.removeAttribute("disabled"))
+            }
+        })
+    }
+
+    useEffect(() => {
+        getAppointmenSlots()
     }, [appointment, payBtnStatus])
 
 
@@ -162,7 +179,7 @@ const Appointment = () => {
             body: JSON.stringify({
                 amount: selectedSlots.length * baseRate
             })
-        }).then((t) => 
+        }).then((t) =>
             t.json()
         );
         console.log(data);

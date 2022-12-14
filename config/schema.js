@@ -5,6 +5,6 @@ const appointmentSchema = new mongoose.Schema({
     bookings: Array
 })
 
-const appointmentModel = mongoose.model('Appointment', appointmentSchema)
+const appointmentModel = mongoose.model('Appointment') || mongoose.model('Appointment', appointmentSchema)
 
 export default appointmentModel

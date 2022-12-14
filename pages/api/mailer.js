@@ -6,7 +6,7 @@ export default async function mailer(req, res) {
     const { method } = req
     const {name, email, phone, gender, age, date, slots, details, orderId, paymentId} = req.body
     const recvDate = new Date(date)
-    const fullDate = `${recvDate.getDate()}` + `${recvDate.getMonth()}` + `${recvDate.getFullYear()}`
+    const fullDate = `${recvDate.getDate()}` + `${recvDate.getMonth()+1}` + `${recvDate.getFullYear()}`
     switch (method) {
         case 'POST':
             await transporter.sendMail({
