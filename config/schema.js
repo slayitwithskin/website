@@ -1,10 +1,9 @@
-import mongoose from "mongoose";
+import mongoose, { model } from "mongoose";
 
-const appointmentSchema = new mongoose.Schema({
+const AppointmentSchema = new mongoose.Schema({
     fulldate: String,
     bookings: Array
 })
+const AppointmentModel = mongoose.models.Appointment || mongoose.model('Appointment', AppointmentSchema)
 
-const appointmentModel = mongoose.model('Appointment') || mongoose.model('Appointment', appointmentSchema)
-
-export default appointmentModel
+export default AppointmentModel

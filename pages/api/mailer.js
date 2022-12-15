@@ -26,8 +26,18 @@ export default async function mailer(req, res) {
                 <p><b>Payment ID: </b>${paymentId}</p>
                 `
             }).then(async () => {
-                await updateslots(fullDate, slots)
-                res.status(200).send('Booking was successful!')
+                const slotsUpdated = await fetch('http://localhost:3000/api/updateslots', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': '*'
+                    },
+                    body: JSON.stringify({
+                        fulldate: fullDate,
+                        slots
+                    })
+                })
+                if(slotsUpdated.status === 200) res.status(200).send('Bookings were added!')
             }
 
             ).catch(error => res.status(400).json({ error: error.message }))

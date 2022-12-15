@@ -195,6 +195,8 @@ const Appointment = () => {
                 // Validate payment at server - using webhooks is a better idea.
                 setModalProps({
                     ...modalProps,
+                    status: true,
+                    title: "Your payment was successful!",
                     paymentId: response.razorpay_payment_id,
                     orderId: response.razorpay_order_id,
                 })
@@ -367,7 +369,7 @@ const Appointment = () => {
                         <ModalFooter>
                             <Button
                                 colorScheme={'twitter'}
-                                onClick={() => setModalProps({ ...modalProps, status: false })}
+                                onClick={() => {setModalProps({ ...modalProps, status: false }); getAppointmenSlots()}}
                             >
                                 Close
                             </Button>
