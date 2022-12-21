@@ -27,7 +27,8 @@ const Footer = () => {
         >
 
             <Flex w={'xs'} direction={'column'} alignItems={'flex-start'} justifyContent={'flex-start'} my={[8,8,0]}>
-                <Text className={styles.cursive} fontSize={28}>Slay it with Skin</Text>
+                {/* <Text className={styles.cursive} fontSize={28}>Slay it with Skin</Text> */}
+                <Image src='logo.png' alt='Logo' w={'auto'} h={'16'} />
                 <Text my={4} fontSize={14}>Station Road, Santacruz West
                     <br />Mumbai, Maharashtra
                     <br />PIN: 400055
@@ -61,7 +62,7 @@ const Footer = () => {
             <Flex w={'full'} direction={'column'} alignItems={'flex-start'} justifyContent={'flex-start'} my={[4,4,0]}>
             <Text className={styles.monts} fontSize={18}>Important Links</Text>
             <Box w={'full'} h={.5} bg={'blackAlpha.400'} mb={4}></Box>
-            <Link href={'#'}>
+            <Link href={'/shop'}>
                 <Text fontSize={16} p={2} _hover={{ bg: 'green.600', color: 'white' }}>The Beauty Shop</Text>
             </Link>
             <Link href={'/blogs'}>

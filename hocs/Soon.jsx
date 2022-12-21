@@ -25,7 +25,7 @@ const Soon = () => {
                     w={['80%', '70%', '50%']}
                 />
                 <Flex direction={'column'} alignItems={'center'} justifyContent={'center'} mb={[24, 0]} position={'relative'}>
-                    <Text fontSize={[40, 64]} fontWeight={800} color={'darkslategray'} textAlign={'center'}>Under Development</Text>
+                    <Text fontSize={[40, 64]} fontWeight={800} color={'darkslategray'} textAlign={'center'}>Coming Soon</Text>
                     <Text textAlign={'center'}>Amazing things are on their way.</Text>
                     <Link href={'/'}>
                         <Button rounded={0} bg={'burlywood'} className={styles.monts} color={'white'} _hover={{ bg: 'brown' }} my={8} alignSelf={'center'}>GET BACK TO HOME PAGE</Button>
