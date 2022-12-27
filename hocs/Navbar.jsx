@@ -42,12 +42,12 @@ const Navbar = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <nav className={styles.nav}>
-        <Flex p={4} alignItems={'center'}>
+        <Flex p={2} alignItems={'center'}>
           {/* <Link href={'/'}><h1 className="brand-title">Slay it with Skin</h1></Link> */}
           <Link href={'/'}>
             <HStack spacing={2}>
-              <Image src='logo.png' alt='Logo' w={'auto'} h={'8'} />
-              <h1 className="brand-title">Slay it with Skin</h1>
+              <Image src='logo.png' alt='Logo' w={'auto'} h={'10'} />
+              {/* <h1 className="brand-title">Slay it with Skin</h1> */}
             </HStack>
           </Link>
           <Spacer />
