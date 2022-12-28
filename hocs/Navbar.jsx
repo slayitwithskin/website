@@ -79,10 +79,13 @@ const Navbar = () => {
                       <Link href={'/service'}><Text>Korean Glass Skin Facial</Text></Link>
                     </MenuItem>
                     <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                      <Link href={'/service'}><Text>Skin Shine Facial</Text></Link>
+                      <Link href={'/service'}><Text>Face Lift Facial</Text></Link>
                     </MenuItem>
                     <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
                       <Link href={'/service'}><Text>24K Gold Facial</Text></Link>
+                    </MenuItem>
+                    <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
+                      <Link href={'/service'}><Text>Micro Dermabation</Text></Link>
                     </MenuItem>
                   </Flex>
 
@@ -92,7 +95,7 @@ const Navbar = () => {
                       <Link href={'/service'}><Text>Anti Aging</Text></Link>
                     </MenuItem>
                     <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                      <Link href={'/service'}><Text>Acne & Acne Marks</Text></Link>
+                      <Link href={'/service'}><Text>Acne & Marks</Text></Link>
                     </MenuItem>
                     <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
                       <Link href={'/service'}><Text>Crows Feet & Fine Lines</Text></Link>
@@ -103,12 +106,24 @@ const Navbar = () => {
                     <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
                       <Link href={'/service'}><Text>Micro Needling</Text></Link>
                     </MenuItem>
+                    <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
+                      <Link href={'/service'}><Text>Fine Lines & Wrinkles</Text></Link>
+                    </MenuItem>
+                    <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
+                      <Link href={'/service'}><Text>Skin Concerns & Maintenance</Text></Link>
+                    </MenuItem>
                   </Flex>
 
                   <Flex direction={"column"} mx={4} alignItems={"flex-start"} justifyContent={"flex-start"}>
                     <Text as={"h2"} mb={5} mt={4} ml={4} textTransform={"uppercase"} className={styles.cursive} fontWeight={600}>Bridal Skin Prep Journey</Text>
                     <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
                       <Link href={'/service'}><Text>BB Glow</Text></Link>
+                    </MenuItem>
+                    <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
+                      <Link href={'/service'}><Text>Gold Facial</Text></Link>
+                    </MenuItem>
+                    <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
+                      <Link href={'/service'}><Text>Chemical Peels</Text></Link>
                     </MenuItem>
                   </Flex>
 
@@ -123,13 +138,22 @@ const Navbar = () => {
                       Hair
                     </Text>
                     <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                      <Link href={'/service'}><Text>Trichology</Text></Link>
+                      <Link href={'/service'}><Text>Hair Fall Treatment</Text></Link>
                     </MenuItem>
                     <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
                       <Link href={'/service'}><Text>Fungal Treatment</Text></Link>
                     </MenuItem>
                     <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
                       <Link href={'/service'}><Text>Hair Growth</Text></Link>
+                    </MenuItem>
+                    <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
+                      <Link href={'/service'}><Text>Dandruff Treatment</Text></Link>
+                    </MenuItem>
+                    <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
+                      <Link href={'/service'}><Text>Graying & Thinning</Text></Link>
+                    </MenuItem>
+                    <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
+                      <Link href={'/service'}><Text>Scalp Nourishment</Text></Link>
                     </MenuItem>
                   </Flex>
 
@@ -197,8 +221,9 @@ const Navbar = () => {
                       <Link href={'/appointment'}><Text my={2}>Medi Facials</Text></Link>
                       <Link href={'/appointment'}><Text my={2}>Hydra Facials</Text></Link>
                       <Link href={'/appointment'}><Text my={2}>Korean Glass Skin Facials</Text></Link>
-                      <Link href={'/appointment'}><Text my={2}>Skin Shine Facials</Text></Link>
+                      <Link href={'/appointment'}><Text my={2}>Face Lift Facials</Text></Link>
                       <Link href={'/appointment'}><Text my={2}>24K Gold Facials</Text></Link>
+                      <Link href={'/appointment'}><Text my={2}>Micro Dermabation</Text></Link>
                     </AccordionPanel>
                   </AccordionItem>
 
@@ -215,10 +240,12 @@ const Navbar = () => {
 
                     <AccordionPanel>
                       <Link href={'/appointment'}><Text my={2}>Anti Aging</Text></Link>
-                      <Link href={'/appointment'}><Text my={2}>Acne & Acne Marks</Text></Link>
+                      <Link href={'/appointment'}><Text my={2}>Acne & Marks</Text></Link>
                       <Link href={'/appointment'}><Text my={2}>Crows Feet & Fine Lines</Text></Link>
                       <Link href={'/appointment'}><Text my={2}>Dermaplaning</Text></Link>
                       <Link href={'/appointment'}><Text my={2}>Micro Needling</Text></Link>
+                      <Link href={'/appointment'}><Text my={2}>Fine Lines & Wrinkles</Text></Link>
+                      <Link href={'/appointment'}><Text my={2}>Skin Concerns & Maintenance</Text></Link>
                     </AccordionPanel>
                   </AccordionItem>
 
@@ -234,6 +261,8 @@ const Navbar = () => {
 
                     <AccordionPanel>
                       <Link href={'/appointment'}><Text my={2}>BB Glow</Text></Link>
+                      <Link href={'/appointment'}><Text my={2}>Gold Facial</Text></Link>
+                      <Link href={'/appointment'}><Text my={2}>Chemical Peels</Text></Link>
                     </AccordionPanel>
                   </AccordionItem>
 
@@ -248,9 +277,12 @@ const Navbar = () => {
                     </h2>
 
                     <AccordionPanel>
-                      <Link href={'/appointment'}><Text my={2}>Trichology</Text></Link>
+                      <Link href={'/appointment'}><Text my={2}>Hair Fall Treatment</Text></Link>
                       <Link href={'/appointment'}><Text my={2}>Fungal Treatment</Text></Link>
+                      <Link href={'/appointment'}><Text my={2}>Dandruff Treatment</Text></Link>
                       <Link href={'/appointment'}><Text my={2}>Hair Growth</Text></Link>
+                      <Link href={'/appointment'}><Text my={2}>Graying & Thinning</Text></Link>
+                      <Link href={'/appointment'}><Text my={2}>Scalp Nourishment</Text></Link>
                     </AccordionPanel>
                   </AccordionItem>
 
