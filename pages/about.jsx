@@ -37,11 +37,12 @@ const About = () => {
         </Box>
         <Box px={[0,16]} w={['100%']}>
             <Text fontSize={20}>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor dolores alias vitae quaerat aspernatur, repudiandae eveniet. Animi, distinctio alias amet eos quia voluptatum eveniet optio, unde vero, sint quo repudiandae?
+                We are a cosmetology and trichology aesthetic center located in Mumbai. We aim at helping our clients understand their concerns and provide a personalised treatment as we believe that everyone has different requirements.
                 <br /><br />
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, tenetur recusandae. Quam ipsam cupiditate facere ut doloremque officia sit laborum voluptatum, perferendis id sapiente itaque. Incidunt, debitis nostrum natus enim aut aliquam eveniet. Neque incidunt illo expedita perspiciatis! Fuga, soluta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga sint voluptates aliquid magni quisquam facere perspiciatis nemo quibusdam aut accusamus!
+                Treatments followed by southness can help acheive skin goals, as it helps building confidence.
                 <br /><br />
-                - Ms. Vandana
+                We are a team of Aestheticians certified in Canada, Korea and India bringing the best of services, treatments and consultations under one roof.
+                
             </Text>
         </Box>
     </Flex>

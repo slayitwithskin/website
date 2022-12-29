@@ -14,234 +14,331 @@ import Newsletter from '../hocs/Banner'
 
 
 const Service = () => {
-  return (
-    <>
-        <Head>
-            <title>Service Name | Slay it with Skin</title>
-        </Head>
-        <Navbar />
-        <Image 
-        src={'https://cdn.shopify.com/s/files/1/0516/0376/7472/files/1920x640-website-banner-v2_422706a2-449f-43ac-9c1b-2e0f3e2d8b0e.jpg'}
-        w={'full'}
-        h={'auto'}
-        mt={20}
-        />
-        <Flex
-        p={[4,8,16]}
-        direction={['column', 'row']}
-        alignItems={'center'}
-        justifyContent={'space-between'}
-        >
-            <Box
-            w={['90%','md']}
-            h={['2xs','sm']}
-            my={[8,0]}
-            bg={'#C5D8A4'}
+    return (
+        <>
+            <Head>
+                <title>Service Name | Slay it with Skin</title>
+            </Head>
+            <Navbar />
+            <Image
+                src={'https://cdn.shopify.com/s/files/1/0516/0376/7472/files/1920x640-website-banner-v2_422706a2-449f-43ac-9c1b-2e0f3e2d8b0e.jpg'}
+                w={'full'}
+                h={'auto'}
+                mt={20}
+            />
+            <Flex
+                p={[4, 8, 16]}
+                direction={['column', 'row']}
+                alignItems={'center'}
+                justifyContent={'space-between'}
             >
-                <Image 
-                src={'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gettyimages-1214644132.jpg?crop=0.793xw:1.00xh;0.104xw,0&resize=640:*'}
-                pos={'relative'}
-                w={['100%','inherit']}
-                h={['100%','inherit']}
-                objectFit={'cover'}
-                bottom={['5px','2em']}
-                right={['5px','2em']}
-                boxShadow={'xl'}
-                />
-            </Box>
-            <Flex 
-            w={['full','70%']}
-            direction={'column'}
-            p={[0,8]}
-            >
-                <Text className={styles.cursive} fontSize={[40,56]} mb={4}>
-                    Service Name
-                </Text>
-                <Text fontSize={16}>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, numquam, qui repellendus voluptatem dolorum error perferendis aliquam et tempore amet vitae quia quod? Iste blanditiis necessitatibus tempora perspiciatis.
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde officiis quam animi quae mollitia nobis corrupti voluptates neque doloremque officia voluptatem commodi rem voluptatibus aspernatur, 
-                    laudantium reprehenderit quisquam similique quos amet reiciendis dolorem nam id esse. Eum alias voluptatum laudantium?
-                    <br /><br />
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam mollitia, neque impedit esse cumque pariatur nam voluptates nisi odit eum modi nemo dolorum magnam accusantium 
-                    eveniet incidunt omnis aliquam magni laborum, commodi quis sapiente. Recusandae ipsam sunt nesciunt adipisci in. Sunt, mollitia atque quis, tempore repellendus nihil temporibus deserunt, 
-                    voluptatem illo est iste officia. Veritatis sed laborum molestias fugiat! Ullam!
-                </Text>
-                <Button
-                my={'8'}
-                w={['auto','max-content']}
-                colorScheme={'whatsapp'}
-                p={6}
-                rounded={0}
-                bg={'brown'}
-                onClick={()=>{Calendly.initPopupWidget({url: 'https://calendly.com/slayitwithskin/appointment'});return false;}}
+                <Box
+                    w={['90%', 'md']}
+                    h={['2xs', 'sm']}
+                    my={[8, 0]}
+                    bg={'#C5D8A4'}
                 >
-                    BOOK AN APPOINTMENT
-                </Button>
+                    <Image
+                        src={'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gettyimages-1214644132.jpg?crop=0.793xw:1.00xh;0.104xw,0&resize=640:*'}
+                        pos={'relative'}
+                        w={['100%', 'inherit']}
+                        h={['100%', 'inherit']}
+                        objectFit={'cover'}
+                        bottom={['5px', '2em']}
+                        right={['5px', '2em']}
+                        boxShadow={'xl'}
+                    />
+                </Box>
+                <Flex
+                    w={['full', '70%']}
+                    direction={'column'}
+                    p={[0, 8]}
+                >
+                    <Text className={styles.cursive} fontSize={[40, 56]} mb={4}>
+                        Our Services
+                    </Text>
+                    <Text fontSize={16}>
+                        We believe that everyone has a different requirement to care and nurture their beauty. That's why provide personalised consultation,
+                        treatment and products that suite best to your skin or hair type and help you gain the confidence you always deserved.
+                        <br /><br />
+                        We are dedicated to helping you look and feel your best. Our team of highly trained professionals will assess
+                        your individual needs and develop a customized plan to restore and maintain your natural beauty.
+                        With our state-of-the-art treatments and the latest technology, you can trust us to take care of all your skin and hair needs.
+                        Let us help you look and feel your absolute best!
+                    </Text>
+                    <Button
+                        my={'8'}
+                        w={['auto', 'max-content']}
+                        colorScheme={'whatsapp'}
+                        p={6}
+                        rounded={0}
+                        bg={'brown'}
+                        onClick={() => { Calendly.initPopupWidget({ url: 'https://calendly.com/slayitwithskin/appointment' }); return false; }}
+                    >
+                        BOOK AN APPOINTMENT
+                    </Button>
+                </Flex>
             </Flex>
-        </Flex>
-        <Text className={styles.monts} textAlign={'center'} my={8} fontWeight={600}>GET IT DONE IN 3 SIMPLE STEPS</Text>
-        <Flex
-        px={[2,8,16]}
-        mb={16}
-        wrap={'wrap'}
-        justifyContent={'space-between'}
-        >
-            <Box 
-            pos={'relative'}
-            m={2}
-            px={[0,6]}
-            w={['full','sm']}
-            h={'auto'}
-            className={styles.gradientBlue}
-            boxShadow={'base'}
-            >
-                <Text 
-                fontSize={[96,128]} 
-                p={[4,4,0]}
-                fontWeight={700} 
-                className={styles.monts} 
-                color={'whiteAlpha.700'}
-                transform={['translateY(-2rem) translateX(-1rem)','translateY(-1.5rem)']}
-                >
-                    01
-                </Text>
-                <Box
-                pos={'absolute'}
-                top={0}
-                right={0}
-                bottom={0}
-                left={0}
-                p={4}
-                w={'inherit'}
-                h={'inherit'}
-                bg={'white'}
-                clipPath={['polygon(40% 0%, 100% 0%, 100% 100%, 0% 100%)','polygon(60% 0%, 100% 0%, 100% 100%, 0% 100%)']}
-                display={'flex'}
-                flexDir={'column'}
-                alignItems={'flex-end'}
-                justifyContent={'flex-start'}
-                >
-                    <Text className={styles.monts} mb={4} fontWeight={700} color={'#0093E9'}>CONTACT US</Text>
-                    <Text maxW={['70%','50%']} textAlign={'right'} mb={2}>
-                        Book your appointment with us at your preferred date and time.
-                    </Text>
-                    <Button 
-                    rounded={0} 
-                    colorScheme={'twitter'} 
-                    className={styles.monts} 
-                    onClick={()=>{Calendly.initPopupWidget({url: 'https://calendly.com/slayitwithskin/appointment'});return false;}}
-                    >
-                        BOOK APPOINTMENT
-                    </Button>
-                </Box>
-            </Box>
-            <Box 
-            pos={'relative'}
-            m={2}
-            px={[0,6]}
-            w={['full','sm']}
-            h={'auto'}
-            className={styles.gradientGreen}
-            boxShadow={'base'}
-            >
-                <Text 
-                fontSize={[96,128]} 
-                p={[4,4,0]}
-                fontWeight={700} 
-                className={styles.monts} 
-                color={'whiteAlpha.700'}
-                transform={['translateY(-2rem) translateX(-1rem)','translateY(-1.5rem)']}
-                >
-                    02
-                </Text>
-                <Box
-                pos={'absolute'}
-                top={0}
-                right={0}
-                bottom={0}
-                left={0}
-                p={4}
-                w={'inherit'}
-                h={'inherit'}
-                bg={'white'}
-                clipPath={['polygon(40% 0%, 100% 0%, 100% 100%, 0% 100%)','polygon(60% 0%, 100% 0%, 100% 100%, 0% 100%)']}
-                display={'flex'}
-                flexDir={'column'}
-                alignItems={'flex-end'}
-                justifyContent={'flex-start'}
-                >
-                    <Text className={styles.monts} mb={4} fontWeight={700} color={'whatsapp.500'}>VISIT US</Text>
-                    <Text maxW={['70%','50%']} textAlign={'right'} mb={2}>
-                        Visit us at the prescribed location for your beauty treatment.
-                    </Text>
-                    <Button 
-                    rounded={0} 
-                    colorScheme={'whatsapp'} 
-                    className={styles.monts} 
-                    onClick={()=>{Calendly.initPopupWidget({url: 'https://calendly.com/slayitwithskin/appointment'});return false;}}
-                    >
-                        BOOK APPOINTMENT
-                    </Button>
-                </Box>
-            </Box>
-            <Box 
-            pos={'relative'}
-            m={2}
-            px={[0,6]}
-            w={['full','sm']}
-            h={'auto'}
-            className={styles.gradientRed}
-            boxShadow={'base'}
-            >
-                <Text 
-                fontSize={[96,128]} 
-                p={[4,4,0]}
-                fontWeight={700} 
-                className={styles.monts} 
-                color={'whiteAlpha.700'}
-                transform={['translateY(-2rem) translateX(-1rem)','translateY(-1.5rem)']}
-                >
-                    03
-                </Text>
-                <Box
-                pos={'absolute'}
-                top={0}
-                right={0}
-                bottom={0}
-                left={0}
-                p={4}
-                w={'inherit'}
-                h={'inherit'}
-                bg={'white'}
-                clipPath={['polygon(40% 0%, 100% 0%, 100% 100%, 0% 100%)','polygon(60% 0%, 100% 0%, 100% 100%, 0% 100%)']}
-                display={'flex'}
-                flexDir={'column'}
-                alignItems={'flex-end'}
-                justifyContent={'flex-start'}
-                >
-                    <Text className={styles.monts} mb={4} fontWeight={700} color={'red.500'}>REMEDIES</Text>
-                    <Text maxW={['70%','50%']} textAlign={'right'} mb={2}>
-                        Follow the medicines and the remedies as prescribed by us.
-                    </Text>
-                    <Button 
-                    rounded={0} 
-                    colorScheme={'red'} 
-                    className={styles.monts} 
-                    onClick={()=>{Calendly.initPopupWidget({url: 'https://calendly.com/slayitwithskin/appointment'});return false;}}
-                    >
-                        BOOK APPOINTMENT
-                    </Button>
-                </Box>
-            </Box>
-        </Flex>
 
-        <Reviews />
 
-        <Newsletter />
+            {/* Facials */}
+            <Box px={[4, 8, 16]} py={6}>
+                <Text className={styles.cursive} fontSize={[24, 36]} mb={5}>
+                    Facials
+                </Text>
 
-        <Footer />
-    </>
-  )
+                <Text py={4}>
+                    <b>Hydra Facial</b>
+                    <br />
+                    It helps in exfoliation of buildup of sebum and debis that covers the top layer of the skin.
+                    It leaves the skin hydrated through infusion of serums.
+                </Text>
+
+                <Text py={4}>
+                    <b>Face Lift Facial</b>
+                    <br />
+                    This process is mainly concentrated on facial massage technique focussing on sculpting
+                    the face uplifting the structure of the jawline and cheek area.
+                </Text>
+
+                <Text py={4}>
+                    <b>Micro Dumabation</b>
+                    <br />
+                    Micro Dumabation is a minimally invasive treatment which helps in resurfacing the texture or skin tome of the face.
+                    It also helps in treating scars, stretch marks and skin damage.
+                </Text>
+
+                <Text py={4}>
+                    <b>Medi Facials</b>
+                    <br />
+                    Medi facials are facials designed using medically approved ingredients
+                    and are friendly to the skin providing long lasting benefits.
+                </Text>
+
+                <Text py={4}>
+                    <b>Korean Facial</b>
+                    <br />
+                    It helps you eliminate acne and blemishes, brightenr and healthier skin enriching supple skin.
+                    It helps in rejuvenation of skin giving it a glass reflection effect.
+                </Text>
+
+            </Box>
+
+
+            {/* Treatments */}
+            <Box px={[4, 8, 16]} py={6}>
+                <Text className={styles.cursive} fontSize={[24, 36]} mb={5}>
+                    Treatments
+                </Text>
+
+                <Text py={4}>
+                    <b>Micro Needling</b>
+                    <br />
+                    It is a minimally invasive process which uses thin needles to make tiny holes on the top layer of the skin.
+                    It helps stimulate healing process and produces more collagen & elastin.
+                </Text>
+
+                <Text py={4}>
+                    <b>Anti Ageing</b>
+                    <br />
+                    This process helps in reducing the fine lines and wrinkles visibly making it look healthier and youthful.
+                </Text>
+
+            </Box>
+
+
+            {/* Bridal Skin Prep Journey */}
+            <Box px={[4, 8, 16]} py={6}>
+                <Text className={styles.cursive} fontSize={[24, 36]} mb={5}>
+                    Bridal Skin Prep Journey
+                </Text>
+
+                <Text py={4}>
+                    <b>Chemical Peels</b>
+                    <br />
+                    This process is used to exfoliate the top layer of the skin.
+                    It helps in improving the tone and texture of the skin as it lasts longer and penetrate deeper in the skin.
+                </Text>
+
+                <Text py={4}>
+                    <b>Gold Facial</b>
+                    <br />
+                    This facial mainly concentrates on infusion of serums with 24K Gold for an instant party ready glow. This is non invasive treatment.
+                </Text>
+
+                <Text py={4}>
+                    <b>Face Lift Facial</b>
+                    <br />
+                    This process is mainly concentrated on facial massage technique focussing on sculpting
+                    the face uplifting the structure of the jawline and cheek area.
+                </Text>
+
+            </Box>
+
+
+            <Text className={styles.monts} textAlign={'center'} my={8} fontWeight={600}>GET IT DONE IN 3 SIMPLE STEPS</Text>
+            <Flex
+                px={[2, 8, 16]}
+                mb={16}
+                wrap={'wrap'}
+                justifyContent={'space-between'}
+            >
+                <Box
+                    pos={'relative'}
+                    m={2}
+                    px={[0, 6]}
+                    w={['full', 'sm']}
+                    h={'auto'}
+                    className={styles.gradientBlue}
+                    boxShadow={'base'}
+                >
+                    <Text
+                        fontSize={[96, 128]}
+                        p={[4, 4, 0]}
+                        fontWeight={700}
+                        className={styles.monts}
+                        color={'whiteAlpha.700'}
+                        transform={['translateY(-2rem) translateX(-1rem)', 'translateY(-1.5rem)']}
+                    >
+                        01
+                    </Text>
+                    <Box
+                        pos={'absolute'}
+                        top={0}
+                        right={0}
+                        bottom={0}
+                        left={0}
+                        p={4}
+                        w={'inherit'}
+                        h={'inherit'}
+                        bg={'white'}
+                        clipPath={['polygon(40% 0%, 100% 0%, 100% 100%, 0% 100%)', 'polygon(60% 0%, 100% 0%, 100% 100%, 0% 100%)']}
+                        display={'flex'}
+                        flexDir={'column'}
+                        alignItems={'flex-end'}
+                        justifyContent={'flex-start'}
+                    >
+                        <Text className={styles.monts} mb={4} fontWeight={700} color={'#0093E9'}>CONTACT US</Text>
+                        <Text maxW={['70%', '50%']} textAlign={'right'} mb={2}>
+                            Book your appointment with us at your preferred date and time.
+                        </Text>
+                        <Button
+                            rounded={0}
+                            colorScheme={'twitter'}
+                            className={styles.monts}
+                            onClick={() => { Calendly.initPopupWidget({ url: 'https://calendly.com/slayitwithskin/appointment' }); return false; }}
+                        >
+                            BOOK APPOINTMENT
+                        </Button>
+                    </Box>
+                </Box>
+                <Box
+                    pos={'relative'}
+                    m={2}
+                    px={[0, 6]}
+                    w={['full', 'sm']}
+                    h={'auto'}
+                    className={styles.gradientGreen}
+                    boxShadow={'base'}
+                >
+                    <Text
+                        fontSize={[96, 128]}
+                        p={[4, 4, 0]}
+                        fontWeight={700}
+                        className={styles.monts}
+                        color={'whiteAlpha.700'}
+                        transform={['translateY(-2rem) translateX(-1rem)', 'translateY(-1.5rem)']}
+                    >
+                        02
+                    </Text>
+                    <Box
+                        pos={'absolute'}
+                        top={0}
+                        right={0}
+                        bottom={0}
+                        left={0}
+                        p={4}
+                        w={'inherit'}
+                        h={'inherit'}
+                        bg={'white'}
+                        clipPath={['polygon(40% 0%, 100% 0%, 100% 100%, 0% 100%)', 'polygon(60% 0%, 100% 0%, 100% 100%, 0% 100%)']}
+                        display={'flex'}
+                        flexDir={'column'}
+                        alignItems={'flex-end'}
+                        justifyContent={'flex-start'}
+                    >
+                        <Text className={styles.monts} mb={4} fontWeight={700} color={'whatsapp.500'}>VISIT US</Text>
+                        <Text maxW={['70%', '50%']} textAlign={'right'} mb={2}>
+                            Visit us at the prescribed location for your beauty treatment.
+                        </Text>
+                        <Button
+                            rounded={0}
+                            colorScheme={'whatsapp'}
+                            className={styles.monts}
+                            onClick={() => { Calendly.initPopupWidget({ url: 'https://calendly.com/slayitwithskin/appointment' }); return false; }}
+                        >
+                            BOOK APPOINTMENT
+                        </Button>
+                    </Box>
+                </Box>
+                <Box
+                    pos={'relative'}
+                    m={2}
+                    px={[0, 6]}
+                    w={['full', 'sm']}
+                    h={'auto'}
+                    className={styles.gradientRed}
+                    boxShadow={'base'}
+                >
+                    <Text
+                        fontSize={[96, 128]}
+                        p={[4, 4, 0]}
+                        fontWeight={700}
+                        className={styles.monts}
+                        color={'whiteAlpha.700'}
+                        transform={['translateY(-2rem) translateX(-1rem)', 'translateY(-1.5rem)']}
+                    >
+                        03
+                    </Text>
+                    <Box
+                        pos={'absolute'}
+                        top={0}
+                        right={0}
+                        bottom={0}
+                        left={0}
+                        p={4}
+                        w={'inherit'}
+                        h={'inherit'}
+                        bg={'white'}
+                        clipPath={['polygon(40% 0%, 100% 0%, 100% 100%, 0% 100%)', 'polygon(60% 0%, 100% 0%, 100% 100%, 0% 100%)']}
+                        display={'flex'}
+                        flexDir={'column'}
+                        alignItems={'flex-end'}
+                        justifyContent={'flex-start'}
+                    >
+                        <Text className={styles.monts} mb={4} fontWeight={700} color={'red.500'}>REMEDIES</Text>
+                        <Text maxW={['70%', '50%']} textAlign={'right'} mb={2}>
+                            Follow the medicines and the remedies as prescribed by us.
+                        </Text>
+                        <Button
+                            rounded={0}
+                            colorScheme={'red'}
+                            className={styles.monts}
+                            onClick={() => { Calendly.initPopupWidget({ url: 'https://calendly.com/slayitwithskin/appointment' }); return false; }}
+                        >
+                            BOOK APPOINTMENT
+                        </Button>
+                    </Box>
+                </Box>
+            </Flex>
+
+            <Reviews />
+
+            <Newsletter />
+
+            <Footer />
+        </>
+    )
 }
 
 export default Service
