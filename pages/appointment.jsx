@@ -21,7 +21,16 @@ import {
     ModalContent,
     ModalHeader,
     ModalFooter,
-    useDisclosure
+    useDisclosure,
+    CheckboxGroup,
+    Checkbox,
+    Popover,
+    PopoverTrigger,
+    PopoverContent,
+    PopoverArrow,
+    PopoverCloseButton,
+    PopoverHeader,
+    PopoverBody
 } from '@chakra-ui/react'
 import DatePicker from 'react-flatpickr'
 import 'flatpickr/dist/themes/material_blue.css'
@@ -39,7 +48,7 @@ const Appointment = () => {
     const [gender, setGender] = useState('female')
     const [selectedSlots, setSelectedSlots] = useState([])
     const [phone, setPhone] = useState("")
-    const [details, setDetails] = useState("")
+    const [details, setDetails] = useState("Concerns: ")
     const [payBtnStatus, setPayBtnStatus] = useState(false)
     const [tranxnData, setTranxnData] = useState({
         paymentId: "",
@@ -274,6 +283,47 @@ const Appointment = () => {
                             </Stack>
                         </VStack>
 
+
+                        <VStack my={4} p={[4, 6]} boxShadow={'base'} bg={'white'} alignItems={'flex-start'}>
+                            <Text color={'rgb(100,100,100)'} pb={2}>What are your concerns?</Text>
+                            <VStack w={'full'} alignItems={'flex-start'}>
+                                <CheckboxGroup defaultValue={[]}>
+                                    <HStack spacing={4} alignItems={'center'}>
+                                        <b>Skin:</b>
+                                        <Checkbox value='Skin' onChange={e => setDetails(e.target.checked ? details + e.target.value + ", " : details.replace(e.target.value + ", ", ""))}>Skin</Checkbox>
+                                        <Checkbox value='Acne' onChange={e => setDetails(e.target.checked ? details + e.target.value + ", " : details.replace(e.target.value + ", ", ""))}>Acne</Checkbox>
+                                        <Checkbox value='Ageing' onChange={e => setDetails(e.target.checked ? details + e.target.value + ", " : details.replace(e.target.value + ", ", ""))}>Ageing</Checkbox>
+                                        <Checkbox value='Pigmentation' onChange={e => setDetails(e.target.checked ? details + e.target.value + ", " : details.replace(e.target.value + ", ", ""))}>Pigmentation</Checkbox>
+                                    </HStack>
+                                </CheckboxGroup>
+                                <br />
+                                <CheckboxGroup defaultValue={[]}>
+                                    <HStack spacing={4} alignItems={'center'}>
+                                        <b>Hair:</b>
+                                        <Checkbox value='Thinning' onChange={e => setDetails(e.target.checked ? details + e.target.value + ", " : details.replace(e.target.value + ", ", ""))}>Thinning</Checkbox>
+                                        <Checkbox value='Scalp' onChange={e => setDetails(e.target.checked ? details + e.target.value + ", " : details.replace(e.target.value + ", ", ""))}>Scalp</Checkbox>
+                                        <Checkbox value='Greying' onChange={e => setDetails(e.target.checked ? details + e.target.value + ", " : details.replace(e.target.value + ", ", ""))}>Greying</Checkbox>
+                                        <Checkbox value='Dandruff' onChange={e => setDetails(e.target.checked ? details + e.target.value + ", " : details.replace(e.target.value + ", ", ""))}>Dandruff</Checkbox>
+                                    </HStack>
+                                </CheckboxGroup>
+                                <br /><br />
+                                <Popover>
+                                    <PopoverTrigger>
+                                        <Text color={'brown'} fontWeight={600} cursor={'pointer'}>What will you get from this consultation?</Text>
+                                    </PopoverTrigger>
+                                    <PopoverContent>
+                                        <PopoverArrow />
+                                        <PopoverCloseButton />
+                                        <PopoverBody>
+                                            In your online consultation, you'll be briefed about the concerns followed by 
+                                            treatment, the routine to be followed, the products to be used, weekely chat guidance to 
+                                            check the updated and track the progress of the same.
+                                        </PopoverBody>
+                                    </PopoverContent>
+                                </Popover>
+                            </VStack>
+                        </VStack>
+
                         <VStack my={4} p={[4, 6]} boxShadow={'base'} bg={'white'}>
                             <HStack w={'full'} my={2}>
                                 <Box w={'full'}>
@@ -369,7 +419,7 @@ const Appointment = () => {
                         <ModalFooter>
                             <Button
                                 colorScheme={'twitter'}
-                                onClick={() => {setModalProps({ ...modalProps, status: false }); getAppointmenSlots()}}
+                                onClick={() => { setModalProps({ ...modalProps, status: false }); getAppointmenSlots() }}
                             >
                                 Close
                             </Button>
