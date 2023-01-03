@@ -89,7 +89,7 @@ const Appointment = () => {
 
     const getAppointmenSlots = async () => {
         const timeslots = document.querySelectorAll('.timeslot')
-        await fetch(`${process.env.BASE_URL}/api/getslots`, {
+        await fetch("/api/getslots", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
