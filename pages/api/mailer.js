@@ -26,7 +26,7 @@ export default async function mailer(req, res) {
                 <p><b>Payment ID: </b>${paymentId}</p>
                 `
             }).then(async () => {
-                const slotsUpdated = await fetch('http://localhost:3000/api/updateslots', {
+                const slotsUpdated = await fetch('https://siws.vercel.app/updateslots', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
