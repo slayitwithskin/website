@@ -4,9 +4,9 @@ import updateslots from "./updateslots";
 
 export default async function mailer(req, res) {
     const { method } = req
-    const {name, email, phone, gender, age, date, slots, details, orderId, paymentId} = req.body
+    const { name, email, phone, gender, age, date, slots, details, orderId, paymentId } = req.body
     const recvDate = new Date(date)
-    const fullDate = `${recvDate.getDate()}` + `${recvDate.getMonth()+1}` + `${recvDate.getFullYear()}`
+    const fullDate = `${recvDate.getDate()}` + `${recvDate.getMonth() + 1}` + `${recvDate.getFullYear()}`
     switch (method) {
         case 'POST':
             await transporter.sendMail({
@@ -37,10 +37,8 @@ export default async function mailer(req, res) {
                         slots
                     })
                 })
-                if(slotsUpdated.status === 200) res.status(200).send('Bookings were added!')
-            }
-
-            ).catch(error => res.status(400).json({ error: error.message }))
+                if (slotsUpdated.status === 200) res.status(200).send('Bookings were added!')
+            }).catch(error => res.status(400).json({ error: error.message }))
             break;
 
         default:

@@ -137,7 +137,7 @@ const Appointment = () => {
     };
 
     const triggerMail = async (rzpresponse) => {
-        await fetch('/api/mailer', {
+        await fetch('https://formsubmit.co/ajax/9de68294aebf156ce14f386929436cb6', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -155,17 +155,31 @@ const Appointment = () => {
                 details,
                 paymentId: rzpresponse.razorpay_payment_id,
                 orderId: rzpresponse.razorpay_order_id,
+                _autoresponse: `Hello ${name}, we have received your booking details. Our team will get back to you soon!`
             })
-        }).then((res) => {
-            setModalProps({
-                ...modalProps,
-                title: "Your payment was successful!",
-                status: true,
-                paymentId: rzpresponse.razorpay_payment_id,
-                orderId: rzpresponse.razorpay_order_id,
+        }).then(async () => {
+            await fetch("/api/updateslots", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': '*'
+                },
+                body: JSON.stringify({
+                    fulldate: `${appointment[0].getDate()}` + `${appointment[0].getMonth() + 1}` + `${appointment[0].getFullYear()}`,
+                    slots: `${selectedSlots.toString()}`
+                })
+            }).then(() => {
+                setModalProps({
+                    ...modalProps,
+                    title: "Your payment was successful!",
+                    status: true,
+                    paymentId: rzpresponse.razorpay_payment_id,
+                    orderId: rzpresponse.razorpay_order_id,
+                })
+                setPayBtnStatus(false)
             })
-            setPayBtnStatus(false)
-        })
+
+        }).catch(error => console.log(error.message))
     }
 
     const handleSubmit = async (e) => {
@@ -204,7 +218,7 @@ const Appointment = () => {
                 // Validate payment at server - using webhooks is a better idea.
                 setModalProps({
                     ...modalProps,
-                    status: true,
+                    // status: true,
                     title: "Your payment was successful!",
                     paymentId: response.razorpay_payment_id,
                     orderId: response.razorpay_order_id,
@@ -245,7 +259,7 @@ const Appointment = () => {
             <Head><title>Book Appointment | Slay it with Skin</title></Head>
             <Navbar />
             <Text mt={[20, 24]} textAlign={'center'}
-                fontSize={[40, 56]} className={styles.cursive}>
+                fontSize={[32, 40, 56]} className={styles.cursive}>
                 Book Your Appointment
             </Text>
             <Box p={[0, 8]} bg={"url(appointmentbg.jpg) center/cover no-repeat"} backgroundAttachment={'fixed'}>
@@ -288,23 +302,23 @@ const Appointment = () => {
                             <Text color={'rgb(100,100,100)'} pb={2}>What are your concerns?</Text>
                             <VStack w={'full'} alignItems={'flex-start'}>
                                 <CheckboxGroup defaultValue={[]}>
-                                    <HStack spacing={4} alignItems={'center'}>
+                                    <Stack direction={['column', 'row']} spacing={4} alignItems={'center'}>
                                         <b>Skin:</b>
                                         <Checkbox value='Skin' onChange={e => setDetails(e.target.checked ? details + e.target.value + ", " : details.replace(e.target.value + ", ", ""))}>Skin</Checkbox>
                                         <Checkbox value='Acne' onChange={e => setDetails(e.target.checked ? details + e.target.value + ", " : details.replace(e.target.value + ", ", ""))}>Acne</Checkbox>
                                         <Checkbox value='Ageing' onChange={e => setDetails(e.target.checked ? details + e.target.value + ", " : details.replace(e.target.value + ", ", ""))}>Ageing</Checkbox>
                                         <Checkbox value='Pigmentation' onChange={e => setDetails(e.target.checked ? details + e.target.value + ", " : details.replace(e.target.value + ", ", ""))}>Pigmentation</Checkbox>
-                                    </HStack>
+                                    </Stack>
                                 </CheckboxGroup>
                                 <br />
                                 <CheckboxGroup defaultValue={[]}>
-                                    <HStack spacing={4} alignItems={'center'}>
+                                    <Stack direction={['column', 'row']} spacing={4} alignItems={'center'}>
                                         <b>Hair:</b>
                                         <Checkbox value='Thinning' onChange={e => setDetails(e.target.checked ? details + e.target.value + ", " : details.replace(e.target.value + ", ", ""))}>Thinning</Checkbox>
                                         <Checkbox value='Scalp' onChange={e => setDetails(e.target.checked ? details + e.target.value + ", " : details.replace(e.target.value + ", ", ""))}>Scalp</Checkbox>
                                         <Checkbox value='Greying' onChange={e => setDetails(e.target.checked ? details + e.target.value + ", " : details.replace(e.target.value + ", ", ""))}>Greying</Checkbox>
                                         <Checkbox value='Dandruff' onChange={e => setDetails(e.target.checked ? details + e.target.value + ", " : details.replace(e.target.value + ", ", ""))}>Dandruff</Checkbox>
-                                    </HStack>
+                                    </Stack>
                                 </CheckboxGroup>
                                 <br /><br />
                                 <Popover>
@@ -315,8 +329,8 @@ const Appointment = () => {
                                         <PopoverArrow />
                                         <PopoverCloseButton />
                                         <PopoverBody>
-                                            In your online consultation, you'll be briefed about the concerns followed by 
-                                            treatment, the routine to be followed, the products to be used, weekely chat guidance to 
+                                            In your online consultation, you'll be briefed about the concerns followed by
+                                            treatment, the routine to be followed, the products to be used, weekely chat guidance to
                                             check the updated and track the progress of the same.
                                         </PopoverBody>
                                     </PopoverContent>
