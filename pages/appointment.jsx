@@ -137,7 +137,7 @@ const Appointment = () => {
     };
 
     const triggerMail = async (rzpresponse) => {
-        await fetch('https://formsubmit.co/ajax/slayitwithskin@gmail.com', {
+        await fetch('https://formsubmit.co/ajax/56b3e13432de43fb57867eafe64c37b2', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
