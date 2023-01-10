@@ -55,7 +55,7 @@ const Post = ({ data }) => {
                 {data.title}
             </Text>
             <Text color={'darkslategray'} px={[4, 16]}>
-                By Robert Downey Jr. &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; 23 November, 2022
+                By our team &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;
             </Text>
 
             <Flex
@@ -69,7 +69,7 @@ const Post = ({ data }) => {
                     {parse(data.intro)}
                 </Text>
                 <Image
-                    src={'https://goodmockups.com/wp-content/uploads/2019/11/Free-Natural-Face-Wash-Pump-Spray-Scrub-Jar-Mockup-PSD-File-1.jpg'}
+                    src={data.image.replace("./blogs", "./")}
                     w={['sm', 'md', 'lg']}
                     h={[48, 56, 72]}
                     mb={[4, 0]}
@@ -108,7 +108,7 @@ const Post = ({ data }) => {
                             }}
                         >
                             <Image
-                                src={'https://goodmockups.com/wp-content/uploads/2019/11/Free-Natural-Face-Wash-Pump-Spray-Scrub-Jar-Mockup-PSD-File-1.jpg'}
+                                src={post.image.replace("./blogs", "./")}
                                 w={'full'}
                                 h={48}
                                 objectFit={'cover'}
@@ -118,10 +118,10 @@ const Post = ({ data }) => {
                                 p={4}
                                 bg={'white'}
                             >
-                                <HStack spacing={2}>
+                                {/* <HStack spacing={2}>
                                     <BsCalendar2 fontSize={10} fontWeight={600} />
                                     <Text color={'darkslategray'} fontSize={10} fontWeight={600}>{post.id} Nov 2022</Text>
-                                </HStack>
+                                </HStack> */}
                                 <Text
                                     my={2}
                                     fontSize={18}
@@ -141,7 +141,7 @@ const Post = ({ data }) => {
                     </Link>
                 )}
             </Flex>
-            <Banner />
+            {/* <Banner /> */}
             <Footer />
         </>
     )

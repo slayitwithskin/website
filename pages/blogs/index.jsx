@@ -66,7 +66,7 @@ const Blogs = () => {
                             }}
                         >
                             <Image
-                                src={'https://goodmockups.com/wp-content/uploads/2019/11/Free-Natural-Face-Wash-Pump-Spray-Scrub-Jar-Mockup-PSD-File-1.jpg'}
+                                src={post.image}
                                 w={'full'}
                                 h={48}
                                 objectFit={'cover'}

@@ -46,7 +46,7 @@ const Navbar = () => {
           {/* <Link href={'/'}><h1 className="brand-title">Slay it with Skin</h1></Link> */}
           <Link href={'/'}>
             <HStack spacing={2}>
-              <Image src='logo.png' alt='Logo' w={'auto'} h={'10'} />
+              <Image src='/logo.png' alt='Logo' w={'auto'} h={'10'} />
               {/* <h1 className="brand-title">Slay it with Skin</h1> */}
             </HStack>
           </Link>
