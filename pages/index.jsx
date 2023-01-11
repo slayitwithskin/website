@@ -30,7 +30,7 @@ const Index = () => {
 
         <Navbar />
 
-        <Flex direction={['column', 'row']} alignItems={"center"} justifyContent={"space-between"} h={'auto'} bg={'red.100'}>
+        <Flex direction={['column', 'row']} alignItems={"center"} justifyContent={"space-between"} h={'auto'} bg={'#D9B3C4'}>
           <Flex w={['100%', '60%']} direction={"column"} justifySelf={'center'} px={['8', '16', '24']} pt={24} justifyContent={'center'}>
             <Text fontSize={["42", "56", "64"]} className={styles.cursive} textAlign={['center', 'left']} lineHeight={[1.5, 1, 1]}>Give your skin</Text>
             <Text mb={8} fontSize={["36", "48", "56"]} className={styles.cursive} textAlign={['center', 'left']} color={'gray.600'}>the treatment it deserves</Text>
@@ -49,15 +49,15 @@ const Index = () => {
             </Link>
           </Flex>
           <Flex w={['100%', '40%']} direction={"column"} justifySelf={'center'} px={'8'} justifyContent={'flex-end'}>
-            <Image src={'woman.png'} />
+            <Image src={'heroimg.png'} />
           </Flex>
         </Flex>
 
       </header>
 
-      <Flex px={[8, 12, 16]} py={8} justifyContent={'center'} wrap={'wrap-reverse'}>
-        <Box w={['100%', '35%', '50%']}>
-          <Image src='woman2.png' w={'xl'} />
+      <Flex px={[8, 12, 16]} py={8} justifyContent={'space-between'} wrap={'wrap-reverse'}>
+        <Box w={['xs', 'md']} h={'md'}>
+          <Image src='glowdaily.jpg' w={'inherit'} h={'inherit'} objectFit={'cover'} objectPosition={'center'} />
         </Box>
         <Flex direction={'column'} alignItems={'flex-start'} justifyContent={'center'} w={['100%', '65%', '50%']} px={[0, 6]}>
           <Text className={styles.monts}>NATURALLY & SAFELY</Text>
@@ -82,7 +82,7 @@ const Index = () => {
 
       <Box
         position={"relative"}
-        backgroundImage={"bride.jpg"}
+        backgroundImage={"bannercover.jpg"}
         backgroundPosition={["top", "50% 0%"]}
         backgroundSize={"cover"}
         backgroundAttachment={"fixed"}
@@ -94,19 +94,20 @@ const Index = () => {
           <Flex h={'full'} direction={"column"} alignItems={'center'} justifyContent={'center'} zIndex={10}>
             <Text className={styles.monts} color={'white'} letterSpacing={4}>STAY BEAUTIFUL & CONFIDENT</Text>
             <Text className={styles.cursive} fontSize={['36', '52', '64']} color={'white'}>Beauty That's Uniquely You</Text>
-            <Button
-              my={4} p={6}
-              bg={'transparent'}
-              border={'2px'}
-              borderColor={'white'}
-              color={'white'}
-              rounded={0}
-              className={styles.monts}
-              _hover={{ bg: 'white', color: 'black' }}
-              onClick={() => { Calendly.initPopupWidget({ url: 'https://calendly.com/slayitwithskin/appointment' }); return false; }}
-            >
-              BOOK APPOINTMENT
-            </Button>
+            <Link href={'/appointment'}>
+              <Button
+                my={4} p={6}
+                bg={'transparent'}
+                border={'2px'}
+                borderColor={'white'}
+                color={'white'}
+                rounded={0}
+                className={styles.monts}
+                _hover={{ bg: 'white', color: 'black' }}
+              >
+                BOOK APPOINTMENT
+              </Button>
+            </Link>
           </Flex>
         </Box>
       </Box>
@@ -117,7 +118,7 @@ const Index = () => {
         <Box width={24} h={.5} m={'0 auto'} bg={'black'}></Box>
         <Flex wrap={'wrap'} mt={16} alignItems={'center'} justifyContent={['center', 'space-around']}>
 
-          {services.map((service) => 
+          {services.map((service) =>
             <Link href={service.slug} key={service.id}>
               <Box
                 position={'relative'}
@@ -181,7 +182,7 @@ const Index = () => {
         </Flex>
       </Box>
 
-      <Flex position={'relative'} p={[8, 16]} bg={"#C5D8A4"} justifyContent={'space-between'} wrap={'wrap'}>
+      {/* <Flex position={'relative'} p={[8, 16]} bg={"#C5D8A4"} justifyContent={'space-between'} wrap={'wrap'}>
         <Flex direction={'column'} alignItems={'flex-start'} justifyContent={'center'} w={['100%', '40%']}>
           <Text className={styles.monts}>EXPERT BEAUTICIANS</Text>
           <Text className={styles.cursive} fontSize={['40', '56']} lineHeight={'short'}>Years of Experience</Text>
@@ -191,7 +192,7 @@ const Index = () => {
         <Flex w={['100%', '45%']} h={['40vh']} mt={[8, 0, 0]}>
           <iframe className={styles.homevideo} src="https://www.youtube.com/embed/q0BVR5jRXxE" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </Flex>
-      </Flex>
+      </Flex> */}
 
       <Flex
         pos={'relative'}
@@ -219,20 +220,29 @@ const Index = () => {
           p={8}
           direction={['column', 'row']}
         >
-          <Image
-            src={'facial.jpg'}
+          <Box
             w={['full', 'xl']}
             h={['180px', 'lg']}
-            objectFit={'cover'}
-          />
+            display={'flex'}
+            flexDir={'column'}
+            alignItems={'center'}
+            justifyContent={'flex-end'}
+            bg={'white'} boxShadow={'lg'}
+          >
+            <Image
+              src={'blogs.png'}
+              w={['full', 'sm']}
+              objectFit={'cover'}
+            />
+          </Box>
 
           <Flex direction={'column'} alignItems={'flex-start'} justifyContent={'center'} w={['100%', '60%']} pl={[0, 16]} pt={[8, 0]}>
             <Text className={styles.monts}>TALKS OF WISDOM</Text>
             <Text className={styles.cursive} fontSize={['40', '56']}>Read Our Blogs</Text>
             <Box mt={6} mb={4} w={20} h={.5} bg={'blackAlpha.800'}></Box>
             <Text fontWeight={400}>
-              Our motto is to make everyone beleive and have that glow in their skin that they 
-              always dreamt of. And to make this motto come true, we're spreading our knowledge 
+              Our motto is to make everyone beleive and have that glow in their skin that they
+              always dreamt of. And to make this motto come true, we're spreading our knowledge
               through these blogs. You'll find Do's and Dont's, tips, home remedies and much more here!
             </Text>
             <Link href={'/blogs'} >

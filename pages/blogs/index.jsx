@@ -76,10 +76,10 @@ const Blogs = () => {
                                 p={4}
                                 bg={'white'}
                             >
-                                <HStack spacing={2}>
+                                {/* <HStack spacing={2}>
                                     <BsCalendar2 fontSize={10} fontWeight={600} />
                                     <Text color={'darkslategray'} fontSize={10} fontWeight={600}>{post.id || "NA"} Nov 2022</Text>
-                                </HStack>
+                                </HStack> */}
                                 <Text
                                     my={2}
                                     fontSize={18}

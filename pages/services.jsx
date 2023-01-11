@@ -82,7 +82,7 @@ const Service = () => {
 
 
             {/* Facials */}
-            <Box px={[4, 8, 16]} py={6}>
+            <Box px={[4, 8, 16]} py={6} id={'facials'}>
                 <Text className={styles.cursive} fontSize={[24, 36]} mb={5}>
                     Facials
                 </Text>
@@ -126,7 +126,7 @@ const Service = () => {
 
 
             {/* Treatments */}
-            <Box px={[4, 8, 16]} py={6}>
+            <Box px={[4, 8, 16]} py={6} id={'treatments'}>
                 <Text className={styles.cursive} fontSize={[24, 36]} mb={5}>
                     Treatments
                 </Text>
@@ -148,7 +148,7 @@ const Service = () => {
 
 
             {/* Bridal Skin Prep Journey */}
-            <Box px={[4, 8, 16]} py={6}>
+            <Box px={[4, 8, 16]} py={6} id={'bridal'}>
                 <Text className={styles.cursive} fontSize={[24, 36]} mb={5}>
                     Bridal Skin Prep Journey
                 </Text>
