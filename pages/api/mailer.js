@@ -1,6 +1,6 @@
 import { mailOptions, transporter } from "../../config/nodemailer";
-import appointments from "./appointments";
-import updateslots from "./updateslots";
+// import appointments from "./appointments";
+// import updateslots from "./updateslots";
 
 export default async function mailer(req, res) {
     const { method } = req
