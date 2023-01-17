@@ -35,7 +35,7 @@ import {
 import DatePicker from 'react-flatpickr'
 import 'flatpickr/dist/themes/material_blue.css'
 
-import appointments from './api/appointments'
+// import appointments from './api/appointments'
 
 
 const Appointment = () => {

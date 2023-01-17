@@ -21,8 +21,10 @@ const Soon = () => {
                 justifyContent={'center'}
             >
                 <Image
-                    src={'/shop.png'}
-                    w={['80%', '70%', '50%']}
+                    src={'/soon.jpeg'}
+                    w={['100%', '100%', '100%']}
+                    h={['60vh', '70vh']}
+                    objectFit={'cover'}
                 />
                 <Flex direction={'column'} alignItems={'center'} justifyContent={'center'} mb={[24, 0]} position={'relative'}>
                     <Text fontSize={[40, 64]} fontWeight={800} color={'darkslategray'} textAlign={'center'}>Coming Soon</Text>

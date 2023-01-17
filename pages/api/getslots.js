@@ -12,7 +12,7 @@ export default async function (req, res) {
             res.status(200).send(bookedSlots)
         }
         else {
-            res.status(404).send("No bookings for this date")
+            res.status(204)
         }
     }
     else res.send(`${req.method} Method Not Allowed`)
