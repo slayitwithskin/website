@@ -90,7 +90,7 @@ const Service = () => {
                 <Text py={4}>
                     <b>Hydra Facial</b>
                     <br />
-                    It helps in exfoliation of buildup of sebum and debis that covers the top layer of the skin.
+                    It helps in exfoliation of buildup of sebum and debris that covers the top layer of the skin.
                     It leaves the skin hydrated through infusion of serums.
                 </Text>
 
@@ -102,9 +102,9 @@ const Service = () => {
                 </Text>
 
                 <Text py={4}>
-                    <b>Micro Dumabation</b>
+                    <b>Micro Dermabrasion</b>
                     <br />
-                    Micro Dumabation is a minimally invasive treatment which helps in resurfacing the texture or skin tome of the face.
+                    Micro Dermabrasion is a minimally invasive treatment which helps in resurfacing the texture or skin tome of the face.
                     It also helps in treating scars, stretch marks and skin damage.
                 </Text>
 
@@ -171,6 +171,29 @@ const Service = () => {
                     <br />
                     This process is mainly concentrated on facial massage technique focussing on sculpting
                     the face uplifting the structure of the jawline and cheek area.
+                </Text>
+
+            </Box>
+
+
+            {/* Hair Treatments */}
+            <Box px={[4, 8, 16]} py={6} id={'bridal'}>
+                <Text className={styles.cursive} fontSize={[24, 36]} mb={5}>
+                    Hair Treatments
+                </Text>
+
+                <Text py={4}>
+                    <b>PRP Therapy</b>
+                    <br />
+                    PRP (platelet-rich plasma) therapy for hair loss is a three-step medical treatment in which a person's blood is drawn, processed, and then injected into the scalp. 
+                    Some in the medical community think that PRP injections trigger natural hair growth and maintain it by increasing blood supply to the hair follicle and increasing the thickness of the hair shaft. 
+                    Sometimes this approach is combined with other hair loss procedures or medications.
+                </Text>
+
+                <Text py={4}>
+                    <b>Scalp Rejuvenation Treatment</b>
+                    <br />
+                    It helps with cleaning and maintaining the health of scalp, treats thinning of hair, regrowth of hair, reverses greying.
                 </Text>
 
             </Box>

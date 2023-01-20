@@ -85,7 +85,7 @@ const Navbar = () => {
                       <Link href={'/services'}><Text>24K Gold Facial</Text></Link>
                     </MenuItem>
                     <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                      <Link href={'/services'}><Text>Micro Dermabation</Text></Link>
+                      <Link href={'/services'}><Text>Micro Dermabrasion</Text></Link>
                     </MenuItem>
                   </Flex>
 
@@ -223,7 +223,7 @@ const Navbar = () => {
                       <Link href={'/services'}><Text my={2}>Korean Glass Skin Facials</Text></Link>
                       <Link href={'/services'}><Text my={2}>Face Lift Facials</Text></Link>
                       <Link href={'/services'}><Text my={2}>24K Gold Facials</Text></Link>
-                      <Link href={'/services'}><Text my={2}>Micro Dermabation</Text></Link>
+                      <Link href={'/services'}><Text my={2}>Micro Dermabrasion</Text></Link>
                     </AccordionPanel>
                   </AccordionItem>
 

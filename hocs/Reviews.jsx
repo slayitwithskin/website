@@ -37,7 +37,7 @@ const Reviews = () => {
             <Box p={4} display={'flex'} flexDirection={'column'} alignItems={'center'} justifyContent={'flex-start'}>
               {/* <Image boxSize={'128px'} objectFit={'cover'} src={'bride.jpg'} objectPosition={'top'} borderTopLeftRadius={16} borderBottomRightRadius={16} /> */}
               <Text fontSize={'2xl'} color={'black'} mt={2}>Kenisha Gami</Text>
-              <Text className={styles.monts} fontSize={12} mb={4}>CANADA</Text>
+              <Text className={styles.monts} fontSize={12} mb={4}>MUMBAI</Text>
               <Text color={'darkslategray'} textAlign={'center'}>After the treatment my skin have become soft and glowing it have also reduced my dark circles and made my skin look even i feel my skin feels healthy ✌🏼</Text>
             </Box>
           </SplideSlide>
@@ -45,7 +45,7 @@ const Reviews = () => {
             <Box p={4} display={'flex'} flexDirection={'column'} alignItems={'center'} justifyContent={'flex-start'}>
               {/* <Image boxSize={'128px'} objectFit={'cover'} src={'bride.jpg'} objectPosition={'top'} borderTopLeftRadius={16} borderBottomRightRadius={16} /> */}
               <Text fontSize={'2xl'} color={'black'} mt={2}>Gunjan Saini</Text>
-              <Text className={styles.monts} fontSize={12} mb={4}>INDIA</Text>
+              <Text className={styles.monts} fontSize={12} mb={4}>DELHI</Text>
               <Text color={'darkslategray'} textAlign={'center'}>
                 I’ve taken the service for my acne skin and did peeling session by Vandana and it was amazing. Felt the changes in my skin within 24 hrs time! Will surely be taking more services soon. ❤️
               </Text>
@@ -54,25 +54,17 @@ const Reviews = () => {
           <SplideSlide>
             <Box p={4} display={'flex'} flexDirection={'column'} alignItems={'center'} justifyContent={'flex-start'}>
               {/* <Image boxSize={'128px'} objectFit={'cover'} src={'bride.jpg'} objectPosition={'top'} borderTopLeftRadius={16} borderBottomRightRadius={16} /> */}
-              <Text fontSize={'2xl'} color={'black'} mt={2}>Amanda</Text>
-              <Text className={styles.monts} fontSize={12} mb={4}>LOCATION</Text>
-              <Text color={'darkslategray'} textAlign={'center'}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore perspiciatis debitis iste quam repellendus quos, sapiente facilis! Consectetur voluptates deserunt sequi?</Text>
+              <Text fontSize={'2xl'} color={'black'} mt={2}>Prapti</Text>
+              <Text className={styles.monts} fontSize={12} mb={4}>MUMBAI</Text>
+              <Text color={'darkslategray'} textAlign={'center'}>I’m getting my acne treatment done, and loving the results so far.</Text>
             </Box>
           </SplideSlide>
           <SplideSlide>
             <Box p={4} display={'flex'} flexDirection={'column'} alignItems={'center'} justifyContent={'flex-start'}>
               {/* <Image boxSize={'128px'} objectFit={'cover'} src={'bride.jpg'} objectPosition={'top'} borderTopLeftRadius={16} borderBottomRightRadius={16} /> */}
-              <Text fontSize={'2xl'} color={'black'} mt={2}>Amanda</Text>
-              <Text className={styles.monts} fontSize={12} mb={4}>LOCATION</Text>
-              <Text color={'darkslategray'} textAlign={'center'}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore perspiciatis debitis iste quam repellendus quos, sapiente facilis! Consectetur voluptates deserunt sequi?</Text>
-            </Box>
-          </SplideSlide>
-          <SplideSlide>
-            <Box p={4} display={'flex'} flexDirection={'column'} alignItems={'center'} justifyContent={'flex-start'}>
-              {/* <Image boxSize={'128px'} objectFit={'cover'} src={'bride.jpg'} objectPosition={'top'} borderTopLeftRadius={16} borderBottomRightRadius={16} /> */}
-              <Text fontSize={'2xl'} color={'black'} mt={2}>Amanda</Text>
-              <Text className={styles.monts} fontSize={12} mb={4}>LOCATION</Text>
-              <Text color={'darkslategray'} textAlign={'center'}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore perspiciatis debitis iste quam repellendus quos, sapiente facilis! Consectetur voluptates deserunt sequi?</Text>
+              <Text fontSize={'2xl'} color={'black'} mt={2}>Abhay</Text>
+              <Text className={styles.monts} fontSize={12} mb={4}>BANGALORE</Text>
+              <Text color={'darkslategray'} textAlign={'center'}>I just love the skin results after my carbon peel laser. Never thought my skin would feel so refreshed & look so healthy.</Text>
             </Box>
           </SplideSlide>
         </Splide>
