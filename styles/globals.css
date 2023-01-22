@@ -8,6 +8,10 @@
   text-decoration: none;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 .brand-title{
   font-size: 1.5rem;
   color: #000;

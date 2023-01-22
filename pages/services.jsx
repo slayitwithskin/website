@@ -31,6 +31,7 @@ const Service = () => {
                 direction={['column', 'row']}
                 alignItems={'center'}
                 justifyContent={'space-between'}
+                scrollBehavior={'smooth'}
             >
                 <Box
                     w={['90%', 'md']}
@@ -82,7 +83,7 @@ const Service = () => {
 
 
             {/* Facials */}
-            <Box px={[4, 8, 16]} py={6} id={'facials'}>
+            <Box px={[4, 8, 16]} py={6} id={'facial'}>
                 <Text className={styles.cursive} fontSize={[24, 36]} mb={5}>
                     Facials
                 </Text>
@@ -126,7 +127,7 @@ const Service = () => {
 
 
             {/* Treatments */}
-            <Box px={[4, 8, 16]} py={6} id={'treatments'}>
+            <Box px={[4, 8, 16]} py={6} id={'treatment'}>
                 <Text className={styles.cursive} fontSize={[24, 36]} mb={5}>
                     Treatments
                 </Text>
@@ -177,7 +178,7 @@ const Service = () => {
 
 
             {/* Hair Treatments */}
-            <Box px={[4, 8, 16]} py={6} id={'bridal'}>
+            <Box px={[4, 8, 16]} py={6} id={'hair'}>
                 <Text className={styles.cursive} fontSize={[24, 36]} mb={5}>
                     Hair Treatments
                 </Text>
