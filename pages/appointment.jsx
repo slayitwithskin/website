@@ -260,7 +260,10 @@ const Appointment = () => {
             <Navbar />
             <Text mt={[20, 24]} textAlign={'center'}
                 fontSize={[32, 40, 56]} className={styles.cursive}>
-                Book Your Appointment
+                Book A Virtual Appointment
+            </Text>
+            <Text textAlign={'center'} mb={4}>
+                Select your preferred slot and book a virtual appointment with one of our expert to guidance on beauty and grooming.
             </Text>
             <Box p={[0, 8]} bg={"url(appointmentbg.jpg) center/cover no-repeat"} backgroundAttachment={'fixed'}>
                 <form action="#!" onSubmit={e => handleSubmit(e)}>
