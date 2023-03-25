@@ -28,7 +28,7 @@ const Footer = () => {
 
             <Flex w={'xs'} direction={'column'} alignItems={'flex-start'} justifyContent={'flex-start'} my={[8,8,0]}>
                 {/* <Text className={styles.cursive} fontSize={28}>Slay it with Skin</Text> */}
-                <Image src='logo.png' alt='Logo' w={'auto'} h={'16'} />
+                <Image src='/logo.png' alt='Logo' w={'auto'} h={'16'} />
                 <Text my={4} fontSize={14}>Station Road, Santacruz West
                     <br />Mumbai, Maharashtra
                     <br />PIN: 400055
