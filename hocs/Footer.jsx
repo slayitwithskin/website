@@ -79,7 +79,7 @@ const Footer = () => {
             <Flex w={'full'} direction={'column'} alignItems={'flex-start'} justifyContent={'flex-start'} my={[4,4,0]}>
             <Text className={styles.monts} fontSize={18}>Policies</Text>
             <Box w={'full'} h={.5} bg={'blackAlpha.400'} mb={4}></Box>
-            <Link href={'#'}>
+            <Link href={'/policies/terms-conditions'}>
                 <Text fontSize={16} p={2} _hover={{ bg: 'green.600', color: 'white' }}>Terms & Conditions</Text>
             </Link>
             <Link href={'/policies/privacy-policy'}>
