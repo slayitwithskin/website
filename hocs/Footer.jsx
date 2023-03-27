@@ -97,19 +97,19 @@ const Footer = () => {
         <Box w={'70%'} h={.5} bg={'blackAlpha.400'} my={8}></Box>
 
         <HStack justifyContent={'center'} spacing={6}>
-            <Link href={'#'}>
+            <Link href={'https://www.instagram.com/slayitwithskin/'} target={'_blank'}>
             <Box p={4} fontSize={24} color={'green.600'} transition={'all .3s ease'} _hover={{ bg: 'green.600', color: 'white' }} borderRadius={'8px 0 8px 0'}><BsInstagram /></Box>
             </Link>
 
-            <Link href={'#'}>
+            <Link href={'https://www.facebook.com/SlayitwithSkin'} target={'_blank'}>
             <Box p={4} fontSize={24} color={'green.600'} transition={'all .3s ease'} _hover={{ bg: 'green.600', color: 'white' }} borderRadius={'8px 0 8px 0'}><BsFacebook /></Box>
             </Link>
 
-            <Link href={'#'}>
+            <Link href={'https://twitter.com/SlayitwithSkin'} target={'_blank'}>
             <Box p={4} fontSize={24} color={'green.600'} transition={'all .3s ease'} _hover={{ bg: 'green.600', color: 'white' }} borderRadius={'8px 0 8px 0'}><BsTwitter /></Box>
             </Link>
 
-            <Link href={'#'}>
+            <Link href={'https://wa.me/919004574190'} target={'_blank'}>
             <Box p={4} fontSize={24} color={'green.600'} transition={'all .3s ease'} _hover={{ bg: 'green.600', color: 'white' }} borderRadius={'8px 0 8px 0'}><BsWhatsapp /></Box>
             </Link>
 
