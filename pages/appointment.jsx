@@ -30,12 +30,13 @@ import {
     PopoverArrow,
     PopoverCloseButton,
     PopoverHeader,
-    PopoverBody
+    PopoverBody,
 } from '@chakra-ui/react'
 import DatePicker from 'react-flatpickr'
 import 'flatpickr/dist/themes/material_blue.css'
+import axios from 'axios'
+import { loadStripe } from '@stripe/stripe-js';
 
-// import appointments from './api/appointments'
 
 
 const Appointment = () => {
@@ -51,11 +52,15 @@ const Appointment = () => {
     const [details, setDetails] = useState("")
     const [couponCode, setCouponCode] = useState("")
     const [payBtnStatus, setPayBtnStatus] = useState(false)
+    const [subTotal, setSubTotal] = useState(0)
+    const [total, setTotal] = useState(0)
     const [tranxnData, setTranxnData] = useState({
         paymentId: "",
         orderId: "",
     })
-
+    const stripePromise = loadStripe(
+        process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
+    );
     const [modalProps, setModalProps] = useState({
         status: false,
         title: "Your payment was not successful!",
@@ -250,11 +255,41 @@ const Appointment = () => {
         setSelectedSlots([])
     }
 
-    function applyCoupon(){
-        
+    function applyCoupon() {
+
     }
 
+    function addToSubtotal(amountToAdd) {
+        setSubTotal(subTotal + amountToAdd)
+    }
+    function subtractFromSubtotal(amountToSubtract) {
+        setSubTotal(subTotal - amountToSubtract)
+    }
 
+    async function stripeCheckout() {
+        try {
+            const stripe = await stripePromise;
+
+            const checkoutSession = await axios.post("/api/stripe/session", {
+                cart: {
+                    name: `${name}'s Appointment at Slayitwithskin`,
+                    price: 1000,
+                    currency: 'INR',
+                    quantity: 1,
+                }
+            });
+
+            const result = await stripe.redirectToCheckout({
+                sessionId: checkoutSession.data.id,
+            });
+
+            if (result.error) {
+                alert(result.error.message);
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
 
     return (
@@ -307,19 +342,19 @@ const Appointment = () => {
                         <VStack my={4} p={[4, 6]} boxShadow={'base'} bg={'white'} alignItems={'flex-start'}>
                             <Text color={'rgb(100,100,100)'} pb={2}>What are your concerns?</Text>
                             <VStack w={'full'} alignItems={'flex-start'}>
-                                <CheckboxGroup defaultValue={[]} onChange={values => setDetails(values)}>
+                                <CheckboxGroup defaultValue={[]} onChange={values => { setDetails(values) }}>
                                     <b>Hair:</b>
-                                    <Stack direction={['row']} spacing={4} flexWrap={'wrap'} alignItems={'center'} pb={6}>
-                                        <Checkbox my={2} value='Thinning' >Thinning</Checkbox>
-                                        <Checkbox my={2} value='Scalp' >Scalp</Checkbox>
-                                        <Checkbox my={2} value='Greying' >Greying</Checkbox>
-                                        <Checkbox my={2} value='Dandruff' >Dandruff</Checkbox>
+                                    <Stack direction={['column']} spacing={4} flexWrap={'wrap'} pb={6}>
+                                        <Checkbox value='Thinning' onChange={e => e.target.checked ? addToSubtotal(399) : subtractFromSubtotal(399)}>Thinning (₹399)</Checkbox>
+                                        <Checkbox value='Scalp' onChange={e => e.target.checked ? addToSubtotal(299) : subtractFromSubtotal(299)} >Scalp (₹299)</Checkbox>
+                                        <Checkbox value='Greying' onChange={e => e.target.checked ? addToSubtotal(399) : subtractFromSubtotal(399)} >Greying (₹399)</Checkbox>
+                                        <Checkbox value='Dandruff' onChange={e => e.target.checked ? addToSubtotal(199) : subtractFromSubtotal(199)} >Dandruff (₹199)</Checkbox>
                                     </Stack>
                                     <b>Skin:</b>
-                                    <Stack direction={['row']} flexWrap={'wrap'} spacing={4} alignItems={'center'}>
-                                        <Checkbox my={2} value='Acne' >Acne</Checkbox>
-                                        <Checkbox my={2} value='Ageing' >Ageing</Checkbox>
-                                        <Checkbox my={2} value='Pigmentation' >Pigmentation</Checkbox>
+                                    <Stack direction={['column']} flexWrap={'wrap'} spacing={4}>
+                                        <Checkbox value='Acne' onChange={e => e.target.checked ? addToSubtotal(499) : subtractFromSubtotal(499)} >Acne (₹499)</Checkbox>
+                                        <Checkbox value='Ageing' onChange={e => e.target.checked ? addToSubtotal(199) : subtractFromSubtotal(199)} >Ageing (₹199)</Checkbox>
+                                        <Checkbox value='Pigmentation' onChange={e => e.target.checked ? addToSubtotal(344) : subtractFromSubtotal(344)} >Pigmentation (₹344)</Checkbox>
                                     </Stack>
                                 </CheckboxGroup>
                                 <br /><br />
@@ -406,17 +441,39 @@ const Appointment = () => {
                                     <Text fontSize={14} color={'rgb(100,100,100)'}>
                                         Total Payable
                                     </Text>
-                                    <Text fontSize={24} className={styles.monts}>
-                                        ₹ {selectedSlots.length * baseRate}
-                                    </Text>
+
+                                    {
+                                        total ?
+                                            <>
+                                                <Text fontSize={16} className={styles.monts}>
+                                                    {selectedSlots.length * baseRate + subTotal}
+                                                </Text>
+                                                <hr style={{ border: '.75px solid #000', position: 'relative', top: '-14px' }} />
+                                                <Text fontSize={24} className={styles.monts}>
+                                                    ₹ {total}
+                                                </Text>
+                                            </> :
+                                            <Text fontSize={24} className={styles.monts}>
+                                                ₹ {selectedSlots.length * baseRate + subTotal}
+                                            </Text>
+                                    }
+
                                 </Box>
-                                <Button colorScheme={'facebook'}
+                                {/* <Button colorScheme={'facebook'}
                                     rounded={0} p={6} fontSize={[12, 16]}
                                     className={styles.monts} textTransform={'uppercase'}
                                     type='submit'
                                     disabled={payBtnStatus}
                                 >
                                     Pay with Razorpay
+                                </Button> */}
+                                <Button colorScheme={'whatsapp'}
+                                    rounded={0} p={6} fontSize={[12, 16]}
+                                    className={styles.monts} textTransform={'uppercase'}
+                                    onClick={stripeCheckout}
+                                    disabled={payBtnStatus}
+                                >
+                                    Pay with Stripe
                                 </Button>
                             </HStack>
                         </VStack>
