@@ -48,7 +48,8 @@ const Appointment = () => {
     const [gender, setGender] = useState('female')
     const [selectedSlots, setSelectedSlots] = useState([])
     const [phone, setPhone] = useState("")
-    const [details, setDetails] = useState("Concerns: ")
+    const [details, setDetails] = useState("")
+    const [couponCode, setCouponCode] = useState("")
     const [payBtnStatus, setPayBtnStatus] = useState(false)
     const [tranxnData, setTranxnData] = useState({
         paymentId: "",
@@ -244,11 +245,13 @@ const Appointment = () => {
         setPayBtnStatus(false)
     }
 
-
-
     function clearSlots() {
         document.querySelectorAll('.timeslot').forEach(element => element.classList.remove("selected"))
         setSelectedSlots([])
+    }
+
+    function applyCoupon(){
+        
     }
 
 
@@ -304,23 +307,19 @@ const Appointment = () => {
                         <VStack my={4} p={[4, 6]} boxShadow={'base'} bg={'white'} alignItems={'flex-start'}>
                             <Text color={'rgb(100,100,100)'} pb={2}>What are your concerns?</Text>
                             <VStack w={'full'} alignItems={'flex-start'}>
-                                <CheckboxGroup defaultValue={[]}>
-                                    <Stack direction={['column', 'row']} spacing={4} alignItems={'center'}>
-                                        <b>Skin:</b>
-                                        <Checkbox value='Skin' onChange={e => setDetails(e.target.checked ? details + e.target.value + ", " : details.replace(e.target.value + ", ", ""))}>Skin</Checkbox>
-                                        <Checkbox value='Acne' onChange={e => setDetails(e.target.checked ? details + e.target.value + ", " : details.replace(e.target.value + ", ", ""))}>Acne</Checkbox>
-                                        <Checkbox value='Ageing' onChange={e => setDetails(e.target.checked ? details + e.target.value + ", " : details.replace(e.target.value + ", ", ""))}>Ageing</Checkbox>
-                                        <Checkbox value='Pigmentation' onChange={e => setDetails(e.target.checked ? details + e.target.value + ", " : details.replace(e.target.value + ", ", ""))}>Pigmentation</Checkbox>
+                                <CheckboxGroup defaultValue={[]} onChange={values => setDetails(values)}>
+                                    <b>Hair:</b>
+                                    <Stack direction={['row']} spacing={4} flexWrap={'wrap'} alignItems={'center'} pb={6}>
+                                        <Checkbox my={2} value='Thinning' >Thinning</Checkbox>
+                                        <Checkbox my={2} value='Scalp' >Scalp</Checkbox>
+                                        <Checkbox my={2} value='Greying' >Greying</Checkbox>
+                                        <Checkbox my={2} value='Dandruff' >Dandruff</Checkbox>
                                     </Stack>
-                                </CheckboxGroup>
-                                <br />
-                                <CheckboxGroup defaultValue={[]}>
-                                    <Stack direction={['column', 'row']} spacing={4} alignItems={'center'}>
-                                        <b>Hair:</b>
-                                        <Checkbox value='Thinning' onChange={e => setDetails(e.target.checked ? details + e.target.value + ", " : details.replace(e.target.value + ", ", ""))}>Thinning</Checkbox>
-                                        <Checkbox value='Scalp' onChange={e => setDetails(e.target.checked ? details + e.target.value + ", " : details.replace(e.target.value + ", ", ""))}>Scalp</Checkbox>
-                                        <Checkbox value='Greying' onChange={e => setDetails(e.target.checked ? details + e.target.value + ", " : details.replace(e.target.value + ", ", ""))}>Greying</Checkbox>
-                                        <Checkbox value='Dandruff' onChange={e => setDetails(e.target.checked ? details + e.target.value + ", " : details.replace(e.target.value + ", ", ""))}>Dandruff</Checkbox>
+                                    <b>Skin:</b>
+                                    <Stack direction={['row']} flexWrap={'wrap'} spacing={4} alignItems={'center'}>
+                                        <Checkbox my={2} value='Acne' >Acne</Checkbox>
+                                        <Checkbox my={2} value='Ageing' >Ageing</Checkbox>
+                                        <Checkbox my={2} value='Pigmentation' >Pigmentation</Checkbox>
                                     </Stack>
                                 </CheckboxGroup>
                                 <br /><br />
@@ -334,7 +333,7 @@ const Appointment = () => {
                                         <PopoverBody>
                                             In your online consultation, you'll be briefed about the concerns followed by
                                             treatment, the routine to be followed, the products to be used, weekely chat guidance to
-                                            check the updated and track the progress of the same.
+                                            check the updates and track the progress of the same.
                                         </PopoverBody>
                                     </PopoverContent>
                                 </Popover>
@@ -390,8 +389,15 @@ const Appointment = () => {
                                     w={'full'}
                                     placeholder={'Any additional details you would like to tell us...'}
                                     resize={'none'}
-                                    h={64} value={details} onChange={e => setDetails(e.target.value)}
+                                    h={64} value={`My Concerns: ${details}.`} onChange={e => setDetails(e.target.value)}
                                 />
+                            </HStack>
+                        </VStack>
+                        <VStack my={4} p={[4, 6]} boxShadow={'base'} bg={'white'} alignItems={'flex-start'}>
+                            <Text color={'rgb(100,100,100)'} pb={2}>Have Coupon Code?</Text>
+                            <HStack w={'full'} spacing={4}>
+                                <Input name='couponCode' onChange={e => setCouponCode(e.target.value)} />
+                                <Button colorScheme='facebook'>Apply</Button>
                             </HStack>
                         </VStack>
                         <VStack my={4} p={[4, 6]} boxShadow={'base'} bg={'white'}>

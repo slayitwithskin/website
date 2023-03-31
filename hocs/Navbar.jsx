@@ -52,7 +52,7 @@ const Navbar = () => {
           </Link>
           <Spacer />
 
-          <Flex display={['none', 'none', 'flex']}>
+          {/* <Flex display={['none', 'none', 'flex']}>
             <Menu>
               <MenuButton mx={6} borderBottom={"2px"} borderColor={"transparent"} _hover={{ borderColor: "black" }}>
                 <Flex alignItems={'center'} justifyContent={'center'}>
@@ -163,7 +163,79 @@ const Navbar = () => {
             </Menu>
             <Link href={"/blogs"}><Text mx={6} borderBottom={"2px"} borderColor={"transparent"} transition={"all .3s ease"} _hover={{ borderColor: "black" }}>Blogs</Text></Link>
             <Link href={"/shop"}><Text mx={6} borderBottom={"2px"} borderColor={"transparent"} transition={"all .3s ease"} _hover={{ borderColor: "black" }}>Shop</Text></Link>
+          </Flex> */}
+
+          <Flex display={['none', 'none', 'flex']}>
+            <Menu>
+              <MenuButton mx={6} borderBottom={"2px"} borderColor={"transparent"} _hover={{ borderColor: "black" }}>
+                <Flex alignItems={'center'} justifyContent={'center'}>
+                  <Text>Consultation</Text> &nbsp;&nbsp;
+                  <Text><BsChevronDown /></Text>
+                </Flex>
+              </MenuButton>
+              <MenuList rounded={0}>
+                <Flex>
+
+                  <Flex direction={"column"} mx={4} alignItems={"flex-start"} justifyContent={"flex-start"}>
+                    <Text as={"h2"} mb={5} mt={4}
+                      ml={4} textTransform={"uppercase"}
+                      className={styles.cursive} fontWeight={600}>
+                      consultation services
+                    </Text>
+                    <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
+                      <Link href={'/services#facial'}><Text>Bridal Consultation</Text></Link>
+                    </MenuItem>
+                    <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
+                      <Link href={'/services#facial'}><Text>Skin Consultation</Text></Link>
+                    </MenuItem>
+                    <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
+                      <Link href={'/services#facial'}><Text>Acne Consultation</Text></Link>
+                    </MenuItem>
+                    <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
+                      <Link href={'/services#facial'}><Text>Hair Consultation</Text></Link>
+                    </MenuItem>
+                  </Flex>
+
+                  <Flex direction={"column"} mx={4} alignItems={"flex-start"} justifyContent={"flex-start"}>
+                    <Text as={"h2"} mb={5} mt={4} ml={4} textTransform={"uppercase"} className={styles.cursive} fontWeight={600}>webinars</Text>
+                    <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
+                      <Link href={'/services#treatment'}><Text>Online Webinar</Text></Link>
+                    </MenuItem>
+                  </Flex>
+
+                  <Flex direction={"column"} mx={4} alignItems={"flex-start"} justifyContent={"flex-start"}>
+                    <Text as={"h2"} mb={5} mt={4} ml={4} textTransform={"uppercase"} className={styles.cursive} fontWeight={600}>courses</Text>
+                    <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
+                      <Link href={'/services#bridal'}><Text>Chemical Peel Course</Text></Link>
+                    </MenuItem>
+                    <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
+                      <Link href={'/services#bridal'}><Text>Dermaplan Course</Text></Link>
+                    </MenuItem>
+                    <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
+                      <Link href={'/services#bridal'}><Text>Aesthetic Course</Text></Link>
+                    </MenuItem>
+                  </Flex>
+
+                  <Flex direction={"column"} mx={4} alignItems={"center"} justifyContent={"center"}>
+                    <Text as={"h2"}
+                      textAlign={'center'}
+                      mb={5} mt={4} ml={4}
+                      textTransform={"capitalize'"}
+                      className={styles.cursive}
+                      fontWeight={600}
+                    >Book Your Consultation With Us
+                    </Text>
+                    <MenuItem mb={3} bg={"transparent"} border={'2px solid #FFDDD2'} _hover={{ bg: "#FFDDD2", color: '#222' }}>
+                      <Link href={'/appointment'} style={{width: '100%'}}><Text textAlign={'center'}>Book Now</Text></Link>
+                    </MenuItem>
+                  </Flex>
+                </Flex>
+              </MenuList>
+            </Menu>
+            <Link href={"/blogs"}><Text mx={6} borderBottom={"2px"} borderColor={"transparent"} transition={"all .3s ease"} _hover={{ borderColor: "black" }}>Blogs</Text></Link>
+            <Link href={"/academy"}><Text mx={6} borderBottom={"2px"} borderColor={"transparent"} transition={"all .3s ease"} _hover={{ borderColor: "black" }}>Academy</Text></Link>
           </Flex>
+
           <Spacer />
           <Link href={'/appointment'}>
             <Button
@@ -194,13 +266,110 @@ const Navbar = () => {
           </DrawerHeader>
           <DrawerBody>
 
-            <Accordion defaultIndex={[]} allowMultiple>
+            {/* <Accordion defaultIndex={[]} allowMultiple>
 
               <AccordionItem border={'none'}>
                 <h2>
                   <AccordionButton>
                     <Box flex='1' textAlign='left'>
                       Services
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel>
+
+                  <AccordionItem border={'none'}>
+                    <h2>
+                      <AccordionButton>
+                        <Box flex='1' textAlign='left'>
+                          Facials
+                        </Box>
+                        <AccordionIcon />
+                      </AccordionButton>
+                    </h2>
+
+                    <AccordionPanel>
+                      <Link href={'/services#facial'}><Text my={2}>Medi Facials</Text></Link>
+                      <Link href={'/services#facial'}><Text my={2}>Hydra Facials</Text></Link>
+                      <Link href={'/services#facial'}><Text my={2}>Korean Glass Skin Facials</Text></Link>
+                      <Link href={'/services#facial'}><Text my={2}>Face Lift Facials</Text></Link>
+                      <Link href={'/services#facial'}><Text my={2}>24K Gold Facials</Text></Link>
+                      <Link href={'/services#facial'}><Text my={2}>Micro Dermabrasion</Text></Link>
+                    </AccordionPanel>
+                  </AccordionItem>
+
+
+                  <AccordionItem border={'none'}>
+                    <h2>
+                      <AccordionButton>
+                        <Box flex='1' textAlign='left'>
+                          Treatments
+                        </Box>
+                        <AccordionIcon />
+                      </AccordionButton>
+                    </h2>
+
+                    <AccordionPanel>
+                      <Link href={'/services#treatment'}><Text my={2}>Anti Aging</Text></Link>
+                      <Link href={'/services#treatment'}><Text my={2}>Acne & Marks</Text></Link>
+                      <Link href={'/services#treatment'}><Text my={2}>Crows Feet & Fine Lines</Text></Link>
+                      <Link href={'/services#treatment'}><Text my={2}>Dermaplaning</Text></Link>
+                      <Link href={'/services#treatment'}><Text my={2}>Micro Needling</Text></Link>
+                      <Link href={'/services#treatment'}><Text my={2}>Fine Lines & Wrinkles</Text></Link>
+                      <Link href={'/services#treatment'}><Text my={2}>Skin Concerns & Maintenance</Text></Link>
+                    </AccordionPanel>
+                  </AccordionItem>
+
+                  <AccordionItem border={'none'}>
+                    <h2>
+                      <AccordionButton>
+                        <Box flex='1' textAlign='left'>
+                          Bridal Skin Prep Journey
+                        </Box>
+                        <AccordionIcon />
+                      </AccordionButton>
+                    </h2>
+
+                    <AccordionPanel>
+                      <Link href={'/services#bridal'}><Text my={2}>BB Glow</Text></Link>
+                      <Link href={'/services#bridal'}><Text my={2}>Gold Facial</Text></Link>
+                      <Link href={'/services#bridal'}><Text my={2}>Chemical Peels</Text></Link>
+                    </AccordionPanel>
+                  </AccordionItem>
+
+                  <AccordionItem border={'none'}>
+                    <h2>
+                      <AccordionButton>
+                        <Box flex='1' textAlign='left'>
+                          Hair
+                        </Box>
+                        <AccordionIcon />
+                      </AccordionButton>
+                    </h2>
+
+                    <AccordionPanel>
+                      <Link href={'/services#hair'}><Text my={2}>Hair Fall Treatment</Text></Link>
+                      <Link href={'/services#hair'}><Text my={2}>Fungal Treatment</Text></Link>
+                      <Link href={'/services#hair'}><Text my={2}>Dandruff Treatment</Text></Link>
+                      <Link href={'/services#hair'}><Text my={2}>Hair Growth</Text></Link>
+                      <Link href={'/services#hair'}><Text my={2}>Graying & Thinning</Text></Link>
+                      <Link href={'/services#hair'}><Text my={2}>Scalp Nourishment</Text></Link>
+                    </AccordionPanel>
+                  </AccordionItem>
+
+                </AccordionPanel>
+              </AccordionItem>
+
+            </Accordion> */}
+
+            <Accordion defaultIndex={[]} allowMultiple>
+
+              <AccordionItem border={'none'}>
+                <h2>
+                  <AccordionButton>
+                    <Box flex='1' textAlign='left'>
+                      Consultation
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
