@@ -17,15 +17,15 @@ const Service = () => {
     return (
         <>
             <Head>
-                <title>Services | Slay it with Skin</title>
+                <title>Consultation | Slay it with Skin</title>
             </Head>
             <Navbar />
-            <Image
+            {/* <Image
                 src={'https://cdn.shopify.com/s/files/1/0516/0376/7472/files/1920x640-website-banner-v2_422706a2-449f-43ac-9c1b-2e0f3e2d8b0e.jpg'}
                 w={'full'}
                 h={'auto'}
                 mt={20}
-            />
+            /> */}
             <Flex
                 p={[4, 8, 16]}
                 direction={['column', 'row']}
@@ -56,7 +56,7 @@ const Service = () => {
                     p={[0, 8]}
                 >
                     <Text className={styles.cursive} fontSize={[40, 56]} mb={4}>
-                        Our Services
+                        Our Consultation Services
                     </Text>
                     <Text fontSize={16}>
                         We believe that everyone has a different requirement to care and nurture their beauty. That's why provide personalised consultation,
@@ -67,17 +67,18 @@ const Service = () => {
                         With our state-of-the-art treatments and the latest technology, you can trust us to take care of all your skin and hair needs.
                         Let us help you look and feel your absolute best!
                     </Text>
-                    <Button
-                        my={'8'}
-                        w={['auto', 'max-content']}
-                        colorScheme={'whatsapp'}
-                        p={6}
-                        rounded={0}
-                        bg={'brown'}
-                        onClick={() => { Calendly.initPopupWidget({ url: 'https://calendly.com/slayitwithskin/appointment' }); return false; }}
-                    >
-                        BOOK AN APPOINTMENT
-                    </Button>
+                    <Link href={'/appointment'}>
+                        <Button
+                            my={'8'}
+                            w={['auto', 'max-content']}
+                            colorScheme={'whatsapp'}
+                            p={6}
+                            rounded={0}
+                            bg={'brown'}
+                        >
+                            BOOK AN APPOINTMENT
+                        </Button>
+                    </Link>
                 </Flex>
             </Flex>
 
@@ -85,116 +86,31 @@ const Service = () => {
             {/* Facials */}
             <Box px={[4, 8, 16]} py={6} id={'facial'}>
                 <Text className={styles.cursive} fontSize={[24, 36]} mb={5}>
-                    Facials
+                    Consultation Services We Provide
                 </Text>
 
                 <Text py={4}>
-                    <b>Hydra Facial</b>
+                    <b>Bridal Consultation</b>
                     <br />
-                    It helps in exfoliation of buildup of sebum and debris that covers the top layer of the skin.
-                    It leaves the skin hydrated through infusion of serums.
+                    Outshine the moon and make your marriage memorable for lifetime. Talk to an expert to know about bridal makeup, skin preparation etc.
                 </Text>
 
                 <Text py={4}>
-                    <b>Face Lift Facial</b>
+                    <b>Skin Consultation</b>
                     <br />
-                    This process is mainly concentrated on facial massage technique focussing on sculpting
-                    the face uplifting the structure of the jawline and cheek area.
+                    Your skin needs care. Talk to an expert to know about what your skin needs to remain soft, fresh and healthy throughout the day.
                 </Text>
 
                 <Text py={4}>
-                    <b>Micro Dermabrasion</b>
+                    <b>Acne Consultation</b>
                     <br />
-                    Micro Dermabrasion is a minimally invasive treatment which helps in resurfacing the texture or skin tome of the face.
-                    It also helps in treating scars, stretch marks and skin damage.
+                    Got an acne? No worries! Talk to us and we will guide you the best to remove it without any side-effects.
                 </Text>
 
                 <Text py={4}>
-                    <b>Medi Facials</b>
+                    <b>Hair Consultation</b>
                     <br />
-                    Medi facials are facials designed using medically approved ingredients
-                    and are friendly to the skin providing long lasting benefits.
-                </Text>
-
-                <Text py={4}>
-                    <b>Korean Facial</b>
-                    <br />
-                    It helps you eliminate acne and blemishes, brightenr and healthier skin enriching supple skin.
-                    It helps in rejuvenation of skin giving it a glass reflection effect.
-                </Text>
-
-            </Box>
-
-
-            {/* Treatments */}
-            <Box px={[4, 8, 16]} py={6} id={'treatment'}>
-                <Text className={styles.cursive} fontSize={[24, 36]} mb={5}>
-                    Treatments
-                </Text>
-
-                <Text py={4}>
-                    <b>Micro Needling</b>
-                    <br />
-                    It is a minimally invasive process which uses thin needles to make tiny holes on the top layer of the skin.
-                    It helps stimulate healing process and produces more collagen & elastin.
-                </Text>
-
-                <Text py={4}>
-                    <b>Anti Ageing</b>
-                    <br />
-                    This process helps in reducing the fine lines and wrinkles visibly making it look healthier and youthful.
-                </Text>
-
-            </Box>
-
-
-            {/* Bridal Skin Prep Journey */}
-            <Box px={[4, 8, 16]} py={6} id={'bridal'}>
-                <Text className={styles.cursive} fontSize={[24, 36]} mb={5}>
-                    Bridal Skin Prep Journey
-                </Text>
-
-                <Text py={4}>
-                    <b>Chemical Peels</b>
-                    <br />
-                    This process is used to exfoliate the top layer of the skin.
-                    It helps in improving the tone and texture of the skin as it lasts longer and penetrate deeper in the skin.
-                </Text>
-
-                <Text py={4}>
-                    <b>Gold Facial</b>
-                    <br />
-                    This facial mainly concentrates on infusion of serums with 24K Gold for an instant party ready glow. This is non invasive treatment.
-                </Text>
-
-                <Text py={4}>
-                    <b>Face Lift Facial</b>
-                    <br />
-                    This process is mainly concentrated on facial massage technique focussing on sculpting
-                    the face uplifting the structure of the jawline and cheek area.
-                </Text>
-
-            </Box>
-
-
-            {/* Hair Treatments */}
-            <Box px={[4, 8, 16]} py={6} id={'hair'}>
-                <Text className={styles.cursive} fontSize={[24, 36]} mb={5}>
-                    Hair Treatments
-                </Text>
-
-                <Text py={4}>
-                    <b>PRP Therapy</b>
-                    <br />
-                    PRP (platelet-rich plasma) therapy for hair loss is a three-step medical treatment in which a person's blood is drawn, processed, and then injected into the scalp. 
-                    Some in the medical community think that PRP injections trigger natural hair growth and maintain it by increasing blood supply to the hair follicle and increasing the thickness of the hair shaft. 
-                    Sometimes this approach is combined with other hair loss procedures or medications.
-                </Text>
-
-                <Text py={4}>
-                    <b>Scalp Rejuvenation Treatment</b>
-                    <br />
-                    It helps with cleaning and maintaining the health of scalp, treats thinning of hair, regrowth of hair, reverses greying.
+                    You win every battle, then why lose your hair? Talk to us regarding your hair problem.
                 </Text>
 
             </Box>

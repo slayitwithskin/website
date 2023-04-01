@@ -183,36 +183,36 @@ const Navbar = () => {
                       consultation services
                     </Text>
                     <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                      <Link href={'/services#facial'}><Text>Bridal Consultation</Text></Link>
+                      <Link href={'/consultation'}><Text>Bridal Consultation</Text></Link>
                     </MenuItem>
                     <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                      <Link href={'/services#facial'}><Text>Skin Consultation</Text></Link>
+                      <Link href={'/consultation'}><Text>Skin Consultation</Text></Link>
                     </MenuItem>
                     <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                      <Link href={'/services#facial'}><Text>Acne Consultation</Text></Link>
+                      <Link href={'/consultation'}><Text>Acne Consultation</Text></Link>
                     </MenuItem>
                     <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                      <Link href={'/services#facial'}><Text>Hair Consultation</Text></Link>
+                      <Link href={'/consultation'}><Text>Hair Consultation</Text></Link>
                     </MenuItem>
                   </Flex>
 
                   <Flex direction={"column"} mx={4} alignItems={"flex-start"} justifyContent={"flex-start"}>
                     <Text as={"h2"} mb={5} mt={4} ml={4} textTransform={"uppercase"} className={styles.cursive} fontWeight={600}>webinars</Text>
                     <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                      <Link href={'/services#treatment'}><Text>Online Webinar</Text></Link>
+                      <Link href={'/consultation'}><Text>Online Webinar</Text></Link>
                     </MenuItem>
                   </Flex>
 
                   <Flex direction={"column"} mx={4} alignItems={"flex-start"} justifyContent={"flex-start"}>
                     <Text as={"h2"} mb={5} mt={4} ml={4} textTransform={"uppercase"} className={styles.cursive} fontWeight={600}>courses</Text>
                     <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                      <Link href={'/services#bridal'}><Text>Chemical Peel Course</Text></Link>
+                      <Link href={'/courses'}><Text>Chemical Peel Course</Text></Link>
                     </MenuItem>
                     <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                      <Link href={'/services#bridal'}><Text>Dermaplan Course</Text></Link>
+                      <Link href={'/courses'}><Text>Dermaplan Course</Text></Link>
                     </MenuItem>
                     <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                      <Link href={'/services#bridal'}><Text>Aesthetic Course</Text></Link>
+                      <Link href={'/courses'}><Text>Aesthetic Course</Text></Link>
                     </MenuItem>
                   </Flex>
 
@@ -226,7 +226,7 @@ const Navbar = () => {
                     >Book Your Consultation With Us
                     </Text>
                     <MenuItem mb={3} bg={"transparent"} border={'2px solid #FFDDD2'} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                      <Link href={'/appointment'} style={{width: '100%'}}><Text textAlign={'center'}>Book Now</Text></Link>
+                      <Link href={'/appointment'} style={{ width: '100%' }}><Text textAlign={'center'}>Book Now</Text></Link>
                     </MenuItem>
                   </Flex>
                 </Flex>
@@ -387,10 +387,10 @@ const Navbar = () => {
                     </h2>
 
                     <AccordionPanel>
-                      <Link href={'/services#facial'}><Text my={2}>Bridal Consultation</Text></Link>
-                      <Link href={'/services#facial'}><Text my={2}>Skin Consultation</Text></Link>
-                      <Link href={'/services#facial'}><Text my={2}>Acne Consultation</Text></Link>
-                      <Link href={'/services#facial'}><Text my={2}>Hair Consultation</Text></Link>
+                      <Link href={'/consultation'}><Text my={2}>Bridal Consultation</Text></Link>
+                      <Link href={'/consultation'}><Text my={2}>Skin Consultation</Text></Link>
+                      <Link href={'/consultation'}><Text my={2}>Acne Consultation</Text></Link>
+                      <Link href={'/consultation'}><Text my={2}>Hair Consultation</Text></Link>
                     </AccordionPanel>
                   </AccordionItem>
 
@@ -406,7 +406,7 @@ const Navbar = () => {
                     </h2>
 
                     <AccordionPanel>
-                      <Link href={'/services#treatment'}><Text my={2}>Online Webinars</Text></Link>
+                      <Link href={'#'}><Text my={2}>Online Webinars</Text></Link>
                     </AccordionPanel>
                   </AccordionItem>
 
@@ -421,9 +421,9 @@ const Navbar = () => {
                     </h2>
 
                     <AccordionPanel>
-                      <Link href={'/services#bridal'}><Text my={2}>Chemical Peel</Text></Link>
-                      <Link href={'/services#bridal'}><Text my={2}>Dermaplan Course</Text></Link>
-                      <Link href={'/services#bridal'}><Text my={2}>Aesthetic Course</Text></Link>
+                      <Link href={'/courses'}><Text my={2}>Chemical Peel</Text></Link>
+                      <Link href={'/courses'}><Text my={2}>Dermaplan Course</Text></Link>
+                      <Link href={'/courses'}><Text my={2}>Aesthetic Course</Text></Link>
                     </AccordionPanel>
                   </AccordionItem>
 
@@ -446,7 +446,7 @@ const Navbar = () => {
             <Link href={'/appointment'}>
               <Button bg={'black'} color={'white'} rounded={0}
                 my={16} w={'full'} _hover={{ bg: "#333" }}
-                onClick={() => { Calendly.initPopupWidget({ url: 'https://calendly.com/slayitwithskin/appointment' }); return false; }}>
+              >
                 <Text className={styles.monts}>BOOK APPOINTMENT</Text>
               </Button>
             </Link>
