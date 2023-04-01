@@ -380,19 +380,17 @@ const Navbar = () => {
                     <h2>
                       <AccordionButton>
                         <Box flex='1' textAlign='left'>
-                          Facials
+                          Consultation Services
                         </Box>
                         <AccordionIcon />
                       </AccordionButton>
                     </h2>
 
                     <AccordionPanel>
-                      <Link href={'/services#facial'}><Text my={2}>Medi Facials</Text></Link>
-                      <Link href={'/services#facial'}><Text my={2}>Hydra Facials</Text></Link>
-                      <Link href={'/services#facial'}><Text my={2}>Korean Glass Skin Facials</Text></Link>
-                      <Link href={'/services#facial'}><Text my={2}>Face Lift Facials</Text></Link>
-                      <Link href={'/services#facial'}><Text my={2}>24K Gold Facials</Text></Link>
-                      <Link href={'/services#facial'}><Text my={2}>Micro Dermabrasion</Text></Link>
+                      <Link href={'/services#facial'}><Text my={2}>Bridal Consultation</Text></Link>
+                      <Link href={'/services#facial'}><Text my={2}>Skin Consultation</Text></Link>
+                      <Link href={'/services#facial'}><Text my={2}>Acne Consultation</Text></Link>
+                      <Link href={'/services#facial'}><Text my={2}>Hair Consultation</Text></Link>
                     </AccordionPanel>
                   </AccordionItem>
 
@@ -401,20 +399,14 @@ const Navbar = () => {
                     <h2>
                       <AccordionButton>
                         <Box flex='1' textAlign='left'>
-                          Treatments
+                          Webinars
                         </Box>
                         <AccordionIcon />
                       </AccordionButton>
                     </h2>
 
                     <AccordionPanel>
-                      <Link href={'/services#treatment'}><Text my={2}>Anti Aging</Text></Link>
-                      <Link href={'/services#treatment'}><Text my={2}>Acne & Marks</Text></Link>
-                      <Link href={'/services#treatment'}><Text my={2}>Crows Feet & Fine Lines</Text></Link>
-                      <Link href={'/services#treatment'}><Text my={2}>Dermaplaning</Text></Link>
-                      <Link href={'/services#treatment'}><Text my={2}>Micro Needling</Text></Link>
-                      <Link href={'/services#treatment'}><Text my={2}>Fine Lines & Wrinkles</Text></Link>
-                      <Link href={'/services#treatment'}><Text my={2}>Skin Concerns & Maintenance</Text></Link>
+                      <Link href={'/services#treatment'}><Text my={2}>Online Webinars</Text></Link>
                     </AccordionPanel>
                   </AccordionItem>
 
@@ -422,36 +414,16 @@ const Navbar = () => {
                     <h2>
                       <AccordionButton>
                         <Box flex='1' textAlign='left'>
-                          Bridal Skin Prep Journey
+                          Courses
                         </Box>
                         <AccordionIcon />
                       </AccordionButton>
                     </h2>
 
                     <AccordionPanel>
-                      <Link href={'/services#bridal'}><Text my={2}>BB Glow</Text></Link>
-                      <Link href={'/services#bridal'}><Text my={2}>Gold Facial</Text></Link>
-                      <Link href={'/services#bridal'}><Text my={2}>Chemical Peels</Text></Link>
-                    </AccordionPanel>
-                  </AccordionItem>
-
-                  <AccordionItem border={'none'}>
-                    <h2>
-                      <AccordionButton>
-                        <Box flex='1' textAlign='left'>
-                          Hair
-                        </Box>
-                        <AccordionIcon />
-                      </AccordionButton>
-                    </h2>
-
-                    <AccordionPanel>
-                      <Link href={'/services#hair'}><Text my={2}>Hair Fall Treatment</Text></Link>
-                      <Link href={'/services#hair'}><Text my={2}>Fungal Treatment</Text></Link>
-                      <Link href={'/services#hair'}><Text my={2}>Dandruff Treatment</Text></Link>
-                      <Link href={'/services#hair'}><Text my={2}>Hair Growth</Text></Link>
-                      <Link href={'/services#hair'}><Text my={2}>Graying & Thinning</Text></Link>
-                      <Link href={'/services#hair'}><Text my={2}>Scalp Nourishment</Text></Link>
+                      <Link href={'/services#bridal'}><Text my={2}>Chemical Peel</Text></Link>
+                      <Link href={'/services#bridal'}><Text my={2}>Dermaplan Course</Text></Link>
+                      <Link href={'/services#bridal'}><Text my={2}>Aesthetic Course</Text></Link>
                     </AccordionPanel>
                   </AccordionItem>
 
@@ -465,9 +437,9 @@ const Navbar = () => {
                 <Text>Blogs</Text>
               </Box>
             </Link>
-            <Link href={'/shop'}>
+            <Link href={'/academy'}>
               <Box flex={1} px={4} py={2}>
-                <Text>Shop</Text>
+                <Text>Academy</Text>
               </Box>
             </Link>
 
