@@ -3,7 +3,6 @@ import styles from '../styles/Home.module.css'
 import Navbar from '../hocs/Navbar'
 import Footer from '../hocs/Footer'
 import Head from 'next/head'
-
 import {
     Flex,
     Text,
@@ -31,15 +30,20 @@ import {
     PopoverCloseButton,
     PopoverHeader,
     PopoverBody,
+    useToast
 } from '@chakra-ui/react'
 import DatePicker from 'react-flatpickr'
 import 'flatpickr/dist/themes/material_blue.css'
 import axios from 'axios'
-import { loadStripe } from '@stripe/stripe-js';
+import Script from 'next/script'
 
 
 
 const Appointment = () => {
+    // const cashfree = new Cashfree("session_XaAxBAAZLPQa1-ppTvfwfCRh4nd4rpsHm99RBWBiN79fim_42A81DX94ADJ2LoQUyp4-Umz4DD-xDoY4C_55aj6f0M7Y-DuBG_RZ0meTYcpN")
+    const Toast = useToast({
+        position: 'top-right'
+    })
     var now = new Date()
     const baseRate = 899
     const [age, setAge] = useState()
@@ -58,9 +62,7 @@ const Appointment = () => {
         paymentId: "",
         orderId: "",
     })
-    const stripePromise = loadStripe(
-        process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
-    );
+    const [cashfreeModal, setCashfreeModal] = useState(false)
     const [modalProps, setModalProps] = useState({
         status: false,
         title: "Your payment was not successful!",
@@ -266,35 +268,45 @@ const Appointment = () => {
         setSubTotal(subTotal - amountToSubtract)
     }
 
-    async function stripeCheckout() {
-        try {
-            const stripe = await stripePromise;
 
-            const checkoutSession = await axios.post("/api/stripe/session", {
-                cart: {
-                    name: `${name}'s Appointment at Slayitwithskin`,
-                    price: 1000,
-                    currency: 'INR',
-                    quantity: 1,
+    // Cashfree Payment Handling
+    useEffect(() => {
+            const cashfree = new Cashfree("session_XaAxBAAZLPQa1-ppTvfwfCRh4nd4rpsHm99RBWBiN79fim_42A81DX94ADJ2LoQUyp4-Umz4DD-xDoY4C_55aj6f0M7Y-DuBG_RZ0meTYcpN")
+            const dropinConfig = {
+                components: [
+                    "order-details",
+                    "card",
+                    "netbanking",
+                    "app",
+                    "upi",
+                ],
+                onSuccess: function (data) {
+                    setCashfreeModal(false)
+                },
+                onFailure: function (data) {
+                    setCashfreeModal(false)
+                },
+                style: {
+                    backgroundColor: "#ffffff",
+                    color: "#11385b",
+                    fontFamily: "Lato",
+                    fontSize: "14px",
+                    errorColor: "#ff0000",
+                    theme: "light",
                 }
-            });
-
-            const result = await stripe.redirectToCheckout({
-                sessionId: checkoutSession.data.id,
-            });
-
-            if (result.error) {
-                alert(result.error.message);
             }
-        } catch (error) {
-            console.log(error);
-        }
-    }
+            cashfree.drop(document.getElementById("paymentForm"), dropinConfig);
+    }, [])
+
 
 
     return (
         <>
             <Head><title>Book Appointment | Slay it with Skin</title></Head>
+            <Script
+                src='https://sdk.cashfree.com/js/ui/2.0.0/cashfree.sandbox.js'
+                strategy='beforeInteractive'
+            />
             <Navbar />
             <Text mt={[20, 24]} textAlign={'center'}
                 fontSize={[32, 40, 56]} className={styles.cursive}>
@@ -470,7 +482,7 @@ const Appointment = () => {
                                 <Button colorScheme={'whatsapp'}
                                     rounded={0} p={6} fontSize={[12, 16]}
                                     className={styles.monts} textTransform={'uppercase'}
-                                    onClick={stripeCheckout}
+                                    onClick={() => setCashfreeModal(true)}
                                     disabled={payBtnStatus}
                                 >
                                     Pay with Stripe
@@ -507,7 +519,24 @@ const Appointment = () => {
                     </ModalContent>
                 </ModalBody>
             </Modal>
+
             <Footer />
+
+
+            {/* Cashfree Payment Modal */}
+            <Modal
+                isOpen={cashfreeModal}
+                onClose={() => setCashfreeModal(false)}
+            >
+                <ModalOverlay />
+                <ModalContent>
+                    <ModalBody h={'auto'}>
+                        <div style={{ width: '100%', height: '70vh', background: 'blue' }} id='paymentForm'>
+
+                        </div>
+                    </ModalBody>
+                </ModalContent>
+            </Modal>
         </>
     )
 }
