@@ -1,4 +1,4 @@
-import { React, useState, useEffect } from 'react'
+import { React, useState, useEffect, useLayoutEffect } from 'react'
 import styles from '../styles/Home.module.css'
 import Navbar from '../hocs/Navbar'
 import Footer from '../hocs/Footer'
@@ -271,6 +271,8 @@ const Appointment = () => {
 
     // Cashfree Payment Handling
     useEffect(() => {
+        if (payBtnStatus) {
+            document.getElementById("paymentForm").innerHTML = ""
             const cashfree = new Cashfree("session_XaAxBAAZLPQa1-ppTvfwfCRh4nd4rpsHm99RBWBiN79fim_42A81DX94ADJ2LoQUyp4-Umz4DD-xDoY4C_55aj6f0M7Y-DuBG_RZ0meTYcpN")
             const dropinConfig = {
                 components: [
@@ -296,7 +298,40 @@ const Appointment = () => {
                 }
             }
             cashfree.drop(document.getElementById("paymentForm"), dropinConfig);
-    }, [])
+        }
+    }, [payBtnStatus])
+
+    useEffect(()=>{
+        setTotal(selectedSlots.length * baseRate + subTotal)
+    },[subTotal, selectedSlots])
+
+    function createCashfreeOrder(){
+        let orderId = `order_${now.getTime()}`
+        axios.postForm(`https://sandbox.cashfree.com/pg/orders`, {
+            order_id: orderId,
+            order_amount: parseFloat(total),
+            order_currency: 'INR',
+            customer_details: {
+                customer_id: phone,
+                customer_email: email,
+                customer_phone: phone,
+            }
+        }, {
+            headers: {
+                'x-client-id': 'TEST355450ff0efee99997add555ba054553',
+                'x-client-secret': 'TEST41aad472314645a1ac4c46abbbd57a7f4d691e0b',
+                'x-api-version': '2022-09-01'
+            }
+        }).then(res=>{
+            console.log(res.data)
+        }).catch(err=>{
+            Toast({
+                description: "Couln't create order"
+            })
+        })
+
+        setPayBtnStatus(true)
+    }
 
 
 
@@ -324,7 +359,7 @@ const Appointment = () => {
                             </HStack>
                             <HStack w={'full'} my={2}>
                                 <Input variant={'flushed'} type={'email'} placeholder={'Your Email ID*'} required value={email} onChange={e => setEmail(e.target.value)} />
-                                <Input variant={'flushed'} type={'tel'} placeholder={'Your Phone Number*'} required value={phone} onChange={e => setPhone(e.target.value)} />
+                                <Input variant={'flushed'} maxLength={10} type={'tel'} placeholder={'Your Phone Number*'} required value={phone} onChange={e => setPhone(e.target.value)} />
                             </HStack>
                             <Stack direction={["column", "row"]} w={'full'} my={2}>
                                 <Box mt={4}>
@@ -482,7 +517,7 @@ const Appointment = () => {
                                 <Button colorScheme={'whatsapp'}
                                     rounded={0} p={6} fontSize={[12, 16]}
                                     className={styles.monts} textTransform={'uppercase'}
-                                    onClick={() => setCashfreeModal(true)}
+                                    onClick={() => createCashfreeOrder()}
                                     disabled={payBtnStatus}
                                 >
                                     Pay with Stripe
@@ -524,19 +559,20 @@ const Appointment = () => {
 
 
             {/* Cashfree Payment Modal */}
-            <Modal
-                isOpen={cashfreeModal}
-                onClose={() => setCashfreeModal(false)}
+            <Box
+                pos={'fixed'}
+                top={0} left={0}
+                bottom={0} right={0}
+                display={payBtnStatus ? 'grid' : 'none'}
+                placeContent={'center'}
+                bg={'rgba(0,0,0,0.75)'}
+                onClick={()=>setPayBtnStatus(false)}
             >
-                <ModalOverlay />
-                <ModalContent>
-                    <ModalBody h={'auto'}>
-                        <div style={{ width: '100%', height: '70vh', background: 'blue' }} id='paymentForm'>
 
-                        </div>
-                    </ModalBody>
-                </ModalContent>
-            </Modal>
+                <Box w={['full', 'sm']} h={['100vh', '80vh']} id='paymentForm'>
+
+                </Box>
+            </Box>
         </>
     )
 }

@@ -7,12 +7,14 @@ export default async function (req, res) {
     if (req.method === 'POST') {
         Main().catch(error => console.error(error))
         const result = await appointmentModel.find({ fulldate: fulldate })
-        if (result[0]) {
+        if(result.length == 0 || !result) {
+            res.status(204)
+            return
+        }
+        if (result) {
             const bookedSlots = result[0].bookings
             res.status(200).send(bookedSlots)
-        }
-        else {
-            res.status(204)
+            return
         }
     }
     else res.send(`${req.method} Method Not Allowed`)
