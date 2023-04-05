@@ -258,7 +258,21 @@ const Appointment = () => {
     }
 
     function applyCoupon() {
-
+        axios.post('/api/getcoupon', {
+            code: couponCode
+        }).then(res => {
+            if (res.data.type == "flat") {
+                setTotal(subTotal - parseInt(res.data.value))
+            }
+            if (res.data.type == "percent") {
+                setTotal(subTotal - subTotal * parseInt(res.data.value) / 100)
+            }
+        }).catch(err=>{
+            Toast({
+                status: 'warning',
+                description: 'Coupon Not Found'
+            })
+        })
     }
 
     function addToSubtotal(amountToAdd) {
@@ -301,15 +315,11 @@ const Appointment = () => {
         }
     }, [payBtnStatus])
 
-    useEffect(()=>{
-        setTotal(selectedSlots.length * baseRate + subTotal)
-    },[subTotal, selectedSlots])
-
-    function createCashfreeOrder(){
+    async function createCashfreeOrder() {
         let orderId = `order_${now.getTime()}`
-        axios.postForm(`https://sandbox.cashfree.com/pg/orders`, {
+        axios.post(`https://sandbox.cashfree.com/pg/orders`, {
             order_id: orderId,
-            order_amount: parseFloat(total),
+            order_amount: parseFloat(total || subTotal),
             order_currency: 'INR',
             customer_details: {
                 customer_id: phone,
@@ -320,11 +330,12 @@ const Appointment = () => {
             headers: {
                 'x-client-id': 'TEST355450ff0efee99997add555ba054553',
                 'x-client-secret': 'TEST41aad472314645a1ac4c46abbbd57a7f4d691e0b',
-                'x-api-version': '2022-09-01'
+                'x-api-version': '2022-09-01',
+
             }
-        }).then(res=>{
+        }).then(res => {
             console.log(res.data)
-        }).catch(err=>{
+        }).catch(err => {
             Toast({
                 description: "Couln't create order"
             })
@@ -450,7 +461,7 @@ const Appointment = () => {
                                     {availableSlots.map((element, key) => (
                                         <Button
                                             key={key} m={[2, 3]} className={'timeslot'}
-                                            onClick={(e) => { e.target.classList.add('selected'); setSelectedSlots([...selectedSlots, e.target.value]) }}
+                                            // onClick={(e) => { e.target.classList.add('selected'); setSelectedSlots([...selectedSlots, e.target.value]) }}
                                             bg={'#edf2f7'}
                                             _hover={{ transition: 'unset' }}
                                             _focus={{ transition: 'unset', bg: '#E3CAA5' }}
@@ -479,7 +490,7 @@ const Appointment = () => {
                             <Text color={'rgb(100,100,100)'} pb={2}>Have Coupon Code?</Text>
                             <HStack w={'full'} spacing={4}>
                                 <Input name='couponCode' onChange={e => setCouponCode(e.target.value)} />
-                                <Button colorScheme='facebook'>Apply</Button>
+                                <Button colorScheme='facebook' onClick={()=>applyCoupon()}>Apply</Button>
                             </HStack>
                         </VStack>
                         <VStack my={4} p={[4, 6]} boxShadow={'base'} bg={'white'}>
@@ -566,7 +577,7 @@ const Appointment = () => {
                 display={payBtnStatus ? 'grid' : 'none'}
                 placeContent={'center'}
                 bg={'rgba(0,0,0,0.75)'}
-                onClick={()=>setPayBtnStatus(false)}
+                onClick={() => setPayBtnStatus(false)}
             >
 
                 <Box w={['full', 'sm']} h={['100vh', '80vh']} id='paymentForm'>
