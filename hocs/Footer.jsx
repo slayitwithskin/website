@@ -62,18 +62,18 @@ const Footer = () => {
             <Flex w={'full'} direction={'column'} alignItems={'flex-start'} justifyContent={'flex-start'} my={[4,4,0]}>
             <Text className={styles.monts} fontSize={18}>Important Links</Text>
             <Box w={'full'} h={.5} bg={'blackAlpha.400'} mb={4}></Box>
-            <Link href={'/shop'}>
+            {/* <Link href={'/shop'}>
                 <Text fontSize={16} p={2} _hover={{ bg: 'green.600', color: 'white' }}>The Beauty Shop</Text>
-            </Link>
+            </Link> */}
             <Link href={'/blogs'}>
                 <Text fontSize={16} p={2} _hover={{ bg: 'green.600', color: 'white' }}>Our Blogs</Text>
             </Link>
             <Link href={'/appointment'}>
                 <Text fontSize={16} p={2} _hover={{ bg: 'green.600', color: 'white' }}>Book Appointment</Text>
             </Link>
-            <Link href={'#'}>
+            {/* <Link href={'#'}>
                 <Text fontSize={16} p={2} _hover={{ bg: 'green.600', color: 'white' }}>Track Your Order</Text>
-            </Link>
+            </Link> */}
             </Flex>
 
             <Flex w={'full'} direction={'column'} alignItems={'flex-start'} justifyContent={'flex-start'} my={[4,4,0]}>
@@ -88,9 +88,9 @@ const Footer = () => {
             <Link href={'/policies/refund-policy'}>
                 <Text fontSize={16} p={2} _hover={{ bg: 'green.600', color: 'white' }}>Refund Policy</Text>
             </Link>
-            <Link href={'#'}>
+            {/* <Link href={'#'}>
                 <Text fontSize={16} p={2} _hover={{ bg: 'green.600', color: 'white' }}>Shipping Policy</Text>
-            </Link>
+            </Link> */}
             </Flex>
         </Flex>
 
