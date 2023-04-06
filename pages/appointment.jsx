@@ -48,6 +48,7 @@ const Appointment = () => {
     const baseRate = 899
     const [age, setAge] = useState()
     const [appointment, setAppointment] = useState([now])
+    const [absentDates, setAbsentDates] = useState([])
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [gender, setGender] = useState('female')
@@ -63,6 +64,7 @@ const Appointment = () => {
         orderId: "",
     })
     const [cashfreeModal, setCashfreeModal] = useState(false)
+    const [cfPaymentSessionId, setCfPaymentSessionId] = useState("")
     const [modalProps, setModalProps] = useState({
         status: false,
         title: "Your payment was not successful!",
@@ -125,6 +127,13 @@ const Appointment = () => {
         getAppointmenSlots()
     }, [appointment, payBtnStatus])
 
+    useEffect(() => {
+        axios.get('/api/absent').then(res => {
+            setAbsentDates(res.data[0].dates || [])
+        }).catch(err => {
+            console.log(err)
+        })
+    }, [])
 
 
     const initializeRazorpay = () => {
@@ -267,7 +276,7 @@ const Appointment = () => {
             if (res.data.type == "percent") {
                 setTotal(subTotal - subTotal * parseInt(res.data.value) / 100)
             }
-        }).catch(err=>{
+        }).catch(err => {
             Toast({
                 status: 'warning',
                 description: 'Coupon Not Found'
@@ -287,12 +296,14 @@ const Appointment = () => {
     useEffect(() => {
         if (payBtnStatus) {
             document.getElementById("paymentForm").innerHTML = ""
-            const cashfree = new Cashfree("session_XaAxBAAZLPQa1-ppTvfwfCRh4nd4rpsHm99RBWBiN79fim_42A81DX94ADJ2LoQUyp4-Umz4DD-xDoY4C_55aj6f0M7Y-DuBG_RZ0meTYcpN")
+            const cashfree = new Cashfree(cfPaymentSessionId)
             const dropinConfig = {
                 components: [
                     "order-details",
                     "card",
                     "netbanking",
+
+
                     "app",
                     "upi",
                 ],
@@ -315,33 +326,24 @@ const Appointment = () => {
         }
     }, [payBtnStatus])
 
-    async function createCashfreeOrder() {
-        let orderId = `order_${now.getTime()}`
-        axios.post(`https://sandbox.cashfree.com/pg/orders`, {
-            order_id: orderId,
-            order_amount: parseFloat(total || subTotal),
-            order_currency: 'INR',
-            customer_details: {
-                customer_id: phone,
-                customer_email: email,
-                customer_phone: phone,
-            }
-        }, {
-            headers: {
-                'x-client-id': 'TEST355450ff0efee99997add555ba054553',
-                'x-client-secret': 'TEST41aad472314645a1ac4c46abbbd57a7f4d691e0b',
-                'x-api-version': '2022-09-01',
-
-            }
+    function createCashfreeOrder() {
+        axios.post(`/api/cashfree/create-order`, {
+            orderAmount: parseFloat(total || subTotal),
+            phone: phone,
+            email: email
         }).then(res => {
             console.log(res.data)
+            console.log(res.data.payment_session_id)
+            setCfPaymentSessionId(res.data.payment_session_id)
+            setTimeout(() => {
+                setPayBtnStatus(true)
+            }, 2000)
+
         }).catch(err => {
             Toast({
                 description: "Couln't create order"
             })
         })
-
-        setPayBtnStatus(true)
     }
 
 
@@ -448,6 +450,7 @@ const Appointment = () => {
                                             altInputClass: 'datepicker',
                                             altFormat: "d M Y",
                                             position: "above center",
+                                            disable: absentDates,
                                             disableMobile: true
                                         }}
                                         className='datepicker'
@@ -490,7 +493,7 @@ const Appointment = () => {
                             <Text color={'rgb(100,100,100)'} pb={2}>Have Coupon Code?</Text>
                             <HStack w={'full'} spacing={4}>
                                 <Input name='couponCode' onChange={e => setCouponCode(e.target.value)} />
-                                <Button colorScheme='facebook' onClick={()=>applyCoupon()}>Apply</Button>
+                                <Button colorScheme='facebook' onClick={() => applyCoupon()}>Apply</Button>
                             </HStack>
                         </VStack>
                         <VStack my={4} p={[4, 6]} boxShadow={'base'} bg={'white'}>

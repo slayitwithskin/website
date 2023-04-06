@@ -6,6 +6,15 @@ const AppointmentSchema = new mongoose.Schema({
 })
 const AppointmentModel = mongoose.models.Appointment || mongoose.model('Appointment', AppointmentSchema)
 
+const AbsentSchema = new mongoose.Schema({
+    type: {
+        type: String,
+        default: 'unavailability'
+    } ,
+    dates: Array,
+})
+const AbsentModel = mongoose.models.AbsentDay || mongoose.model('AbsentDay', AbsentSchema)
+
 const CouponSchema = new mongoose.Schema({
     code: String,
     value: Number,
@@ -13,5 +22,5 @@ const CouponSchema = new mongoose.Schema({
 })
 const CouponModel = mongoose.models.Coupon || mongoose.model('Coupon', CouponSchema)
 
-export {CouponModel}
+export {CouponModel, AbsentModel}
 export default AppointmentModel
