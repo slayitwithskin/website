@@ -563,7 +563,7 @@ const Appointment = () => {
                                     onClick={() => createCashfreeOrder()}
                                     disabled={payBtnStatus}
                                 >
-                                    Pay with Stripe
+                                    Pay Now
                                 </Button>
                             </HStack>
                         </VStack>
