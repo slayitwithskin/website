@@ -5,11 +5,10 @@ import appointmentModel from "../../config/schema";
 export default async function (req, res) {
     const { fulldate } = req.body
     if (req.method == 'POST') {
-        Main().catch(error => console.error(error))
+        await Main()
         const result = await appointmentModel.find({ fulldate: fulldate })
         if (result.length == 0 || !result) {
-            res.status(204)
-            return
+            return res.status(204)
         }
         const bookedSlots = result[0].bookings
         res.status(200).send(bookedSlots)

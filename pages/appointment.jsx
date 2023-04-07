@@ -135,6 +135,13 @@ const Appointment = () => {
         })
     }, [])
 
+    function addSlot(e) {
+        e.target.classList.add('selected'); setSelectedSlots([...selectedSlots, e.target.value])
+        if(total){
+            setTotal(total+baseRate)
+        }
+        addToSubtotal(baseRate)
+    }
 
     const initializeRazorpay = () => {
         return new Promise((resolve) => {
@@ -262,6 +269,23 @@ const Appointment = () => {
     }
 
     function clearSlots() {
+        if (total) {
+            if (total - selectedSlots.length * baseRate <= 0) {
+                setTotal(0)
+                setSubTotal(0)
+            }
+            else {
+                setTotal(total - selectedSlots.length * baseRate)
+            }
+        }
+        else {
+            if (subTotal - selectedSlots.length * baseRate <= 0) {
+                setSubTotal(0)
+            }
+            else{
+                setSubTotal(subTotal - selectedSlots.length * baseRate)
+            }
+        }
         document.querySelectorAll('.timeslot').forEach(element => element.classList.remove("selected"))
         setSelectedSlots([])
     }
@@ -277,6 +301,7 @@ const Appointment = () => {
                 setTotal(subTotal - subTotal * parseInt(res.data.value) / 100)
             }
         }).catch(err => {
+            setTotal(0)
             Toast({
                 status: 'warning',
                 description: 'Coupon Not Found'
@@ -285,9 +310,15 @@ const Appointment = () => {
     }
 
     function addToSubtotal(amountToAdd) {
+        if(total){
+            setTotal(total+amountToAdd)
+        }
         setSubTotal(subTotal + amountToAdd)
     }
     function subtractFromSubtotal(amountToSubtract) {
+        if(total){
+            setTotal(total - amountToSubtract)
+        }
         setSubTotal(subTotal - amountToSubtract)
     }
 
@@ -302,8 +333,6 @@ const Appointment = () => {
                     "order-details",
                     "card",
                     "netbanking",
-
-
                     "app",
                     "upi",
                 ],
@@ -464,7 +493,7 @@ const Appointment = () => {
                                     {availableSlots.map((element, key) => (
                                         <Button
                                             key={key} m={[2, 3]} className={'timeslot'}
-                                            // onClick={(e) => { e.target.classList.add('selected'); setSelectedSlots([...selectedSlots, e.target.value]) }}
+                                            onClick={(e) => addSlot(e)}
                                             bg={'#edf2f7'}
                                             _hover={{ transition: 'unset' }}
                                             _focus={{ transition: 'unset', bg: '#E3CAA5' }}
@@ -492,7 +521,7 @@ const Appointment = () => {
                         <VStack my={4} p={[4, 6]} boxShadow={'base'} bg={'white'} alignItems={'flex-start'}>
                             <Text color={'rgb(100,100,100)'} pb={2}>Have Coupon Code?</Text>
                             <HStack w={'full'} spacing={4}>
-                                <Input name='couponCode' onChange={e => setCouponCode(e.target.value)} />
+                                <Input name='couponCode' textTransform={'uppercase'} onChange={e => setCouponCode(e.target.value.toUpperCase())} />
                                 <Button colorScheme='facebook' onClick={() => applyCoupon()}>Apply</Button>
                             </HStack>
                         </VStack>
@@ -507,7 +536,7 @@ const Appointment = () => {
                                         total ?
                                             <>
                                                 <Text fontSize={16} className={styles.monts}>
-                                                    {selectedSlots.length * baseRate + subTotal}
+                                                    {subTotal}
                                                 </Text>
                                                 <hr style={{ border: '.75px solid #000', position: 'relative', top: '-14px' }} />
                                                 <Text fontSize={24} className={styles.monts}>
@@ -515,7 +544,7 @@ const Appointment = () => {
                                                 </Text>
                                             </> :
                                             <Text fontSize={24} className={styles.monts}>
-                                                ₹ {selectedSlots.length * baseRate + subTotal}
+                                                ₹ {subTotal}
                                             </Text>
                                     }
 
