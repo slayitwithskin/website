@@ -196,7 +196,7 @@ const Navbar = () => {
                   <Flex direction={"column"} mx={4} alignItems={"flex-start"} justifyContent={"flex-start"}>
                     <Text as={"h2"} mb={5} mt={4} ml={4} textTransform={"uppercase"} className={styles.cursive} fontWeight={600}>webinars</Text>
                     <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                      <Link href={'/consultation'}><Text>Online Webinar</Text></Link>
+                      <Link href={'https://buy.stripe.com/aEUcQf0gqbxpdKU144'} target='_blank'><Text>Online Webinar</Text></Link>
                     </MenuItem>
                   </Flex>
 
@@ -257,7 +257,7 @@ const Navbar = () => {
           <DrawerCloseButton />
           <DrawerHeader mb={16}>
             <HStack>
-              <Image src='logo.png' alt='Logo' w={'auto'} h={'8'} />
+              <Image src='/logo.png' alt='Logo' w={'auto'} h={'8'} />
               <Text textAlign={'center'} fontSize={24} className={styles.cursive}>Slay it with Skin</Text>
             </HStack>
           </DrawerHeader>
@@ -402,7 +402,7 @@ const Navbar = () => {
                     </h2>
 
                     <AccordionPanel>
-                      <Link href={'#'}><Text my={2}>Online Webinars</Text></Link>
+                      <Link href={'https://buy.stripe.com/aEUcQf0gqbxpdKU144'} target='_blank'><Text my={2}>Online Webinars</Text></Link>
                     </AccordionPanel>
                   </AccordionItem>
 
