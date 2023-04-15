@@ -217,7 +217,7 @@ export default [
   },
   {
     id: 28,
-    title: "Take good care of your hair as you get older.",
+    title: "How To Take good care of your hair as we get older.",
     image: "./blogs/take-good-care-of-your-hair-as-you-get-older.jpg",
     slug: "take-good-care-of-your-hair-as-you-get-older",
     intro: "The fact that your hair changes as you get older may not come as a surprise. The primary cause? Your hair follicles and hair shaft start to shrink over time, causing thinning and hair loss—and slower than usual hair growth. Here are some tips from our experts on how to support your hair as you age.",

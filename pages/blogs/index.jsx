@@ -37,7 +37,7 @@ const Blogs = () => {
                 textAlign={'center'}
                 className={styles.monts}
             >
-                TALKS OF WISDOM
+                WORDS OF WISDOM
             </Text>
             <Text
                 fontSize={[40, 56]}

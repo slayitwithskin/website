@@ -57,17 +57,22 @@ const Index = () => {
 
       <Flex px={[8, 12, 16]} py={8} justifyContent={'space-between'} wrap={'wrap-reverse'}>
         <Box w={['xs', 'md']} h={'md'}>
-          <Image src='glowdaily.jpg' w={'inherit'} h={'inherit'} objectFit={'cover'} objectPosition={'center'} />
+          <Image src='about.jpeg' w={'inherit'} h={'inherit'} objectFit={'cover'} objectPosition={'top'} />
         </Box>
         <Flex direction={'column'} alignItems={'flex-start'} justifyContent={'center'} w={['100%', '65%', '50%']} px={[0, 6]}>
-          <Text className={styles.monts}>NATURALLY & SAFELY</Text>
-          <Text className={styles.cursive} fontSize={['40', '56']}>Helping You Glow Daily</Text>
+          <Text className={styles.monts}>FOUNDER, SLAYITWITHSKIN</Text>
+          <Text className={styles.cursive} fontSize={['40', '56']}>Vandana Khilare</Text>
           <Box mt={6} mb={4} w={20} h={.5} bg={'blackAlpha.800'}></Box>
           <Text fontWeight={400}>
-            Your face shows your inner health. We at Slay It With Skin always beleive that everyone
-            deserves a happy, glowing skin at every phase of life irrespective of their gender. And the perfect way to achieve it is professional guidance and consultation.
+            Vandana Khilare is the cosmetologist and founder of slayitwithskin. Because of her tremendous service, she has achieved commendable milestones. An award-winning cosmetologist, Vandana has an experienced team of dermatologists at various online consultations for slayitwithskin across India.
+            <br /><br />
+            After practicing medicine for more than 10 years, Vandana found slayitwithskin. The idea behind slayitwithskin is to provide a wide range of services and products, including but not limited to routine skin & hair exams, beauty & cosmetic procedures, and the treatment of skin disorders. slayitwithskin is a comfortable and contemporary place for patients to get procedures done.
+            <br /><br />
+            Vandana Khilare has completed her studies at a government Medical College situated in Mumbai. She went to Abroad University in Canada to pursue higher education in practical Dermatology  & Cosmetology she went to  University UK. Hereafter, she completed her diploma in Aesthetic Medicine from the American Academy of Aesthetic Medicine.
+            <br /><br />
+            Given her advanced knowledge of cosmetology and Dermatology, she has attended various workshops and conferences globally.
           </Text>
-          <Link href={'/about'} >
+          <Link href={'https://www.instagram.com/slayitwithskin/'} >
             <Flex mt={'12'} alignItems={"center"} justifyContent={"flex-start"}>
               <Text className={styles.monts} position={'relative'} top={1} fontWeight={600} mr={4} transition={'ease'} transitionDuration={'.5s'} borderBottom={'1px'} borderBottomColor={'transparent'} _hover={{ mr: 6, borderBottomColor: 'black' }}>
                 READ MORE ABOUT US
@@ -182,18 +187,6 @@ const Index = () => {
         </Flex>
       </Box>
 
-      {/* <Flex position={'relative'} p={[8, 16]} bg={"#C5D8A4"} justifyContent={'space-between'} wrap={'wrap'}>
-        <Flex direction={'column'} alignItems={'flex-start'} justifyContent={'center'} w={['100%', '40%']}>
-          <Text className={styles.monts}>EXPERT BEAUTICIANS</Text>
-          <Text className={styles.cursive} fontSize={['40', '56']} lineHeight={'short'}>Years of Experience</Text>
-          <Box mt={6} mb={4} w={20} h={.5} bg={'blackAlpha.800'}></Box>
-          <Text fontWeight={400}>Slay it with skin aims at delivering happy skin smiles, helping clients achieve their skin goals with correct guidance & expert treatments. </Text>
-        </Flex>
-        <Flex w={['100%', '45%']} h={['40vh']} mt={[8, 0, 0]}>
-          <iframe className={styles.homevideo} src="https://www.youtube.com/embed/q0BVR5jRXxE" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </Flex>
-      </Flex> */}
-
       <Flex
         pos={'relative'}
         h={['auto', '100vh']}
@@ -237,7 +230,7 @@ const Index = () => {
           </Box>
 
           <Flex direction={'column'} alignItems={'flex-start'} justifyContent={'center'} w={['100%', '60%']} pl={[0, 16]} pt={[8, 0]}>
-            <Text className={styles.monts}>TALKS OF WISDOM</Text>
+            <Text className={styles.monts}>WORDS OF WISDOM</Text>
             <Text className={styles.cursive} fontSize={['40', '56']}>Read Our Blogs</Text>
             <Box mt={6} mb={4} w={20} h={.5} bg={'blackAlpha.800'}></Box>
             <Text fontWeight={400}>

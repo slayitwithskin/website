@@ -41,12 +41,12 @@ const Courses = () => {
                     boxShadow={'lg'}
                     w={['full', 'sm']}
                 >
-                    <Image src={'https://studyabroadnations.com/wp-content/uploads/2021/03/beauty.jpg'} w={['full', 'sm']} h={60} objectFit={'cover'} />
+                    <Image src={'./course1.jpg'} w={['full', 'sm']} h={60} objectFit={'cover'} />
                     <Text fontSize={'2xl'} fontWeight={'600'}>Chemical Peel Course</Text>
                     <br />
                     <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque ipsum nulla laborum iure temporibus id. Temporibus at odio in qui voluptatum dolores perferendis, magni repudiandae, reiciendis eius, quo reprehenderit nemo!</Text>
                     <br />
-                    <Button rounded={0} colorScheme='whatsapp' w={'full'}>Enrol Now</Button>
+                    <Button rounded={0} colorScheme='whatsapp' w={'full'}>Enrol Now (Rs. 7500)</Button>
                 </Box>
                 <Box
                     p={4}
@@ -54,12 +54,12 @@ const Courses = () => {
                     boxShadow={'lg'}
                     w={['full', 'sm']}
                 >
-                    <Image src={'https://5.imimg.com/data5/SELLER/Default/2022/7/SV/LZ/CC/140980125/advance-beauty-courses-500x500.jpg'} w={['full', 'sm']} h={60} objectFit={'cover'} />
+                    <Image src={'./course2.jpg'} w={['full', 'sm']} h={60} objectFit={'cover'} />
                     <Text fontSize={'2xl'} fontWeight={'600'}>Dermaplan Course</Text>
                     <br />
                     <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque ipsum nulla laborum iure temporibus id. Temporibus at odio in qui voluptatum dolores perferendis, magni repudiandae, reiciendis eius, quo reprehenderit nemo!</Text>
                     <br />
-                    <Button rounded={0} colorScheme='twitter' w={'full'}>Enrol Now</Button>
+                    <Button rounded={0} colorScheme='twitter' w={'full'}>Enrol Now (Rs. 20000)</Button>
                 </Box>
                 <Box
                     p={4}
@@ -67,12 +67,12 @@ const Courses = () => {
                     boxShadow={'lg'}
                     w={['full', 'sm']}
                 >
-                    <Image src={'https://5.imimg.com/data5/SELLER/Default/2022/7/SV/LZ/CC/140980125/advance-beauty-courses-500x500.jpg'} w={['full', 'sm']} h={60} objectFit={'cover'} />
+                    <Image src={'./course3.jpg'} w={['full', 'sm']} h={60} objectFit={'cover'} />
                     <Text fontSize={'2xl'} fontWeight={'600'}>Aesthetic Course</Text>
                     <br />
                     <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque ipsum nulla laborum iure temporibus id. Temporibus at odio in qui voluptatum dolores perferendis, magni repudiandae, reiciendis eius, quo reprehenderit nemo!</Text>
                     <br />
-                    <Button rounded={0} colorScheme='pink' w={'full'}>Enrol Now</Button>
+                    <Button rounded={0} colorScheme='pink' w={'full'}>Enrol Now (Rs 75000)</Button>
                 </Box>
             </Stack>
             <Footer />

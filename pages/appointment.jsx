@@ -55,6 +55,7 @@ const Appointment = () => {
     const [selectedSlots, setSelectedSlots] = useState([])
     const [phone, setPhone] = useState("")
     const [details, setDetails] = useState("")
+    const [concerns, setConcerns] = useState("")
     const [couponCode, setCouponCode] = useState("")
     const [payBtnStatus, setPayBtnStatus] = useState(false)
     const [subTotal, setSubTotal] = useState(0)
@@ -80,12 +81,7 @@ const Appointment = () => {
         "12:30 - 13:00",
         "13:00 - 13:30",
         "13:30 - 14:00",
-        "14:00 - 14:30",
-        "14:30 - 15:00",
-        "15:00 - 15:30",
-        "15:30 - 16:00",
-        "16:00 - 16:30",
-        "16:30 - 17:00",
+
         "17:00 - 17:30",
         "17:30 - 18:00",
         "18:00 - 18:30",
@@ -94,7 +90,18 @@ const Appointment = () => {
 
     useEffect(() => {
         document.getElementById(gender).style.background = '#E3CAA5'
-        gender === 'male' ? document.getElementById('female').style.background = "#edf2f7" : document.getElementById('male').style.background = "#edf2f7"
+        if (gender == 'male') {
+            document.getElementById('female').style.background = "#edf2f7"
+            document.getElementById('transgender').style.background = "#edf2f7"
+        }
+        if (gender == 'female') {
+            document.getElementById('male').style.background = "#edf2f7"
+            document.getElementById('transgender').style.background = "#edf2f7"
+        }
+        if (gender == 'transgender') {
+            document.getElementById('female').style.background = "#edf2f7"
+            document.getElementById('male').style.background = "#edf2f7"
+        }
     }, [gender])
 
     const getAppointmenSlots = async () => {
@@ -137,8 +144,8 @@ const Appointment = () => {
 
     function addSlot(e) {
         e.target.classList.add('selected'); setSelectedSlots([...selectedSlots, e.target.value])
-        if(total){
-            setTotal(total+baseRate)
+        if (total) {
+            setTotal(total + baseRate)
         }
         addToSubtotal(baseRate)
     }
@@ -176,6 +183,7 @@ const Appointment = () => {
                 age,
                 date: appointment.toString(),
                 slots: `${selectedSlots.toString()}`,
+                concerns,
                 details,
                 paymentId: rzpresponse.razorpay_payment_id,
                 orderId: rzpresponse.razorpay_order_id,
@@ -282,7 +290,7 @@ const Appointment = () => {
             if (subTotal - selectedSlots.length * baseRate <= 0) {
                 setSubTotal(0)
             }
-            else{
+            else {
                 setSubTotal(subTotal - selectedSlots.length * baseRate)
             }
         }
@@ -310,13 +318,13 @@ const Appointment = () => {
     }
 
     function addToSubtotal(amountToAdd) {
-        if(total){
-            setTotal(total+amountToAdd)
+        if (total) {
+            setTotal(total + amountToAdd)
         }
         setSubTotal(subTotal + amountToAdd)
     }
     function subtractFromSubtotal(amountToSubtract) {
-        if(total){
+        if (total) {
             setTotal(total - amountToSubtract)
         }
         setSubTotal(subTotal - amountToSubtract)
@@ -408,14 +416,22 @@ const Appointment = () => {
                                     <Text color={'rgb(100,100,100)'} pb={2}>Your Gender</Text>
                                     <HStack spacing={6}>
                                         <Button id='male'
+                                            size={'sm'}
                                             onClick={(e) => { setGender('male') }}
                                         >
                                             Male
                                         </Button>
                                         <Button id='female'
+                                            size={'sm'}
                                             onClick={(e) => { setGender('female') }}
                                         >
                                             Female
+                                        </Button>
+                                        <Button id='transgender'
+                                            size={'sm'}
+                                            onClick={(e) => { setGender('transgender') }}
+                                        >
+                                            Transgender
                                         </Button>
                                     </HStack>
                                     <Input type={'hidden'} name={'gender'} value={gender} />
@@ -431,19 +447,24 @@ const Appointment = () => {
                         <VStack my={4} p={[4, 6]} boxShadow={'base'} bg={'white'} alignItems={'flex-start'}>
                             <Text color={'rgb(100,100,100)'} pb={2}>What are your concerns?</Text>
                             <VStack w={'full'} alignItems={'flex-start'}>
-                                <CheckboxGroup defaultValue={[]} onChange={values => { setDetails(values) }}>
+                                <CheckboxGroup defaultValue={[]} onChange={values => {
+                                    values.length <= 4 ? setSubTotal(599) : setSubTotal(699)
+                                    setConcerns(values)
+                                }}>
                                     <b>Hair:</b>
                                     <Stack direction={['column']} spacing={4} flexWrap={'wrap'} pb={6}>
-                                        <Checkbox value='Thinning' onChange={e => e.target.checked ? addToSubtotal(399) : subtractFromSubtotal(399)}>Thinning (₹399)</Checkbox>
-                                        <Checkbox value='Scalp' onChange={e => e.target.checked ? addToSubtotal(299) : subtractFromSubtotal(299)} >Scalp (₹299)</Checkbox>
-                                        <Checkbox value='Greying' onChange={e => e.target.checked ? addToSubtotal(399) : subtractFromSubtotal(399)} >Greying (₹399)</Checkbox>
-                                        <Checkbox value='Dandruff' onChange={e => e.target.checked ? addToSubtotal(199) : subtractFromSubtotal(199)} >Dandruff (₹199)</Checkbox>
+                                        <Checkbox value='Thinning'>Thinning</Checkbox>
+                                        <Checkbox value='Scalp' >Scalp</Checkbox>
+                                        <Checkbox value='Greying' >Greying</Checkbox>
+                                        <Checkbox value='Dandruff' >Dandruff</Checkbox>
                                     </Stack>
                                     <b>Skin:</b>
                                     <Stack direction={['column']} flexWrap={'wrap'} spacing={4}>
-                                        <Checkbox value='Acne' onChange={e => e.target.checked ? addToSubtotal(499) : subtractFromSubtotal(499)} >Acne (₹499)</Checkbox>
-                                        <Checkbox value='Ageing' onChange={e => e.target.checked ? addToSubtotal(199) : subtractFromSubtotal(199)} >Ageing (₹199)</Checkbox>
-                                        <Checkbox value='Pigmentation' onChange={e => e.target.checked ? addToSubtotal(344) : subtractFromSubtotal(344)} >Pigmentation (₹344)</Checkbox>
+                                        <Checkbox value='Acne' >Acne</Checkbox>
+                                        <Checkbox value='Ageing' >Ageing</Checkbox>
+                                        <Checkbox value='Pigmentation' >Pigmentation</Checkbox>
+                                        <Checkbox value='Dark Circles' >Dark Circles</Checkbox>
+                                        <Checkbox value='Rosaria' >Rosaria</Checkbox>
                                     </Stack>
                                 </CheckboxGroup>
                                 <br /><br />
@@ -511,10 +532,18 @@ const Appointment = () => {
                             <Text color={'rgb(100,100,100)'} pb={2}>Additional Details</Text>
                             <HStack w={'full'}>
                                 <Textarea
+                                    w={'full'} disabled={true}
+                                    resize={'none'}
+                                    h={24} value={`My Concerns are: ${concerns}.`}
+                                />
+                            </HStack>
+                            <br />
+                            <HStack w={'full'}>
+                                <Textarea
                                     w={'full'}
                                     placeholder={'Any additional details you would like to tell us...'}
                                     resize={'none'}
-                                    h={64} value={`My Concerns: ${details}.`} onChange={e => setDetails(e.target.value)}
+                                    h={64} value={details} onChange={e => setDetails(e.target.value)}
                                 />
                             </HStack>
                         </VStack>
