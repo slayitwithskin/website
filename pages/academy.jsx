@@ -39,27 +39,26 @@ const Academy = () => {
           boxShadow={'lg'}
           w={['full', 'sm']}
         >
-          <Image src={'https://studyabroadnations.com/wp-content/uploads/2021/03/beauty.jpg'} w={['full', 'sm']} h={60} objectFit={'cover'} />
+          <Image src={'/onlineacademy.jpg'} w={['full', 'sm']} h={60} objectFit={'cover'} />
           <Text fontSize={'2xl'} fontWeight={'600'}>Online Academy</Text>
           <br />
           <Text>
             <b>May Month Launch</b> <br />
             Course Topics Such as : <br />
-            Anatomy <br />
-            Theory of face <br />
-            Facial massages <br />
-            Micro Derma <br />
-            Hydra facial <br />
-            Galbinac <br />
-            High Frequency <br />
-            Skin Consultation <br />
-            Chemical peel <br />
-            Product Knowledge <br />
-            Fees  20000/- <br />
-            Five days Course
+            • Anatomy <br />
+            • Theory of face <br />
+            • Facial massages <br />
+            • Micro Derma <br />
+            • Hydra facial <br />
+            • Galbinac <br />
+            • High Frequency <br />
+            • Skin Consultation <br />
+            • Chemical peel <br />
+            • Product Knowledge <br />
+            • Five days Course
           </Text>
           <br />
-          <Button rounded={0} bg={'#BA90C6'} colorScheme='pink' w={'full'}>Enrol Now</Button>
+          <Button rounded={0} bg={'#BA90C6'} colorScheme='pink' w={'full'}>Enrol Now (Rs. 20000)</Button>
         </Box>
         <Box
           p={4}
@@ -67,32 +66,31 @@ const Academy = () => {
           boxShadow={'lg'}
           w={['full', 'sm']}
         >
-          <Image src={'https://5.imimg.com/data5/SELLER/Default/2022/7/SV/LZ/CC/140980125/advance-beauty-courses-500x500.jpg'} w={['full', 'sm']} h={60} objectFit={'cover'} />
+          <Image src={'/offlineacademy.jpg'} w={['full', 'sm']} h={60} objectFit={'cover'} />
           <Text fontSize={'2xl'} fontWeight={'600'}>Offline Academy</Text>
           <br />
           <Text>
             <b>Nashik April Batch</b> <br />
-            Micro Needling <br />
-            Chemical peel <br />
-            laser <br />
-            Carbon laser <br />
-            HIFU <br />
-            Anatomy <br />
-            Theory of face <br />
-            Facial massages <br />
-            Micro Derma <br />
-            Hydra facial <br />
-            Galbinac <br />
-            High Frequency <br />
-            Skin Consultation <br />
-            Chemical peel <br />
-            Product Knowledge <br />
-            Fees 75000/- <br />
-            Seven days Course <br />
-            Government Certification <br />
+            • Micro Needling <br />
+            • Chemical peel <br />
+            • laser <br />
+            • Carbon laser <br />
+            • HIFU <br />
+            • Anatomy <br />
+            • Theory of face <br />
+            • Facial massages <br />
+            • Micro Derma <br />
+            • Hydra facial <br />
+            • Galbinac <br />
+            • High Frequency <br />
+            • Skin Consultation <br />
+            • Chemical peel <br />
+            • Product Knowledge <br />
+            • Seven days Course <br />
+            • Government Certification <br />
           </Text>
           <br />
-          <Button rounded={0} bg={'#BA90C6'} colorScheme='pink' w={'full'}>Enrol Now</Button>
+          <Button rounded={0} bg={'#BA90C6'} colorScheme='pink' w={'full'}>Enrol Now (Rs. 75000)</Button>
         </Box>
       </Stack>
       <Footer />
