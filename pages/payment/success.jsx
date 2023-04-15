@@ -11,7 +11,6 @@ import Navbar from '../../hocs/Navbar'
 import Footer from '../../hocs/Footer'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import Cookies from 'js-cookie'
 
 const Success = () => {
     const Router = useRouter()
