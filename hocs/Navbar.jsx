@@ -189,9 +189,6 @@ const Navbar = () => {
                       <Link href={'/consultation'}><Text>Skin Consultation</Text></Link>
                     </MenuItem>
                     <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                      <Link href={'/consultation'}><Text>Acne Consultation</Text></Link>
-                    </MenuItem>
-                    <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
                       <Link href={'/consultation'}><Text>Hair Consultation</Text></Link>
                     </MenuItem>
                   </Flex>
@@ -389,7 +386,6 @@ const Navbar = () => {
                     <AccordionPanel>
                       <Link href={'/consultation'}><Text my={2}>Bridal Consultation</Text></Link>
                       <Link href={'/consultation'}><Text my={2}>Skin Consultation</Text></Link>
-                      <Link href={'/consultation'}><Text my={2}>Acne Consultation</Text></Link>
                       <Link href={'/consultation'}><Text my={2}>Hair Consultation</Text></Link>
                     </AccordionPanel>
                   </AccordionItem>

@@ -1,11 +1,24 @@
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
+
 export default async function handler(req, res) {
     if (req.method === 'POST') {
         const { cart } = req.body;
 
         try {
             const session = await stripe.checkout.sessions.create({
-                line_items: [
-                    cart
+                payment_method_types: ['card'],
+                line_items: [{
+                    price_data: {
+                        currency: 'inr',
+                        product_data: {
+                            images: ['https://slayitwithskin.com/logo.png'],
+                            name: 'Online Appointment',
+                        },
+                        unit_amount: cart.price * 100,
+                    },
+                    description: 'New appointment from '+cart.name,
+                    quantity: cart.slots
+                }
                 ],
                 mode: 'payment',
                 success_url: `${req.headers.origin}/payment/success`,
