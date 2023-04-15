@@ -98,7 +98,7 @@ const Index = () => {
         <Box position={"absolute"} top={0} right={0} bottom={0} left={0} bg={"rgba(0,0,0,0.6)"}>
           <Flex h={'full'} direction={"column"} alignItems={'center'} justifyContent={'center'} zIndex={10}>
             <Text className={styles.monts} color={'white'} letterSpacing={4}>STAY BEAUTIFUL & CONFIDENT</Text>
-            <Text className={styles.cursive} fontSize={['36', '52', '64']} color={'white'}>Beauty That's Uniquely You</Text>
+            <Text className={styles.cursive} fontSize={['36', '52', '64']} textAlign={'center'} color={'white'}>Beauty That's Uniquely You</Text>
             <Link href={'/appointment'}>
               <Button
                 my={4} p={6}
@@ -214,8 +214,8 @@ const Index = () => {
           direction={['column', 'row']}
         >
           <Box
-            w={['full', 'xl']}
-            h={['180px', 'lg']}
+            boxSize={['xs', 'xl']}
+            alignSelf={['center', 'unset']}
             display={'flex'}
             flexDir={'column'}
             alignItems={'center'}
