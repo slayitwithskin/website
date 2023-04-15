@@ -36,7 +36,7 @@ import DatePicker from 'react-flatpickr'
 import 'flatpickr/dist/themes/material_blue.css'
 import axios from 'axios'
 import Script from 'next/script'
-
+import { loadStripe } from '@stripe/stripe-js'
 
 
 const Appointment = () => {
@@ -167,114 +167,127 @@ const Appointment = () => {
         });
     };
 
-    const triggerMail = async (rzpresponse) => {
-        await fetch('https://formsubmit.co/ajax/56b3e13432de43fb57867eafe64c37b2', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json',
-                'User-Agent': '*',
-            },
-            body: JSON.stringify({
-                name,
-                phone,
-                email,
-                gender,
-                age,
-                date: appointment.toString(),
-                slots: `${selectedSlots.toString()}`,
-                concerns,
-                details,
-                paymentId: rzpresponse.razorpay_payment_id,
-                orderId: rzpresponse.razorpay_order_id,
-                _autoresponse: `Hello ${name}, we have received your booking details. Our team will get back to you soon!`
-            })
-        }).then(async () => {
-            await fetch("/api/updateslots", {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': '*'
-                },
-                body: JSON.stringify({
-                    fulldate: `${appointment[0].getDate()}` + `${appointment[0].getMonth() + 1}` + `${appointment[0].getFullYear()}`,
-                    slots: `${selectedSlots.toString()}`
-                })
-            }).then(() => {
-                setModalProps({
-                    ...modalProps,
-                    title: "Your payment was successful!",
-                    status: true,
-                    paymentId: rzpresponse.razorpay_payment_id,
-                    orderId: rzpresponse.razorpay_order_id,
-                })
-                setPayBtnStatus(false)
-            })
-
-        }).catch(error => console.log(error.message))
+    async function storeData() {
+        localStorage.setItem('name', name)
+        localStorage.setItem('phone', phone)
+        localStorage.setItem('email', email)
+        localStorage.setItem('gender', gender)
+        localStorage.setItem('age', age)
+        localStorage.setItem('date', appointment.toString())
+        localStorage.setItem('slots', `${selectedSlots.toString()}`)
+        localStorage.setItem('details', details)
+        localStorage.setItem('concerns', concerns)
+        localStorage.setItem('mailSent', 0)
     }
 
-    const handleSubmit = async (e) => {
-        e.preventDefault()
-        const res = await initializeRazorpay();
+    // const triggerMail = async (rzpresponse) => {
+    //     await fetch('https://formsubmit.co/ajax/56b3e13432de43fb57867eafe64c37b2', {
+    //         method: 'POST',
+    //         headers: {
+    //             'Content-Type': 'application/json',
+    //             'Accept': 'application/json',
+    //             'User-Agent': '*',
+    //         },
+    //         body: JSON.stringify({
+    //             name,
+    //             phone,
+    //             email,
+    //             gender,
+    //             age,
+    //             date: appointment.toString(),
+    //             slots: `${selectedSlots.toString()}`,
+    //             concerns,
+    //             details,
+    //             paymentId: rzpresponse.razorpay_payment_id,
+    //             orderId: rzpresponse.razorpay_order_id,
+    //             _autoresponse: `Hello ${name}, we have received your booking details. Our team will get back to you soon!`
+    //         })
+    //     }).then(async () => {
+    //         await fetch("/api/updateslots", {
+    //             method: 'POST',
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //                 'Accept': '*'
+    //             },
+    //             body: JSON.stringify({
+    //                 fulldate: `${appointment[0].getDate()}` + `${appointment[0].getMonth() + 1}` + `${appointment[0].getFullYear()}`,
+    //                 slots: `${selectedSlots.toString()}`
+    //             })
+    //         }).then(() => {
+    //             setModalProps({
+    //                 ...modalProps,
+    //                 title: "Your payment was successful!",
+    //                 status: true,
+    //                 paymentId: rzpresponse.razorpay_payment_id,
+    //                 orderId: rzpresponse.razorpay_order_id,
+    //             })
+    //             setPayBtnStatus(false)
+    //         })
 
-        if (!res) {
-            alert("Razorpay SDK Failed to load");
-            setPayBtnStatus(false)
-            return;
-        }
+    //     }).catch(error => console.log(error.message))
+    // }
 
-        setPayBtnStatus(true)
-        // Make API call to the serverless API
-        const data = await fetch("/api/razorpay", {
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                amount: selectedSlots.length * baseRate
-            })
-        }).then((t) =>
-            t.json()
-        );
-        console.log(data);
-        var options = {
-            key: process.env.RAZORPAY_KEY, // Enter the Key ID generated from the Dashboard
-            name: "Slay it with skin",
-            currency: data.currency,
-            amount: data.amount,
-            order_id: data.id,
-            description: "Thankyou for your booking your appointment",
-            image: "https://avatars.githubusercontent.com/u/7713209?s=280&v=4",
-            handler: function (response) {
-                // Validate payment at server - using webhooks is a better idea.
-                setModalProps({
-                    ...modalProps,
-                    // status: true,
-                    title: "Your payment was successful!",
-                    paymentId: response.razorpay_payment_id,
-                    orderId: response.razorpay_order_id,
-                })
-                if (response.razorpay_payment_id) {
-                    triggerMail(response)
-                    setPayBtnStatus(false)
-                }
-                else {
-                    setModalProps({ ...modalProps, title: "Your payment could not be completed!", status: true })
-                    setPayBtnStatus(false)
-                }
-            },
-            prefill: {
-                name: name,
-                email: email,
-                contact: phone,
-            },
-        };
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault()
+    //     const res = await initializeRazorpay();
 
-        const paymentObject = new window.Razorpay(options);
-        paymentObject.open();
-        setPayBtnStatus(false)
-    }
+    //     if (!res) {
+    //         alert("Razorpay SDK Failed to load");
+    //         setPayBtnStatus(false)
+    //         return;
+    //     }
+
+    //     setPayBtnStatus(true)
+    //     // Make API call to the serverless API
+    //     const data = await fetch("/api/razorpay", {
+    //         method: "POST",
+    //         headers: {
+    //             'Content-Type': 'application/json'
+    //         },
+    //         body: JSON.stringify({
+    //             amount: selectedSlots.length * baseRate
+    //         })
+    //     }).then((t) =>
+    //         t.json()
+    //     );
+    //     console.log(data);
+    //     var options = {
+    //         key: process.env.RAZORPAY_KEY, // Enter the Key ID generated from the Dashboard
+    //         name: "Slay it with skin",
+    //         currency: data.currency,
+    //         amount: data.amount,
+    //         order_id: data.id,
+    //         description: "Thankyou for your booking your appointment",
+    //         image: "https://avatars.githubusercontent.com/u/7713209?s=280&v=4",
+    //         handler: function (response) {
+    //             // Validate payment at server - using webhooks is a better idea.
+    //             setModalProps({
+    //                 ...modalProps,
+    //                 // status: true,
+    //                 title: "Your payment was successful!",
+    //                 paymentId: response.razorpay_payment_id,
+    //                 orderId: response.razorpay_order_id,
+    //             })
+    //             if (response.razorpay_payment_id) {
+    //                 triggerMail(response)
+    //                 setPayBtnStatus(false)
+    //             }
+    //             else {
+    //                 setModalProps({ ...modalProps, title: "Your payment could not be completed!", status: true })
+    //                 setPayBtnStatus(false)
+    //             }
+    //         },
+    //         prefill: {
+    //             name: name,
+    //             email: email,
+    //             contact: phone,
+    //         },
+    //     };
+
+    //     const paymentObject = new window.Razorpay(options);
+    //     paymentObject.open();
+    //     setPayBtnStatus(false)
+    // }
 
     function clearSlots() {
         if (total) {
@@ -383,6 +396,33 @@ const Appointment = () => {
         })
     }
 
+    const publishableKey = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY;
+    const stripePromise = loadStripe(publishableKey);
+
+    async function createStripeOrder(){
+        await storeData()
+        const stripe = await stripePromise
+        axios.post('/api/stripe/session', {
+                name: name,
+                slots: selectedSlots.length,
+                price: parseFloat(total || subTotal)
+        }, {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(async (res)=>{
+            await stripe.redirectToCheckout({
+                sessionId: res.data.id
+            })
+        }).catch(err=>{
+            console.log(err)
+            Toast({
+                status: 'error',
+                title: 'Error while creating order',
+                description: err.message
+            })
+        })
+    }
 
 
     return (
@@ -589,7 +629,7 @@ const Appointment = () => {
                                 <Button colorScheme={'whatsapp'}
                                     rounded={0} p={6} fontSize={[12, 16]}
                                     className={styles.monts} textTransform={'uppercase'}
-                                    onClick={() => createCashfreeOrder()}
+                                    onClick={() => createStripeOrder()}
                                     disabled={payBtnStatus}
                                 >
                                     Pay Now
