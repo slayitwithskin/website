@@ -55,7 +55,7 @@ const Index = () => {
 
       </header>
 
-      <Flex px={[8, 12, 16]} py={8} justifyContent={'space-between'} wrap={'wrap-reverse'}>
+      <Flex px={[8, 12, 16]} py={8} justifyContent={'space-between'} wrap={'wrap'}>
         <Box w={['xs', 'md']} h={'md'}>
           <Image src='about.jpeg' w={'inherit'} h={'inherit'} objectFit={'cover'} objectPosition={'top'} />
         </Box>
