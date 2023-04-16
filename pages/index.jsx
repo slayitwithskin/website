@@ -210,7 +210,7 @@ const Index = () => {
         ></Box>
         <Flex
           pos={'relative'}
-          p={8}
+          p={[4,8]}
           direction={['column', 'row']}
         >
           <Box
