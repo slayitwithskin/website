@@ -92,13 +92,13 @@ const Appointment = () => {
         document.getElementById(gender).style.background = '#E3CAA5'
         if (gender == 'male') {
             document.getElementById('female').style.background = "#edf2f7"
-            document.getElementById('transgender').style.background = "#edf2f7"
+            document.getElementById('others').style.background = "#edf2f7"
         }
         if (gender == 'female') {
             document.getElementById('male').style.background = "#edf2f7"
-            document.getElementById('transgender').style.background = "#edf2f7"
+            document.getElementById('others').style.background = "#edf2f7"
         }
-        if (gender == 'transgender') {
+        if (gender == 'others') {
             document.getElementById('female').style.background = "#edf2f7"
             document.getElementById('male').style.background = "#edf2f7"
         }
@@ -467,11 +467,11 @@ const Appointment = () => {
                                         >
                                             Female
                                         </Button>
-                                        <Button id='transgender'
+                                        <Button id='others'
                                             size={'sm'}
-                                            onClick={(e) => { setGender('transgender') }}
+                                            onClick={(e) => { setGender('others') }}
                                         >
-                                            Transgender
+                                            Others
                                         </Button>
                                     </HStack>
                                     <Input type={'hidden'} name={'gender'} value={gender} />
@@ -504,7 +504,7 @@ const Appointment = () => {
                                         <Checkbox value='Ageing' >Ageing</Checkbox>
                                         <Checkbox value='Pigmentation' >Pigmentation</Checkbox>
                                         <Checkbox value='Dark Circles' >Dark Circles</Checkbox>
-                                        <Checkbox value='Rosaria' >Rosaria</Checkbox>
+                                        <Checkbox value='Rosaria' >Rosacea</Checkbox>
                                     </Stack>
                                 </CheckboxGroup>
                                 <br /><br />
@@ -534,7 +534,6 @@ const Appointment = () => {
                                         onChange={(appointmentDate) => setAppointment(appointmentDate)}
                                         options={{
                                             minDate: now.setDate(now.getDate() + 1),
-                                            maxDate: now.setDate(now.getDate() + 15),
                                             dateFormat: "d M Y",
                                             altInput: true,
                                             altInputClass: 'datepicker',
