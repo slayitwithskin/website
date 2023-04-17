@@ -131,7 +131,7 @@ const Index = () => {
         <Flex wrap={'wrap'} mt={16} alignItems={'center'} justifyContent={['center', 'space-around']}>
 
           {services.map((service) =>
-            <Link href="/consultation" key={service.id}>
+            <Link href={service.link} key={service.id}>
               <Box
                 position={'relative'}
                 m={2}
