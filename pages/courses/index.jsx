@@ -57,8 +57,8 @@ const Courses = () => {
                         you may need to undergo the procedure more than once to get the desired results.
                     </Text>
                     <br />
-                    <Link href={'https://buy.stripe.com/dR69E3gfo8lddKUeUX'}>
-                        <Button rounded={0} bg={'#BA90C6'} colorScheme='pink' w={'full'}>Enrol Now (Rs. 7500)</Button>
+                    <Link href={'https://wa.me/919004574190'}>
+                        <Button rounded={0} bg={'#BA90C6'} colorScheme='pink' w={'full'}>Enquire On WhatsApp</Button>
                     </Link>
                 </Box>
                 <Box
@@ -101,8 +101,8 @@ const Courses = () => {
                         </AccordionItem>
                     </Accordion>
                     <br />
-                    <Link href={'https://buy.stripe.com/aEU7vVbZ8dFx6iseUV'}>
-                        <Button rounded={0} bg={'#BA90C6'} colorScheme='pink' w={'full'}>Enrol Now (Rs. 20000)</Button>
+                    <Link href={'https://wa.me/919004574190'}>
+                        <Button rounded={0} bg={'#BA90C6'} colorScheme='pink' w={'full'}>Enquire On WhatsApp</Button>
                     </Link>
                 </Box>
                 <Box
@@ -150,8 +150,8 @@ const Courses = () => {
                         </AccordionItem>
                     </Accordion>
                     <br />
-                    <Link href={'https://buy.stripe.com/6oE5nNaV49phcGQ9AC'} target='_blank'>
-                        <Button rounded={0} bg={'#BA90C6'} colorScheme='pink' w={'full'}>Enrol Now (Rs. 75000)</Button>
+                    <Link href={'https://wa.me/919004574190'} target='_blank'>
+                        <Button rounded={0} bg={'#BA90C6'} colorScheme='pink' w={'full'}>Enquire On WhatsApp</Button>
                     </Link>
                 </Box>
             </Stack>
