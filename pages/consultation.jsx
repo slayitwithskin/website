@@ -101,11 +101,11 @@ const Service = () => {
                     Your skin needs care. Talk to an expert to know about what your skin needs to remain soft, fresh and healthy throughout the day.
                 </Text>
 
-                <Text py={4}>
+                {/* <Text py={4}>
                     <b>Acne Consultation</b>
                     <br />
                     Got an acne? No worries! Talk to us and we will guide you the best to remove it without any side-effects.
-                </Text>
+                </Text> */}
 
                 <Text py={4}>
                     <b>Hair Consultation</b>

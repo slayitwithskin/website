@@ -144,10 +144,10 @@ const Appointment = () => {
 
     function addSlot(e) {
         e.target.classList.add('selected'); setSelectedSlots([...selectedSlots, e.target.value])
-        if (total) {
-            setTotal(total + baseRate)
-        }
-        addToSubtotal(baseRate)
+        // if (total) {
+        //     setTotal(total + baseRate)
+        // }
+        // addToSubtotal(baseRate)
     }
 
     const initializeRazorpay = () => {
@@ -488,7 +488,7 @@ const Appointment = () => {
                             <Text color={'rgb(100,100,100)'} pb={2}>What are your concerns?</Text>
                             <VStack w={'full'} alignItems={'flex-start'}>
                                 <CheckboxGroup defaultValue={[]} onChange={values => {
-                                    values.length <= 4 ? setSubTotal(599) : setSubTotal(699)
+                                    values.length < 4 ? setSubTotal(299) : values.length == 4 ? setSubTotal(599) : setSubTotal(699)
                                     setConcerns(values)
                                 }}>
                                     <b>Hair:</b>

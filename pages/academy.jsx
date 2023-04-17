@@ -9,6 +9,7 @@ import {
 import Navbar from '../hocs/Navbar'
 import Footer from '../hocs/Footer'
 import Head from 'next/head'
+import Link from 'next/link'
 
 const Academy = () => {
   return (
@@ -44,6 +45,7 @@ const Academy = () => {
           <br />
           <Text>
             <b>May Month Launch</b> <br />
+            <b>Five days Course</b><br />
             Course Topics Such as : <br />
             • Anatomy <br />
             • Theory of face <br />
@@ -55,10 +57,11 @@ const Academy = () => {
             • Skin Consultation <br />
             • Chemical peel <br />
             • Product Knowledge <br />
-            • Five days Course
           </Text>
           <br />
+          <Link href={'https://buy.stripe.com/aEU7vVbZ8dFx6iseUV'}>
           <Button rounded={0} bg={'#BA90C6'} colorScheme='pink' w={'full'}>Enrol Now (Rs. 20000)</Button>
+          </Link>
         </Box>
         <Box
           p={4}
@@ -71,6 +74,7 @@ const Academy = () => {
           <br />
           <Text>
             <b>Nashik April Batch</b> <br />
+            <b>Seven days Course</b><br />
             • Micro Needling <br />
             • Chemical peel <br />
             • laser <br />
@@ -86,11 +90,12 @@ const Academy = () => {
             • Skin Consultation <br />
             • Chemical peel <br />
             • Product Knowledge <br />
-            • Seven days Course <br />
             • Government Certification <br />
           </Text>
           <br />
+          <Link href={'https://buy.stripe.com/6oE5nNaV49phcGQ9AC'} target='_blank'>
           <Button rounded={0} bg={'#BA90C6'} colorScheme='pink' w={'full'}>Enrol Now (Rs. 75000)</Button>
+          </Link>
         </Box>
       </Stack>
       <Footer />
