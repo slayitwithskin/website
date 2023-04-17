@@ -15,6 +15,7 @@ import {
 import Head from 'next/head'
 import Navbar from '../../hocs/Navbar'
 import Footer from '../../hocs/Footer'
+import Link from 'next/link'
 
 const Courses = () => {
     const [accordionOneOpen, setAccordionOneOpen] = useState(false)
@@ -56,7 +57,9 @@ const Courses = () => {
                         you may need to undergo the procedure more than once to get the desired results.
                     </Text>
                     <br />
-                    <Button rounded={0} colorScheme='whatsapp' w={'full'}>Enrol Now (Rs. 7500)</Button>
+                    <Link href={'https://buy.stripe.com/dR69E3gfo8lddKUeUX'}>
+                        <Button rounded={0} bg={'#BA90C6'} colorScheme='pink' w={'full'}>Enrol Now (Rs. 7500)</Button>
+                    </Link>
                 </Box>
                 <Box
                     p={4}
@@ -98,7 +101,9 @@ const Courses = () => {
                         </AccordionItem>
                     </Accordion>
                     <br />
-                    <Button rounded={0} colorScheme='twitter' w={'full'}>Enrol Now (Rs. 20000)</Button>
+                    <Link href={'https://buy.stripe.com/aEU7vVbZ8dFx6iseUV'}>
+                        <Button rounded={0} bg={'#BA90C6'} colorScheme='pink' w={'full'}>Enrol Now (Rs. 20000)</Button>
+                    </Link>
                 </Box>
                 <Box
                     p={4}
@@ -145,7 +150,9 @@ const Courses = () => {
                         </AccordionItem>
                     </Accordion>
                     <br />
-                    <Button rounded={0} colorScheme='pink' w={'full'}>Enrol Now (Rs 75000)</Button>
+                    <Link href={'https://buy.stripe.com/6oE5nNaV49phcGQ9AC'} target='_blank'>
+                        <Button rounded={0} bg={'#BA90C6'} colorScheme='pink' w={'full'}>Enrol Now (Rs. 75000)</Button>
+                    </Link>
                 </Box>
             </Stack>
             <Footer />

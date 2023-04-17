@@ -60,7 +60,7 @@ const Academy = () => {
           </Text>
           <br />
           <Link href={'https://buy.stripe.com/aEU7vVbZ8dFx6iseUV'}>
-          <Button rounded={0} bg={'#BA90C6'} colorScheme='pink' w={'full'}>Enrol Now (Rs. 20000)</Button>
+            <Button rounded={0} bg={'#BA90C6'} colorScheme='pink' w={'full'}>Enrol Now (Rs. 20000)</Button>
           </Link>
         </Box>
         <Box
@@ -94,7 +94,7 @@ const Academy = () => {
           </Text>
           <br />
           <Link href={'https://buy.stripe.com/6oE5nNaV49phcGQ9AC'} target='_blank'>
-          <Button rounded={0} bg={'#BA90C6'} colorScheme='pink' w={'full'}>Enrol Now (Rs. 75000)</Button>
+            <Button rounded={0} bg={'#BA90C6'} colorScheme='pink' w={'full'}>Enrol Now (Rs. 75000)</Button>
           </Link>
         </Box>
       </Stack>
