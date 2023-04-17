@@ -46,21 +46,23 @@ const Academy = () => {
           <Text>
             <b>May Month Launch</b> <br />
             <b>Five days Course</b><br />
-            Course Topics Such as : <br />
             • Anatomy <br />
-            • Theory of face <br />
-            • Facial massages <br />
-            • Micro Derma <br />
-            • Hydra facial <br />
-            • Galbinac <br />
-            • High Frequency <br />
-            • Skin Consultation <br />
+            • Theory <br />
+            • Facial massage <br />
+            • High frequency <br />
+            • Galvanic <br />
+            • Micro derma brasion <br />
+            • Hydrafacial <br />
             • Chemical peel <br />
-            • Product Knowledge <br />
+            • Product knowledge <br />
+            • Client consultation <br />
+            • Exam <br />
+            • Certification <br />
+
           </Text>
           <br />
-          <Link href={'https://buy.stripe.com/aEU7vVbZ8dFx6iseUV'}>
-            <Button rounded={0} bg={'#BA90C6'} colorScheme='pink' w={'full'}>Enrol Now (Rs. 20000)</Button>
+          <Link href={'https://wa.me/919004574190'} target='_blank'>
+            <Button rounded={0} bg={'#BA90C6'} colorScheme='pink' w={'full'}>Enquire On WhatsApp</Button>
           </Link>
         </Box>
         <Box
@@ -75,26 +77,29 @@ const Academy = () => {
           <Text>
             <b>Nashik April Batch</b> <br />
             <b>Seven days Course</b><br />
-            • Micro Needling <br />
-            • Chemical peel <br />
-            • laser <br />
-            • Carbon laser <br />
-            • HIFU <br />
             • Anatomy <br />
-            • Theory of face <br />
-            • Facial massages <br />
-            • Micro Derma <br />
+            • Theory <br />
+            • Facial massage <br />
+            • High frequency <br />
+            • Galvanic <br />
+            • Micro derma brasion <br />
             • Hydra facial <br />
-            • Galbinac <br />
-            • High Frequency <br />
-            • Skin Consultation <br />
             • Chemical peel <br />
-            • Product Knowledge <br />
-            • Government Certification <br />
+            • Carbon facial <br />
+            • Micro needling <br />
+            • Bb glow <br />
+            • Hifu <br />
+            • Light therapy <br />
+            • Korean facials <br />
+            • Facelift <br />
+            • Laser <br />
+            • Exam <br />
+            • Certification <br />
+
           </Text>
           <br />
-          <Link href={'https://buy.stripe.com/6oE5nNaV49phcGQ9AC'} target='_blank'>
-            <Button rounded={0} bg={'#BA90C6'} colorScheme='pink' w={'full'}>Enrol Now (Rs. 75000)</Button>
+          <Link href={'https://wa.me/919004574190'} target='_blank'>
+            <Button rounded={0} bg={'#BA90C6'} colorScheme='pink' w={'full'}>Enquire On WhatsApp</Button>
           </Link>
         </Box>
       </Stack>

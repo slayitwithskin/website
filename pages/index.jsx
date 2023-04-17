@@ -55,22 +55,29 @@ const Index = () => {
 
       </header>
 
-      <Flex px={[8, 12, 16]} py={8} justifyContent={'space-between'} wrap={'wrap'}>
-        <Box w={['xs', 'md']} h={'md'}>
-          <Image src='about.jpeg' w={'inherit'} h={'inherit'} objectFit={'cover'} objectPosition={'top'} />
+      <Flex px={[8, 12, 16]} py={8} justifyContent={'center'} gap={48} wrap={'wrap'}>
+        <Box w={['xs', 'md']} >
+          <Image src='vandana.jpg' w={'inherit'} objectFit={'cover'} objectPosition={'top'} />
         </Box>
         <Flex direction={'column'} alignItems={'flex-start'} justifyContent={'center'} w={['100%', '65%', '50%']} px={[0, 6]}>
           <Text className={styles.monts}>FOUNDER, SLAYITWITHSKIN</Text>
           <Text className={styles.cursive} fontSize={['40', '56']}>Vandana Khilare</Text>
           <Box mt={6} mb={4} w={20} h={.5} bg={'blackAlpha.800'}></Box>
           <Text fontWeight={400}>
-            Vandana Khilare is the cosmetologist and founder of slayitwithskin. Because of her tremendous service, she has achieved commendable milestones. An award-winning cosmetologist, Vandana has an experienced team of dermatologists at various online consultations for slayitwithskin across India.
+            She is a cosmetologist and founder of slay it with skin. 
+            She is a practicing cosmetologist and a educator in her field. 
+            She has been practicing skin care for years and founded slay it 
+            with skin with a vision to bring awareness about skin care issues 
+            and bring medically backed solutions to it.
+            <br />
+            We at slay it with skin don’t only provide routines & services, 
+            we also are highly motivated with the vision to create employment 
+            and bring more awareness on how this field can create a well-practiced 
+            professional providing professional services & be employed.
+            We are also focused on providing our services online for the comfort of our clients.
             <br /><br />
-            After practicing medicine for more than 10 years, Vandana found slayitwithskin. The idea behind slayitwithskin is to provide a wide range of services and products, including but not limited to routine skin & hair exams, beauty & cosmetic procedures, and the treatment of skin disorders. slayitwithskin is a comfortable and contemporary place for patients to get procedures done.
-            <br /><br />
-            Vandana Khilare has completed her studies at a government Medical College situated in Mumbai. She went to Abroad University in Canada to pursue higher education in practical Dermatology  & Cosmetology she went to  University UK. Hereafter, she completed her diploma in Aesthetic Medicine from the American Academy of Aesthetic Medicine.
-            <br /><br />
-            Given her advanced knowledge of cosmetology and Dermatology, she has attended various workshops and conferences globally.
+            She is certified at djpimac & licensed at cidesco.
+
           </Text>
           <Link href={'https://www.instagram.com/slayitwithskin/'} >
             <Flex mt={'12'} alignItems={"center"} justifyContent={"flex-start"}>
@@ -210,7 +217,7 @@ const Index = () => {
         ></Box>
         <Flex
           pos={'relative'}
-          p={[4,8]}
+          p={[4, 8]}
           direction={['column', 'row']}
         >
           <Box

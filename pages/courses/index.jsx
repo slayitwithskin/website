@@ -88,14 +88,16 @@ const Courses = () => {
                             </AccordionButton>
                             <AccordionPanel paddingY={0}>
                                 <Text>
-                                    • Facial massages <br />
-                                    • Micro Derma <br />
-                                    • Hydra facial <br />
-                                    • Galbinac <br />
-                                    • High Frequency <br />
-                                    • Skin Consultation <br />
+                                    • Facial massage <br />
+                                    • High frequency <br />
+                                    • Galvanic <br />
+                                    • Micro derma brasion <br />
+                                    • Hydrafacial <br />
                                     • Chemical peel <br />
-                                    • Product Knowledge <br />
+                                    • Product knowledge <br />
+                                    • Client consultation <br />
+                                    • Exam <br />
+                                    • Certification <br />
                                 </Text>
                             </AccordionPanel>
                         </AccordionItem>
@@ -121,9 +123,9 @@ const Courses = () => {
                                     <b>Nashik April Batch</b>
                                     <b>Seven days Course</b>
                                     <Text textAlign={'left'}>
-                                        • Micro Needling <br />
-                                        • Chemical peel <br />
-                                        • laser <br />
+                                        • Anatomy <br />
+                                        • Theory of Face <br />
+                                        • Facial massage <br />
                                     </Text>
                                     {accordionTwoOpen ||
                                         <Text fontWeight={'medium'} color={'twitter.600'}>Read More</Text>
@@ -132,19 +134,21 @@ const Courses = () => {
                             </AccordionButton>
                             <AccordionPanel paddingY={0}>
                                 <Text>
-                                    • Carbon laser <br />
-                                    • HIFU <br />
-                                    • Anatomy <br />
-                                    • Theory of face <br />
-                                    • Facial massages <br />
-                                    • Micro Derma <br />
+                                    • High frequency <br />
+                                    • Galvanic <br />
+                                    • Micro derma brasion <br />
                                     • Hydra facial <br />
-                                    • Galbinac <br />
-                                    • High Frequency <br />
-                                    • Skin Consultation <br />
                                     • Chemical peel <br />
-                                    • Product Knowledge <br />
-                                    • Government Certification <br />
+                                    • Carbon facial <br />
+                                    • Micro needling <br />
+                                    • Bb glow <br />
+                                    • Hifu <br />
+                                    • Light therapy <br />
+                                    • Korean facials <br />
+                                    • Facelift <br />
+                                    • Laser <br />
+                                    • Exam <br />
+                                    • Certification <br />
                                 </Text>
                             </AccordionPanel>
                         </AccordionItem>
