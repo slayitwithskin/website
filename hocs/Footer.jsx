@@ -31,7 +31,7 @@ const Footer = () => {
                 <Image src='/logo.png' alt='Logo' w={'auto'} h={'16'} />
                 <Text my={4} fontSize={14}>Station Road, Santacruz West
                     <br />Mumbai, Maharashtra
-                    <br />PIN: 400055
+                    <br />PIN: 400054
                 </Text>
                 <Link href={'mailto: info@slayitwithskin.com'} target={'_blank'}>
                     <Flex alignItems={'center'}><Text fontSize={16} mr={4}><BsEnvelopeFill /></Text><Text fontSize={16}>info@slayitwithskin.com</Text></Flex>
