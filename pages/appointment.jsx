@@ -533,7 +533,7 @@ const Appointment = () => {
                                         value={appointment}
                                         onChange={(appointmentDate) => setAppointment(appointmentDate)}
                                         options={{
-                                            minDate: now.setDate(now.getDate() + 1),
+                                            minDate: now.setDate(now.getDate()),
                                             dateFormat: "d M Y",
                                             altInput: true,
                                             altInputClass: 'datepicker',
