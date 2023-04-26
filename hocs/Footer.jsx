@@ -42,7 +42,7 @@ const Footer = () => {
                 </Link>
             </Flex>
 
-            <Flex w={'full'} direction={'column'} alignItems={'flex-start'} justifyContent={'flex-start'} my={[4,4,0]}>
+            {/* <Flex w={'full'} direction={'column'} alignItems={'flex-start'} justifyContent={'flex-start'} my={[4,4,0]}>
             <Text className={styles.monts} fontSize={18}>Services</Text>
             <Box w={'full'} h={.5} bg={'blackAlpha.400'} mb={4}></Box>
             <Link href={'#'}>
@@ -57,7 +57,7 @@ const Footer = () => {
             <Link href={'about'}>
                 <Text fontSize={16} p={2} _hover={{ bg: 'green.600', color: 'white' }}>About Us</Text>
             </Link>
-            </Flex>
+            </Flex> */}
 
             <Flex w={'full'} direction={'column'} alignItems={'flex-start'} justifyContent={'flex-start'} my={[4,4,0]}>
             <Text className={styles.monts} fontSize={18}>Important Links</Text>

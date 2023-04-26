@@ -66,10 +66,6 @@ const Success = () => {
                     fulldate: `${appointmentDate.getDate()}` + `${appointmentDate.getMonth() + 1}` + `${appointmentDate.getFullYear()}`,
                     slots: localStorage.getItem('slots')
                 })
-            }).then(() => {
-                Toast({
-                    description: 'Slots were updated'
-                })
             })
         }).catch(
             error => console.log(error.message)
@@ -101,8 +97,8 @@ const Success = () => {
         <>
             <Head><title>Transaction Successful!</title></Head>
             <Navbar />
-            <VStack paddingBottom={16} justifyContent={'center'}>
-                <Image src='https://icon-library.com/images/4631f6529c.png' width={'sm'} />
+            <VStack paddingY={16} justifyContent={'center'}>
+                <Image src='https://icon-library.com/images/4631f6529c.png' width={'xs'} />
                 <Text fontSize={'4xl'} fontWeight={600} textAlign={'center'} pt={8}>
                     Your transaction was successful!
                 </Text>

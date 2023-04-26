@@ -66,6 +66,7 @@ const Appointment = () => {
     })
     const [cashfreeModal, setCashfreeModal] = useState(false)
     const [cfPaymentSessionId, setCfPaymentSessionId] = useState("")
+    const [mojoAccessToken, setMojoAccessToken] = useState("")
     const [modalProps, setModalProps] = useState({
         status: false,
         title: "Your payment was not successful!",
@@ -139,6 +140,14 @@ const Appointment = () => {
             setAbsentDates(res.data[0].dates || [])
         }).catch(err => {
             console.log(err)
+        })
+        axios.post("/api/mojo/token").then(res=>{
+            setMojoAccessToken(res.data.access_token)
+        }).catch(err=>{
+            Toast({
+                status: 'error',
+                description: err.response.data.message || err.message
+            })
         })
     }, [])
 
@@ -399,27 +408,46 @@ const Appointment = () => {
     const publishableKey = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY;
     const stripePromise = loadStripe(publishableKey);
 
-    async function createStripeOrder(){
+    async function createStripeOrder() {
         await storeData()
         const stripe = await stripePromise
         axios.post('/api/stripe/session', {
-                name: name,
-                slots: selectedSlots.length,
-                price: parseFloat(total || subTotal)
+            name: name,
+            slots: selectedSlots.length,
+            price: parseFloat(total || subTotal)
         }, {
             headers: {
                 'Content-Type': 'application/json'
             }
-        }).then(async (res)=>{
+        }).then(async (res) => {
             await stripe.redirectToCheckout({
                 sessionId: res.data.id
             })
-        }).catch(err=>{
+        }).catch(err => {
             console.log(err)
             Toast({
                 status: 'error',
                 title: 'Error while creating order',
                 description: err.message
+            })
+        })
+    }
+
+    async function createMojoOrder() {
+        axios.post("/api/mojo/create-order", {
+            name: name,
+            email: email,
+            phone: phone,
+            amount: `${parseFloat(total || subTotal)}`,
+            accessToken: mojoAccessToken
+        }).then(res=>{
+            // window.location.assign(res.data.shorturl)
+            console.log(res.data)
+        }).catch(err => {
+            Toast({
+                status: 'error',
+                title: "Error while creating order",
+                description: err.response.data.message || err.message
             })
         })
     }
@@ -533,7 +561,7 @@ const Appointment = () => {
                                         value={appointment}
                                         onChange={(appointmentDate) => setAppointment(appointmentDate)}
                                         options={{
-                                            minDate: now.setDate(now.getDate()+1),
+                                            minDate: now.setDate(now.getDate() + 1),
                                             dateFormat: "d M Y",
                                             altInput: true,
                                             altInputClass: 'datepicker',
@@ -628,7 +656,7 @@ const Appointment = () => {
                                 <Button colorScheme={'whatsapp'}
                                     rounded={0} p={6} fontSize={[12, 16]}
                                     className={styles.monts} textTransform={'uppercase'}
-                                    onClick={() => createStripeOrder()}
+                                    onClick={() => createMojoOrder()}
                                     disabled={payBtnStatus}
                                 >
                                     Pay Now

@@ -64,7 +64,7 @@ const Index = () => {
           <Text className={styles.cursive} fontSize={['40', '56']}>Vandana Khilare</Text>
           <Box mt={6} mb={4} w={20} h={.5} bg={'blackAlpha.800'}></Box>
           <Text fontWeight={400}>
-            She is a cosmetologist and founder of slay it with skin. 
+            Vandana Khilare is a COSMETOLOGIST and FOUNDER of slay it with skin. 
             She is a practicing cosmetologist and a educator in her field. 
             She has been practicing skin care for years and founded slay it 
             with skin with a vision to bring awareness about skin care issues 
@@ -76,7 +76,7 @@ const Index = () => {
             professional providing professional services & be employed.
             We are also focused on providing our services online for the comfort of our clients.
             <br /><br />
-            She is certified at djpimac & licensed at cidesco.
+            She is certified at DJPIMAC & licensed at CIDESCO.
 
           </Text>
           <Link href={'https://www.instagram.com/slayitwithskin/'} >

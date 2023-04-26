@@ -30,14 +30,13 @@ const Failed = () => {
         <>
         <Head><title>Transaction Failed!</title></Head>
             <Navbar />
-            <VStack paddingBottom={16} justifyContent={'center'}>
-                <Image src='https://icon-library.com/images/failed-icon/failed-icon-7.jpg' w={'sm'} />
+            <VStack paddingY={16} justifyContent={'center'}>
+                <Image src='https://icon-library.com/images/failed-icon/failed-icon-7.jpg' w={'xs'} />
                 <Text fontSize={'4xl'} fontWeight={600} textAlign={'center'} pt={8}>
                     We could not capture your payment!
                 </Text>
                 <Text textAlign={'center'}>If your amount was deducted, it will be refunded back automatically.</Text>
                 <br /><br />
-                <Text textAlign={'center'}>You will be automatically redirected to homepage</Text>
                 <Link href={'/'}>
                     <Button>Return To Homepage</Button>
                 </Link>
