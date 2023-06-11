@@ -166,7 +166,8 @@ const Navbar = () => {
           </Flex> */}
 
           <Flex display={['none', 'none', 'flex']}>
-            <Menu>
+
+            {/* <Menu>
               <MenuButton mx={6} borderBottom={"2px"} borderColor={"transparent"} _hover={{ borderColor: "black" }}>
                 <Flex alignItems={'center'} justifyContent={'center'}>
                   <Text>Consultation</Text> &nbsp;&nbsp;
@@ -228,7 +229,62 @@ const Navbar = () => {
                   </Flex>
                 </Flex>
               </MenuList>
+            </Menu> */}
+
+            <Menu>
+              <MenuButton mx={6} borderBottom={"2px"} borderColor={"transparent"} _hover={{ borderColor: "black" }}>
+                <Flex alignItems={'center'} justifyContent={'center'}>
+                  <Text>Consultation</Text> &nbsp;&nbsp;
+                  <Text><BsChevronDown /></Text>
+                </Flex>
+              </MenuButton>
+              <MenuList rounded={0}>
+                <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
+                  <Link href={'/consultation'}><Text>Bridal Consultation</Text></Link>
+                </MenuItem>
+                <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
+                  <Link href={'/consultation'}><Text>Skin Consultation</Text></Link>
+                </MenuItem>
+                <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
+                  <Link href={'/consultation'}><Text>Hair Consultation</Text></Link>
+                </MenuItem>
+              </MenuList>
             </Menu>
+
+            <Menu>
+              <MenuButton mx={6} borderBottom={"2px"} borderColor={"transparent"} _hover={{ borderColor: "black" }}>
+                <Flex alignItems={'center'} justifyContent={'center'}>
+                  <Text>Webinars</Text> &nbsp;&nbsp;
+                  <Text><BsChevronDown /></Text>
+                </Flex>
+              </MenuButton>
+              <MenuList rounded={0}>
+                <MenuItem bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
+                  <Link href={'https://buy.stripe.com/aEUcQf0gqbxpdKU144'} target='_blank'><Text>Online Webinar</Text></Link>
+                </MenuItem>
+              </MenuList>
+            </Menu>
+
+            <Menu>
+              <MenuButton mx={6} borderBottom={"2px"} borderColor={"transparent"} _hover={{ borderColor: "black" }}>
+                <Flex alignItems={'center'} justifyContent={'center'}>
+                  <Text>Courses</Text> &nbsp;&nbsp;
+                  <Text><BsChevronDown /></Text>
+                </Flex>
+              </MenuButton>
+              <MenuList rounded={0}>
+                <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
+                  <Link href={'/courses'}><Text>Chemical Peel Course</Text></Link>
+                </MenuItem>
+                <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
+                  <Link href={'/courses'}><Text>Dermaplan Course</Text></Link>
+                </MenuItem>
+                <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
+                  <Link href={'/courses'}><Text>Aesthetic Course</Text></Link>
+                </MenuItem>
+              </MenuList>
+            </Menu>
+
             <Link href={"/blogs"}><Text mx={6} borderBottom={"2px"} borderColor={"transparent"} transition={"all .3s ease"} _hover={{ borderColor: "black" }}>Blogs</Text></Link>
             <Link href={"/academy"}><Text mx={6} borderBottom={"2px"} borderColor={"transparent"} transition={"all .3s ease"} _hover={{ borderColor: "black" }}>Academy</Text></Link>
           </Flex>
@@ -360,7 +416,7 @@ const Navbar = () => {
 
             </Accordion> */}
 
-            <Accordion defaultIndex={[]} allowMultiple>
+            {/* <Accordion defaultIndex={[]} allowMultiple>
 
               <AccordionItem border={'none'}>
                 <h2>
@@ -426,6 +482,61 @@ const Navbar = () => {
                 </AccordionPanel>
               </AccordionItem>
 
+            </Accordion> */}
+
+            <Accordion defaultIndex={[]} allowMultiple>
+              <AccordionItem border={'none'}>
+                <h2>
+                  <AccordionButton>
+                    <Box flex='1' textAlign='left'>
+                      Consultation Services
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+
+                <AccordionPanel>
+                  <Link href={'/consultation'}><Text my={2}>Bridal Consultation</Text></Link>
+                  <Link href={'/consultation'}><Text my={2}>Skin Consultation</Text></Link>
+                  <Link href={'/consultation'}><Text my={2}>Hair Consultation</Text></Link>
+                </AccordionPanel>
+              </AccordionItem>
+            </Accordion>
+
+            <Accordion defaultIndex={[]} allowMultiple>
+              <AccordionItem border={'none'}>
+                <h2>
+                  <AccordionButton>
+                    <Box flex='1' textAlign='left'>
+                      Webinars
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+
+                <AccordionPanel>
+                  <Link href={'https://buy.stripe.com/aEUcQf0gqbxpdKU144'} target='_blank'><Text my={2}>Online Webinars</Text></Link>
+                </AccordionPanel>
+              </AccordionItem>
+            </Accordion>
+
+            <Accordion defaultIndex={[]} allowMultiple>
+              <AccordionItem border={'none'}>
+                <h2>
+                  <AccordionButton>
+                    <Box flex='1' textAlign='left'>
+                      Courses
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+
+                <AccordionPanel>
+                  <Link href={'/courses'}><Text my={2}>Chemical Peel</Text></Link>
+                  <Link href={'/courses'}><Text my={2}>Dermaplan Course</Text></Link>
+                  <Link href={'/courses'}><Text my={2}>Aesthetic Course</Text></Link>
+                </AccordionPanel>
+              </AccordionItem>
             </Accordion>
 
             <Link href={'/blogs'}>
