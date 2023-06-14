@@ -19,6 +19,7 @@ import Navbar from '../hocs/Navbar'
 import Footer from '../hocs/Footer'
 import Reviews from '../hocs/Reviews'
 import services from './api/services'
+import Faqs from '../hocs/Faqs'
 
 const Index = () => {
   return (
@@ -32,9 +33,10 @@ const Index = () => {
 
         <Flex direction={['column', 'row']} alignItems={"center"} justifyContent={"space-between"} h={'auto'} bg={'#D9B3C4'}>
           <Flex w={['100%', '60%']} direction={"column"} justifySelf={'center'} px={['8', '16', '24']} pt={24} justifyContent={'center'}>
-            <Text fontSize={["42", "56", "64"]} className={styles.cursive} textAlign={['center', 'left']} lineHeight={[1.5, 1, 1]}>Give your skin</Text>
-            <Text mb={8} fontSize={["36", "48", "56"]} className={styles.cursive} textAlign={['center', 'left']} color={'gray.600'}>the treatment it deserves</Text>
-            <Link href={'/appointment'}>
+            <Text fontSize={["42", "56", "64"]} className={styles.cursive} textAlign={['center', 'left']} lineHeight={[1, 1, 1]}>Welcome to </Text>
+            <Text mb={0} fontSize={["36", "48", "56"]} className={styles.cursive} textAlign={['center', 'left']} color={'gray.600'}>Slay It With Skin</Text>
+            <Text mb={5} fontSize={['16','18']} textAlign={['center','left']}>Give your skin the treatment it deserves.</Text>
+            <Link href={'/courses'}>
               <Button
                 w={['full', 'fit-content']}
                 border={'2px'} p={6}
@@ -43,8 +45,9 @@ const Index = () => {
                 rounded={0} bg={'black'}
                 color={'white'} _hover={{ bg: 'rgba(0,0,0,0.6)' }}
                 className={styles.monts}
+                textTransform={'uppercase'}
               >
-                BOOK APPOINTMENT
+                Checkout Our Courses
               </Button>
             </Link>
           </Flex>
@@ -196,7 +199,7 @@ const Index = () => {
 
       <Flex
         pos={'relative'}
-        h={['auto', '100vh']}
+        h={['auto', '80vh']}
         mt={[0, 16]}
         alignItems={['flex-start', 'center']}
         justifyContent={'flex-start'}
@@ -219,6 +222,7 @@ const Index = () => {
           pos={'relative'}
           p={[4, 8]}
           direction={['column', 'row']}
+
         >
           <Box
             boxSize={['xs', 'xl']}
@@ -226,13 +230,16 @@ const Index = () => {
             display={'flex'}
             flexDir={'column'}
             alignItems={'center'}
-            justifyContent={'flex-end'}
-            bg={'white'} boxShadow={'lg'}
+            justifyContent={'center'}
+            
+            height={'fit-content'}
           >
             <Image
-              src={'blogs.png'}
-              w={['full', 'sm']}
+              src={'updated-blogs.jpg'}
+              w={['full', 'full']}
               objectFit={'cover'}
+              bg={'white'} 
+              boxShadow={'lg'}
             />
           </Box>
 
@@ -260,6 +267,8 @@ const Index = () => {
       </Flex>
 
       <Reviews />
+
+      <Faqs/>
 
       <Footer />
     </>

@@ -30,7 +30,8 @@ const Reviews = () => {
               }
             },
             perPage: 4,
-            perMove: 1
+            perMove: 1,
+            
           }}
         >
           <SplideSlide>

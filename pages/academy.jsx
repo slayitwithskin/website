@@ -40,7 +40,7 @@ const Academy = () => {
           boxShadow={'lg'}
           w={['full', 'sm']}
         >
-          <Image src={'/onlineacademy.jpg'} w={['full', 'sm']} h={60} objectFit={'cover'} />
+          <Image src={'/updated-academy.jpg'} w={['full', 'sm']} h={60} objectFit={'cover'} />
           <Text fontSize={'2xl'} fontWeight={'600'}>Online Academy</Text>
           <br />
           <Text>
