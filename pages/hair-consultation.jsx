@@ -84,7 +84,7 @@ const Service = () => {
 
 
             <Flex direction={['column','row']} gap={[0,5]} alignItems={'center'} mb={[16,28]} >
-                <Image src='/hair.jpg' flex={1} width={['100%','50%']}/>
+                <Image src='/Hair.jpg' flex={1} width={['100%','50%']}/>
                 <Box width={['100%','50%']} p={5}>
                     <Heading as='h3' fontSize={['24','36']} mb={[2,4]}>Hair Consultation</Heading>
                     <Text fontSize={['16','18']}>You win every battle, then why lose your hair? Talk to us regarding your hair problem.</Text>
