@@ -63,13 +63,13 @@ const Navbar = () => {
               </MenuButton>
               <MenuList rounded={0}>
                 <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                  <Link href={'/consultation'}><Text>Bridal Consultation</Text></Link>
+                  <Link href={'/bridal-consultation'}><Text>Bridal Consultation</Text></Link>
                 </MenuItem>
                 <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                  <Link href={'/consultation'}><Text>Skin Consultation</Text></Link>
+                  <Link href={'/skin-consultation'}><Text>Skin Consultation</Text></Link>
                 </MenuItem>
                 <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                  <Link href={'/consultation'}><Text>Hair Consultation</Text></Link>
+                  <Link href={'/hair-consultation'}><Text>Hair Consultation</Text></Link>
                 </MenuItem>
               </MenuList>
             </Menu>

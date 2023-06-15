@@ -17,7 +17,7 @@ const Service = () => {
     return (
         <>
             <Head>
-                <title>Hair Consultation | Slay it with Skin</title>
+                <title>Skin Consultation | Slay it with Skin</title>
             </Head>
             <Navbar />
             {/* <Image
@@ -83,11 +83,11 @@ const Service = () => {
             </Flex>
 
 
-            <Flex direction={['column','row']} gap={[0,5]} alignItems={'center'} mb={[16,28]} >
-                <Image src='/hair.jpg' flex={1} width={['100%','50%']}/>
-                <Box width={['100%','50%']} p={5}>
-                    <Heading as='h3' fontSize={['24','36']} mb={[2,4]}>Hair Consultation</Heading>
-                    <Text fontSize={['16','18']}>You win every battle, then why lose your hair? Talk to us regarding your hair problem.</Text>
+            <Flex direction={['column', 'row']} gap={[0, 5]} alignItems={'center'} mb={[16, 28]} >
+                <Image src='/skin.jpg' flex={1} width={['100%', '50%']} />
+                <Box width={['100%', '50%']} p={5}>
+                    <Heading as='h3' fontSize={['24', '36']} mb={[2, 4]}>Skin Consultation</Heading>
+                    <Text fontSize={['16', '18']}>Your skin needs care. Talk to an expert to know about what your skin needs to remain soft, fresh and healthy throughout the day.</Text>
                 </Box>
             </Flex>
 
