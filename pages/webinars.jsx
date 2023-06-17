@@ -14,10 +14,10 @@ export default function webinars() {
                 <title>Webinars | Slay it with Skin</title>
             </Head>
 
-            <Box bg={"gray.100"} pt={24} pb={20} px={[6, 24]}>
+            <Box bg={"gray.100"} pt={24} pb={20} px={[4, 24]}>
                 <Text as={'h1'} className={styles.cursive} textAlign={'center'} fontSize={[40, 56]}> Webinars </Text>
 
-                <Flex my={8} gap={6} alignItems={'center'}>
+                <Flex direction={['column','row']} my={8} gap={6} alignItems={'center'}>
                     <Image width={['100%', '50%']} src="/updated-academy.jpg" />
                     <Box>
                         <Text className={styles.cursive} fontSize={[24, 32]} lineHeight={1.1} mb={4} as={'h3'}>Teenage skin care, building routine & dealing with acne</Text>
@@ -29,14 +29,14 @@ export default function webinars() {
                             <ListItem>Urge to try everything available in the market</ListItem>
                         </UnorderedList>
 
-                        <Flex alignItems={'flex-start'} gap={12} mb={4}>
+                        <Flex alignItems={'flex-start'} gap={[6,12]} mb={4}>
                             <Flex alignItems={'flex-start'} gap={3}>
                                 <Box fontSize={22} bg={"gray.200"} p={2} borderRadius={3}>
                                     <AiOutlineCalendar/>
                                 </Box>
                                 <Box>
                                     <Text fontWeight={700} lineHeight={1} mb={1}>Date & time:</Text>
-                                    <Text>14th July, 2023 - 7pm</Text>
+                                    <Text fontSize={[13,16]}>14th July, 2023 - 7pm</Text>
                                 </Box>
                             </Flex>
                             <Flex alignItems={'flex-start'} gap={3}>
@@ -45,7 +45,7 @@ export default function webinars() {
                                 </Box>
                                 <Box>
                                     <Text fontWeight={700} lineHeight={1} mb={1}>Duration:</Text>
-                                    <Text>45mins</Text>
+                                    <Text fontSize={[13,16]}>45mins</Text>
                                 </Box>
                             </Flex>
                         </Flex>

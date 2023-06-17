@@ -74,7 +74,7 @@ const Navbar = () => {
               </MenuList>
             </Menu>
 
-            <Link href={'https://buy.stripe.com/aEUcQf0gqbxpdKU144'} target='_blank'><Text  mx={6} borderBottom={"2px"} borderColor={"transparent"} transition={"all .3s ease"} _hover={{ borderColor: "black" }}>Webinars</Text></Link>
+            <Link href={'/webinars'}><Text mx={6} borderBottom={"2px"} borderColor={"transparent"} transition={"all .3s ease"} _hover={{ borderColor: "black" }}>Webinars</Text></Link>
 
             <Menu>
               <MenuButton mx={6} borderBottom={"2px"} borderColor={"transparent"} _hover={{ borderColor: "black" }}>
@@ -96,14 +96,14 @@ const Navbar = () => {
               </MenuList>
             </Menu>
 
-            
+
 
             <Link href={"/blogs"}><Text mx={6} borderBottom={"2px"} borderColor={"transparent"} transition={"all .3s ease"} _hover={{ borderColor: "black" }}>Blogs</Text></Link>
             <Link href={"/academy"}><Text mx={6} borderBottom={"2px"} borderColor={"transparent"} transition={"all .3s ease"} _hover={{ borderColor: "black" }}>Academy</Text></Link>
           </Flex>
 
-          <Spacer/>
-          
+          <Spacer />
+
           <Text fontSize={28} display={['block', 'block', 'none']} ref={menuRef} onClick={onOpen}><HiBars3BottomRight /></Text>
         </Flex>
       </nav>
@@ -139,14 +139,14 @@ const Navbar = () => {
                 </h2>
 
                 <AccordionPanel>
-                  <Link href={'/consultation'}><Text my={2}>Bridal Consultation</Text></Link>
-                  <Link href={'/consultation'}><Text my={2}>Skin Consultation</Text></Link>
-                  <Link href={'/consultation'}><Text my={2}>Hair Consultation</Text></Link>
+                  <Link href={'/bridal-consultation'}><Text my={2}>Bridal Consultation</Text></Link>
+                  <Link href={'/skin-consultation'}><Text my={2}>Skin Consultation</Text></Link>
+                  <Link href={'/hair-consultation'}><Text my={2}>Hair Consultation</Text></Link>
                 </AccordionPanel>
               </AccordionItem>
             </Accordion>
 
-            <Link href={'https://buy.stripe.com/aEUcQf0gqbxpdKU144'} target='_blank'>
+            <Link href={'/webinars'}>
               <Box flex={1} px={4} py={2}>
                 <Text>Webinars</Text>
               </Box>
