@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../../../styles/Home.module.css'
+import styles from '/styles/Home.module.css'
 
 import {
   Flex,
@@ -17,15 +17,15 @@ import Head from 'next/head'
 
 import '@splidejs/react-splide/css/sea-green';
 
-import Reviews from '../../../hocs/Reviews'
-import Faqs from '../../../hocs/Faqs'
-import LPForm from '../../../hocs/LPForm'
+import Reviews from '../../hocs/Reviews'
+import Faqs from '../../hocs/Faqs'
+import LPForm from '../../hocs/LPForm'
 
 const Index = () => {
   return (
     <>
       <Head>
-        <title>Landing page | Slay it with Skin</title>
+        <title>Best Skin consultation online | Slay it with Skin</title>
         <meta name="robots" content="noindex"></meta>
       </Head>
 
