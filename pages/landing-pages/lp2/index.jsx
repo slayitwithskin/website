@@ -1,6 +1,8 @@
 import React from 'react'
 import styles from '../../../styles/Home.module.css'
 
+import Appointment from '../../../hocs/AppointmentForm'
+
 import {
   Flex,
   Box,
@@ -8,7 +10,15 @@ import {
   Image,
   UnorderedList,
   ListItem,
-  Button
+  Button,
+  useDisclosure,
+  Modal,
+  ModalOverlay,
+  ModalHeader,
+  ModalCloseButton,
+  ModalBody,
+  ModalFooter,
+  ModalContent,
 } from '@chakra-ui/react'
 import { BsArrowRight, BsEnvelopeFill, BsTelephoneFill } from 'react-icons/bs'
 
@@ -22,6 +32,9 @@ import Faqs from '../../../hocs/Faqs'
 import LPForm from '../../../hocs/LPForm'
 
 const Index = () => {
+
+  const { isOpen, onOpen, onClose } = useDisclosure()
+
   return (
     <>
       <Head>
@@ -35,14 +48,17 @@ const Index = () => {
         </Flex>
       </nav>
 
-      <Flex id='contact-us' px={['6', '16', '24']} py={['8', '16']} bg={'#D9B3C4'} flexDirection={['column', 'row']} gap={['10', '4']} alignItems={'center'}>
-        <Box width={['100%', '50%']}>
+      <Flex px={['6', '16', '24']} pt={['8', '0']} bg={'#D9B3C4'} flexDirection={['column', 'row']} gap={['10', '4']} alignItems={'center'}>
+        <Box width={['100%', '50%']} textAlign={['center', 'left']} py={[0, 4]}>
           <Text fontSize={["42", "56", "64"]} className={styles.cursive} textAlign={['center', 'left']} lineHeight={1}>Welcome to </Text>
           <Text mb={4} fontSize={["36", "48", "56"]} className={styles.cursive} textAlign={['center', 'left']} lineHeight={1} color={'gray.600'}>Slay It With Skin</Text>
           <Text fontSize={['16', '18']} textAlign={['center', 'left']}>Give your skin the treatment it deserves.</Text>
+          <Button mt={4} onClick={onOpen} textTransform={'uppercase'} >
+            Book an Appointment
+          </Button>
         </Box>
         <Box width={['100%', '50%']}>
-          <LPForm />
+          <Image src='/heroimg.png' maxHeight={'500px'} mx={'auto'}/>
         </Box>
       </Flex>
 
@@ -50,64 +66,34 @@ const Index = () => {
       <Flex direction={'column'} alignItems={'center'} py={[16, 20]} px={[4, 20]}>
         <Text className={styles.cursive} fontSize={['40', '56']}>Our Services</Text>
         <Box width={24} h={.5} bg={'black'} mb={10}></Box>
-        <Flex maxWidth={'1080px'} gap={[10, 20]} direction={['column', 'row']}>
+        <Flex maxWidth={'1280px'} gap={[10, 10]} direction={['column', 'row']}>
           <Box boxShadow={'0 0 10px rgba(0,0,0,0.2)'} pb={8} borderRadius={4} overflow={'hidden'} flex={1}>
-            <Image src='/updated-academy.jpg' height={['auto', '320px']} width={'100%'} mb={4} objectFit={'cover'} />
+            <Image src='/updated-academy.jpg' height={['auto', '250px']} width={'100%'} mb={4} objectFit={'cover'} />
             <Box px={[4, 6]}>
-              <Text className={styles.cursive} fontSize={24}>Online Academy</Text>
-              <Text fontWeight={'800'} color={'blackAlpha.700'} mb={2}>May Month Launch | Five days Course</Text>
-
-              <UnorderedList fontSize={[14, 16]} display={'grid'} m={0} gridTemplateColumns={'repeat(2,1fr)'} textAlign={'left'} listStylePosition={'inside'} gap={2} flexWrap={'wrap'} justifyContent={'center'}>
-                <ListItem>Anatomy</ListItem>
-                <ListItem>Theory</ListItem>
-                <ListItem>Facial massage</ListItem>
-                <ListItem>High frequency</ListItem>
-                <ListItem>Galvanic</ListItem>
-                <ListItem>Micro derma brasion</ListItem>
-                <ListItem>Hydrafacial</ListItem>
-                <ListItem>Chemical peel</ListItem>
-                <ListItem>Product knowledge</ListItem>
-                <ListItem>Client consultation</ListItem>
-                <ListItem>Exam</ListItem>
-                <ListItem>Certification</ListItem>
-              </UnorderedList>
+              <Text className={styles.cursive} fontSize={24}>Bridal Consultation</Text>
+              <Text color={'blackAlpha.700'} mb={2}>Outshine the moon and make your marriage memorable for lifetime. Talk to an expert to know about bridal makeup, skin preparation etc.</Text>
             </Box>
           </Box>
 
           <Box boxShadow={'0 0 10px rgba(0,0,0,0.2)'} pb={8} borderRadius={4} overflow={'hidden'} flex={1}>
-            <Image src='/offlineacademy.jpg' height={['auto', '320px']} width={'100%'} mb={4} objectFit={'cover'} />
+            <Image src='/Skin.jpg' height={['auto', '250px']} width={'100%'} mb={4} objectFit={'cover'} />
             <Box px={[4, 6]}>
-              <Text className={styles.cursive} fontSize={24}>Offline Academy</Text>
-              <Text fontWeight={'800'} color={'blackAlpha.700'} mb={2}>Nashik April Batch | Seven days Course</Text>
+              <Text className={styles.cursive} fontSize={24}>Skin Consultation</Text>
+              <Text color={'blackAlpha.700'} mb={2}>Your skin needs care. Talk to an expert to know about what your skin needs to remain soft, fresh and healthy throughout the day.</Text>
+            </Box>
+          </Box>
 
-              <UnorderedList fontSize={[14, 16]} display={'grid'} m={0} gridTemplateColumns={'repeat(2,1fr)'} textAlign={'left'} listStylePosition={'inside'} gap={2} flexWrap={'wrap'} justifyContent={'center'}>
-                <ListItem> Anatomy</ListItem>
-                <ListItem> Theory</ListItem>
-                <ListItem> Facial massage</ListItem>
-                <ListItem> High frequency</ListItem>
-                <ListItem> Galvanic</ListItem>
-                <ListItem> Micro derma brasion</ListItem>
-                <ListItem> Hydra facial</ListItem>
-                <ListItem> Chemical peel</ListItem>
-                <ListItem> Carbon facial</ListItem>
-                <ListItem> Micro needling</ListItem>
-                <ListItem> Bb glow</ListItem>
-                <ListItem> Hifu</ListItem>
-                <ListItem> Light therapy</ListItem>
-                <ListItem> Korean facials</ListItem>
-                <ListItem> Facelift</ListItem>
-                <ListItem> Laser</ListItem>
-                <ListItem> Exam</ListItem>
-                <ListItem> Certification</ListItem>
-              </UnorderedList>
+          <Box boxShadow={'0 0 10px rgba(0,0,0,0.2)'} pb={8} borderRadius={4} overflow={'hidden'} flex={1}>
+            <Image src='/Hair.jpg' height={['auto', '250px']} width={'100%'} mb={4} objectFit={'cover'} />
+            <Box px={[4, 6]}>
+              <Text className={styles.cursive} fontSize={24}>Hair Consultation</Text>
+              <Text color={'blackAlpha.700'} mb={2}>You win every battle, then why lose your hair? Talk to us regarding your hair problem.</Text>
             </Box>
           </Box>
 
         </Flex>
 
-        <Link href='#contact-us'>
-          <Button mt={[8, 16]} bg={'brown'} color={'white'} p={6} _hover={{ bg: 'black' }} textTransform={'uppercase'}>Contact Us</Button>
-        </Link>
+        <Button onClick={onOpen} mt={[8, 16]} bg={'brown'} color={'white'} p={6} _hover={{bg:'black'}} textTransform={'uppercase'}>Book An Appointment</Button>
       </Flex>
 
       {/* Why SIWS */}
@@ -164,10 +150,8 @@ const Index = () => {
       <Reviews />
 
       <Faqs />
-      <Box textAlign={'center'} mt={['-14',"-20"]} mb={[16, 24]}>
-        <Link href='#contact-us'>
-          <Button mt={[8, 16]} bg={'brown'} color={'white'} p={6} _hover={{ bg: 'black' }} textTransform={'uppercase'}>Contact Us</Button>
-        </Link>
+      <Box textAlign={'center'} mt={['-14',"-20"]} mb={[16, 24]}>        
+          <Button onClick={onOpen} mt={[8, 16]} bg={'brown'} color={'white'} p={6} _hover={{ bg: 'black' }} textTransform={'uppercase'}>Book An Appointment</Button>
       </Box>
 
       {/* Footer */}
@@ -182,6 +166,17 @@ const Index = () => {
           <Link href={'mailto:info@slayitwithskin.com'}>info@slayitwithskin.com</Link>
         </Flex>
       </Flex>
+
+      <Modal isOpen={isOpen} onClose={onClose} size={'xl'}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Book An Appointment</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <Appointment/>
+          </ModalBody>
+        </ModalContent>
+      </Modal>
 
 
     </>

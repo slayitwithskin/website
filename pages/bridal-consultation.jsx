@@ -88,6 +88,18 @@ const Service = () => {
                 <Box width={['100%','50%']} p={5}>
                     <Heading as='h3' fontSize={['24','36']} mb={[2,4]}>Bridal Consultation</Heading>
                     <Text fontSize={['16','18']}>Outshine the moon and make your marriage memorable for lifetime. Talk to an expert to know about bridal makeup, skin preparation etc.</Text>
+                    <Link href={'/appointment'}>
+                        <Button
+                            my={'8'}
+                            w={['auto', 'max-content']}
+                            colorScheme={'whatsapp'}
+                            p={6}
+                            rounded={0}
+                            bg={'brown'}
+                        >
+                            BOOK AN APPOINTMENT
+                        </Button>
+                    </Link>
                 </Box>
             </Flex>
 

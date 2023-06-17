@@ -51,7 +51,7 @@ export default function Faqs() {
             <Flex px={[5,16]} pb={[16]} justifyContent={'center'} direction={'column'} align={'center'}>
                 <Text className={styles.cursive} fontSize={['40', '56']}>FAQs</Text>
                 <Box width={24} h={.5} bg={'black'} mb={10}></Box>
-                <Accordion allowMultiple defaultIndex={[0]} width={'100%'} maxWidth={'720px'}>
+                <Accordion allowMultiple width={'100%'} >
 
                     {faqs.map((f, index) => (
                         <AccordionItem key={index} borderColor={"blackAlpha.500"}>

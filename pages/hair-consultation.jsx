@@ -88,6 +88,16 @@ const Service = () => {
                 <Box width={['100%','50%']} p={5}>
                     <Heading as='h3' fontSize={['24','36']} mb={[2,4]}>Hair Consultation</Heading>
                     <Text fontSize={['16','18']}>You win every battle, then why lose your hair? Talk to us regarding your hair problem.</Text>
+                    <Button
+                            my={'8'}
+                            w={['auto', 'max-content']}
+                            colorScheme={'whatsapp'}
+                            p={6}
+                            rounded={0}
+                            bg={'brown'}
+                        >
+                            BOOK AN APPOINTMENT
+                        </Button>
                 </Box>
             </Flex>
 
