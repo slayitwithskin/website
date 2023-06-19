@@ -51,8 +51,7 @@ export default function webinars() {
                             </Flex>
                         </Flex>
                         
-                        <Text fontWeight={700}>Price:</Text>
-                        <Text mb={4}>Single webinar at ₹129 <br/> 7 day program at ₹1,499 <br/> 21 day program at ₹2,499</Text>
+                        <Text fontSize={20} mb={3}>Price: <b>₹129</b></Text>
 
                         <Link href='https://buy.stripe.com/aEUcQf0gqbxpdKU144' target="_blank">
                             <Button bg={"black"} color={"white"} _hover={{bg:'brown'}}>Book Now</Button>
@@ -80,7 +79,7 @@ export default function webinars() {
                                 </Box>
                                 <Box>
                                     <Text fontWeight={700} lineHeight={1} mb={1}>Date & time:</Text>
-                                    <Text fontSize={[13,16]}>14th July, 2023 - 7pm</Text>
+                                    <Text fontSize={[13,16]}>28th July, 2023 - 7pm</Text>
                                 </Box>
                             </Flex>
                             <Flex alignItems={'flex-start'} gap={3}>
@@ -94,8 +93,7 @@ export default function webinars() {
                             </Flex>
                         </Flex>
                         
-                        <Text fontWeight={700}>Price:</Text>
-                        <Text mb={4}>Single webinar at ₹129 <br/> 7 day program at ₹1,499 <br/> 21 day program at ₹2,499</Text>
+                        <Text fontSize={20} mb={3}>Price: <b>₹129</b></Text>
 
                         <Link href='https://buy.stripe.com/aEUcQf0gqbxpdKU144' target="_blank">
                             <Button bg={"black"} color={"white"} _hover={{bg:'brown'}}>Book Now</Button>
@@ -139,8 +137,7 @@ export default function webinars() {
                             </Flex>
                         </Flex>
                         
-                        <Text fontWeight={700}>Price:</Text>
-                        <Text mb={4}>Single webinar at ₹129 <br/> 7 day program at ₹1,499 <br/> 21 day program at ₹2,499</Text>
+                        <Text fontSize={20} mb={3}>Price: <b>₹129</b></Text>
 
                         <Link href='https://buy.stripe.com/aEUcQf0gqbxpdKU144' target="_blank">
                             <Button bg={"black"} color={"white"} _hover={{bg:'brown'}}>Book Now</Button>
