@@ -63,13 +63,13 @@ const Navbar = () => {
               </MenuButton>
               <MenuList rounded={0}>
                 <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
-                  <Link href={'/bridal-consultation'}><Text>Bridal Consultation</Text></Link>
-                </MenuItem>
-                <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
                   <Link href={'/skin-consultation'}><Text>Skin Consultation</Text></Link>
                 </MenuItem>
                 <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
                   <Link href={'/hair-consultation'}><Text>Hair Consultation</Text></Link>
+                </MenuItem>
+                <MenuItem mb={3} bg={"transparent"} _hover={{ bg: "#FFDDD2", color: '#222' }}>
+                  <Link href={'/bridal-consultation'}><Text>Bridal Consultation</Text></Link>
                 </MenuItem>
               </MenuList>
             </Menu>
@@ -139,9 +139,9 @@ const Navbar = () => {
                 </h2>
 
                 <AccordionPanel>
-                  <Link href={'/bridal-consultation'}><Text my={2}>Bridal Consultation</Text></Link>
                   <Link href={'/skin-consultation'}><Text my={2}>Skin Consultation</Text></Link>
                   <Link href={'/hair-consultation'}><Text my={2}>Hair Consultation</Text></Link>
+                  <Link href={'/bridal-consultation'}><Text my={2}>Bridal Consultation</Text></Link>
                 </AccordionPanel>
               </AccordionItem>
             </Accordion>
