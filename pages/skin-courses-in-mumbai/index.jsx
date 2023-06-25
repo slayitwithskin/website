@@ -25,7 +25,7 @@ const Index = () => {
   return (
     <>
       <Head>
-        <title>Best Skin consultation online | Slay it with Skin</title>
+        <title>Skin courses in Mumbai | Slay it with Skin</title>
         <meta name="robots" content="noindex"></meta>
       </Head>
 
@@ -55,7 +55,7 @@ const Index = () => {
             <Image src='/updated-academy.jpg' height={['auto', '320px']} width={'100%'} mb={4} objectFit={'cover'} />
             <Box px={[4, 6]}>
               <Text className={styles.cursive} fontSize={24}>Online Academy</Text>
-              <Text fontWeight={'800'} color={'blackAlpha.700'} mb={2}>May Month Launch | Five days Course</Text>
+              <Text fontWeight={'800'} color={'blackAlpha.700'} mb={2}>7 day course</Text>
 
               <UnorderedList fontSize={[14, 16]} display={'grid'} m={0} gridTemplateColumns={'repeat(2,1fr)'} textAlign={'left'} listStylePosition={'inside'} gap={2} flexWrap={'wrap'} justifyContent={'center'}>
                 <ListItem>Anatomy</ListItem>
@@ -78,7 +78,7 @@ const Index = () => {
             <Image src='/offlineacademy.jpg' height={['auto', '320px']} width={'100%'} mb={4} objectFit={'cover'} />
             <Box px={[4, 6]}>
               <Text className={styles.cursive} fontSize={24}>Offline Academy</Text>
-              <Text fontWeight={'800'} color={'blackAlpha.700'} mb={2}>Nashik April Batch | Seven days Course</Text>
+              <Text fontWeight={'800'} color={'blackAlpha.700'} mb={2}>20 days course + Internship</Text>
 
               <UnorderedList fontSize={[14, 16]} display={'grid'} m={0} gridTemplateColumns={'repeat(2,1fr)'} textAlign={'left'} listStylePosition={'inside'} gap={2} flexWrap={'wrap'} justifyContent={'center'}>
                 <ListItem> Anatomy</ListItem>
@@ -97,6 +97,7 @@ const Index = () => {
                 <ListItem> Korean facials</ListItem>
                 <ListItem> Facelift</ListItem>
                 <ListItem> Laser</ListItem>
+                <ListItem gridColumnEnd={3} gridColumnStart={1}> And many more</ListItem>
                 <ListItem> Exam</ListItem>
                 <ListItem> Certification</ListItem>
               </UnorderedList>
@@ -175,7 +176,7 @@ const Index = () => {
         <Image src='/logo.png' h={10} />
         <Flex alignItems={'center'} gap={2}>
           <BsTelephoneFill />
-          <Link href={'tel:919004574190'}>+91 90045 74190</Link>
+          <Link href={'tel:918237644190'}>+91 82376 44190</Link>
         </Flex>
         <Flex alignItems={'center'} gap={2}>
           <BsEnvelopeFill />

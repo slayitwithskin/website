@@ -38,7 +38,7 @@ const Index = () => {
   return (
     <>
       <Head>
-        <title>Skin courses in Mumbai | Slay it with Skin</title>
+        <title>Best Skin consultation online | Slay it with Skin</title>
         <meta name="robots" content="noindex"></meta>
       </Head>
 
@@ -159,7 +159,7 @@ const Index = () => {
         <Image src='/logo.png' h={10} />
         <Flex alignItems={'center'} gap={2}>
           <BsTelephoneFill />
-          <Link href={'tel:919004574190'}>+91 90045 74190</Link>
+          <Link href={'tel:918237644190'}>+91 82376 44190</Link>
         </Flex>
         <Flex alignItems={'center'} gap={2}>
           <BsEnvelopeFill />

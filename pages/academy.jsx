@@ -44,8 +44,8 @@ const Academy = () => {
           <Text fontSize={'2xl'} fontWeight={'600'}>Online Academy</Text>
           <br />
           <Text>
-            <b>May Month Launch</b> <br />
-            <b>Five days Course</b><br />
+            <b>7 day course</b> <br />
+            
             • Anatomy <br />
             • Theory <br />
             • Facial massage <br />
@@ -75,8 +75,8 @@ const Academy = () => {
           <Text fontSize={'2xl'} fontWeight={'600'}>Offline Academy</Text>
           <br />
           <Text>
-            <b>Nashik April Batch</b> <br />
-            <b>Seven days Course</b><br />
+            <b>20 days course + Internship</b> <br />
+            
             • Anatomy <br />
             • Theory <br />
             • Facial massage <br />
@@ -93,6 +93,7 @@ const Academy = () => {
             • Korean facials <br />
             • Facelift <br />
             • Laser <br />
+            • And many more <br/>
             • Exam <br />
             • Certification <br />
 

@@ -37,8 +37,8 @@ const Footer = () => {
                     <Flex alignItems={'center'}><Text fontSize={16} mr={4}><BsEnvelopeFill /></Text><Text fontSize={16}>info@slayitwithskin.com</Text></Flex>
                 </Link>
                 <Box w={4} h={2}></Box>
-                <Link href={'tel: +919004574190'} target={'_blank'}>
-                    <Flex alignItems={'center'}><Text fontSize={16} mr={4}><BsTelephoneFill /></Text><Text fontSize={16}>+91 90045 74190</Text></Flex>
+                <Link href={'tel: +918237644190'} target={'_blank'}>
+                    <Flex alignItems={'center'}><Text fontSize={16} mr={4}><BsTelephoneFill /></Text><Text fontSize={16}>+91 82376 44190</Text></Flex>
                 </Link>
             </Flex>
 
