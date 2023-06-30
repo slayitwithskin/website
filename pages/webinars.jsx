@@ -37,7 +37,7 @@ export default function webinars() {
                                 </Box>
                                 <Box>
                                     <Text fontWeight={700} lineHeight={1} mb={1}>Date & time:</Text>
-                                    <Text fontSize={[13,16]}>14th July, 2023 - 7pm</Text>
+                                    <Text fontSize={[13,16]}>28th July, 2023 - 7pm</Text>
                                 </Box>
                             </Flex>
                             <Flex alignItems={'flex-start'} gap={3}>
@@ -79,7 +79,7 @@ export default function webinars() {
                                 </Box>
                                 <Box>
                                     <Text fontWeight={700} lineHeight={1} mb={1}>Date & time:</Text>
-                                    <Text fontSize={[13,16]}>28th July, 2023 - 7pm</Text>
+                                    <Text fontSize={[13,16]}>11th August, 2023 - 7pm</Text>
                                 </Box>
                             </Flex>
                             <Flex alignItems={'flex-start'} gap={3}>
@@ -107,12 +107,12 @@ export default function webinars() {
                 <Flex direction={['column','row']} mt={8} gap={6} alignItems={'center'}>
                     <Image width={['100%', '50%']} src="/webinar3.jpg" />
                     <Box width={['100%','50%']}>
-                        <Text className={styles.cursive} fontSize={[24, 32]} lineHeight={1.1} mb={4} as={'h3'}>Understanding ingredients & Including skin care</Text>
+                        <Text className={styles.cursive} fontSize={[24, 32]} lineHeight={1.1} mb={4} as={'h3'}>Understanding ingredients & Including in skin care</Text>
                         <Text fontWeight={700}>Topics:</Text>
                         <UnorderedList mb={6}>
-                            <ListItem>Not everything is for you</ListItem>
+                            <ListItem>Keeping the environment & your budget in mind</ListItem>
                             <ListItem>Understanding your skin & lifestyle needs</ListItem>
-                            <ListItem>Keeping the environment &your budget in mind</ListItem>
+                            <ListItem>Not everything is for you</ListItem>     
                             <ListItem>Nutrition plan</ListItem>
                         </UnorderedList>
 
@@ -123,7 +123,7 @@ export default function webinars() {
                                 </Box>
                                 <Box>
                                     <Text fontWeight={700} lineHeight={1} mb={1}>Date & time:</Text>
-                                    <Text fontSize={[13,16]}>14th July, 2023 - 7pm</Text>
+                                    <Text fontSize={[13,16]}>25th August, 2023 - 7pm</Text>
                                 </Box>
                             </Flex>
                             <Flex alignItems={'flex-start'} gap={3}>
