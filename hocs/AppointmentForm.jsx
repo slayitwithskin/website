@@ -646,7 +646,7 @@ const Appointment = () => {
                                 <Button colorScheme={'whatsapp'}
                                     rounded={0} p={6} fontSize={[12, 16]}
                                     className={styles.monts} textTransform={'uppercase'}
-                                    onClick={() => createMojoOrder()}
+                                    onClick={() => createStripeOrder()}
                                     disabled={payBtnStatus}
                                 >
                                     Pay Now
