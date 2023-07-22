@@ -108,6 +108,7 @@ const Courses = () => {
                     </Link>
                 </Box>
                 <Box
+                    display={'none'}
                     p={4}
                     bg={'white'}
                     boxShadow={'lg'}
