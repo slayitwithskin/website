@@ -441,7 +441,7 @@ const Appointment = () => {
             amount: `${parseFloat(total || subTotal)}`,
             accessToken: mojoAccessToken
         }).then(res=>{
-            // window.location.assign(res.data.shorturl)
+            window.location.assign(res.data.shorturl)
             console.log(res.data)
         }).catch(err => {
             Toast({
